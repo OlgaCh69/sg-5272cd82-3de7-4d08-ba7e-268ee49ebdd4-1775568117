@@ -25,15 +25,15 @@
     --border: 220 15% 18%;
     --input: 220 15% 18%;
     --ring: 158 100% 50%;
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --neon-green: 158 100% 50%;
     --dark-bg: 218 27% 6%;
     --glass-bg: 220 25% 12%;
     --glass-border: 220 20% 20%;
     
-    --shadow-glow: 0 0 40px rgba(0, 255, 157, 0.4);
-    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(0, 255, 157, 0.15);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -55,11 +55,11 @@
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-glass-border;
+    @apply bg-card/40 backdrop-blur-sm border border-border/50;
   }
   
   .glow-green {
-    box-shadow: 0 0 40px rgba(0, 255, 157, 0.4);
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.15);
   }
   
   .text-gradient {

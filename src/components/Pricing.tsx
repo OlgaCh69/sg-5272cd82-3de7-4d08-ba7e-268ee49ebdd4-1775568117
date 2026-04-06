@@ -58,36 +58,36 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-24 px-4" id="pricing">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-4">
+    <section className="py-32 px-4" id="pricing">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-20">
+          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-6">
             Choose the Perfect Plan
           </h2>
-          <p className="text-lg text-muted-foreground">Simple pricing. Big impact.</p>
+          <p className="text-xl text-muted-foreground">Simple pricing. Big impact.</p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`glass-card rounded-2xl p-8 shadow-card relative border ${
+              className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 border relative ${
                 plan.popular 
-                  ? "border-primary/50 shadow-glow" 
+                  ? "border-primary/50" 
                   : "border-border/50"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-glow">
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
                     Most Popular
                   </div>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-2xl mb-3">{plan.name}</h3>
-                <div className="mb-2">
+                <h3 className="font-heading font-bold text-2xl mb-4">{plan.name}</h3>
+                <div className="mb-3">
                   <span className="text-4xl font-bold text-primary">{plan.price}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{plan.description}</p>
@@ -96,9 +96,7 @@ export function Pricing() {
               <div className="space-y-3 mb-8">
                 {plan.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-3">
-                    <div className="w-5 h-5 bg-primary/20 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3.5 h-3.5 text-primary" />
-                    </div>
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-sm">{feature}</span>
                   </div>
                 ))}
@@ -107,7 +105,7 @@ export function Pricing() {
               <Button
                 className={`w-full font-semibold ${
                   plan.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow"
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "bg-secondary hover:bg-secondary/80"
                 }`}
               >
