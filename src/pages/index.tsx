@@ -7,6 +7,7 @@ import { Features } from "@/components/Features";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Pricing } from "@/components/Pricing";
 import { Trust } from "@/components/Trust";
+import { ContactForm } from "@/components/ContactForm";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
           <HowItWorks />
           <Pricing />
           <Trust />
+          <ContactForm />
           <FinalCTA />
         </main>
         <footer className="border-t border-border/50 py-12 px-4">
