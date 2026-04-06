@@ -29,7 +29,7 @@ export function FAQ() {
     },
     {
       question: "Is customer support included?",
-      answer: "Yes! All plans include customer support. Starter and Growth plans get email support with 24-hour response time. Pro and Enterprise plans include priority support with faster response times and dedicated assistance."
+      answer: "Yes! All plans include customer support and maintenance as part of your monthly subscription fee. Our team is available to help you with setup, troubleshooting, and optimization. Enterprise customers get priority support with dedicated account managers."
     },
     {
       question: "Can the bot handle multiple languages?",
