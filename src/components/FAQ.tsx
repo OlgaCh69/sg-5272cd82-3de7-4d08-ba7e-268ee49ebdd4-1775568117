@@ -13,7 +13,7 @@ export function FAQ() {
     },
     {
       question: "How long does it take to set up a bot?",
-      answer: "Initial setup takes 2-3 business days depending on your plan. This includes bot configuration, platform integration, and initial testing. We'll work closely with you to ensure everything meets your requirements."
+      answer: "Most bots can be set up within 5-10 days, depending on your requirements and customization needs. We handle the technical setup, and you can start engaging with customers immediately after launch."
     },
     {
       question: "Can I customize the bot to match my brand?",
