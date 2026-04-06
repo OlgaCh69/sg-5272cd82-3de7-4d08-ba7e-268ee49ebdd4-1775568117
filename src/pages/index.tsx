@@ -14,9 +14,9 @@ export default function Home() {
     <>
       <SEO
         title="O.N.E.Tech - Turn Conversations Into Sales. 24/7."
-        description="Create smart bots for Telegram, WhatsApp, Instagram, and more. Automate support, showcase products, and increase conversions — all in one place."
+        description="Create smart bots for Telegram, WhatsApp, Instagram, and more. Automate support, showcase products, and increase conversions."
       />
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen">
         <Header />
         <main>
           <Hero />
@@ -28,9 +28,9 @@ export default function Home() {
           <Trust />
           <FinalCTA />
         </main>
-        <footer className="py-8 px-4 border-t border-glass-border">
-          <div className="container mx-auto text-center text-sm text-muted-foreground">
-            <p>© 2026 O.N.E.Tech. All rights reserved.</p>
+        <footer className="border-t border-border/50 py-12 px-4">
+          <div className="container mx-auto max-w-7xl text-center">
+            <p className="text-sm text-muted-foreground">© 2023 O.N.E.Tech. All rights reserved.</p>
           </div>
         </footer>
       </div>
