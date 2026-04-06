@@ -103,7 +103,7 @@ export function Pricing() {
                 ))}
               </div>
 
-              <Link href={`#contact?plan=${plan.name}`}>
+              <Link href={`#contact?plan=${plan.name}`} className="w-full block">
                 <Button
                   className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
                 >
