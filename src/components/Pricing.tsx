@@ -58,9 +58,9 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-24 px-4" id="pricing">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-4">
             Choose the Perfect Plan
           </h2>
@@ -71,43 +71,45 @@ export function Pricing() {
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`glass-card p-6 rounded-2xl shadow-card relative ${
-                plan.popular ? "border-2 border-primary shadow-glow" : ""
+              className={`glass-card rounded-2xl p-8 shadow-card relative border ${
+                plan.popular 
+                  ? "border-primary/50 shadow-glow" 
+                  : "border-border/50"
               }`}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  <div className="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-glow">
                     Most Popular
                   </div>
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="font-heading font-bold text-2xl mb-2">{plan.name}</h3>
+              <div className="text-center mb-8">
+                <h3 className="font-heading font-bold text-2xl mb-3">{plan.name}</h3>
                 <div className="mb-2">
                   <span className="text-4xl font-bold text-primary">{plan.price}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{plan.description}</p>
               </div>
 
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-8">
                 {plan.features.map((feature, j) => (
-                  <div key={j} className="flex items-start gap-2">
+                  <div key={j} className="flex items-start gap-3">
                     <div className="w-5 h-5 bg-primary/20 rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                      <Check className="w-3.5 h-3.5 text-primary" />
                     </div>
-                    <span className="text-sm text-foreground">{feature}</span>
+                    <span className="text-sm">{feature}</span>
                   </div>
                 ))}
               </div>
 
               <Button
-                className={`w-full ${
+                className={`w-full font-semibold ${
                   plan.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90 glow-green"
+                    ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-glow"
                     : "bg-secondary hover:bg-secondary/80"
-                } font-semibold`}
+                }`}
               >
                 {plan.cta}
               </Button>

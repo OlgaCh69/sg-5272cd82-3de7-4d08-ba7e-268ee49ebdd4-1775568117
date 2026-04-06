@@ -25,11 +25,11 @@ export function Problem() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-destructive/5 to-transparent pointer-events-none" />
+    <section className="py-24 px-4 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-destructive/5 to-transparent" />
       
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
+      <div className="container mx-auto relative z-10">
+        <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-4">
             You're <span className="text-destructive">Losing Sales</span> Every Day
           </h2>
@@ -38,19 +38,19 @@ export function Problem() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up">
-          {problems.map((problem, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {problems.map((problem, i) => (
             <div
-              key={index}
-              className="glass-card rounded-2xl p-6 border border-destructive/20 hover:border-destructive/40 transition-all hover:scale-105"
+              key={i}
+              className="glass-card rounded-2xl p-6 border border-destructive/20 hover:border-destructive/40 hover:shadow-[0_0_30px_rgba(239,68,68,0.2)] transition-all duration-300 group"
             >
-              <div className="w-12 h-12 bg-destructive/10 rounded-xl flex items-center justify-center mb-4">
-                <problem.icon className="w-6 h-6 text-destructive" />
+              <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+                <problem.icon className="w-7 h-7 text-destructive" />
               </div>
-              <h3 className="font-heading font-semibold text-lg mb-2">
+              <h3 className="font-heading font-semibold text-lg mb-2.5">
                 {problem.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {problem.description}
               </p>
             </div>

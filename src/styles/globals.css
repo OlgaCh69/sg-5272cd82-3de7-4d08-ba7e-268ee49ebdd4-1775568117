@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,37 +6,34 @@
 
 @layer base {
   :root {
-    /* shadcn defaults - keep intact */
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --background: 218 27% 6%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
     --primary: 158 100% 50%;
-    --primary-foreground: 222 47% 5%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --primary-foreground: 218 27% 6%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 0 0% 65%;
     --accent: 158 100% 50%;
-    --accent-foreground: 222 47% 5%;
-    --destructive: 0 62% 30%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
+    --accent-foreground: 218 27% 6%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
     --ring: 158 100% 50%;
     --radius: 1rem;
 
-    /* Custom O.N.E.Tech colors */
     --neon-green: 158 100% 50%;
-    --dark-navy: 222 47% 5%;
-    --glass-bg: 220 30% 12%;
+    --dark-bg: 218 27% 6%;
+    --glass-bg: 220 25% 12%;
     --glass-border: 220 20% 20%;
     
-    /* Shadows */
-    --shadow-glow: 0 0 30px rgba(0, 255, 157, 0.3);
-    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 40px rgba(0, 255, 157, 0.4);
+    --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -46,25 +43,35 @@
   }
   
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Work Sans', system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sora', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-weight: 700;
   }
 }
 
 @layer utilities {
   .glass-card {
-    @apply bg-card/40 backdrop-blur-xl border border-glass-border rounded-2xl;
+    @apply bg-card/50 backdrop-blur-xl border border-glass-border;
   }
   
   .glow-green {
-    box-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+    box-shadow: 0 0 40px rgba(0, 255, 157, 0.4);
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary to-emerald-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-emerald-400 to-primary bg-clip-text text-transparent;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
   }
 }
