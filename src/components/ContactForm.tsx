@@ -3,11 +3,20 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send, Mail, Clock, Headphones } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Send, Mail, Clock, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
+import { useEffect, useState, FormEvent } from "react";
+import { contactService } from "@/services/contactService";
 
 export function ContactForm() {
   const [selectedPlan, setSelectedPlan] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+  });
 
   useEffect(() => {
     // Get plan from URL parameter
@@ -17,6 +26,50 @@ export function ContactForm() {
       setSelectedPlan(plan);
     }
   }, []);
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      await contactService.submitContact({
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || undefined,
+        plan: selectedPlan || undefined,
+        message: formData.message,
+      });
+
+      setSubmitStatus("success");
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+      });
+      setSelectedPlan("");
+
+      // Clear success message after 5 seconds
+      setTimeout(() => setSubmitStatus("idle"), 5000);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+      setTimeout(() => setSubmitStatus("idle"), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-32 px-4" id="contact">
@@ -33,27 +86,51 @@ export function ContactForm() {
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
-              <form className="space-y-6">
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-primary/10 border border-primary/20 rounded-lg flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                  <p className="text-sm text-primary">
+                    Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                  </p>
+                </div>
+              )}
+
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0" />
+                  <p className="text-sm text-destructive">
+                    Please fill in all required fields and try again.
+                  </p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium mb-2 block">
-                      Your Name
+                      Your Name <span className="text-destructive">*</span>
                     </label>
                     <Input 
                       id="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="John Doe" 
                       className="bg-muted/30 border-border/50"
+                      required
                     />
                   </div>
                   <div>
                     <label htmlFor="email" className="text-sm font-medium mb-2 block">
-                      Email Address
+                      Email Address <span className="text-destructive">*</span>
                     </label>
                     <Input 
                       id="email"
                       type="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="john@company.com" 
                       className="bg-muted/30 border-border/50"
+                      required
                     />
                   </div>
                 </div>
@@ -65,6 +142,8 @@ export function ContactForm() {
                     </label>
                     <Input 
                       id="company"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                       placeholder="Your Company" 
                       className="bg-muted/30 border-border/50"
                     />
@@ -91,21 +170,25 @@ export function ContactForm() {
 
                 <div>
                   <label htmlFor="message" className="text-sm font-medium mb-2 block">
-                    Your Message
+                    Your Message <span className="text-destructive">*</span>
                   </label>
                   <Textarea 
                     id="message"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Tell us about your project and requirements..." 
                     rows={6}
                     className="bg-muted/30 border-border/50 resize-none"
+                    required
                   />
                 </div>
 
                 <Button 
                   type="submit"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base h-12"
+                  disabled={isSubmitting}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base h-12 disabled:opacity-50"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                   <Send className="ml-2 w-4 h-4" />
                 </Button>
               </form>
