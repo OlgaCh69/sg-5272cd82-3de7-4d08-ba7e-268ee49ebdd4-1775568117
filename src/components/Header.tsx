@@ -14,9 +14,9 @@ export function Header() {
             <Image
               src="/onetech-logo.png"
               alt="O.N.E.Tech Logo"
-              width={280}
-              height={120}
-              className="h-16 w-auto transition-transform group-hover:scale-105"
+              width={200}
+              height={85}
+              className="w-auto h-12 transition-transform group-hover:scale-105"
               priority
             />
           </a>
