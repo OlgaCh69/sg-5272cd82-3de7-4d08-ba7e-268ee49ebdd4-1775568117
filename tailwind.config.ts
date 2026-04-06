@@ -43,21 +43,29 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        "neon-green": "hsl(var(--neon-green))",
+        "dark-navy": "hsl(var(--dark-navy))",
+        "glass-bg": "hsl(var(--glass-bg))",
+        "glass-border": "hsl(var(--glass-border))",
+      },
+      fontFamily: {
+        sans: ["Work Sans", "system-ui", "sans-serif"],
+        heading: ["Sora", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      fontFamily: {
-        sans: ["Work Sans", "system-ui", "sans-serif"],
-        heading: ["Space Grotesk", "system-ui", "sans-serif"],
+      boxShadow: {
+        glow: "var(--shadow-glow)",
+        card: "var(--shadow-card)",
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",
         "slide-up": "slideUp 0.6s ease-out",
         "scale-in": "scaleIn 0.4s ease-out",
-        "glow": "glow 2s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
       keyframes: {
         fadeIn: {
@@ -72,9 +80,9 @@ const config: Config = {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
-        glow: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
         },
       },
     },
