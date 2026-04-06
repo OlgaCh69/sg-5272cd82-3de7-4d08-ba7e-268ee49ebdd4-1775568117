@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
-import Image from "next/image";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -11,13 +11,10 @@ export function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <Image
+            <img
               src="/onetech-logo.png"
               alt="O.N.E.Tech Logo"
-              width={280}
-              height={120}
               className="h-16 w-auto transition-transform group-hover:scale-105"
-              priority
             />
           </a>
 
