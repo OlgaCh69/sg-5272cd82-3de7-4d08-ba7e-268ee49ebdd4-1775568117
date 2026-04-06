@@ -10,12 +10,9 @@ export function Header() {
     <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <img
-              src="/onetech-logo.png"
-              alt="O.N.E.Tech Logo"
-              className="h-16 w-auto transition-transform group-hover:scale-105"
-            />
+          <a href="#" className="flex flex-col group">
+            <span className="text-2xl font-bold text-foreground">O.N.E.Tech</span>
+            <span className="text-xs text-primary font-medium tracking-wider">AUTOMATE • ENGAGE • GROW</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
