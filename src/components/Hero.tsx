@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -22,14 +23,18 @@ export function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base group px-8 h-14">
-                Get Your Bot Demo
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-card font-semibold text-base h-14 px-8">
-                <MessageCircle className="mr-2 w-5 h-5" />
-                Contact Us
-              </Button>
+              <Link href="#contact">
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base group px-8 h-14 w-full sm:w-auto">
+                  Get Your Bot Demo
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="#contact">
+                <Button size="lg" variant="outline" className="border-2 border-border hover:bg-card font-semibold text-base h-14 px-8 w-full sm:w-auto">
+                  <MessageCircle className="mr-2 w-5 h-5" />
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </div>
 

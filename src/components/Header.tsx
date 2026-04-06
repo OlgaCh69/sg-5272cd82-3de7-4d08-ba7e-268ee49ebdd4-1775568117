@@ -4,9 +4,9 @@ import { Globe, Menu } from "lucide-react";
 
 export function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/50">
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <div className="container mx-auto max-w-7xl">
+        <div className="flex items-center justify-between h-20 px-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
               <div className="w-6 h-6 border-2 border-primary-foreground rounded" />
@@ -35,12 +35,14 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            <Link href="#contact">
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
+                Get Your Bot Demo
+              </Button>
+            </Link>
             <Button variant="ghost" size="icon" className="hidden md:flex text-muted-foreground hover:text-foreground">
               <Globe className="w-5 h-5" />
-            </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-glow">
-              Get Your Bot Demo
             </Button>
             <Button variant="ghost" size="icon" className="lg:hidden">
               <Menu className="w-6 h-6" />
