@@ -1,55 +1,73 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Globe, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
 
 export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
-      <div className="container mx-auto max-w-7xl">
-        <div className="flex items-center justify-between h-20 px-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <div className="w-6 h-6 border-2 border-primary-foreground rounded" />
-            </div>
-            <div>
-              <div className="font-heading font-bold text-xl tracking-tight">O.N.E.Tech</div>
-              <div className="text-[10px] text-muted-foreground tracking-widest uppercase">Automate • Engage • Grow</div>
-            </div>
-          </Link>
+    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+      <nav className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <a href="#" className="flex items-center gap-3 group">
+            <Image
+              src="/onetech-logo.png"
+              alt="O.N.E.Tech Logo"
+              width={180}
+              height={80}
+              className="h-12 w-auto transition-transform group-hover:scale-105"
+              priority
+            />
+          </a>
 
-          <nav className="hidden lg:flex items-center gap-8">
-            <Link href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <div className="hidden md:flex items-center gap-8">
+            <a href="#features" className="text-sm hover:text-primary transition-colors">
               Features
-            </Link>
-            <Link href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </a>
+            <a href="#how-it-works" className="text-sm hover:text-primary transition-colors">
               How It Works
-            </Link>
-            <Link href="#pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </a>
+            <a href="#pricing" className="text-sm hover:text-primary transition-colors">
               Pricing
-            </Link>
-            <Link href="#examples" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Examples
-            </Link>
-            <Link href="#faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            </a>
+            <a href="#faq" className="text-sm hover:text-primary transition-colors">
               FAQ
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-4">
-            <Link href="#contact">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
-                Get Your Bot Demo
-              </Button>
-            </Link>
-            <Button variant="ghost" size="icon" className="hidden md:flex text-muted-foreground hover:text-foreground">
-              <Globe className="w-5 h-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="lg:hidden">
-              <Menu className="w-6 h-6" />
+            </a>
+            <Button className="bg-primary hover:bg-primary/90 text-background font-semibold shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all">
+              Get Your Bot Demo
             </Button>
           </div>
+
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
         </div>
-      </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden mt-4 py-4 space-y-4 border-t border-border/50">
+            <a href="#features" className="block text-sm hover:text-primary transition-colors">
+              Features
+            </a>
+            <a href="#how-it-works" className="block text-sm hover:text-primary transition-colors">
+              How It Works
+            </a>
+            <a href="#pricing" className="block text-sm hover:text-primary transition-colors">
+              Pricing
+            </a>
+            <a href="#faq" className="block text-sm hover:text-primary transition-colors">
+              FAQ
+            </a>
+            <Button className="w-full bg-primary hover:bg-primary/90 text-background font-semibold shadow-lg shadow-primary/50">
+              Get Your Bot Demo
+            </Button>
+          </div>
+        )}
+      </nav>
     </header>
   );
 }
