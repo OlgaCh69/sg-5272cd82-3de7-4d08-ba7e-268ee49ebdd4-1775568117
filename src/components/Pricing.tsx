@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 export function Pricing() {
   const plans = [
@@ -102,15 +103,17 @@ export function Pricing() {
                 ))}
               </div>
 
-              <Button
-                className={`w-full font-semibold ${
-                  plan.popular
-                    ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary hover:bg-secondary/80"
-                }`}
-              >
-                {plan.cta}
-              </Button>
+              <Link href={`#contact?plan=${plan.name}`}>
+                <Button
+                  className={`w-full font-semibold ${
+                    plan.popular
+                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
+                      : "bg-secondary hover:bg-secondary/80"
+                  }`}
+                >
+                  {plan.cta}
+                </Button>
+              </Link>
             </div>
           ))}
         </div>
