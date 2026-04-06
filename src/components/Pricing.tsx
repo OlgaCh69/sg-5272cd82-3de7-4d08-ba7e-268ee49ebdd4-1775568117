@@ -105,11 +105,7 @@ export function Pricing() {
 
               <Link href={`#contact?plan=${plan.name}`}>
                 <Button
-                  className={`w-full font-semibold ${
-                    plan.popular
-                      ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                      : "bg-secondary hover:bg-secondary/80"
-                  }`}
+                  className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   {plan.cta}
                 </Button>
