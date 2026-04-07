@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Clock, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
 import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { contactService } from "@/services/contactService";
-import { supabase } from "@/integrations/supabase/client";
 
 export function ContactForm() {
   const [selectedPlan, setSelectedPlan] = useState("");
@@ -20,7 +19,6 @@ export function ContactForm() {
   });
 
   useEffect(() => {
-    // Get plan from URL parameter
     const params = new URLSearchParams(window.location.search);
     const plan = params.get("plan");
     if (plan) {
@@ -37,84 +35,34 @@ export function ContactForm() {
     }));
   };
 
-  // Diagnostic test function
-  const testSupabaseConnection = async () => {
-    console.log("=== TESTING SUPABASE CONNECTION ===");
-    try {
-      const testData = {
-        name: "Test User " + new Date().getTime(),
-        email: "test@example.com",
-        company: "Test Company",
-        plan: "Starter",
-        message: "This is a diagnostic test from the browser",
-      };
-
-      console.log("Test data:", testData);
-      
-      const { data, error } = await supabase
-        .from("contacts")
-        .insert(testData)
-        .select()
-        .single();
-
-      console.log("Supabase test response:", { data, error });
-
-      if (error) {
-        console.error("❌ Test failed:", error);
-        alert("Test FAILED: " + error.message);
-      } else {
-        console.log("✅ Test SUCCESS:", data);
-        alert("Test SUCCESS! Check console for details.");
-      }
-    } catch (err) {
-      console.error("❌ Test exception:", err);
-      alert("Test FAILED with exception: " + err);
-    }
-  };
-
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    console.log("=== FORM SUBMIT TRIGGERED ===");
-    console.log("Current form data:", formData);
-    console.log("Selected plan:", selectedPlan);
+    console.log("Form submitted");
     
-    // Trim values and check validation
-    const trimmedName = formData.name.trim();
-    const trimmedEmail = formData.email.trim();
-    const trimmedMessage = formData.message.trim();
-    
-    console.log("Trimmed values:", { trimmedName, trimmedEmail, trimmedMessage });
-    
-    // Basic validation
-    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
-      console.log("❌ Validation failed - missing required fields");
-      console.log("Name empty:", !trimmedName);
-      console.log("Email empty:", !trimmedEmail);
-      console.log("Message empty:", !trimmedMessage);
+    if (!formData.name || !formData.email || !formData.message) {
+      console.log("Validation failed - missing required fields");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
       return;
     }
 
-    console.log("✅ Validation passed, submitting...");
+    console.log("Validation passed, submitting...");
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      console.log("Calling contactService.submitContact...");
       const result = await contactService.submitContact({
-        name: trimmedName,
-        email: trimmedEmail,
-        company: formData.company.trim() || undefined,
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || undefined,
         plan: selectedPlan || undefined,
-        message: trimmedMessage,
+        message: formData.message,
       });
 
-      console.log("✅ Form submission successful:", result);
+      console.log("✅ Form submitted successfully:", result);
       setSubmitStatus("success");
       
-      // Reset form
       setFormData({
         name: "",
         email: "",
@@ -123,11 +71,9 @@ export function ContactForm() {
       });
       setSelectedPlan("");
 
-      // Clear success message after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
       console.error("❌ Form submission error:", error);
-      console.error("Error object:", error);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {
@@ -151,21 +97,6 @@ export function ContactForm() {
           <div className="lg:col-span-2">
             <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
               
-              {/* DIAGNOSTIC TEST BUTTON - REMOVE AFTER FIXING */}
-              <div className="mb-6 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                <p className="text-sm text-yellow-600 dark:text-yellow-400 mb-3">
-                  🔧 Diagnostic Test: Click to test Supabase connection (check console after clicking)
-                </p>
-                <Button 
-                  type="button"
-                  onClick={testSupabaseConnection}
-                  variant="outline"
-                  className="w-full"
-                >
-                  Test Supabase Connection
-                </Button>
-              </div>
-
               {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-primary/10 border border-primary/20 rounded-lg flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
