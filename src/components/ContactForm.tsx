@@ -203,7 +203,7 @@ export function ContactForm() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Email Us</h3>
-                  <p className="text-sm text-muted-foreground">hello@onetechautomation.com</p>
+                  <p className="text-sm text-muted-foreground">support@onetechautomation.com</p>
                 </div>
               </div>
             </div>

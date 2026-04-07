@@ -82,7 +82,7 @@ serve(async (req) => {
       },
       body: JSON.stringify({
         from: "O.N.E.Tech Notifications <onboarding@resend.dev>", // Change this after domain verification
-        to: ["hello@onetechautomation.com"], // Your notification email
+        to: ["support@onetechautomation.com"], // Your notification email
         subject: `New Contact Form: ${name} - ${plan} Plan`,
         html: emailBody,
         reply_to: email, // User can reply directly to the customer
