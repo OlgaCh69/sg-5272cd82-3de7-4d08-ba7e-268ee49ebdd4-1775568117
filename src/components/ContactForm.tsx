@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Clock, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
 import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { contactService } from "@/services/contactService";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 export function ContactForm() {
   const [selectedPlan, setSelectedPlan] = useState("");
