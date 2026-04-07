@@ -30,18 +30,23 @@ export function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
+    console.log("Form submit triggered");
+    
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
+      console.log("Validation failed - missing required fields");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
       return;
     }
 
+    console.log("Validation passed, submitting...");
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      await contactService.submitContact({
+      console.log("Calling contactService.submitContact...");
+      const result = await contactService.submitContact({
         name: formData.name,
         email: formData.email,
         company: formData.company || undefined,
@@ -49,6 +54,7 @@ export function ContactForm() {
         message: formData.message,
       });
 
+      console.log("✅ Form submission successful:", result);
       setSubmitStatus("success");
       
       // Reset form
@@ -63,7 +69,8 @@ export function ContactForm() {
       // Clear success message after 5 seconds
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("❌ Form submission error:", error);
+      console.error("Error object:", error);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {
