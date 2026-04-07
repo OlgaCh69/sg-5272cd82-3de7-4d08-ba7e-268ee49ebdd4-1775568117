@@ -99,13 +99,14 @@ export function Hero() {
               <div className="flex-1 bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
                 <div className="bg-muted/20 rounded-xl p-4">
                   <div className="bg-muted/30 rounded-lg overflow-hidden mb-4 aspect-square flex items-center justify-center">
-                    <span className="text-6xl">🎒</span>
+                    <span className="text-6xl">🎧</span>
                   </div>
                   
-                  <h3 className="font-semibold text-base mb-2">Tactical Backpack</h3>
+                  <h3 className="font-semibold text-base mb-2">Premium Wireless Headphones</h3>
                   
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-2xl font-bold text-primary">€89.99</span>
+                    <span className="text-2xl font-bold text-primary">€299.99</span>
+                    <span className="text-sm text-muted-foreground line-through">€399.99</span>
                   </div>
                   
                   <div className="flex items-center gap-2 mb-4">
@@ -114,7 +115,7 @@ export function Hero() {
                         <span key={i} className="text-yellow-400 text-xs">⭐</span>
                       ))}
                     </div>
-                    <span className="text-xs text-muted-foreground">(120 reviews)</span>
+                    <span className="text-xs text-muted-foreground">(450 reviews)</span>
                   </div>
                   
                   <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm h-10">
