@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Clock, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
-import { useEffect, useState, FormEvent } from "react";
+import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { contactService } from "@/services/contactService";
 
 export function ContactForm() {
@@ -27,6 +27,15 @@ export function ContactForm() {
     }
   }, []);
 
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    console.log(`Input changed - ${name}:`, value);
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
@@ -34,12 +43,19 @@ export function ContactForm() {
     console.log("Current form data:", formData);
     console.log("Selected plan:", selectedPlan);
     
+    // Trim values and check validation
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+    
+    console.log("Trimmed values:", { trimmedName, trimmedEmail, trimmedMessage });
+    
     // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!trimmedName || !trimmedEmail || !trimmedMessage) {
       console.log("❌ Validation failed - missing required fields");
-      console.log("Name:", formData.name);
-      console.log("Email:", formData.email);
-      console.log("Message:", formData.message);
+      console.log("Name empty:", !trimmedName);
+      console.log("Email empty:", !trimmedEmail);
+      console.log("Message empty:", !trimmedMessage);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
       return;
@@ -52,11 +68,11 @@ export function ContactForm() {
     try {
       console.log("Calling contactService.submitContact...");
       const result = await contactService.submitContact({
-        name: formData.name,
-        email: formData.email,
-        company: formData.company || undefined,
+        name: trimmedName,
+        email: trimmedEmail,
+        company: formData.company.trim() || undefined,
         plan: selectedPlan || undefined,
-        message: formData.message,
+        message: trimmedMessage,
       });
 
       console.log("✅ Form submission successful:", result);
@@ -111,7 +127,7 @@ export function ContactForm() {
                 <div className="mb-6 p-4 bg-destructive/10 border border-destructive/20 rounded-lg flex items-center gap-3">
                   <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0" />
                   <p className="text-sm text-destructive">
-                    Please fill in all required fields and try again.
+                    Please fill in all required fields (Name, Email, and Message) and try again.
                   </p>
                 </div>
               )}
@@ -124,8 +140,9 @@ export function ContactForm() {
                     </label>
                     <Input 
                       id="name"
+                      name="name"
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={handleInputChange}
                       placeholder="John Doe" 
                       className="bg-muted/30 border-border/50"
                       required
@@ -137,9 +154,10 @@ export function ContactForm() {
                     </label>
                     <Input 
                       id="email"
+                      name="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={handleInputChange}
                       placeholder="john@company.com" 
                       className="bg-muted/30 border-border/50"
                       required
@@ -154,8 +172,9 @@ export function ContactForm() {
                     </label>
                     <Input 
                       id="company"
+                      name="company"
                       value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      onChange={handleInputChange}
                       placeholder="Your Company" 
                       className="bg-muted/30 border-border/50"
                     />
@@ -186,8 +205,9 @@ export function ContactForm() {
                   </label>
                   <Textarea 
                     id="message"
+                    name="message"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={handleInputChange}
                     placeholder="Tell us about your project and requirements..." 
                     rows={6}
                     className="bg-muted/30 border-border/50 resize-none"
