@@ -42,13 +42,13 @@ export function FAQ() {
   ];
 
   return (
-    <section className="py-32 px-4" id="faq">
+    <section className="py-24 sm:py-32 px-4" id="faq">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
             Frequently Asked <span className="text-gradient">Questions</span>
           </h2>
-          <p className="text-xl text-muted-foreground">
+          <p className="text-lg sm:text-xl text-muted-foreground">
             Everything you need to know about our bot automation platform
           </p>
         </div>
@@ -58,12 +58,12 @@ export function FAQ() {
             <AccordionItem 
               key={i} 
               value={`item-${i}`}
-              className="bg-card/60 backdrop-blur-sm rounded-xl border border-border/50 px-6 data-[state=open]:border-primary/30"
+              className="bg-card/60 backdrop-blur-sm rounded-xl border border-border/50 px-4 sm:px-6 data-[state=open]:border-primary/30"
             >
-              <AccordionTrigger className="text-left font-semibold text-lg hover:text-primary hover:no-underline py-5">
+              <AccordionTrigger className="text-left font-semibold text-base sm:text-lg hover:text-primary hover:no-underline py-4 sm:py-5">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+              <AccordionContent className="text-sm sm:text-base text-muted-foreground leading-relaxed pb-4 sm:pb-5">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -71,8 +71,8 @@ export function FAQ() {
         </Accordion>
 
         <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">Still have questions?</p>
-          <a href="#contact" className="text-primary font-semibold hover:underline">
+          <p className="text-sm sm:text-base text-muted-foreground mb-4">Still have questions?</p>
+          <a href="#contact" className="text-primary font-semibold hover:underline text-sm sm:text-base">
             Contact our team →
           </a>
         </div>

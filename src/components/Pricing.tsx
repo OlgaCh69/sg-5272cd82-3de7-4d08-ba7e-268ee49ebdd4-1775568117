@@ -59,20 +59,20 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-32 px-4" id="pricing">
+    <section className="py-24 sm:py-32 px-4" id="pricing">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-20">
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-6">
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
             Choose the Perfect Plan
           </h2>
-          <p className="text-xl text-muted-foreground">Simple pricing. Big impact.</p>
+          <p className="text-lg sm:text-xl text-muted-foreground">Simple pricing. Big impact.</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, i) => (
             <div
               key={i}
-              className={`bg-card/60 backdrop-blur-sm rounded-2xl p-8 border relative ${
+              className={`bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border relative ${
                 plan.popular 
                   ? "border-primary/50" 
                   : "border-border/50"
@@ -87,9 +87,9 @@ export function Pricing() {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-2xl mb-4">{plan.name}</h3>
+                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4">{plan.name}</h3>
                 <div className="mb-3">
-                  <span className="text-4xl font-bold text-primary">{plan.price}</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">{plan.price}</span>
                 </div>
                 <p className="text-sm text-muted-foreground">{plan.description}</p>
               </div>
@@ -105,7 +105,7 @@ export function Pricing() {
 
               <Link href={`#contact?plan=${plan.name}`} className="w-full block">
                 <Button
-                  className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 h-11"
                 >
                   {plan.cta}
                 </Button>
