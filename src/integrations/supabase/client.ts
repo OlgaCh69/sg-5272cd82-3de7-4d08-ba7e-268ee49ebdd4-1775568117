@@ -2,7 +2,7 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
-// Force refresh - updated at 2026-04-07T20:35:02Z
+// Force refresh - updated at 2026-04-07T20:35:28Z
 // Read from environment variables instead of hardcoding tokens
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_PUBLISHABLE_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
