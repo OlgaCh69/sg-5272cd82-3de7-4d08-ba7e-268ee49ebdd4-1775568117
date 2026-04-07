@@ -40,11 +40,11 @@ export function Solution() {
   ];
 
   return (
-    <section className="py-32 px-4">
+    <section className="py-24 sm:py-32 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-8">
-            <h2 className="font-heading font-bold text-4xl lg:text-5xl xl:text-6xl leading-tight">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-6 sm:space-y-8">
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight">
               One Bot. <span className="text-gradient">Multiple Platforms.</span><br />
               Endless Possibilities.
             </h2>
@@ -53,14 +53,14 @@ export function Solution() {
               {platforms.map((platform, i) => (
                 <div
                   key={i}
-                  className={`${platform.color} rounded-xl w-14 h-14 flex items-center justify-center text-white hover:scale-105 transition-transform cursor-pointer`}
+                  className={`${platform.color} rounded-xl w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center text-white hover:scale-105 transition-transform cursor-pointer`}
                 >
                   <platform.Icon />
                 </div>
               ))}
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 "Unified inbox",
                 "Smart automations",
@@ -69,37 +69,37 @@ export function Solution() {
               ].map((benefit, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-lg">{benefit}</span>
+                  <span className="text-base sm:text-lg">{benefit}</span>
                 </div>
               ))}
             </div>
 
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
               Build once. Deploy everywhere. Connect with your customers on their favorite platforms.
             </p>
           </div>
 
-          <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                <span className="text-xl">💬</span>
+          <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
+            <div className="flex items-center gap-3 mb-4 sm:mb-6">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                <span className="text-lg sm:text-xl">💬</span>
               </div>
               <div>
-                <div className="font-semibold text-lg">Your Business</div>
+                <div className="font-semibold text-base sm:text-lg">Your Business</div>
                 <div className="text-xs text-muted-foreground">Multi-Platform</div>
               </div>
             </div>
 
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {messages.map((msg, i) => (
-                <div key={i} className="flex items-center gap-3 p-4 bg-muted/30 rounded-lg">
-                  <div className={`w-10 h-10 rounded-full ${msg.color} flex items-center justify-center flex-shrink-0`}>
+                <div key={i} className="flex items-center gap-3 p-3 sm:p-4 bg-muted/30 rounded-lg">
+                  <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full ${msg.color} flex items-center justify-center flex-shrink-0`}>
                     <div className="text-white">
                       <msg.Icon />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="font-medium text-sm">{msg.platform}</div>
+                    <div className="font-medium text-xs sm:text-sm">{msg.platform}</div>
                     <div className="text-xs text-muted-foreground truncate">{msg.message}</div>
                   </div>
                   <div className="text-xs text-muted-foreground">{msg.time}</div>
@@ -107,10 +107,10 @@ export function Solution() {
               ))}
             </div>
 
-            <div className="mt-6 pt-6 border-t border-border/50">
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-border/50">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">Active Conversations</span>
-                <span className="text-2xl font-bold text-primary">24</span>
+                <span className="text-xs sm:text-sm text-muted-foreground">Active Conversations</span>
+                <span className="text-xl sm:text-2xl font-bold text-primary">24</span>
               </div>
             </div>
           </div>
