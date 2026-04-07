@@ -26,6 +26,7 @@ export const contactService = {
 
     console.log("Supabase insert data:", insertData);
 
+    // Step 1: Save to database
     const { data: result, error } = await supabase
       .from("contacts")
       .insert(insertData)
@@ -46,6 +47,35 @@ export const contactService = {
     }
 
     console.log("✅ Contact submitted successfully:", result);
+
+    // Step 2: Send email notification via Edge Function
+    try {
+      console.log("Calling Edge Function to send email notification...");
+      const { data: emailResult, error: emailError } = await supabase.functions.invoke(
+        "send-contact-notification",
+        {
+          body: {
+            name: data.name,
+            email: data.email,
+            company: data.company || null,
+            plan: data.plan || null,
+            message: data.message,
+            created_at: result.created_at,
+          },
+        }
+      );
+
+      if (emailError) {
+        console.error("⚠️ Email notification error:", emailError);
+        // Don't throw - contact is saved, email is just a bonus
+      } else {
+        console.log("✅ Email notification sent:", emailResult);
+      }
+    } catch (emailErr) {
+      console.error("⚠️ Failed to send email notification:", emailErr);
+      // Don't throw - contact is saved, that's what matters
+    }
+
     console.log("=== CONTACT FORM SUBMISSION END ===");
     
     return result;
