@@ -30,17 +30,22 @@ export function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    console.log("Form submit triggered");
+    console.log("=== FORM SUBMIT TRIGGERED ===");
+    console.log("Current form data:", formData);
+    console.log("Selected plan:", selectedPlan);
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
-      console.log("Validation failed - missing required fields");
+      console.log("❌ Validation failed - missing required fields");
+      console.log("Name:", formData.name);
+      console.log("Email:", formData.email);
+      console.log("Message:", formData.message);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
       return;
     }
 
-    console.log("Validation passed, submitting...");
+    console.log("✅ Validation passed, submitting...");
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
