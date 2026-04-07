@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, Clock, Headphones, CheckCircle2, AlertCircle } from "lucide-react";
 import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { contactService } from "@/services/contactService";
+import { supabase } from "@/lib/supabase";
 
 export function ContactForm() {
   const [selectedPlan, setSelectedPlan] = useState("");
@@ -34,6 +35,41 @@ export function ContactForm() {
       ...prev,
       [name]: value
     }));
+  };
+
+  // Diagnostic test function
+  const testSupabaseConnection = async () => {
+    console.log("=== TESTING SUPABASE CONNECTION ===");
+    try {
+      const testData = {
+        name: "Test User " + new Date().getTime(),
+        email: "test@example.com",
+        company: "Test Company",
+        plan: "Starter",
+        message: "This is a diagnostic test from the browser",
+      };
+
+      console.log("Test data:", testData);
+      
+      const { data, error } = await supabase
+        .from("contacts")
+        .insert(testData)
+        .select()
+        .single();
+
+      console.log("Supabase test response:", { data, error });
+
+      if (error) {
+        console.error("❌ Test failed:", error);
+        alert("Test FAILED: " + error.message);
+      } else {
+        console.log("✅ Test SUCCESS:", data);
+        alert("Test SUCCESS! Check console for details.");
+      }
+    } catch (err) {
+      console.error("❌ Test exception:", err);
+      alert("Test FAILED with exception: " + err);
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -114,6 +150,22 @@ export function ContactForm() {
         <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-2">
             <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
+              
+              {/* DIAGNOSTIC TEST BUTTON - REMOVE AFTER FIXING */}
+              <div className="mb-6 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                <p className="text-sm text-yellow-600 dark:text-yellow-400 mb-3">
+                  🔧 Diagnostic Test: Click to test Supabase connection (check console after clicking)
+                </p>
+                <Button 
+                  type="button"
+                  onClick={testSupabaseConnection}
+                  variant="outline"
+                  className="w-full"
+                >
+                  Test Supabase Connection
+                </Button>
+              </div>
+
               {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-primary/10 border border-primary/20 rounded-lg flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
