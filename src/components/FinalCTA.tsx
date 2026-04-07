@@ -6,15 +6,15 @@ export function FinalCTA() {
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-transparent via-primary/10 to-transparent">
       <div className="container mx-auto">
-        <div className="glass-card rounded-3xl p-12 lg:p-16 shadow-glow border-2 border-primary/40 text-center max-w-5xl mx-auto backdrop-blur-xl">
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl xl:text-6xl mb-6">
+        <div className="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 shadow-glow border-2 border-primary/40 text-center max-w-5xl mx-auto backdrop-blur-xl">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
             Ready to <span className="text-gradient">Automate</span> Your Business?
           </h2>
-          <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
             Automate conversations. Increase sales. Save time.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-10">
             <Link href="#contact">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base group px-8 h-14 w-full sm:w-auto">
                 Get Your Bot Demo

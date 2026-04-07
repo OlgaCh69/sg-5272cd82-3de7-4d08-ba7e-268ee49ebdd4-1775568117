@@ -72,20 +72,20 @@ export function ContactForm() {
   };
 
   return (
-    <section className="py-32 px-4" id="contact">
+    <section className="py-24 sm:py-32 px-4" id="contact">
       <div className="container mx-auto max-w-5xl">
-        <div className="text-center mb-16">
-          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
             Let's <span className="text-gradient">Build</span> Together
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
             Get in touch with us to discuss your project and start automating your business today.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
           <div className="lg:col-span-2">
-            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
+            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
               {submitStatus === "success" && (
                 <div className="mb-6 p-4 bg-primary/10 border border-primary/20 rounded-lg flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
@@ -105,7 +105,7 @@ export function ContactForm() {
               )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="text-sm font-medium mb-2 block">
                       Your Name <span className="text-destructive">*</span>
@@ -135,7 +135,7 @@ export function ContactForm() {
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="company" className="text-sm font-medium mb-2 block">
                       Company <span className="text-muted-foreground">(Optional)</span>
@@ -195,8 +195,8 @@ export function ContactForm() {
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-primary" />
@@ -208,7 +208,7 @@ export function ContactForm() {
               </div>
             </div>
 
-            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-5 h-5 text-primary" />
@@ -220,7 +220,7 @@ export function ContactForm() {
               </div>
             </div>
 
-            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
+            <div className="bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Headphones className="w-5 h-5 text-primary" />
