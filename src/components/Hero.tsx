@@ -30,19 +30,19 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-24 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full border border-primary/20">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
               <span className="text-sm font-medium text-primary">Automate • Engage • Grow</span>
             </div>
             
-            <h1 className="font-heading font-bold text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+            <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
               Turn Conversations Into{" "}
               <span className="text-gradient">Sales. 24/7.</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
               Create smart bots for Telegram, WhatsApp, Instagram, and more. Automate support, showcase products, and increase conversions.
             </p>
 
@@ -63,10 +63,10 @@ export function Hero() {
           </div>
 
           <div className="relative">
-            <div className="flex gap-6">
-              <div className="flex-1 bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <div className="bg-muted/20 rounded-xl p-4">
-                  <div className="flex items-center gap-3 mb-6">
+            <div className="flex gap-4 sm:gap-6">
+              <div className="flex-1 bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
+                <div className="bg-muted/20 rounded-xl p-3 sm:p-4">
+                  <div className="flex items-center gap-3 mb-4 sm:mb-6">
                     <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
                       <span className="text-xl">🤖</span>
                     </div>
@@ -86,46 +86,46 @@ export function Hero() {
                     ].map((item, i) => (
                       <button
                         key={i}
-                        className="w-full bg-muted/40 px-4 py-3 rounded-lg flex items-center gap-3 hover:bg-muted/60 transition-all"
+                        className="w-full bg-muted/40 px-3 sm:px-4 py-2 sm:py-3 rounded-lg flex items-center gap-3 hover:bg-muted/60 transition-all"
                       >
-                        <span className="text-lg">{item.icon}</span>
-                        <span className="text-sm font-medium">{item.label}</span>
+                        <span className="text-base sm:text-lg">{item.icon}</span>
+                        <span className="text-xs sm:text-sm font-medium">{item.label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
               </div>
 
-              <div className="flex-1 bg-card/60 backdrop-blur-sm rounded-2xl p-6 border border-border/50">
-                <div className="bg-muted/20 rounded-xl p-4">
-                  <div className="bg-muted/30 rounded-lg overflow-hidden mb-4 aspect-square flex items-center justify-center">
-                    <span className="text-6xl">🎧</span>
+              <div className="flex-1 bg-card/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-border/50">
+                <div className="bg-muted/20 rounded-xl p-3 sm:p-4">
+                  <div className="bg-muted/30 rounded-lg overflow-hidden mb-3 sm:mb-4 aspect-square flex items-center justify-center">
+                    <span className="text-4xl sm:text-6xl">🎧</span>
                   </div>
                   
-                  <h3 className="font-semibold text-base mb-2">Premium Wireless Headphones</h3>
+                  <h3 className="font-semibold text-sm sm:text-base mb-2">Premium Wireless Headphones</h3>
                   
                   <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-2xl font-bold text-primary">€299.99</span>
-                    <span className="text-sm text-muted-foreground line-through">€399.99</span>
+                    <span className="text-xl sm:text-2xl font-bold text-primary">€299.99</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground line-through">€399.99</span>
                   </div>
                   
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-3 sm:mb-4">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <span key={i} className="text-yellow-400 text-xs">⭐</span>
                       ))}
                     </div>
-                    <span className="text-xs text-muted-foreground">(450 reviews)</span>
+                    <span className="text-xs text-muted-foreground">(450)</span>
                   </div>
                   
-                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-sm h-10">
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-xs sm:text-sm h-9 sm:h-10">
                     Add to Cart
                   </Button>
                 </div>
               </div>
             </div>
 
-            <div className="absolute -right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3">
+            <div className="hidden lg:flex absolute -right-8 top-1/2 -translate-y-1/2 flex-col gap-3">
               {[
                 { name: "Telegram", color: "bg-[#0088cc]", Icon: TelegramIcon },
                 { name: "WhatsApp", color: "bg-[#25D366]", Icon: WhatsAppIcon },
