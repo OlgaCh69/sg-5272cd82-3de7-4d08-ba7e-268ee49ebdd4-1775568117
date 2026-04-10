@@ -7,7 +7,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50">
+    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50" style={{ backgroundImage: "url(\"/Screenshot_2026-04-07_at_7.52.39_PM.png\")", backgroundColor: "transparent", backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "left center" }}>
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <a href="#" className="flex flex-col group">
@@ -36,14 +36,14 @@ export function Header() {
           <button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
+            aria-label="Toggle menu">
+            
             <Menu className="w-6 h-6" />
           </button>
         </div>
 
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 space-y-4 border-t border-border/50">
+        {mobileMenuOpen &&
+        <div className="md:hidden mt-4 py-4 space-y-4 border-t border-border/50">
             <a href="#features" className="block text-sm hover:text-primary transition-colors">
               Features
             </a>
@@ -60,8 +60,8 @@ export function Header() {
               Get Your Bot Demo
             </Button>
           </div>
-        )}
+        }
       </nav>
-    </header>
-  );
+    </header>);
+
 }
