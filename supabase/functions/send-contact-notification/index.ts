@@ -2,9 +2,20 @@ import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 
 const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+};
+
 serve(async (req) => {
+  // Handle CORS preflight requests
+  if (req.method === 'OPTIONS') {
+    return new Response('ok', { headers: corsHeaders });
+  }
+
   try {
-    const { name, email, company, plan, message, created_at } = await req.json();
+    const body = await req.json();
+    const { name, email, company, plan, message, created_at } = body;
 
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
@@ -50,14 +61,26 @@ serve(async (req) => {
     const data = await emailResponse.json();
 
     return new Response(
-      JSON.stringify({ success: true, email_id: data.id }),
-      { headers: { "Content-Type": "application/json" } }
+      JSON.stringify({ success: true, emailId: data.id }),
+      { 
+        status: 200, 
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        } 
+      }
     );
   } catch (error) {
-    console.error("Error sending notification:", error);
+    console.error("Error:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { 
+        status: 500, 
+        headers: { 
+          "Content-Type": "application/json",
+          ...corsHeaders
+        } 
+      }
     );
   }
 });
