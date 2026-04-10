@@ -75,13 +75,12 @@ export const contactService = {
         console.error("⚠️ Failed to send email notification:", emailErr);
         // Don't throw - contact is saved, that's what matters
       }
+
+      console.log("=== CONTACT FORM SUBMISSION END ===");
+      return savedContact;
     } catch (err) {
       console.error("⚠️ Failed to submit contact form:", err);
       throw err;
     }
-
-    console.log("=== CONTACT FORM SUBMISSION END ===");
-    
-    return savedContact;
   },
 };
