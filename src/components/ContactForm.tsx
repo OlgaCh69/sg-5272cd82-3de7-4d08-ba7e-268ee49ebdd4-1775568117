@@ -153,6 +153,21 @@ export function ContactForm() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
+                    <label htmlFor="phone" className="text-sm font-medium mb-2 block">
+                      Phone Number <span className="text-destructive">*</span>
+                    </label>
+                    <Input 
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="+1 (555) 000-0000" 
+                      className="bg-muted/30 border-border/50"
+                      required
+                    />
+                  </div>
+                  <div>
                     <label htmlFor="company" className="text-sm font-medium mb-2 block">
                       Company <span className="text-muted-foreground">(Optional)</span>
                     </label>
@@ -165,6 +180,9 @@ export function ContactForm() {
                       className="bg-muted/30 border-border/50"
                     />
                   </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="plan" className="text-sm font-medium mb-2 block">
                       Interested Plan
