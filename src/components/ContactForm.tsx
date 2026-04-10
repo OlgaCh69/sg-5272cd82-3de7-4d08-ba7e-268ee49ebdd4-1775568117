@@ -14,6 +14,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     message: "",
   });
@@ -40,7 +41,7 @@ export function ContactForm() {
     
     console.log("Form submitted");
     
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       console.log("Validation failed - missing required fields");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
@@ -55,6 +56,7 @@ export function ContactForm() {
       const result = await contactService.submitContact({
         name: formData.name,
         email: formData.email,
+        phone: formData.phone,
         company: formData.company || undefined,
         plan: selectedPlan || undefined,
         message: formData.message,
@@ -66,6 +68,7 @@ export function ContactForm() {
       setFormData({
         name: "",
         email: "",
+        phone: "",
         company: "",
         message: "",
       });

@@ -15,10 +15,12 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { name, email, company, plan, message, created_at } = body;
+    const { name, email, phone, company, plan, message, created_at } = body;
+
+    console.log("Received notification request:", { name, email, phone, plan });
 
     if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+      throw new Error("RESEND_API_KEY is not set");
     }
 
     // Send email via Resend
@@ -39,6 +41,7 @@ serve(async (req) => {
             <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
               <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
               <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
+              <p style="margin: 10px 0;"><strong>Phone:</strong> ${phone}</p>
               ${company ? `<p style="margin: 10px 0;"><strong>Company:</strong> ${company}</p>` : ""}
               ${plan ? `<p style="margin: 10px 0;"><strong>Plan:</strong> ${plan}</p>` : ""}
               <p style="margin: 10px 0;"><strong>Message:</strong></p>
