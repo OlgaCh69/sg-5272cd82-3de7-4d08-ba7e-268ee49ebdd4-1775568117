@@ -58,10 +58,10 @@ serve(async (req) => {
       throw new Error(`Resend API error: ${error}`);
     }
 
-    const data = await emailResponse.json();
+    const emailData = await emailResponse.json();
 
     return new Response(
-      JSON.stringify({ success: true, emailId: data.id }),
+      JSON.stringify({ success: true, emailId: emailData.id }),
       { 
         status: 200, 
         headers: { 
