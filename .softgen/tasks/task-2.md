@@ -1,6 +1,6 @@
 ---
 title: Create WhatsApp Automation Landing Page
-status: in_progress
+status: done
 priority: high
 type: feature
 tags: [whatsapp, landing-page, ecommerce]

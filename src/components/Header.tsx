@@ -15,23 +15,20 @@ export function Header() {
             <span className="text-xs text-primary font-medium tracking-wider">AUTOMATE • ENGAGE • GROW</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm hover:text-primary transition-colors">
+          <nav className="hidden md:flex items-center gap-8">
+            <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
-            </a>
-            <a href="#how-it-works" className="text-sm hover:text-primary transition-colors">
-              How It Works
-            </a>
-            <a href="#pricing" className="text-sm hover:text-primary transition-colors">
+            </Link>
+            <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
-            </a>
-            <a href="#faq" className="text-sm hover:text-primary transition-colors">
-              FAQ
-            </a>
-            <Button className="bg-primary hover:bg-primary/90 text-background font-semibold shadow-lg shadow-primary/50 hover:shadow-primary/70 transition-all">
-              Get Your Bot Demo
-            </Button>
-          </div>
+            </Link>
+            <Link href="/whatsapp-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
+              WhatsApp
+            </Link>
+            <Link href="/#contact" className="text-sm font-medium hover:text-primary transition-colors">
+              Contact
+            </Link>
+          </nav>
 
           <button
             className="md:hidden"
