@@ -8,19 +8,15 @@ import { UseCases } from "@/components/UseCases";
 import { Results } from "@/components/Results";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
 import { Pricing } from "@/components/Pricing";
-import { ContactForm } from "@/components/ContactForm";
+import { Trust } from "@/components/Trust";
+import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
 
 export default function Home() {
   return (
     <>
-      <SEO 
-        title="AI Chatbot for Ecommerce Brands | WhatsApp & Instagram Automation"
-        description="Automate ecommerce sales with AI chatbots. Increase conversions, recover abandoned carts, and scale support across WhatsApp and Instagram."
-        image="/og-image.png"
-      />
+      <SEO />
       <Header />
       <main>
         <Hero />
@@ -32,10 +28,8 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <Pricing />
+        <Trust />
         <FAQ />
-        <section id="contact" className="scroll-mt-20">
-          <ContactForm />
-        </section>
         <FinalCTA />
       </main>
     </>

@@ -31,7 +31,7 @@ export function Header() {
             <Link href="/telegram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Telegram
             </Link>
-            <Link href="/#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
             </Link>
           </nav>
