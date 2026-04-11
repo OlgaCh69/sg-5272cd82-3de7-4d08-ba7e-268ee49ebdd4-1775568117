@@ -1,61 +1,84 @@
-import { ShoppingBag, Search, Package, Zap, Sparkles, Rocket } from "lucide-react";
+import { MessageSquare, Instagram, Send } from "lucide-react";
 
 export function Features() {
-  const features = [
+  const platforms = [
     {
-      icon: ShoppingBag,
-      title: "Smart Shopping",
-      description: "Beautiful product catalogs right inside chat.",
+      icon: MessageSquare,
+      title: "WhatsApp Automation for Ecommerce",
+      description: "Recover abandoned carts, send real-time updates, and close sales directly inside WhatsApp—where conversion rates are highest.",
+      benefits: [
+        "Abandoned cart recovery flows",
+        "Order updates & tracking",
+        "Direct sales conversions",
+        "Product recommendations",
+      ],
     },
     {
-      icon: Search,
-      title: "Instant Search",
-      description: "Users find products fast with powerful search.",
+      icon: Instagram,
+      title: "Instagram DM Automation",
+      description: "Turn engagement into revenue by automatically responding, qualifying, and guiding prospects through your funnel.",
+      benefits: [
+        "Auto-respond to DMs & comments",
+        "Lead qualification",
+        "Product discovery",
+        "Sales conversion flows",
+      ],
     },
     {
-      icon: Package,
-      title: "Order Tracking",
-      description: "Customers check orders without leaving chat.",
-    },
-    {
-      icon: Zap,
-      title: "Automations",
-      description: "Send deals, updates, and promotions automatically.",
-    },
-    {
-      icon: Sparkles,
-      title: "AI Assistant",
-      description: "Answer questions and recommend products.",
-    },
-    {
-      icon: Rocket,
-      title: "Lightning Fast",
-      description: "Built for speed and smooth performance.",
+      icon: Send,
+      title: "Messenger & Chat Automation",
+      description: "Capture and convert leads across platforms with consistent, intelligent messaging.",
+      benefits: [
+        "Multi-platform consistency",
+        "Unified customer data",
+        "Cross-channel campaigns",
+        "24/7 availability",
+      ],
     },
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4" id="features">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 sm:mb-20">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
-            Powerful Features to <span className="text-gradient">Drive Results</span>
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to automate and scale your business
-          </p>
-        </div>
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Multi-Channel Automation Built for Ecommerce
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Your customers don't stay in one place. Your automation shouldn't either.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, i) => (
-            <div key={i} className="text-center space-y-4">
-              <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mx-auto">
-                <feature.icon className="w-7 h-7 text-primary" />
+          {/* Platform Cards */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {platforms.map((platform, index) => (
+              <div
+                key={index}
+                className="bg-background rounded-2xl p-8 border border-border/50 hover:border-primary/30 transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <platform.icon className="h-7 w-7 text-primary" />
+                </div>
+
+                <h3 className="text-2xl font-bold mb-4">{platform.title}</h3>
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  {platform.description}
+                </p>
+
+                <div className="space-y-2">
+                  {platform.benefits.map((benefit, idx) => (
+                    <div key={idx} className="flex items-center gap-2 text-sm">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                      <span className="text-foreground">{benefit}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <h3 className="font-heading font-semibold text-lg sm:text-xl">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
