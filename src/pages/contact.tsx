@@ -3,39 +3,41 @@ import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, MessageCircle, Clock } from "lucide-react";
 
-export default function ContactPage() {
+export default function Contact() {
   return (
     <>
       <SEO 
         title="Contact Us | OneTech Automation"
-        description="Get in touch with OneTech Automation. Book a strategy demo to see how AI chatbot automation can transform your ecommerce business."
+        description="Get in touch with OneTech Automation to discuss your ecommerce automation needs. We're here to help you scale your business."
       />
       <Header />
       <main>
         <section className="py-24 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              {/* Header */}
+              <div className="text-center mb-16">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
                   Get In Touch
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Ready to transform your customer conversations into revenue? Let's discuss how automation can help your ecommerce business grow.
+                  Get in touch with us to discuss your project and start automating your business today.
                 </p>
               </div>
 
+              {/* Two Column Layout */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {/* Contact Form - Left Side (2/3) */}
                 <div className="lg:col-span-2">
                   <ContactForm />
                 </div>
 
+                {/* Contact Info - Right Sidebar (1/3) */}
                 <div className="space-y-6">
+                  {/* Email Card */}
                   <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
                     <Mail className="w-8 h-8 text-primary mb-3" />
                     <h3 className="font-semibold mb-2">Email Us</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Get in touch via email
-                    </p>
                     <a 
                       href="mailto:support@onetechautomation.com" 
                       className="text-sm text-primary hover:underline break-all"
@@ -44,12 +46,11 @@ export default function ContactPage() {
                     </a>
                   </div>
 
+                  {/* WhatsApp Card */}
                   <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
                     <MessageCircle className="w-8 h-8 text-green-600 mb-3" />
                     <h3 className="font-semibold mb-2">WhatsApp</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Message us directly
-                    </p>
+                    <p className="text-sm text-muted-foreground mb-2">Message us directly</p>
                     <a 
                       href="https://wa.me/35795180206" 
                       target="_blank"
@@ -60,6 +61,7 @@ export default function ContactPage() {
                     </a>
                   </div>
 
+                  {/* Response Time Card */}
                   <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
                     <Clock className="w-8 h-8 text-primary mb-3" />
                     <h3 className="font-semibold mb-2">Response Time</h3>
