@@ -1,55 +1,68 @@
-import { Clock, TrendingDown, Zap, Users } from "lucide-react";
+import { AlertCircle, TrendingDown, Clock } from "lucide-react";
 
 export function Problem() {
-  const problems = [
-    {
-      icon: Clock,
-      title: "Slow customer responses",
-      description: "Delayed replies cost you sales and hurt customer satisfaction"
-    },
-    {
-      icon: TrendingDown,
-      title: "Missed sales opportunities",
-      description: "Potential customers leave before getting answers"
-    },
-    {
-      icon: Zap,
-      title: "No automation in your business",
-      description: "Manual processes waste time and limit growth"
-    },
-    {
-      icon: Users,
-      title: "Overloaded support team",
-      description: "Your team drowns in repetitive questions daily"
-    }
-  ];
-
   return (
-    <section className="py-24 sm:py-32 px-4">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 sm:mb-20">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
-            You're <span className="text-destructive">Losing Sales</span> Every Day
-          </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Without automation, your business is leaving money on the table
-          </p>
-        </div>
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center space-y-4 mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold">
+              This Isn't Another Chatbot Tool
+            </h2>
+          </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          {problems.map((problem, i) => (
-            <div key={i} className="text-center space-y-4 p-4 sm:p-0">
-              <div className="w-14 h-14 bg-destructive/10 rounded-xl flex items-center justify-center mx-auto">
-                <problem.icon className="w-7 h-7 text-destructive" />
+          {/* Main Copy */}
+          <div className="prose prose-lg max-w-none text-center mb-12">
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              Most ecommerce brands don't have a traffic problem—they have a <strong className="text-foreground">conversion problem</strong>.
+            </p>
+          </div>
+
+          {/* Problem Statements */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: AlertCircle,
+                text: "Customers ask questions and leave",
+              },
+              {
+                icon: Clock,
+                text: "DMs go unanswered",
+              },
+              {
+                icon: TrendingDown,
+                text: "Support teams get overwhelmed",
+              },
+            ].map((item, index) => (
+              <div 
+                key={index}
+                className="flex items-start gap-3 p-6 rounded-lg bg-background border border-border/50"
+              >
+                <item.icon className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
+                <p className="text-lg text-foreground">{item.text}</p>
               </div>
-              <h3 className="font-heading font-semibold text-base sm:text-lg">
-                {problem.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {problem.description}
+            ))}
+          </div>
+
+          <div className="text-center space-y-6">
+            <p className="text-xl text-muted-foreground">
+              Revenue is lost in conversations that never convert.
+            </p>
+            
+            <p className="text-xl text-muted-foreground">
+              We built <strong className="text-foreground">OneTech Automation</strong> for brands that want to fix that at scale.
+            </p>
+
+            <div className="pt-8 space-y-3">
+              <p className="text-2xl font-semibold text-foreground">
+                This is not just automation.
+              </p>
+              <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+                This is a system designed to turn every interaction into revenue.
               </p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
