@@ -35,24 +35,18 @@ export function TelegramHero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link href="/#contact">
-              <Button 
-                size="lg" 
-                className="text-lg px-8 py-6 bg-blue-500 hover:bg-blue-600 group shadow-lg shadow-blue-500/25"
-              >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white text-base font-semibold" asChild>
+              <Link href="/contact">
                 Book a Strategy Demo
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="text-lg px-8 py-6 group border-2 border-blue-500/30 hover:border-blue-500/50"
-            >
-              <Play className="mr-2 h-5 w-5" />
-              See How It Works
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" className="text-base font-semibold border-blue-500/50 text-blue-500 hover:bg-blue-50" asChild>
+              <Link href="#how-it-works">
+                See How It Works
+                <Play className="ml-2 w-4 h-4" />
+              </Link>
             </Button>
           </div>
 

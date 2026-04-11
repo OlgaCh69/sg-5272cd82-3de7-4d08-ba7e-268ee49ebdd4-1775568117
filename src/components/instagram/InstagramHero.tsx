@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Instagram } from "lucide-react";
+import Link from "next/link";
 
 export function InstagramHero() {
   const stats = [
@@ -37,27 +38,18 @@ export function InstagramHero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-pink-600 to-fuchsia-600 hover:from-pink-700 hover:to-fuchsia-700 text-white group w-full sm:w-auto"
-              asChild
-            >
-              <a href="#contact">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white text-base font-semibold" asChild>
+              <Link href="/contact">
                 Book a Strategy Demo
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </a>
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-pink-500/30 hover:bg-pink-500/5 w-full sm:w-auto"
-              asChild
-            >
-              <a href="#how-it-works">
-                <Play className="mr-2 h-4 w-4" />
+            <Button size="lg" variant="outline" className="text-base font-semibold border-pink-500/50 text-pink-500 hover:bg-pink-50" asChild>
+              <Link href="#how-it-works">
                 See How It Works
-              </a>
+                <Play className="ml-2 w-4 h-4" />
+              </Link>
             </Button>
           </div>
 
