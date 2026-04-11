@@ -16,8 +16,8 @@ export function FAQ() {
       answer: "By responding instantly to customer inquiries, recovering abandoned carts, and guiding prospects through the buying process. Automation ensures no opportunity is missed, even outside business hours.",
     },
     {
-      question: "Which platforms does this support?",
-      answer: "We support WhatsApp, Instagram, Messenger, and other major communication channels. Our system integrates with your ecommerce platform to provide a unified automation experience across all channels.",
+      question: "What platforms do you support?",
+      answer: "We support WhatsApp, Instagram, Telegram, and other major communication channels. Our system integrates with your ecommerce platform to provide a unified automation experience across all channels.",
     },
     {
       question: "Is this suitable for growing ecommerce brands?",

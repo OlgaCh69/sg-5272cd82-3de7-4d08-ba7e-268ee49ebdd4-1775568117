@@ -26,10 +26,10 @@ export function Features() {
     },
     {
       icon: Send,
-      title: "Messenger & Chat Automation",
-      description: "Capture and convert leads across platforms with consistent, intelligent messaging.",
+      title: "Multi-Channel Automation",
+      description: "Deliver consistent, intelligent messaging across all your customer touchpoints with unified automation.",
       benefits: [
-        "Multi-platform consistency",
+        "WhatsApp, Instagram & Telegram",
         "Unified customer data",
         "Cross-channel campaigns",
         "24/7 availability",

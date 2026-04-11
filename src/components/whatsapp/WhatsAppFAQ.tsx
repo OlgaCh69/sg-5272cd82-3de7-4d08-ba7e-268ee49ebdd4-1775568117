@@ -28,8 +28,8 @@ export function WhatsAppFAQ() {
       answer: "No. It helps your team work more efficiently by automating the repetitive parts of customer communication while allowing human support where needed.",
     },
     {
-      question: "Can this work alongside Instagram and Messenger automation?",
-      answer: "Yes. OneTech Automation is designed to support multi-channel ecommerce communication, including WhatsApp, Instagram, and other messaging platforms.",
+      question: "Can this work alongside Instagram and Telegram automation?",
+      answer: "Yes. OneTech Automation is designed to support multi-channel ecommerce communication, including WhatsApp, Instagram, and Telegram.",
     },
   ];
 
