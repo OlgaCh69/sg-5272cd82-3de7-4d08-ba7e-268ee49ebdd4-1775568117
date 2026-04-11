@@ -1,6 +1,6 @@
 ---
 title: Create Telegram Automation Landing Page
-status: in_progress
+status: done
 priority: high
 type: feature
 tags: [telegram, landing-page, ecommerce]
