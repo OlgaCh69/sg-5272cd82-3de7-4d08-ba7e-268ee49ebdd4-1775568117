@@ -29,6 +29,9 @@ export function Header() {
             <Link href="/instagram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Instagram
             </Link>
+            <Link href="/ai-chatbot-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
+              AI Chatbot
+            </Link>
             <Link href="/whatsapp-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               WhatsApp
             </Link>
@@ -69,25 +72,19 @@ export function Header() {
                 </Link>
                 <Link 
                   href="/instagram-automation-ecommerce" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Instagram Automation
                 </Link>
                 <Link 
-                  href="/whatsapp-automation-ecommerce" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                  href="/ai-chatbot-ecommerce" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
-                  WhatsApp Automation
-                </Link>
-                <Link 
-                  href="/telegram-automation-ecommerce" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
-                >
-                  Telegram Automation
+                  AI Chatbot
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Contact
                 </Link>

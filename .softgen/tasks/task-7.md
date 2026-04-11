@@ -1,6 +1,6 @@
 ---
 title: Create AI Chatbot for Ecommerce Landing Page
-status: in_progress
+status: done
 priority: high
 type: feature
 tags: [landing-page, ai-chatbot, seo]
