@@ -1,6 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
+import { Mail, MessageCircle, Clock } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -32,17 +33,44 @@ export default function Contact() {
 
             {/* Additional Info */}
             <div className="max-w-3xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-muted-foreground">support@onetechautomation.com</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Response Time</h3>
-                <p className="text-muted-foreground">Within 24 hours</p>
-              </div>
-              <div>
-                <h3 className="font-semibold mb-2">Best For</h3>
-                <p className="text-muted-foreground">Ecommerce brands €500k+ revenue</p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                  <Mail className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Email Us</h3>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Get in touch via email
+                  </p>
+                  <a 
+                    href="mailto:support@onetechautomation.com" 
+                    className="text-sm text-primary hover:underline"
+                  >
+                    support@onetechautomation.com
+                  </a>
+                </div>
+
+                <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                  <MessageCircle className="w-8 h-8 text-green-600 mb-3" />
+                  <h3 className="font-semibold mb-2">WhatsApp</h3>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Message us directly
+                  </p>
+                  <a 
+                    href="https://wa.me/35795180206" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-green-600 hover:underline"
+                  >
+                    +357 95 180 206
+                  </a>
+                </div>
+
+                <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                  <Clock className="w-8 h-8 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">Response Time</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We typically respond within 24 hours
+                  </p>
+                </div>
               </div>
             </div>
           </div>
