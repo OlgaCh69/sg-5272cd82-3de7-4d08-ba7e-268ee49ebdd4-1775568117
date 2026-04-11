@@ -1,10 +1,11 @@
-import { useState, useEffect, FormEvent, ChangeEvent } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { contactService } from "@/services/contactService";
-import { toast } from "@/sonnerie";
+import { useToast } from "@/hooks/use-toast";
 
 export function ContactForm() {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,15 +26,7 @@ export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const plan = params.get("plan");
-    if (plan) {
-      setSelectedPlan(plan);
-    }
-  }, []);
-
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -84,30 +77,25 @@ export function ContactForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
-    console.log("Form submitted");
-    
     if (!validateForm()) {
-      console.log("Validation failed - missing required fields");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
       return;
     }
 
-    console.log("Validation passed, submitting...");
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     try {
-      const result = await contactService.submitContact({
+      await contactService.submitContact({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         company: formData.company || undefined,
-        platform: formData.platform || undefined,
+        platform: formData.platform,
         message: formData.message,
       });
 
-      console.log("✅ Form submitted successfully:", result);
       setSubmitStatus("success");
       
       toast({
@@ -123,11 +111,10 @@ export function ContactForm() {
         platform: "",
         message: "",
       });
-      setSelectedPlan("");
 
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } catch (error) {
-      console.error("❌ Form submission error:", error);
+      console.error("Form submission error:", error);
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {
@@ -149,9 +136,10 @@ export function ContactForm() {
             required
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            className={`w-full h-10 px-3 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary ${errors.name ? 'border-red-500' : 'border-border/50'}`}
             placeholder="John Doe"
           />
+          {errors.name && <p className="text-xs text-red-500 mt-1">{errors.name}</p>}
         </div>
         <div>
           <label htmlFor="email" className="text-sm font-medium mb-2 block">
@@ -164,9 +152,10 @@ export function ContactForm() {
             required
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            className={`w-full h-10 px-3 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary ${errors.email ? 'border-red-500' : 'border-border/50'}`}
             placeholder="john@company.com"
           />
+          {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email}</p>}
         </div>
       </div>
 
@@ -182,9 +171,10 @@ export function ContactForm() {
             required
             value={formData.phone}
             onChange={handleInputChange}
-            className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            className={`w-full h-10 px-3 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary ${errors.phone ? 'border-red-500' : 'border-border/50'}`}
             placeholder="+1 (555) 000-0000"
           />
+          {errors.phone && <p className="text-xs text-red-500 mt-1">{errors.phone}</p>}
         </div>
         <div>
           <label htmlFor="company" className="text-sm font-medium mb-2 block">
@@ -202,25 +192,25 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="platform" className="text-sm font-medium mb-2 block">
-            Platform of Interest
-          </label>
-          <select
-            id="platform"
-            name="platform"
-            value={formData.platform}
-            onChange={(e) => setFormData(prev => ({ ...prev, platform: e.target.value }))}
-            className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="">Select platform</option>
-            <option value="Instagram">Instagram</option>
-            <option value="WhatsApp">WhatsApp</option>
-            <option value="Telegram">Telegram</option>
-            <option value="All Platforms">All Platforms</option>
-          </select>
-        </div>
+      <div>
+        <label htmlFor="platform" className="text-sm font-medium mb-2 block">
+          Platform of Interest <span className="text-red-500">*</span>
+        </label>
+        <select
+          id="platform"
+          name="platform"
+          required
+          value={formData.platform}
+          onChange={handleInputChange}
+          className={`w-full h-10 px-3 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary ${errors.platform ? 'border-red-500' : 'border-border/50'}`}
+        >
+          <option value="">Select platform</option>
+          <option value="Instagram">Instagram</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Telegram">Telegram</option>
+          <option value="All Platforms">All Platforms</option>
+        </select>
+        {errors.platform && <p className="text-xs text-red-500 mt-1">{errors.platform}</p>}
       </div>
 
       <div>
@@ -234,9 +224,10 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleInputChange}
           rows={5}
-          className="w-full px-3 py-2 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+          className={`w-full px-3 py-2 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary resize-none ${errors.message ? 'border-red-500' : 'border-border/50'}`}
           placeholder="Tell us about your project and requirements..."
         />
+        {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message}</p>}
       </div>
 
       {submitStatus === "success" && (
