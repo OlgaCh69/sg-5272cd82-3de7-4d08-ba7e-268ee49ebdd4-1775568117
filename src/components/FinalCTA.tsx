@@ -1,38 +1,56 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export function FinalCTA() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-transparent via-primary/10 to-transparent">
-      <div className="container mx-auto">
-        <div className="glass-card rounded-3xl p-8 sm:p-12 lg:p-16 shadow-glow border-2 border-primary/40 text-center max-w-5xl mx-auto backdrop-blur-xl">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-4 sm:mb-6">
-            Ready to <span className="text-gradient">Automate</span> Your Business?
+    <section className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          {/* Headline */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            Ready to Turn Conversations Into{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              Revenue?
+            </span>
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-            Automate conversations. Increase sales. Save time.
+
+          {/* Subheadline */}
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            If you're serious about scaling your ecommerce brand, it's time to automate what matters most.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 sm:mb-10">
-            <Link href="#contact">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-base group px-8 h-14 w-full sm:w-auto">
-                Get Your Bot Demo
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Link href="/#contact">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 group shadow-lg shadow-primary/25"
+              >
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
-            <Link href="#contact">
-              <Button size="lg" variant="outline" className="border-2 border-border hover:bg-card font-semibold text-base h-14 px-8 w-full sm:w-auto">
-                <Phone className="mr-2 w-5 h-5" />
-                Book a Call
+            
+            <Link href="/#contact">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-lg px-8 py-6 border-2"
+              >
+                Get Started
               </Button>
             </Link>
           </div>
 
-          <div className="inline-flex items-center gap-2.5 glass-card px-5 py-2.5 rounded-full border border-primary/20">
-            <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground">Limited slots available this month</span>
-          </div>
+          {/* Trust Line */}
+          <p className="text-sm text-muted-foreground pt-8">
+            Join ecommerce brands that chose growth over manual effort
+          </p>
         </div>
       </div>
     </section>

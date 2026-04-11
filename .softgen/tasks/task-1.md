@@ -1,6 +1,6 @@
 ---
 title: Rebuild Landing Page - Ecommerce AI Chatbot Focus
-status: in_progress
+status: done
 priority: urgent
 type: feature
 tags: [content, redesign, ecommerce]
