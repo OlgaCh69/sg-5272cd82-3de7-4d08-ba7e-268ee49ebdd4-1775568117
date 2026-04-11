@@ -67,14 +67,6 @@ export default function Contact() {
                       </a>
                     </div>
                   </div>
-
-                  {/* Response Time Card */}
-                  <div className="bg-muted/50 p-6 rounded-xl border border-border/50">
-                    <p className="text-sm text-muted-foreground">
-                      <strong className="text-foreground">Response Time:</strong><br />
-                      We typically respond within 24 hours during business days.
-                    </p>
-                  </div>
                 </div>
               </div>
             </div>
