@@ -2,6 +2,7 @@ import { useState, useEffect, FormEvent, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { contactService } from "@/services/contactService";
+import { toast } from "@/sonnerie";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -13,7 +14,14 @@ export function ContactForm() {
     message: "",
   });
 
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const [errors, setErrors] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    platform: "",
+    message: "",
+  });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -30,12 +38,55 @@ export function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const validateForm = () => {
+    const newErrors = {
+      name: "",
+      email: "",
+      phone: "",
+      platform: "",
+      message: "",
+    };
+
+    let isValid = true;
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+      isValid = false;
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+      isValid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email format";
+      isValid = false;
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+      isValid = false;
+    }
+
+    if (!formData.platform) {
+      newErrors.platform = "Please select a platform";
+      isValid = false;
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     
     console.log("Form submitted");
     
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (!validateForm()) {
       console.log("Validation failed - missing required fields");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus("idle"), 3000);
@@ -53,13 +104,17 @@ export function ContactForm() {
         phone: formData.phone,
         company: formData.company || undefined,
         platform: formData.platform || undefined,
-        plan: selectedPlan || undefined,
         message: formData.message,
       });
 
       console.log("✅ Form submitted successfully:", result);
       setSubmitStatus("success");
       
+      toast({
+        title: "Message sent!",
+        description: `Thank you for your interest in ${formData.platform} automation. We'll be in touch within 24 hours.`,
+      });
+
       setFormData({
         name: "",
         email: "",
@@ -148,24 +203,6 @@ export function ContactForm() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="plan" className="text-sm font-medium mb-2 block">
-            Interested Plan
-          </label>
-          <select
-            id="plan"
-            value={selectedPlan}
-            onChange={(e) => setSelectedPlan(e.target.value)}
-            className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
-          >
-            <option value="">Select a plan</option>
-            <option value="Starter">Starter - €699</option>
-            <option value="Growth">Growth - €1,490</option>
-            <option value="Pro">Pro - €2,490</option>
-            <option value="Enterprise">Enterprise - Custom</option>
-            <option value="Demo">Just a Demo</option>
-          </select>
-        </div>
         <div>
           <label htmlFor="platform" className="text-sm font-medium mb-2 block">
             Platform of Interest
