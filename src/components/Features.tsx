@@ -1,4 +1,4 @@
-import { MessageSquare, Instagram, Send } from "lucide-react";
+import { MessageSquare, Instagram, Send, CheckCircle2 } from "lucide-react";
 
 export function Features() {
   const platforms = [

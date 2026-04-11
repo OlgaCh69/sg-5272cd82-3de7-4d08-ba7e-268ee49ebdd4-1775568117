@@ -30,8 +30,8 @@ export function Hero() {
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Turn conversations into predictable revenue. Automate sales, support, and customer journeys across WhatsApp, Instagram, and Messenger—without adding headcount.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Built for ecommerce brands that want faster responses, higher conversions, and scalable customer communication across WhatsApp, Instagram, and Telegram.
           </p>
 
           {/* CTA Buttons */}

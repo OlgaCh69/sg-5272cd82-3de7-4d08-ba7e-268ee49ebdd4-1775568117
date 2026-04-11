@@ -1,7 +1,7 @@
 # OneTech Automation - Ecommerce AI Chatbot Platform
 
 ## Vision
-AI chatbot and automation platform for high-growth ecommerce brands. Turn conversations into predictable revenue by automating sales, support, and customer journeys across WhatsApp, Instagram, and Messenger—without adding headcount.
+AI chatbot and automation platform for high-growth ecommerce brands. Turn conversations into predictable revenue by automating sales, support, and customer journeys across WhatsApp, Instagram, and Telegram—without adding headcount.
 
 **Target Audience:** Ecommerce brands serious about scaling (€500k-€10M+ annual revenue)
 
@@ -29,7 +29,7 @@ Complete conversion-optimized landing page for AI chatbot automation platform:
 1. **Hero** - Value proposition with trust badge, dual CTAs, social proof stats
 2. **Positioning** - Premium hook addressing conversion problems vs traffic problems
 3. **Core Value** - Revenue channel transformation messaging
-4. **Platform Authority** - WhatsApp, Instagram, Messenger automation capabilities
+4. **Platform Authority** - WhatsApp, Instagram, Telegram automation capabilities
 5. **Use Cases** - 6 ecommerce automation scenarios (cart recovery, support, upsells)
 6. **Results** - Performance benefits (conversions, response time, costs, LTV, scalability)
 7. **Process** - 3-step implementation system
