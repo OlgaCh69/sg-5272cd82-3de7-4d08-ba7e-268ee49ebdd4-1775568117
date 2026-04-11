@@ -8,7 +8,7 @@ import { UseCases } from "@/components/UseCases";
 import { Results } from "@/components/Results";
 import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
-import { Pricing } from "@/components/Pricing";
+import { Investment } from "@/components/Investment";
 import { Trust } from "@/components/Trust";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -27,7 +27,7 @@ export default function Home() {
         <Results />
         <HowItWorks />
         <Testimonials />
-        <Pricing />
+        <Investment />
         <Trust />
         <FAQ />
         <FinalCTA />

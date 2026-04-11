@@ -13,10 +13,11 @@ import { InstagramWhoItsFor } from "@/components/instagram/InstagramWhoItsFor";
 import { InstagramDifferentiation } from "@/components/instagram/InstagramDifferentiation";
 import { InstagramSocialProof } from "@/components/instagram/InstagramSocialProof";
 import { InstagramROI } from "@/components/instagram/InstagramROI";
+import { Investment } from "@/components/Investment";
 import { InstagramFAQ } from "@/components/instagram/InstagramFAQ";
 import { InstagramFinalCTA } from "@/components/instagram/InstagramFinalCTA";
 
-export default function InstagramAutomationPage() {
+export default function InstagramAutomation() {
   return (
     <>
       <SEO 
@@ -38,6 +39,7 @@ export default function InstagramAutomationPage() {
         <InstagramDifferentiation />
         <InstagramSocialProof />
         <InstagramROI />
+        <Investment />
         <InstagramFAQ />
         <InstagramFinalCTA />
       </main>

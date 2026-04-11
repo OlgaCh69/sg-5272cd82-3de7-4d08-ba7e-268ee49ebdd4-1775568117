@@ -19,8 +19,8 @@ export function Header() {
             <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
             </Link>
-            <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Pricing
+            <Link href="/#investment" className="text-sm font-medium hover:text-primary transition-colors">
+              Investment
             </Link>
             <Link href="/instagram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Instagram

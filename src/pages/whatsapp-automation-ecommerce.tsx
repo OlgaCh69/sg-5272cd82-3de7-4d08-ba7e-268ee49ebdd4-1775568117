@@ -12,16 +12,16 @@ import { WhoItsFor } from "@/components/whatsapp/WhoItsFor";
 import { WhatsAppDifferentiation } from "@/components/whatsapp/WhatsAppDifferentiation";
 import { WhatsAppSocialProof } from "@/components/whatsapp/WhatsAppSocialProof";
 import { WhatsAppROI } from "@/components/whatsapp/WhatsAppROI";
+import { Investment } from "@/components/Investment";
 import { WhatsAppFAQ } from "@/components/whatsapp/WhatsAppFAQ";
 import { WhatsAppFinalCTA } from "@/components/whatsapp/WhatsAppFinalCTA";
 
-export default function WhatsAppAutomationPage() {
+export default function WhatsAppAutomation() {
   return (
     <>
       <SEO 
-        title="WhatsApp Automation for Ecommerce Brands | Recover More Sales"
+        title="WhatsApp Automation for Ecommerce | Recover More Sales"
         description="Increase ecommerce sales with WhatsApp automation. Recover abandoned carts, automate customer conversations, and scale support with a premium system built for growth."
-        image="/og-image.png"
       />
       <Header />
       <main>
@@ -37,6 +37,7 @@ export default function WhatsAppAutomationPage() {
         <WhatsAppDifferentiation />
         <WhatsAppSocialProof />
         <WhatsAppROI />
+        <Investment />
         <WhatsAppFAQ />
         <WhatsAppFinalCTA />
       </main>

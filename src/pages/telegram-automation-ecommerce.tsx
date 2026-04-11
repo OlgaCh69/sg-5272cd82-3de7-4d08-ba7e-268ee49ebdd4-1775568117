@@ -12,10 +12,11 @@ import { TelegramWhoItsFor } from "@/components/telegram/TelegramWhoItsFor";
 import { TelegramDifferentiation } from "@/components/telegram/TelegramDifferentiation";
 import { TelegramSocialProof } from "@/components/telegram/TelegramSocialProof";
 import { TelegramROI } from "@/components/telegram/TelegramROI";
+import { Investment } from "@/components/Investment";
 import { TelegramFAQ } from "@/components/telegram/TelegramFAQ";
 import { TelegramFinalCTA } from "@/components/telegram/TelegramFinalCTA";
 
-export default function TelegramAutomationPage() {
+export default function TelegramAutomation() {
   return (
     <>
       <SEO 
@@ -36,6 +37,7 @@ export default function TelegramAutomationPage() {
         <TelegramDifferentiation />
         <TelegramSocialProof />
         <TelegramROI />
+        <Investment />
         <TelegramFAQ />
         <TelegramFinalCTA />
       </main>
