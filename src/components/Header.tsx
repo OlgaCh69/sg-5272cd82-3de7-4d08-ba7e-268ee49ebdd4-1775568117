@@ -22,6 +22,9 @@ export function Header() {
             <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
             </Link>
+            <Link href="/instagram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
+              Instagram
+            </Link>
             <Link href="/whatsapp-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               WhatsApp
             </Link>
