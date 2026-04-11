@@ -1,4 +1,4 @@
- 
+/* eslint-disable @typescript-eslint/no-empty-object-type */
 export type Json =
   | string
   | number
@@ -25,6 +25,7 @@ export type Database = {
           name: string
           phone: string
           plan: string | null
+          platform: string | null
           status: string | null
         }
         Insert: {
@@ -36,6 +37,7 @@ export type Database = {
           name: string
           phone: string
           plan?: string | null
+          platform?: string | null
           status?: string | null
         }
         Update: {
@@ -47,6 +49,7 @@ export type Database = {
           name?: string
           phone?: string
           plan?: string | null
+          platform?: string | null
           status?: string | null
         }
         Relationships: []

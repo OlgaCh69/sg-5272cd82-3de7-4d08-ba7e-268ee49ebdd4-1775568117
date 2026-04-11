@@ -8,6 +8,7 @@ export interface ContactFormData {
   email: string;
   phone: string;
   company?: string;
+  platform?: string;
   plan?: string;
   message: string;
 }
@@ -26,6 +27,7 @@ export const contactService = {
           email: data.email,
           phone: data.phone,
           company: data.company || null,
+          platform: data.platform || null,
           plan: data.plan || null,
           message: data.message,
         })
@@ -58,6 +60,7 @@ export const contactService = {
               email: data.email,
               phone: data.phone,
               company: data.company,
+              platform: data.platform,
               plan: data.plan,
               message: data.message,
               created_at: savedContact.created_at,

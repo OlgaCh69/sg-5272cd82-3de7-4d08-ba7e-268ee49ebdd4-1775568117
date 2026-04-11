@@ -8,16 +8,18 @@ import { useEffect, useState, FormEvent, ChangeEvent } from "react";
 import { contactService } from "@/services/contactService";
 
 export function ContactForm() {
-  const [selectedPlan, setSelectedPlan] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
+    platform: "",
     message: "",
   });
+
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -29,11 +31,7 @@ export function ContactForm() {
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    console.log(`Input changed - ${name}:`, value);
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: FormEvent) => {
@@ -58,6 +56,7 @@ export function ContactForm() {
         email: formData.email,
         phone: formData.phone,
         company: formData.company || undefined,
+        platform: formData.platform || undefined,
         plan: selectedPlan || undefined,
         message: formData.message,
       });
@@ -70,6 +69,7 @@ export function ContactForm() {
         email: "",
         phone: "",
         company: "",
+        platform: "",
         message: "",
       });
       setSelectedPlan("");
@@ -199,6 +199,24 @@ export function ContactForm() {
                       <option value="Pro">Pro - €2,490</option>
                       <option value="Enterprise">Enterprise - Custom</option>
                       <option value="Demo">Just a Demo</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="platform" className="text-sm font-medium mb-2 block">
+                      Platform of Interest
+                    </label>
+                    <select
+                      id="platform"
+                      name="platform"
+                      value={formData.platform}
+                      onChange={(e) => setFormData(prev => ({ ...prev, platform: e.target.value }))}
+                      className="w-full h-10 px-3 rounded-md bg-muted/30 border border-border/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                    >
+                      <option value="">Select platform</option>
+                      <option value="Instagram">Instagram</option>
+                      <option value="WhatsApp">WhatsApp</option>
+                      <option value="Telegram">Telegram</option>
+                      <option value="All Platforms">All Platforms</option>
                     </select>
                   </div>
                 </div>

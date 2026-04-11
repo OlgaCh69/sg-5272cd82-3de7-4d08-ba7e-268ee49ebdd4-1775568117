@@ -15,9 +15,9 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { name, email, phone, company, plan, message, created_at } = body;
+    const { name, email, phone, company, platform, plan, message, created_at } = body;
 
-    console.log("Received notification request:", { name, email, phone, plan });
+    console.log("Received notification request:", { name, email, phone, platform, plan });
 
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not set");
@@ -33,7 +33,7 @@ serve(async (req) => {
       body: JSON.stringify({
         from: "onboarding@resend.dev",
         to: ["support@onetechautomation.com"],
-        subject: `New Contact Form: ${name}${plan ? ` - ${plan}` : ""}`,
+        subject: `New Contact: ${name}${platform ? ` - ${platform}` : ""}${plan ? ` (${plan})` : ""}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #333;">New Contact Form Submission</h2>
@@ -43,6 +43,7 @@ serve(async (req) => {
               <p style="margin: 10px 0;"><strong>Email:</strong> ${email}</p>
               <p style="margin: 10px 0;"><strong>Phone:</strong> ${phone}</p>
               ${company ? `<p style="margin: 10px 0;"><strong>Company:</strong> ${company}</p>` : ""}
+              ${platform ? `<p style="margin: 10px 0;"><strong>Platform:</strong> ${platform}</p>` : ""}
               ${plan ? `<p style="margin: 10px 0;"><strong>Plan:</strong> ${plan}</p>` : ""}
               <p style="margin: 10px 0;"><strong>Message:</strong></p>
               <p style="background: white; padding: 15px; border-radius: 4px; white-space: pre-wrap;">${message}</p>
