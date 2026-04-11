@@ -1,20 +1,24 @@
-import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border/50" style={{ backgroundImage: "url(\"/Screenshot_2026-04-07_at_7.52.39_PM.png\")", backgroundColor: "transparent", backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "left center" }}>
-      <nav className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          <a href="#" className="flex flex-col group">
-            <span className="text-2xl font-bold text-foreground">O.N.E.Tech</span>
-            <span className="text-xs text-primary font-medium tracking-wider">AUTOMATE • ENGAGE • GROW</span>
-          </a>
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
+            <MessageCircle className="w-6 h-6 text-primary" />
+            <span className="font-bold text-xl">O.N.E.Tech</span>
+          </Link>
 
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
@@ -36,35 +40,69 @@ export function Header() {
             </Link>
           </nav>
 
-          <button
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu">
-            
-            <Menu className="w-6 h-6" />
-          </button>
-        </div>
-
-        {mobileMenuOpen &&
-        <div className="md:hidden mt-4 py-4 space-y-4 border-t border-border/50">
-            <a href="#features" className="block text-sm hover:text-primary transition-colors">
-              Features
-            </a>
-            <a href="#how-it-works" className="block text-sm hover:text-primary transition-colors">
-              How It Works
-            </a>
-            <a href="#pricing" className="block text-sm hover:text-primary transition-colors">
-              Pricing
-            </a>
-            <a href="#faq" className="block text-sm hover:text-primary transition-colors">
-              FAQ
-            </a>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-background font-semibold shadow-lg shadow-primary/50">
-              Get Your Bot Demo
-            </Button>
+          <div className="hidden md:flex items-center gap-4">
+            <Link href="/contact">
+              <Button>Get Started</Button>
+            </Link>
           </div>
-        }
-      </nav>
-    </header>);
 
+          {/* Mobile Navigation */}
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <nav className="flex flex-col gap-4 mt-8">
+                <Link 
+                  href="/#features" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  Features
+                </Link>
+                <Link 
+                  href="/#investment" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  Investment
+                </Link>
+                <Link 
+                  href="/instagram-automation-ecommerce" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  Instagram Automation
+                </Link>
+                <Link 
+                  href="/whatsapp-automation-ecommerce" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  WhatsApp Automation
+                </Link>
+                <Link 
+                  href="/telegram-automation-ecommerce" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  Telegram Automation
+                </Link>
+                <Link 
+                  href="/contact" 
+                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                >
+                  Contact
+                </Link>
+                <div className="mt-4 pt-4 border-t border-border">
+                  <Link href="/contact" className="w-full">
+                    <Button className="w-full" size="lg">
+                      Get Started
+                    </Button>
+                  </Link>
+                </div>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+    </header>
+  );
 }
