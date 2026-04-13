@@ -61,13 +61,16 @@ export function Header() {
             >
               AI Chatbot
             </Link>
-            <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
-              Pricing
-            </Link>
-            <Link href="/abandoned-cart-recovery-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="/abandoned-cart-recovery-ecommerce" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Cart Recovery
             </Link>
-            <Link href="/ecommerce-customer-support-automation" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="/ecommerce-customer-support-automation" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Support
             </Link>
             <Link 
