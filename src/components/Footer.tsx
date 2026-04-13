@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -29,7 +30,13 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <MessageCircle className="w-8 h-8 text-primary" />
+              <Image 
+                src="/onetech-logo.png" 
+                alt="OneTech Automation Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="text-xl font-bold text-foreground">OneTech Automation</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">

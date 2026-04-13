@@ -1,21 +1,27 @@
 import Link from "next/link";
-import { MessageCircle } from "lucide-react";
+import { Menu } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <MessageCircle className="w-6 h-6 text-primary" />
-            <span className="font-bold text-xl">O.N.E.Tech</span>
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+            <Image 
+              src="/onetech-logo.png" 
+              alt="OneTech Automation Logo" 
+              width={40} 
+              height={40}
+              className="w-10 h-10"
+            />
+            <span>OneTech Automation</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -57,6 +63,18 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <div className="flex flex-col gap-6 mt-6">
+                <Link href="/" className="flex items-center gap-2 font-bold text-xl">
+                  <Image 
+                    src="/onetech-logo.png" 
+                    alt="OneTech Automation Logo" 
+                    width={40} 
+                    height={40}
+                    className="w-10 h-10"
+                  />
+                  <span>OneTech Automation</span>
+                </Link>
+              </div>
               <nav className="flex flex-col gap-4 mt-8">
                 <Link 
                   href="/#features" 
