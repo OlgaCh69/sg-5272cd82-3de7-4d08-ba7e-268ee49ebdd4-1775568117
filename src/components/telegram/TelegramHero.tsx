@@ -36,17 +36,11 @@ export function TelegramHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-500 hover:bg-blue-600 text-white text-base font-semibold" asChild>
-              <Link href="/contact">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-base font-semibold border-blue-500/50 text-blue-500 hover:bg-blue-50" asChild>
-              <Link href="#how-it-works">
-                See How It Works
-                <Play className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="#how-it-works">See How It Works</Link>
             </Button>
           </div>
 

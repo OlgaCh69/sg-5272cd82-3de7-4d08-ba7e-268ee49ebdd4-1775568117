@@ -36,17 +36,11 @@ export function WhatsAppHero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-base font-semibold" asChild>
-              <Link href="/contact">
-                Book a Demo
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-base font-semibold border-green-600/50 text-green-600 hover:bg-green-50" asChild>
-              <Link href="#how-it-works">
-                See How It Works
-                <Play className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="#how-it-works">See How It Works</Link>
             </Button>
           </div>
         </div>

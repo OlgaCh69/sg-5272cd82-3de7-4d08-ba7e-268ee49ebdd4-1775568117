@@ -19,17 +19,12 @@ export function SupportFinalCTA() {
             Let's build a system that supports your growth.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button size="lg" className="group" asChild>
-              <Link href="/contact">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            <Button size="lg" variant="outline" asChild>
-              <Link href="/#features">
-                Explore Our Automation Solutions
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="/ecommerce-customer-support-automation">Learn More</Link>
             </Button>
           </div>
 

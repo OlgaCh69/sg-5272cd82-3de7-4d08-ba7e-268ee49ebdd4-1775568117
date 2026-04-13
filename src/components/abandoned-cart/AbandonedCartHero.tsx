@@ -15,19 +15,12 @@ export function AbandonedCartHero() {
             Recover lost revenue with abandoned cart automation built for ecommerce brands. Re-engage shoppers, answer buying objections, and turn incomplete checkouts into completed sales.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="/contact">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            
-            <Button size="lg" variant="outline" className="text-lg px-8" asChild>
-              <Link href="#how-it-works">
-                See How It Works
-                <PlayCircle className="ml-2 w-5 h-5" />
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="#how-it-works">See How It Works</Link>
             </Button>
           </div>
           

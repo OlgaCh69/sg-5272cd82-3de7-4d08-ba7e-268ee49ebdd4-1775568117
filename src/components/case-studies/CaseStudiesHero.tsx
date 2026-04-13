@@ -15,19 +15,13 @@ export function CaseStudiesHero() {
             See how ecommerce brands use automation to increase conversions, recover lost revenue, and scale customer communication.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-            <Link href="/contact">
-              <Button size="lg" className="w-full sm:w-auto">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/#how-it-works">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                <PlayCircle className="mr-2 h-5 w-5" />
-                See How It Works
-              </Button>
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="#case-studies">See Case Studies</Link>
+            </Button>
           </div>
 
           <p className="text-sm text-muted-foreground pt-4">

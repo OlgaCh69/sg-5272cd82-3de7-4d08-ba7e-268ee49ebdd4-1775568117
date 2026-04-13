@@ -19,18 +19,12 @@ export function ChatbotFinalCTA() {
             Let's build a chatbot system that helps you capture more of it.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="/contact">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            
-            <Button size="lg" variant="outline" className="text-lg px-8" asChild>
-              <Link href="/#features">
-                Explore Our Automation Solutions
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="/ai-chatbot-ecommerce">Learn More</Link>
             </Button>
           </div>
           

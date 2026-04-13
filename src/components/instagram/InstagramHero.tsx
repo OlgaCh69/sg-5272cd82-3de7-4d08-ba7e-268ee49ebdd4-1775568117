@@ -39,17 +39,11 @@ export function InstagramHero() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-pink-500 to-fuchsia-500 hover:from-pink-600 hover:to-fuchsia-600 text-white text-base font-semibold" asChild>
-              <Link href="/contact">
-                Book a Strategy Demo
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" asChild className="text-lg px-8">
+              <Link href="/contact">Book Your Strategy Demo</Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-base font-semibold border-pink-500/50 text-pink-500 hover:bg-pink-50" asChild>
-              <Link href="#how-it-works">
-                See How It Works
-                <Play className="ml-2 w-4 h-4" />
-              </Link>
+            <Button size="lg" variant="outline" asChild className="text-lg px-8">
+              <Link href="#how-it-works">See How It Works</Link>
             </Button>
           </div>
 
