@@ -48,12 +48,6 @@ export default function Blog() {
                 {blogPosts.map((post) => (
                   <Card key={post.slug} className="group hover:shadow-lg transition-all duration-300">
                     <CardHeader>
-                      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
-                        <Calendar className="h-4 w-4" />
-                        <span>{new Date(post.date).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}</span>
-                        <span>•</span>
-                        <span>{post.readTime}</span>
-                      </div>
                       <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
                         {post.category}
                       </div>

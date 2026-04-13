@@ -15,17 +15,17 @@ export default function BlogAIChatbotsEcommerceSales() {
       />
       <Header />
       <main>
-        {/* Hero / Intro Section */}
-        <section className="py-20 bg-gradient-to-b from-primary/5 to-background">
+        {/* Hero Section */}
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">
                 7 Ways AI Chatbots Increase Ecommerce Sales
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-6">
+              <p className="text-xl text-muted-foreground mb-4">
                 Learn how ecommerce brands use AI chatbots to increase conversions, recover lost revenue, and turn customer conversations into sales.
               </p>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground">
                 If your store is getting traffic but not converting as much as it should, the problem is often not traffic—it's how conversations are handled.
               </p>
             </div>
