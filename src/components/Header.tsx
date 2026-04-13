@@ -78,10 +78,11 @@ export function Header() {
             </Link>
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Link href="/contact">
-              <Button>Get Started</Button>
-            </Link>
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Button asChild>
+              <Link href="/contact">Book Your Strategy Demo</Link>
+            </Button>
           </div>
 
           {/* Mobile Navigation */}
@@ -160,12 +161,12 @@ export function Header() {
                 >
                   Contact
                 </Link>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <Link href="/contact" className="w-full">
-                    <Button className="w-full" size="lg">
-                      Get Started
-                    </Button>
-                  </Link>
+                <div className="pt-6 border-t">
+                  <Button className="w-full" asChild>
+                    <Link href="/contact">
+                      Book Your Strategy Demo
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </SheetContent>

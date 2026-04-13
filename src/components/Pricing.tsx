@@ -3,59 +3,68 @@ import { Check } from "lucide-react";
 import Link from "next/link";
 
 export function Pricing() {
-  const plans = [
+  const tiers = [
     {
       name: "Starter",
-      price: "€699",
-      description: "Perfect for small businesses.",
+      price: "Custom",
+      description: "Perfect for ecommerce brands starting with automation",
       features: [
-        "Product Catalog",
-        "Basic Bot Flow",
-        "FAQ & Support",
-        "1 Platform",
+        "WhatsApp or Instagram automation",
+        "Basic chatbot setup",
+        "Up to 1,000 conversations/month",
+        "Email support",
+        "Setup & onboarding"
       ],
-      cta: "Get Started",
-      popular: false,
+      cta: "Book Your Strategy Demo",
+      popular: false
     },
     {
       name: "Growth",
-      price: "€1,490",
-      description: "Best for growing brands.",
+      price: "Custom",
+      description: "For growing brands scaling customer interactions",
       features: [
-        "Everything in Starter",
-        "Cart & Orders",
-        "Multi-Platform Support",
-        "Automations",
+        "Multi-channel automation (WhatsApp + Instagram)",
+        "Advanced AI chatbot",
+        "Up to 5,000 conversations/month",
+        "Priority support",
+        "Custom workflows",
+        "Analytics dashboard"
       ],
-      cta: "Choose Growth",
-      popular: true,
+      cta: "Book Your Strategy Demo",
+      popular: true
     },
     {
       name: "Pro",
-      price: "€2,490",
-      description: "For businesses that want more.",
+      price: "Custom",
+      description: "For established brands with high volume",
       features: [
-        "Everything in Growth",
-        "AI Assistant",
-        "Payment Integration",
-        "Advanced Analytics",
+        "All platforms (WhatsApp, Instagram, Telegram)",
+        "Premium AI capabilities",
+        "Up to 15,000 conversations/month",
+        "Dedicated account manager",
+        "Custom integrations",
+        "Advanced analytics",
+        "A/B testing"
       ],
-      cta: "Choose Pro",
-      popular: false,
+      cta: "Book Your Strategy Demo",
+      popular: false
     },
     {
       name: "Enterprise",
       price: "Custom",
-      description: "Tailored for your needs.",
+      description: "For large-scale operations requiring full customization",
       features: [
-        "Custom Integrations",
-        "Advanced Features",
-        "Multi-Language Support",
-        "Priority Support",
+        "Unlimited conversations",
+        "Full platform access",
+        "White-label options",
+        "Custom development",
+        "SLA guarantees",
+        "Dedicated team",
+        "Strategic consulting"
       ],
-      cta: "Contact Us",
-      popular: false,
-    },
+      cta: "Book Your Strategy Demo",
+      popular: false
+    }
   ];
 
   return (
@@ -69,16 +78,16 @@ export function Pricing() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {plans.map((plan, i) => (
+          {tiers.map((tier, i) => (
             <div
               key={i}
               className={`bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border relative ${
-                plan.popular 
+                tier.popular 
                   ? "border-primary/50" 
                   : "border-border/50"
               }`}
             >
-              {plan.popular && (
+              {tier.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
                   <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
                     Most Popular
@@ -87,15 +96,15 @@ export function Pricing() {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4">{plan.name}</h3>
+                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4">{tier.name}</h3>
                 <div className="mb-3">
-                  <span className="text-3xl sm:text-4xl font-bold text-primary">{plan.price}</span>
+                  <span className="text-3xl sm:text-4xl font-bold text-primary">{tier.price}</span>
                 </div>
-                <p className="text-sm text-muted-foreground">{plan.description}</p>
+                <p className="text-sm text-muted-foreground">{tier.description}</p>
               </div>
 
               <div className="space-y-3 mb-8">
-                {plan.features.map((feature, j) => (
+                {tier.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-sm">{feature}</span>
@@ -103,11 +112,11 @@ export function Pricing() {
                 ))}
               </div>
 
-              <Link href={`#contact?plan=${plan.name}`} className="w-full block">
+              <Link href={`#contact?plan=${tier.name}`} className="w-full block">
                 <Button
                   className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 h-11"
                 >
-                  {plan.cta}
+                  {tier.cta}
                 </Button>
               </Link>
             </div>
