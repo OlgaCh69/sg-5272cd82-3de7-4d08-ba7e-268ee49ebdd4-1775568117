@@ -70,7 +70,10 @@ export function Header() {
             <Link href="/ecommerce-customer-support-automation" className="text-sm font-medium hover:text-primary transition-colors">
               Support
             </Link>
-            <Link href="/ecommerce-automation-case-studies" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              href="/ecommerce-automation-case-studies" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Case Studies
             </Link>
             <Link 
