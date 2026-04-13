@@ -37,8 +37,11 @@ export default function AIChatbotEcommerce() {
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-2">
                 Learn how this works in practice → <Link href="/ai-chatbots-increase-ecommerce-sales" className="text-primary font-semibold hover:underline">7 Ways AI Chatbots Increase Ecommerce Sales</Link>
+              </p>
+              <p className="text-lg text-muted-foreground">
+                See the full system → <Link href="/automate-ecommerce-store" className="text-primary font-semibold hover:underline">How to Automate Your Ecommerce Store</Link>
               </p>
             </div>
           </div>

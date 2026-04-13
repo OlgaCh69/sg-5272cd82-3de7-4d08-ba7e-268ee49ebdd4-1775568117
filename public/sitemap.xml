@@ -76,6 +76,13 @@
     <priority>0.7</priority>
   </url>
   
+  <url>
+    <loc>https://onetechautomation.com/automate-ecommerce-store</loc>
+    <lastmod>2026-04-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Contact -->
   <url>
     <loc>https://onetechautomation.com/contact</loc>

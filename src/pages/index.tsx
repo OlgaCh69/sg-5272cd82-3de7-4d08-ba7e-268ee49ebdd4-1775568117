@@ -46,19 +46,19 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Latest Insights</h2>
               </div>
               
-              <Link href="/ai-chatbots-increase-ecommerce-sales">
+              <Link href="/automate-ecommerce-store">
                 <Card className="group hover:shadow-xl transition-all duration-300 cursor-pointer border-2 hover:border-primary/50">
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-3">
-                          AI Automation
+                          Ecommerce Automation
                         </div>
                         <CardTitle className="text-2xl md:text-3xl mb-3 group-hover:text-primary transition-colors">
-                          7 Ways AI Chatbots Increase Ecommerce Sales
+                          How to Automate Your Ecommerce Store (Step-by-Step Guide)
                         </CardTitle>
                         <CardDescription className="text-base">
-                          Learn how ecommerce brands use AI chatbots to increase conversions, recover lost revenue, and turn customer conversations into sales.
+                          Learn how to automate your ecommerce store using AI chatbots, messaging automation, and smart systems that increase conversions and reduce manual work.
                         </CardDescription>
                       </div>
                       <ArrowRight className="h-6 w-6 text-primary shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -66,7 +66,7 @@ export default function Home() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      <span>8 min read</span>
+                      <span>10 min read</span>
                       <span>•</span>
                       <span className="text-primary font-medium group-hover:underline">Read Article →</span>
                     </div>
