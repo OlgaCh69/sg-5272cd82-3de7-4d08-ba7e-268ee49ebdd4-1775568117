@@ -35,11 +35,8 @@ export function Header() {
             <Link href="/abandoned-cart-recovery-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Cart Recovery
             </Link>
-            <Link href="/whatsapp-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
-              WhatsApp
-            </Link>
-            <Link href="/telegram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
-              Telegram
+            <Link href="/ecommerce-customer-support-automation" className="text-sm font-medium hover:text-primary transition-colors">
+              Support
             </Link>
             <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
               Contact
@@ -90,6 +87,12 @@ export function Header() {
                   className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Abandoned Cart Recovery
+                </Link>
+                <Link 
+                  href="/ecommerce-customer-support-automation" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Customer Support Automation
                 </Link>
                 <Link 
                   href="/contact" 
