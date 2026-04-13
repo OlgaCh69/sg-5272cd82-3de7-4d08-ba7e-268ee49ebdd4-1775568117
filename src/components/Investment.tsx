@@ -19,28 +19,18 @@ export function Investment() {
   ];
 
   return (
-    <section id="investment" className="py-24 bg-background">
+    <section id="pricing" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          {/* Main Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Investment
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              Every ecommerce business is different.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4">
-              The way your customers interact, the number of conversations you handle, and the level of automation you need all shape the system we build.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4">
-              Because of that, we don't offer generic pricing tiers.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto mt-4 font-medium">
-              Instead, we design a solution around your business that focuses on one thing—driving measurable results.
-            </p>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Pricing Built for Growth
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Flexible pricing that scales with your ecommerce business. Every tier includes full automation capabilities.
+          </p>
+        </div>
 
+        <div className="max-w-4xl mx-auto">
           {/* Positioning */}
           <div className="mb-16 p-8 bg-muted/30 rounded-lg border border-border/50">
             <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">

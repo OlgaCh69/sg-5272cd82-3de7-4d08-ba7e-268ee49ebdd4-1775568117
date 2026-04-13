@@ -70,10 +70,19 @@ export function Header() {
             <Link href="/ecommerce-customer-support-automation" className="text-sm font-medium hover:text-primary transition-colors">
               Support
             </Link>
-            <Link href="/ecommerce-automation-case-studies" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link href="/ecommerce-automation-case-studies" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               Case Studies
             </Link>
-            <Link href="/contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="/#pricing" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Pricing
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
               Contact
             </Link>
           </nav>
@@ -154,6 +163,12 @@ export function Header() {
                   className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Case Studies
+                </Link>
+                <Link 
+                  href="/#pricing" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Pricing
                 </Link>
                 <Link 
                   href="/contact" 

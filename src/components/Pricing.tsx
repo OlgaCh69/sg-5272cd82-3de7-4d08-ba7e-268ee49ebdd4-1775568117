@@ -1,6 +1,6 @@
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import Link from "next/link";
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Pricing() {
   const tiers = [
@@ -68,59 +68,64 @@ export function Pricing() {
   ];
 
   return (
-    <section className="py-24 sm:py-32 px-4" id="pricing">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12 sm:mb-20">
-          <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
-            Choose the Perfect Plan
+    <section id="pricing" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Pricing Built for Growth
           </h2>
-          <p className="text-lg sm:text-xl text-muted-foreground">Simple pricing. Big impact.</p>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Flexible pricing that scales with your ecommerce business. Every tier includes full automation capabilities.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tiers.map((tier, i) => (
-            <div
-              key={i}
-              className={`bg-card/60 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border relative ${
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {tiers.map((tier, index) => (
+            <div 
+              key={index}
+              className={`relative rounded-lg border-2 ${
                 tier.popular 
-                  ? "border-primary/50" 
-                  : "border-border/50"
-              }`}
+                  ? "border-primary bg-background shadow-lg scale-105" 
+                  : "border-border bg-background"
+              } p-8 hover:shadow-xl transition-all duration-300`}
             >
               {tier.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
-                    Most Popular
-                  </div>
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                  Most Popular
                 </div>
               )}
-
-              <div className="text-center mb-8">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl mb-4">{tier.name}</h3>
-                <div className="mb-3">
-                  <span className="text-3xl sm:text-4xl font-bold text-primary">{tier.price}</span>
-                </div>
-                <p className="text-sm text-muted-foreground">{tier.description}</p>
+              
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
+                <p className="text-muted-foreground text-sm mb-4">{tier.description}</p>
+                <div className="text-4xl font-bold mb-2">{tier.price}</div>
+                <p className="text-sm text-muted-foreground">Tailored to your needs</p>
               </div>
 
-              <div className="space-y-3 mb-8">
-                {tier.features.map((feature, j) => (
-                  <div key={j} className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+              <ul className="space-y-3 mb-8">
+                {tier.features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm">{feature}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
-              <Link href={`#contact?plan=${tier.name}`} className="w-full block">
-                <Button
-                  className="w-full font-semibold bg-primary text-primary-foreground hover:bg-primary/90 h-11"
-                >
-                  {tier.cta}
-                </Button>
-              </Link>
+              <Button 
+                variant={tier.popular ? "default" : "outline"}
+                className="w-full"
+                asChild
+              >
+                <Link href="/contact">{tier.cta}</Link>
+              </Button>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <p className="text-muted-foreground">
+            All plans include dedicated onboarding, analytics, and ongoing optimization support.
+          </p>
         </div>
       </div>
     </section>
