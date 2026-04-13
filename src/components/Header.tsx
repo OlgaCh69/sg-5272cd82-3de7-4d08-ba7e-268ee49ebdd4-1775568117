@@ -80,6 +80,12 @@ export function Header() {
               Case Studies
             </Link>
             <Link 
+              href="/blog" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Blog
+            </Link>
+            <Link 
               href="/#pricing" 
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -169,6 +175,12 @@ export function Header() {
                   className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Case Studies
+                </Link>
+                <Link 
+                  href="/blog" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Blog
                 </Link>
                 <Link 
                   href="/#pricing" 
