@@ -28,28 +28,20 @@ export function Footer() {
       <div className="container mx-auto px-6 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
+          <div className="space-y-4">
+            <Link href="/" className="flex items-center gap-2 font-bold text-xl">
               <Image 
                 src="/onetech-logo.png" 
-                alt="OneTech Automation Logo" 
+                alt="O.N.E.Tech Logo" 
                 width={32} 
                 height={32}
                 className="w-8 h-8"
               />
-              <span className="text-xl font-bold text-foreground">OneTech Automation</span>
+              <span>O.N.E.Tech</span>
             </Link>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              AI chatbot and automation platform for high-growth ecommerce brands. Turn conversations into predictable revenue.
+            <p className="text-sm text-muted-foreground">
+              AI-powered automation solutions for high-growth ecommerce brands
             </p>
-            <div className="space-y-3">
-              <div className="flex items-start space-x-3 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
-                <a href="mailto:support@onetechautomation.com" className="hover:text-foreground transition-colors">
-                  support@onetechautomation.com
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Solutions Column */}
@@ -114,7 +106,7 @@ export function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2023 OneTech Automation. All rights reserved.
+              © 2023 O.N.E.Tech. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link 

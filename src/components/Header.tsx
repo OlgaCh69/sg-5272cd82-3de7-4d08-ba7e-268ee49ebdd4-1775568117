@@ -16,12 +16,12 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
             <Image 
               src="/onetech-logo.png" 
-              alt="OneTech Automation Logo" 
+              alt="O.N.E.Tech Logo" 
               width={40} 
               height={40}
               className="w-10 h-10"
             />
-            <span>OneTech Automation</span>
+            <span>O.N.E.Tech</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -67,12 +67,12 @@ export function Header() {
                 <Link href="/" className="flex items-center gap-2 font-bold text-xl">
                   <Image 
                     src="/onetech-logo.png" 
-                    alt="OneTech Automation Logo" 
+                    alt="O.N.E.Tech Logo" 
                     width={40} 
                     height={40}
                     className="w-10 h-10"
                   />
-                  <span>OneTech Automation</span>
+                  <span>O.N.E.Tech</span>
                 </Link>
               </div>
               <nav className="flex flex-col gap-4 mt-8">
