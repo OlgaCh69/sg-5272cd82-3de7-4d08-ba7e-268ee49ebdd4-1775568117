@@ -222,8 +222,53 @@ export default function AutomateEcommerceStore() {
               <p className="text-lg text-muted-foreground mb-4">
                 It is about improving speed, consistency, and efficiency across your ecommerce business.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-4">
                 When implemented correctly, automation helps you convert more customers, reduce workload, and scale operations more effectively.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                You can also read our guide on <Link href="/ai-chatbots-increase-ecommerce-sales" className="text-primary font-semibold hover:underline">how AI chatbots increase ecommerce sales</Link> to see specific tactics in action.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Common Mistakes Section */}
+        <section className="py-16 bg-muted/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6">
+                Common Mistakes When Automating an Ecommerce Store
+              </h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                Many ecommerce businesses implement automation incorrectly, which limits results.
+              </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                Common mistakes include:
+              </p>
+              <ul className="space-y-3 mb-4">
+                <li className="text-lg text-muted-foreground flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>Automating without understanding the customer journey</span>
+                </li>
+                <li className="text-lg text-muted-foreground flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>Using disconnected tools instead of a system</span>
+                </li>
+                <li className="text-lg text-muted-foreground flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>Ignoring customer experience</span>
+                </li>
+                <li className="text-lg text-muted-foreground flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>Overcomplicating automation flows</span>
+                </li>
+                <li className="text-lg text-muted-foreground flex items-start">
+                  <span className="text-primary mr-2">•</span>
+                  <span>Not optimizing based on real data</span>
+                </li>
+              </ul>
+              <p className="text-lg text-muted-foreground">
+                Avoiding these mistakes ensures your automation improves performance instead of creating friction.
               </p>
             </div>
           </div>

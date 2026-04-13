@@ -245,8 +245,11 @@ export default function BlogAIChatbotsEcommerceSales() {
               <p className="text-lg text-muted-foreground mb-4">
                 They are a system that helps capture more value from your existing traffic by improving how customer conversations are handled.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-4">
                 Small improvements in response time and guidance can lead to significant increases in revenue.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                For a complete step-by-step approach, read our guide on <Link href="/automate-ecommerce-store" className="text-primary font-semibold hover:underline">how to automate your ecommerce store</Link>.
               </p>
             </div>
           </div>
