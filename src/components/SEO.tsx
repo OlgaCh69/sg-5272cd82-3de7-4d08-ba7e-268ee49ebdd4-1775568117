@@ -9,8 +9,8 @@ interface SEOProps {
 
 // SEO elements that can be used in _document.tsx (returns JSX without Head wrapper)
 export function SEOElements({
-  title = "Hello World",
-  description = "Welcome to my app",
+  title = "O.N.E.Tech AI Automation for E-Commerce Business",
+  description = "Boost your e-commerce business with AI automation, Chatbots, and smart workflows. O.N.E.Tech Automation helps you save time, increase sales, and scale faster.",
   image = "/og-image.png",
   url,
 }: SEOProps) {

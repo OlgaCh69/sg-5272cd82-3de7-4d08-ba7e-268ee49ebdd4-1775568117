@@ -104,10 +104,10 @@ export default function BlogAIChatbotsEcommerceSales() {
         </section>
 
         {/* Point 3 */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 3. Turn Conversations Into Sales Funnels
               </h2>
               <p className="text-lg text-muted-foreground mb-4">
@@ -119,6 +119,26 @@ export default function BlogAIChatbotsEcommerceSales() {
               <p className="text-lg text-muted-foreground">
                 This creates consistency and improves conversion rates.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Mid-Article CTA */}
+        <section className="py-16 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center">
+              <h3 className="text-2xl font-bold mb-4">
+                Want to See How This Works for Your Store?
+              </h3>
+              <p className="text-lg text-muted-foreground mb-8">
+                If you're already getting traffic but not converting as much as you should, automation can help capture more revenue from your existing visitors.
+              </p>
+              <Link href="/contact">
+                <Button size="lg" className="text-lg px-8">
+                  Book a Strategy Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -212,11 +232,11 @@ export default function BlogAIChatbotsEcommerceSales() {
           </div>
         </section>
 
-        {/* Summary Section */}
-        <section className="py-16">
+        {/* Summary */}
+        <section className="py-16 bg-muted/50">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 What This Means for Your Ecommerce Business
               </h2>
               <p className="text-lg text-muted-foreground mb-4">
@@ -228,6 +248,43 @@ export default function BlogAIChatbotsEcommerceSales() {
               <p className="text-lg text-muted-foreground">
                 Small improvements in response time and guidance can lead to significant increases in revenue.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold mb-12 text-center">
+                Frequently Asked Questions
+              </h2>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    How do AI chatbots increase ecommerce sales?
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    They improve response time, guide customers to purchase, and recover lost opportunities like abandoned carts.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Are AI chatbots suitable for small ecommerce stores?
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    Yes, especially for stores that want to scale without increasing manual workload.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">
+                    Can chatbots replace customer support?
+                  </h3>
+                  <p className="text-lg text-muted-foreground">
+                    No, they support teams by handling repetitive tasks and improving efficiency.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
