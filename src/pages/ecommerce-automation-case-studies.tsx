@@ -4,6 +4,7 @@ import { CaseStudiesHero } from "@/components/case-studies/CaseStudiesHero";
 import { CaseStudiesIntro } from "@/components/case-studies/CaseStudiesIntro";
 import { CaseStudyBlock } from "@/components/case-studies/CaseStudyBlock";
 import { CaseStudiesSummary } from "@/components/case-studies/CaseStudiesSummary";
+import { CaseStudiesTestimonials } from "@/components/case-studies/CaseStudiesTestimonials";
 import { TrustBuilder } from "@/components/case-studies/TrustBuilder";
 import { CaseStudiesFinalCTA } from "@/components/case-studies/CaseStudiesFinalCTA";
 
@@ -110,6 +111,7 @@ export default function CaseStudiesPage() {
         <CaseStudyBlock {...caseStudy2} variant="accent" />
         <CaseStudyBlock {...caseStudy3} />
         <CaseStudiesSummary />
+        <CaseStudiesTestimonials />
         <TrustBuilder />
         <CaseStudiesFinalCTA />
       </main>
