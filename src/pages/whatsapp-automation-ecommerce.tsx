@@ -12,9 +12,10 @@ import { WhoItsFor } from "@/components/whatsapp/WhoItsFor";
 import { WhatsAppDifferentiation } from "@/components/whatsapp/WhatsAppDifferentiation";
 import { WhatsAppSocialProof } from "@/components/whatsapp/WhatsAppSocialProof";
 import { WhatsAppROI } from "@/components/whatsapp/WhatsAppROI";
-import { Investment } from "@/components/Investment";
+import { Pricing } from "@/components/Pricing";
 import { WhatsAppFAQ } from "@/components/whatsapp/WhatsAppFAQ";
 import { WhatsAppFinalCTA } from "@/components/whatsapp/WhatsAppFinalCTA";
+import { Footer } from "@/components/Footer";
 
 export default function WhatsAppAutomation() {
   return (
@@ -37,7 +38,7 @@ export default function WhatsAppAutomation() {
         <WhatsAppDifferentiation />
         <WhatsAppSocialProof />
         <WhatsAppROI />
-        <Investment />
+        <Pricing />
         <WhatsAppFAQ />
         <WhatsAppFinalCTA />
       </main>
