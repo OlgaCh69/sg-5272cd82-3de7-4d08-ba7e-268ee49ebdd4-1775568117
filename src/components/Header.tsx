@@ -23,8 +23,8 @@ export function Header() {
             <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
               Features
             </Link>
-            <Link href="/#investment" className="text-sm font-medium hover:text-primary transition-colors">
-              Investment
+            <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
+              Pricing
             </Link>
             <Link href="/instagram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Instagram
@@ -63,15 +63,15 @@ export function Header() {
               <nav className="flex flex-col gap-4 mt-8">
                 <Link 
                   href="/#features" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   Features
                 </Link>
                 <Link 
-                  href="/#investment" 
-                  className="text-lg font-medium hover:text-primary transition-colors py-2"
+                  href="/#pricing" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
-                  Investment
+                  Pricing
                 </Link>
                 <Link 
                   href="/instagram-automation-ecommerce" 
