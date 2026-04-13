@@ -32,6 +32,9 @@ export function Header() {
             <Link href="/ai-chatbot-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               AI Chatbot
             </Link>
+            <Link href="/abandoned-cart-recovery-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
+              Cart Recovery
+            </Link>
             <Link href="/whatsapp-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               WhatsApp
             </Link>
@@ -81,6 +84,12 @@ export function Header() {
                   className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                 >
                   AI Chatbot
+                </Link>
+                <Link 
+                  href="/abandoned-cart-recovery-ecommerce" 
+                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Abandoned Cart Recovery
                 </Link>
                 <Link 
                   href="/contact" 
