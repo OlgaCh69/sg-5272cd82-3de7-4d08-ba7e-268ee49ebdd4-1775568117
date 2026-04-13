@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
+import Link from "next/link";
 import { ChatbotHero } from "@/components/chatbot/ChatbotHero";
 import { ChatbotProblem } from "@/components/chatbot/ChatbotProblem";
 import { ChatbotSolution } from "@/components/chatbot/ChatbotSolution";
@@ -31,6 +32,18 @@ export default function AIChatbotEcommerce() {
         <ChatbotProblem />
         <ChatbotSolution />
         <ChatbotBenefits />
+        
+        {/* Blog Link Section */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-lg text-muted-foreground">
+                Learn how this works in practice → <Link href="/ai-chatbots-increase-ecommerce-sales" className="text-primary font-semibold hover:underline">7 Ways AI Chatbots Increase Ecommerce Sales</Link>
+              </p>
+            </div>
+          </div>
+        </section>
+        
         <ChatbotUseCases />
         <ProductDiscovery />
         <SupportAutomation />
