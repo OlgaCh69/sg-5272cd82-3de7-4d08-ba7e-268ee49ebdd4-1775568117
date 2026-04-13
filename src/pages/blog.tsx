@@ -8,6 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function Blog() {
   const blogPosts = [
     {
+      title: "Best Chatbots for Ecommerce (2026 Comparison Guide)",
+      slug: "best-chatbots-ecommerce",
+      description: "Discover the best chatbots for ecommerce in 2026. Compare tools, features, and systems to increase sales and automate customer conversations.",
+      category: "Chatbot Comparison",
+      readTime: "12 min read"
+    },
+    {
       title: "How to Automate Your Ecommerce Store (Step-by-Step Guide)",
       slug: "automate-ecommerce-store",
       description: "Learn how to automate your ecommerce store using AI chatbots, messaging automation, and smart systems that increase conversions and reduce manual work.",
