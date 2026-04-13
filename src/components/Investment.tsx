@@ -18,28 +18,27 @@ export function Investment() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <h3 className="text-2xl font-bold mb-4">
-              Typical Pricing Range
+              Pricing Plans
             </h3>
             <p className="text-muted-foreground">
               We focus on building systems that generate a return—so the pricing is tied to outcomes, not just access to a tool.
             </p>
           </div>
-
-          <div className="bg-card p-8 rounded-xl border border-border shadow-lg">
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-bold">€2,500</span>
-              <span className="text-muted-foreground">- €15,000+</span>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-lg">€1,000 - €15,000+</p>
+                <p className="text-muted-foreground">Implementation fee</p>
+              </div>
             </div>
-            <p className="text-muted-foreground mb-6">
-              Implementation fee (one-time setup)
-            </p>
-            <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-5xl font-bold">€500</span>
-              <span className="text-muted-foreground">- €5,000+/mo</span>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-lg">€500 - €5,000+/mo</p>
+                <p className="text-muted-foreground">Ongoing optimization</p>
+              </div>
             </div>
-            <p className="text-muted-foreground">
-              Ongoing optimization & management
-            </p>
           </div>
         </div>
 
