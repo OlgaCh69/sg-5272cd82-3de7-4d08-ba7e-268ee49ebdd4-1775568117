@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,6 +7,12 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export function Header() {
   return (
@@ -25,18 +31,38 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
-            <Link href="/#features" className="text-sm font-medium hover:text-primary transition-colors">
-              Features
+          <nav className="hidden lg:flex items-center gap-6">
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Platforms
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link href="/whatsapp-automation-ecommerce" className="w-full cursor-pointer">
+                    WhatsApp Automation
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/instagram-automation-ecommerce" className="w-full cursor-pointer">
+                    Instagram Automation
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/telegram-automation-ecommerce" className="w-full cursor-pointer">
+                    Telegram Automation
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link 
+              href="/ai-chatbot-ecommerce" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              AI Chatbot
             </Link>
             <Link href="/#pricing" className="text-sm font-medium hover:text-primary transition-colors">
               Pricing
-            </Link>
-            <Link href="/instagram-automation-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
-              Instagram
-            </Link>
-            <Link href="/ai-chatbot-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
-              AI Chatbot
             </Link>
             <Link href="/abandoned-cart-recovery-ecommerce" className="text-sm font-medium hover:text-primary transition-colors">
               Cart Recovery
@@ -77,32 +103,39 @@ export function Header() {
                   />
                   <span>O.N.E.Tech</span>
                 </Link>
-              </div>
-              <nav className="flex flex-col gap-4 mt-8">
-                <Link 
-                  href="/#features" 
-                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  Features
-                </Link>
-                <Link 
-                  href="/#pricing" 
-                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  Pricing
-                </Link>
-                <Link 
-                  href="/instagram-automation-ecommerce" 
-                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  Instagram Automation
-                </Link>
-                <Link 
-                  href="/ai-chatbot-ecommerce" 
-                  className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
-                >
-                  AI Chatbot
-                </Link>
+                
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                      Platforms
+                    </p>
+                    <Link 
+                      href="/whatsapp-automation-ecommerce" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      WhatsApp Automation
+                    </Link>
+                    <Link 
+                      href="/instagram-automation-ecommerce" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Instagram Automation
+                    </Link>
+                    <Link 
+                      href="/telegram-automation-ecommerce" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Telegram Automation
+                    </Link>
+                  </div>
+
+                  <Link 
+                    href="/ai-chatbot-ecommerce" 
+                    className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    AI Chatbot
+                  </Link>
+                </div>
                 <Link 
                   href="/abandoned-cart-recovery-ecommerce" 
                   className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
@@ -134,7 +167,7 @@ export function Header() {
                     </Button>
                   </Link>
                 </div>
-              </nav>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
