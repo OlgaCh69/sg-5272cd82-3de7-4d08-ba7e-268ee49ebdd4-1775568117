@@ -35,7 +35,7 @@ export function Investment() {
             <div className="flex items-start gap-3">
               <Check className="h-6 w-6 text-primary shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-lg">€500 - €5,000+/mo</p>
+                <p className="font-semibold text-lg">€300 - €5,000+/mo</p>
                 <p className="text-muted-foreground">Ongoing optimization</p>
               </div>
             </div>
