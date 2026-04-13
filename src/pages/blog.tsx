@@ -1,8 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import Link from "next/link";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -111,7 +110,6 @@ export default function Blog() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
