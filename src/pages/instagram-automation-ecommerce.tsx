@@ -13,7 +13,7 @@ import { InstagramWhoItsFor } from "@/components/instagram/InstagramWhoItsFor";
 import { InstagramDifferentiation } from "@/components/instagram/InstagramDifferentiation";
 import { InstagramSocialProof } from "@/components/instagram/InstagramSocialProof";
 import { InstagramROI } from "@/components/instagram/InstagramROI";
-import { Pricing } from "@/components/Pricing";
+import { Investment } from "@/components/Investment";
 import { InstagramFAQ } from "@/components/instagram/InstagramFAQ";
 import { InstagramFinalCTA } from "@/components/instagram/InstagramFinalCTA";
 import { Footer } from "@/components/Footer";
@@ -40,7 +40,7 @@ export default function InstagramAutomation() {
         <InstagramDifferentiation />
         <InstagramSocialProof />
         <InstagramROI />
-        <Pricing />
+        <Investment />
         <InstagramFAQ />
         <InstagramFinalCTA />
       </main>

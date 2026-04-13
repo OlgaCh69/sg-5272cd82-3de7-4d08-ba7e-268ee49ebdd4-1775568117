@@ -1,155 +1,134 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, TrendingUp, Target, Users, Zap, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function Investment() {
-  const valuePoints = [
-    "Capture and convert more customer conversations",
-    "Recover revenue that would otherwise be lost",
-    "Reduce manual workload across your team",
-    "Improve customer experience at scale",
-    "Create consistent, predictable growth",
-  ];
-
-  const qualifications = [
-    "Are already generating consistent traffic or sales",
-    "Receive regular customer messages or inquiries",
-    "Want to improve conversion rates and efficiency",
-    "Are focused on scaling with better systems",
-  ];
-
   return (
-    <section id="pricing" className="py-20 bg-muted/30">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Pricing Built for Growth
+            Pricing Built Around Results
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Flexible pricing that scales with your ecommerce business. Every tier includes full automation capabilities.
+            Every implementation is custom-built for your ecommerce business, your traffic, and your goals.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Positioning */}
-          <div className="mb-16 p-8 bg-muted/30 rounded-lg border border-border/50">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Target className="w-6 h-6 text-primary" />
-              Built Around Performance, Not Packages
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Most automation tools offer fixed plans that don't reflect how ecommerce businesses actually operate.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              We take a different approach.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Your setup is tailored based on your store, your customer journey, and your growth goals.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mt-4 font-medium">
-              This ensures you are not paying for features you don't need or missing functionality that impacts performance.
-            </p>
-          </div>
-
-          {/* Price Anchor */}
-          <div className="mb-16 p-8 bg-primary/5 rounded-lg border border-primary/20">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
             <h3 className="text-2xl font-bold mb-4">
-              Typical Investment Range
+              Typical Pricing Range
             </h3>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-              Most ecommerce brands we work with invest from <span className="font-bold text-foreground">€1,000 to €10,000</span> per setup plus monthly support, depending on the complexity of their automation and the scale of their operations.
-            </p>
-            <p className="text-muted-foreground leading-relaxed font-medium">
-              We focus on building systems that generate a return—so the investment is tied to outcomes, not just access to a tool.
+            <p className="text-muted-foreground">
+              We focus on building systems that generate a return—so the pricing is tied to outcomes, not just access to a tool.
             </p>
           </div>
 
-          {/* Value Shift */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Zap className="w-6 h-6 text-primary" />
-              What You're Really Investing In
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              This is not just about automation.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6 font-medium">
-              It's about building a system that helps your ecommerce business:
-            </p>
-            <ul className="space-y-3">
-              {valuePoints.map((point, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* ROI Frame */}
-          <div className="mb-16 p-8 bg-muted/30 rounded-lg border border-border/50">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <TrendingUp className="w-6 h-6 text-primary" />
-              Focused on Return, Not Cost
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              For most ecommerce brands, even a small improvement in conversion rate or response time can have a significant impact on revenue.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Automation helps unlock value from traffic and conversations you are already generating.
-            </p>
-            <p className="text-muted-foreground leading-relaxed font-medium">
-              Instead of increasing ad spend, you improve the performance of what you already have.
-            </p>
-          </div>
-
-          {/* Qualification */}
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-              <Users className="w-6 h-6 text-primary" />
-              Who This Is For
-            </h3>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              We typically work with ecommerce brands that:
-            </p>
-            <ul className="space-y-3">
-              {qualifications.map((qualification, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-muted-foreground">{qualification}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* CTA */}
-          <div className="text-center p-8 bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg border border-primary/20">
-            <h2 className="text-3xl font-bold mb-4">
-              Let's See What This Could Look Like for Your Store
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              The best way to understand how this would work for your business is through a short strategy call.
-            </p>
-            <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              We'll look at your current setup, identify opportunities, and show you how automation can support your growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-base font-semibold" asChild>
-                <Link href="/contact">
-                  Book a Strategy Demo
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-base font-semibold border-border/50" asChild>
-                <Link href="#features">
-                  See How It Works
-                </Link>
-              </Button>
+          <div className="bg-card p-8 rounded-xl border border-border shadow-lg">
+            <div className="flex items-baseline gap-2 mb-4">
+              <span className="text-5xl font-bold">€2,500</span>
+              <span className="text-muted-foreground">- €15,000+</span>
             </div>
-            <p className="text-sm text-muted-foreground mt-6">
-              No generic pitches. Just a focused conversation on your ecommerce growth.
+            <p className="text-muted-foreground mb-6">
+              Implementation fee (one-time setup)
+            </p>
+            <div className="flex items-baseline gap-2 mb-4">
+              <span className="text-5xl font-bold">€500</span>
+              <span className="text-muted-foreground">- €5,000+/mo</span>
+            </div>
+            <p className="text-muted-foreground">
+              Ongoing optimization & management
             </p>
           </div>
+        </div>
+
+        <div className="bg-muted/50 rounded-2xl p-8 md:p-12 mb-12">
+          <h3 className="text-2xl font-bold mb-6">What&apos;s Included</h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Multi-Channel Automation</p>
+                <p className="text-sm text-muted-foreground">
+                  WhatsApp, Instagram, Telegram integration based on your traffic sources
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Custom AI Configuration</p>
+                <p className="text-sm text-muted-foreground">
+                  Trained on your products, FAQs, and customer journey
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Abandoned Cart Recovery</p>
+                <p className="text-sm text-muted-foreground">
+                  Automated follow-up sequences designed to recover revenue
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Customer Support Automation</p>
+                <p className="text-sm text-muted-foreground">
+                  Handle FAQs, order tracking, and common questions instantly
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Analytics Dashboard</p>
+                <p className="text-sm text-muted-foreground">
+                  Track conversations, conversions, and revenue impact
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold mb-1">Ongoing Optimization</p>
+                <p className="text-sm text-muted-foreground">
+                  Continuous improvement based on performance data
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-2">
+                How We Calculate Pricing
+              </h3>
+              <p className="text-muted-foreground">
+                Your pricing is based on conversation volume, number of platforms, and the complexity of your automation flows.
+              </p>
+              <p className="text-muted-foreground mt-2">
+                The goal is to ensure that the system pays for itself through improved conversions and reduced manual workload.
+              </p>
+            </div>
+            <Button size="lg" asChild className="whitespace-nowrap">
+              <Link href="/contact">
+                Get Custom Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
+            All implementations include full setup, training, and ongoing optimization support.
+          </p>
         </div>
       </div>
     </section>
