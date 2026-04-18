@@ -39,8 +39,8 @@ export function SEOElements({
 // SEO component for use in pages/_app.tsx or individual pages (uses next/head)
 // Note: Flattened structure (no fragment) for better Next.js Head compatibility during hot reload
 export function SEO({
-  title = "Hello World",
-  description = "Welcome to my app",
+  title = "O.N.E.Tech AI Automation for E-Commerce Business",
+  description = "Boost your e-commerce business with AI automation, Chatbots, and smart workflows. O.N.E.Tech Automation helps you save time, increase sales, and scale faster.",
   image = "/og-image.png",
   url,
 }: SEOProps) {
