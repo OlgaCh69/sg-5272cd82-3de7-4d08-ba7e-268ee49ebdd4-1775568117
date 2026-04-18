@@ -8,6 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function Blog() {
   const blogPosts = [
     {
+      title: "How to Increase Ecommerce Conversion Rate (Proven Methods)",
+      slug: "increase-ecommerce-conversion-rate",
+      description: "Learn how to increase ecommerce conversion rate using proven methods like automation, faster responses, and better customer journeys.",
+      category: "Conversion Optimization",
+      readTime: "9 min read"
+    },
+    {
       title: "Best Chatbots for Ecommerce (2026 Comparison Guide)",
       slug: "best-chatbots-ecommerce",
       description: "Discover the best chatbots for ecommerce in 2026. Compare tools, features, and systems to increase sales and automate customer conversations.",

@@ -251,8 +251,11 @@ export default function BlogAIChatbotsEcommerceSales() {
               <p className="text-lg text-muted-foreground mb-4">
                 For a complete step-by-step approach, read our guide on <Link href="/automate-ecommerce-store" className="text-primary font-semibold hover:underline">how to automate your ecommerce store</Link>.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-4">
                 Not sure which solution is right for you? See our <Link href="/best-chatbots-ecommerce" className="text-primary font-semibold hover:underline">comparison of the best chatbots for ecommerce</Link>.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Looking to optimize your current traffic? Check out our guide on <Link href="/increase-ecommerce-conversion-rate" className="text-primary font-semibold hover:underline">how to increase ecommerce conversion rate</Link>.
               </p>
             </div>
           </div>

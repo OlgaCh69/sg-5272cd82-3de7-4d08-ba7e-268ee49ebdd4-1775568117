@@ -228,8 +228,11 @@ export default function AutomateEcommerceStore() {
               <p className="text-lg text-muted-foreground mb-4">
                 You can also read our guide on <Link href="/ai-chatbots-increase-ecommerce-sales" className="text-primary font-semibold hover:underline">how AI chatbots increase ecommerce sales</Link> to see specific tactics in action.
               </p>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-muted-foreground mb-4">
                 Looking for the right tools? Check out our comparison of the <Link href="/best-chatbots-ecommerce" className="text-primary font-semibold hover:underline">best chatbots for ecommerce</Link>.
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Want to focus on conversion optimization? Read our guide on <Link href="/increase-ecommerce-conversion-rate" className="text-primary font-semibold hover:underline">how to increase ecommerce conversion rate</Link>.
               </p>
             </div>
           </div>

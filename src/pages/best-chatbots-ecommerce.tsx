@@ -414,6 +414,9 @@ export default function BestChatbotsEcommerce() {
               <p className="text-lg text-muted-foreground mt-6">
                 For more insights on implementation, read our guides on <Link href="/automate-ecommerce-store" className="text-primary font-semibold hover:underline">how to automate your ecommerce store</Link> and <Link href="/ai-chatbots-increase-ecommerce-sales" className="text-primary font-semibold hover:underline">how AI chatbots increase ecommerce sales</Link>.
               </p>
+              <p className="text-lg text-muted-foreground mt-4">
+                To improve your current results, see our guide on <Link href="/increase-ecommerce-conversion-rate" className="text-primary font-semibold hover:underline">how to increase ecommerce conversion rate</Link>.
+              </p>
             </div>
           </div>
         </section>
