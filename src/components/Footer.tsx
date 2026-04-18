@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 import Image from "next/image";
 
 export function Footer() {
@@ -42,6 +42,26 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               AI-powered automation solutions for high-growth ecommerce brands
             </p>
+            <div className="flex items-center gap-4 pt-2">
+              <a 
+                href="https://www.instagram.com/o.n.e.tech/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/company/o-n-e-tech/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
           {/* Solutions Column */}

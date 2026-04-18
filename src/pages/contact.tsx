@@ -1,7 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
-import { Mail, MessageCircle, Clock } from "lucide-react";
+import { Mail, MessageCircle, Clock, Instagram, Linkedin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -66,6 +66,30 @@ export default function Contact() {
                     <p className="text-sm text-muted-foreground">
                       We typically respond within 24 hours
                     </p>
+                  </div>
+
+                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+                    <h3 className="font-semibold mb-4">Follow Us</h3>
+                    <div className="flex flex-col gap-4">
+                      <a 
+                        href="https://www.instagram.com/o.n.e.tech/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <Instagram className="w-5 h-5" />
+                        <span>Instagram</span>
+                      </a>
+                      <a 
+                        href="https://www.linkedin.com/company/o-n-e-tech/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        <Linkedin className="w-5 h-5" />
+                        <span>LinkedIn</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
