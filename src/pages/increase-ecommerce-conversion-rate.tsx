@@ -306,12 +306,12 @@ export default function IncreaseEcommerceConversionRate() {
                   Turn WhatsApp conversations into sales with automation
                 </p>
               </Link>
-              <Link href="/automate-ecommerce-store" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
-                  Automate Your Ecommerce Store
+                  Instagram Automation for Ecommerce
                 </h3>
                 <p className="text-sm text-foreground/70">
-                  Complete guide to ecommerce automation
+                  Automate Instagram DMs to increase sales and engagement
                 </p>
               </Link>
             </div>

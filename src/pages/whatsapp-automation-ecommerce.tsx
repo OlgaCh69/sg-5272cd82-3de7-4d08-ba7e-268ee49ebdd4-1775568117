@@ -286,6 +286,14 @@ export default function WhatsAppAutomationEcommerce() {
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
+              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
+                  Instagram Automation for Ecommerce
+                </h3>
+                <p className="text-sm text-foreground/70">
+                  Learn how Instagram automation can increase your sales
+                </p>
+              </Link>
               <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   AI Chatbots Increase Ecommerce Sales
