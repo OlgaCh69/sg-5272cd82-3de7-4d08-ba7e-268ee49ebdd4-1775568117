@@ -298,20 +298,20 @@ export default function IncreaseEcommerceConversionRate() {
                   Learn how AI chatbots can boost your ecommerce revenue
                 </p>
               </Link>
+              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
+                  WhatsApp Automation for Ecommerce
+                </h3>
+                <p className="text-sm text-foreground/70">
+                  Turn WhatsApp conversations into sales with automation
+                </p>
+              </Link>
               <Link href="/automate-ecommerce-store" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Automate Your Ecommerce Store
                 </h3>
                 <p className="text-sm text-foreground/70">
                   Complete guide to ecommerce automation
-                </p>
-              </Link>
-              <Link href="/best-chatbots-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
-                  Best Chatbots for Ecommerce
-                </h3>
-                <p className="text-sm text-foreground/70">
-                  Compare top ecommerce chatbot platforms
                 </p>
               </Link>
             </div>

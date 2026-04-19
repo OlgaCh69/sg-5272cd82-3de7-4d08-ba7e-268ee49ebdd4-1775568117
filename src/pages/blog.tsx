@@ -8,6 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function Blog() {
   const blogPosts = [
     {
+      title: "WhatsApp Automation for Ecommerce: Increase Sales & Save Time",
+      slug: "whatsapp-automation-ecommerce",
+      description: "Learn how WhatsApp automation helps ecommerce brands increase sales, improve customer support, and recover abandoned carts.",
+      category: "Platform Automation",
+      readTime: "7 min read"
+    },
+    {
       title: "How to Increase Ecommerce Conversion Rate (Proven Methods)",
       slug: "increase-ecommerce-conversion-rate",
       description: "Learn how to increase ecommerce conversion rate using proven methods like automation, faster responses, and better customer journeys.",
