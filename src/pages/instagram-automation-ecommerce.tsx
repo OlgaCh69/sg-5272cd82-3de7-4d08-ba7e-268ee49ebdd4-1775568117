@@ -337,7 +337,6 @@ export default function InstagramAutomationEcommerce() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
