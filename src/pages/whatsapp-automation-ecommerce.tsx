@@ -302,6 +302,14 @@ export default function WhatsAppAutomationEcommerce() {
                   Learn how AI chatbots can boost your ecommerce revenue
                 </p>
               </Link>
+              <Link href="/ecommerce-customer-support-automation" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
+                  Ecommerce Customer Support Automation
+                </h3>
+                <p className="text-sm text-foreground/70">
+                  Reduce workload and increase sales with automated support
+                </p>
+              </Link>
               <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Increase Ecommerce Conversion Rate
