@@ -8,6 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 export default function Blog() {
   const blogPosts = [
     {
+      title: "Ecommerce Customer Support Automation: Reduce Workload & Increase Sales",
+      slug: "ecommerce-customer-support-automation",
+      description: "Learn how ecommerce customer support automation improves response time, reduces workload, and increases conversions.",
+      category: "Support Automation",
+      readTime: "8 min read"
+    },
+    {
       title: "Instagram Automation for Ecommerce: Increase Sales with DM Automation",
       slug: "instagram-automation-ecommerce",
       description: "Learn how Instagram automation helps ecommerce brands increase sales, automate DMs, and improve customer engagement.",
