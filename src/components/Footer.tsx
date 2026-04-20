@@ -126,11 +126,11 @@ export function Footer() {
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
-              © 2023 O.N.E.Tech. All rights reserved.
+              © 2026 O.N.E.Tech. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link 
-                href="/contact" 
+                href="/privacy-policy" 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 Privacy Policy
