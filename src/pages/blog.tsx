@@ -135,6 +135,28 @@ export default function Blog() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">More Insights</h2>
+              <style dangerouslySetInnerHTML={{__html: `
+                #soro-blog,
+                #soro-blog *,
+                #soro-blog p,
+                #soro-blog h1,
+                #soro-blog h2,
+                #soro-blog h3,
+                #soro-blog h4,
+                #soro-blog h5,
+                #soro-blog h6,
+                #soro-blog span,
+                #soro-blog div,
+                #soro-blog article {
+                  color: hsl(var(--foreground)) !important;
+                }
+                #soro-blog a {
+                  color: hsl(var(--primary)) !important;
+                }
+                #soro-blog a:hover {
+                  color: hsl(var(--accent)) !important;
+                }
+              `}} />
               <div id="soro-blog" className="prose prose-lg max-w-none dark:prose-invert"></div>
             </div>
           </div>
