@@ -129,6 +129,16 @@ export default function Blog() {
           </div>
         </section>
 
+        {/* Soro Blog Embed */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div id="soro-blog"></div>
+              <script src="https://app.trysoro.com/api/embed/da7f8ba9-ea7e-4f22-869e-d4b0df8b82b9" defer></script>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-br from-primary via-primary to-accent">
           <div className="container mx-auto px-4">
