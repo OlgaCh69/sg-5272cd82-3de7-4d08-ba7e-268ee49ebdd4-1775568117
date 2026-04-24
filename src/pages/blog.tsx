@@ -1,6 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -134,7 +135,6 @@ export default function Blog() {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div id="soro-blog"></div>
-              <script src="https://app.trysoro.com/api/embed/da7f8ba9-ea7e-4f22-869e-d4b0df8b82b9" defer></script>
             </div>
           </div>
         </section>
@@ -161,6 +161,10 @@ export default function Blog() {
           </div>
         </section>
       </main>
+      <Script 
+        src="https://app.trysoro.com/api/embed/da7f8ba9-ea7e-4f22-869e-d4b0df8b82b9" 
+        strategy="lazyOnload"
+      />
     </>
   );
 }
