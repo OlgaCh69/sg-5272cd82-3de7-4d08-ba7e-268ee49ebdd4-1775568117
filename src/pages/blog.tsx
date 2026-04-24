@@ -131,21 +131,11 @@ export default function Blog() {
         </section>
 
         {/* Soro Blog Embed */}
-        <section className="py-20 bg-gradient-to-br from-primary/5 via-accent/5 to-background">
+        <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <style jsx>{`
-                #soro-blog * {
-                  color: white !important;
-                }
-                #soro-blog a {
-                  color: #a855f7 !important;
-                }
-                #soro-blog a:hover {
-                  color: #d946ef !important;
-                }
-              `}</style>
-              <div id="soro-blog"></div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8">More Insights</h2>
+              <div id="soro-blog" className="prose prose-lg max-w-none dark:prose-invert"></div>
             </div>
           </div>
         </section>
