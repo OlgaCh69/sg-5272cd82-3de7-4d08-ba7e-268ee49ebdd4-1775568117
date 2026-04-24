@@ -131,10 +131,10 @@ export default function Blog() {
         </section>
 
         {/* Soro Blog Embed */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-white dark:bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div id="soro-blog"></div>
+              <div id="soro-blog" className="text-gray-900 dark:text-gray-900"></div>
             </div>
           </div>
         </section>
