@@ -2,6 +2,7 @@ import { useState, FormEvent, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export function ContactForm() {
   const { toast } = useToast();
@@ -97,7 +98,8 @@ export function ContactForm() {
         message: fullMessage,
       });
 
-      const response = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=pb_lead__ysTmm0l5DwzgbUzs9DfvCgCm4NpsVX3LU5Yru2Vxqk", {
+      // Submit to external lead capture API
+      const externalResponse = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=pb_lead__ysTmm0l5DwzgbUzs9DfvCgCm4NpsVX3LU5Yru2Vxqk", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -105,8 +107,25 @@ export function ContactForm() {
         body: formBody.toString(),
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit form");
+      if (!externalResponse.ok) {
+        throw new Error("Failed to submit to lead capture");
+      }
+
+      // Also send email notification via Supabase Edge Function
+      const emailResponse = await supabase.functions.invoke("send-contact-notification", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          platform: formData.platform,
+          message: formData.message,
+        },
+      });
+
+      if (emailResponse.error) {
+        console.error("Email notification error:", emailResponse.error);
+        // Don't fail the whole submission if email fails
       }
 
       setSubmitStatus("success");
