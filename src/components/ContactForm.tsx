@@ -97,7 +97,7 @@ export function ContactForm() {
         message: fullMessage,
       });
 
-      const response = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=YOUR_API_KEY", {
+      const response = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=pb_lead__ysTmm0l5DwzgbUzs9DfvCgCm4NpsVX3LU5Yru2Vxqk", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
