@@ -1,7 +1,6 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
-import { contactService } from "@/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 
 export function ContactForm() {
@@ -87,14 +86,28 @@ export function ContactForm() {
     setSubmitStatus("idle");
 
     try {
-      await contactService.submitContact({
+      // Include platform in message for the external endpoint
+      const fullMessage = `Platform: ${formData.platform}\n\n${formData.message}`;
+      
+      const formBody = new URLSearchParams({
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
-        company: formData.company || undefined,
-        platform: formData.platform,
-        message: formData.message,
+        company: formData.company,
+        message: fullMessage,
       });
+
+      const response = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=YOUR_API_KEY", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: formBody.toString(),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
 
       setSubmitStatus("success");
       
@@ -116,6 +129,11 @@ export function ContactForm() {
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
       setTimeout(() => setSubmitStatus("idle"), 3000);
     } finally {
       setIsSubmitting(false);
