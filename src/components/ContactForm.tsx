@@ -90,23 +90,23 @@ export function ContactForm() {
       // Include platform in message for the external endpoint
       const fullMessage = `Platform: ${formData.platform}\n\n${formData.message}`;
       
-      const formBody = new URLSearchParams({
+      const requestBody = {
         name: formData.name,
         email: formData.email,
         phone: formData.phone,
         company: formData.company,
         message: fullMessage,
-      });
+      };
 
-      console.log("Submitting to external API...", formBody.toString());
+      console.log("Submitting to external API...", requestBody);
 
       // Submit to external lead capture API
       const externalResponse = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=pb_lead__ysTmm0l5DwzgbUzs9DfvCgCm4NpsVX3LU5Yru2Vxqk", {
         method: "POST",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
-        body: formBody.toString(),
+        body: JSON.stringify(requestBody),
       });
 
       console.log("External API response status:", externalResponse.status);
@@ -114,7 +114,7 @@ export function ContactForm() {
       if (!externalResponse.ok) {
         const errorText = await externalResponse.text();
         console.error("External API error response:", errorText);
-        console.error("Submitted data:", formBody.toString());
+        console.error("Submitted data:", requestBody);
         throw new Error(`Failed to submit to lead capture: ${externalResponse.status} - ${errorText}`);
       }
 
