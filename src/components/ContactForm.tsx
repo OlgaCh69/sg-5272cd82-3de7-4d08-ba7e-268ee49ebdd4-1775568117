@@ -113,8 +113,9 @@ export function ContactForm() {
       
       if (!externalResponse.ok) {
         const errorText = await externalResponse.text();
-        console.error("External API error:", errorText);
-        throw new Error(`Failed to submit to lead capture: ${externalResponse.status}`);
+        console.error("External API error response:", errorText);
+        console.error("Submitted data:", formBody.toString());
+        throw new Error(`Failed to submit to lead capture: ${externalResponse.status} - ${errorText}`);
       }
 
       console.log("External API success, sending email notification...");
