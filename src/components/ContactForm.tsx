@@ -98,6 +98,8 @@ export function ContactForm() {
         message: fullMessage,
       });
 
+      console.log("Submitting to external API...", formBody.toString());
+
       // Submit to external lead capture API
       const externalResponse = await fetch("https://workspace-grid.emergent.host/api/public/lead?key=pb_lead__ysTmm0l5DwzgbUzs9DfvCgCm4NpsVX3LU5Yru2Vxqk", {
         method: "POST",
@@ -107,9 +109,15 @@ export function ContactForm() {
         body: formBody.toString(),
       });
 
+      console.log("External API response status:", externalResponse.status);
+      
       if (!externalResponse.ok) {
-        throw new Error("Failed to submit to lead capture");
+        const errorText = await externalResponse.text();
+        console.error("External API error:", errorText);
+        throw new Error(`Failed to submit to lead capture: ${externalResponse.status}`);
       }
+
+      console.log("External API success, sending email notification...");
 
       // Also send email notification via Supabase Edge Function
       const emailResponse = await supabase.functions.invoke("send-contact-notification", {
@@ -126,6 +134,8 @@ export function ContactForm() {
       if (emailResponse.error) {
         console.error("Email notification error:", emailResponse.error);
         // Don't fail the whole submission if email fails
+      } else {
+        console.log("Email notification sent successfully");
       }
 
       setSubmitStatus("success");
@@ -148,9 +158,12 @@ export function ContactForm() {
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitStatus("error");
+      
+      const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+      
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: `Something went wrong: ${errorMessage}. Please try again.`,
         variant: "destructive",
       });
       setTimeout(() => setSubmitStatus("idle"), 3000);
