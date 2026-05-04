@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Html, Head, Main, NextScript } from "next/document";
 import { SEOElements } from "@/components/SEO";
+import Script from "next/script";
 
 export default function Document() {
   return (
@@ -36,7 +37,9 @@ export default function Document() {
         )}
 
         {/* O.N.E.Tech AI Assistant */}
-        <script
+        <Script
+          id="onetech-config"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.ONETECH_CONFIG = {
@@ -45,7 +48,7 @@ export default function Document() {
             `
           }}
         />
-        <script src="/widget.js" />
+        <Script src="/widget.js" strategy="afterInteractive" />
       </body>
     </Html>
   );
