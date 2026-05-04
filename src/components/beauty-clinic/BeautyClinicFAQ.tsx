@@ -13,28 +13,28 @@ export function BeautyClinicFAQ() {
     },
     {
       question: "Can it book appointments?",
-      answer: "Yes. It connects to your calendar and allows clients to book instantly. The system shows real-time availability and handles confirmations and reminders automatically."
+      answer: "Yes. It connects to your calendar and allows clients to book instantly. The system checks real-time availability and confirms bookings automatically."
     },
     {
       question: "Does it work with Instagram and WhatsApp?",
-      answer: "Yes. It can reply and manage conversations on both platforms, ensuring you never miss a client inquiry regardless of where they reach out."
+      answer: "Yes. It can reply and manage conversations on both platforms, handling DMs, comments, and messages with intelligent responses."
     },
     {
       question: "What happens if I miss a call?",
-      answer: "The system sends an automatic SMS with a booking link within seconds. This recovers missed opportunities and turns them into booked appointments."
+      answer: "The system sends an automatic SMS within seconds with a booking link, turning missed calls into confirmed appointments."
     },
     {
       question: "Will it replace my staff?",
-      answer: "No. It reduces repetitive work so your team can focus on clients. Think of it as a smart assistant that handles the busywork while your staff provides personalized service."
+      answer: "No. It reduces repetitive work so your team can focus on clients. Think of it as a smart assistant that handles initial inquiries and bookings."
     },
     {
       question: "How long does setup take?",
-      answer: "Typically 2-3 weeks. This includes connecting to your calendar, training the AI on your services, and testing the booking flow. We handle the technical setup for you."
+      answer: "Typically 2-4 weeks depending on the plan. This includes AI training, platform integration, calendar setup, and testing."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-[#f8f3ef] to-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-[#1a1a1a]">
@@ -43,11 +43,15 @@ export function BeautyClinicFAQ() {
           
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-2 border-gray-100 rounded-xl px-6 hover:border-[#d4af37]/30 transition-colors">
-                <AccordionTrigger className="text-left text-lg font-semibold text-[#1a1a1a] hover:no-underline">
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-white border-2 border-gray-200 rounded-lg px-6 hover:border-[#d4af37] transition-colors"
+              >
+                <AccordionTrigger className="text-left text-lg font-semibold text-[#1a1a1a] hover:text-[#d4af37] hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 leading-relaxed">
+                <AccordionContent className="text-base text-gray-700 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

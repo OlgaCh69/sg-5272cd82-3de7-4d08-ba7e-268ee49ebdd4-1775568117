@@ -14,50 +14,44 @@ export function BeautyClinicPricing() {
       features: [
         "Instagram OR WhatsApp automation",
         "Basic booking system",
-        "Missed call SMS",
-        "Email support"
+        "Missed call SMS"
       ],
-      badge: null,
-      gradient: "from-gray-600 to-gray-700"
+      badge: null
     },
     {
       name: "Growth",
       setup: "€2,400",
       monthly: "€700",
-      description: "Complete solution for growing businesses",
+      description: "Complete automation suite for growth",
       features: [
         "Instagram + WhatsApp",
         "Advanced booking system",
         "Smart follow-ups",
-        "CRM integration",
-        "Priority support"
+        "CRM integration"
       ],
-      badge: "Most Popular",
-      gradient: "from-[#d4af37] to-[#b8941f]"
+      badge: "Most Popular"
     },
     {
       name: "Enterprise",
-      setup: "€5,000+",
-      monthly: "€1,500+",
-      description: "Full automation for multi-location businesses",
+      setup: "€5,000",
+      monthly: "€1,500",
+      description: "Full-scale automation for multiple locations",
       features: [
         "Full automation suite",
         "Multi-location support",
         "Custom workflows",
-        "Advanced analytics",
         "Dedicated support"
       ],
-      badge: null,
-      gradient: "from-[#ffb6c1] to-[#ff69b4]"
+      badge: null
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-[#f5f5dc]/10 to-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
-            AI Receptionist Plans
+            Choose Your Automation Plan
           </h2>
           <p className="text-lg text-gray-600">
             Transparent pricing. No hidden fees. Cancel anytime.
@@ -66,12 +60,10 @@ export function BeautyClinicPricing() {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative border-2 ${plan.badge ? 'border-[#d4af37] shadow-2xl scale-105' : 'border-gray-200'} bg-white overflow-hidden`}>
-              <div className={`h-2 bg-gradient-to-r ${plan.gradient}`}></div>
-              
+            <Card key={index} className={`relative border-2 ${plan.badge ? 'border-[#d4af37] shadow-2xl scale-105' : 'border-gray-200'} bg-white`}>
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-gradient-to-r from-[#d4af37] to-[#b8941f] text-white px-4 py-1 shadow-lg">{plan.badge}</Badge>
+                  <Badge className="bg-[#d4af37] text-[#1a1a1a] px-4 py-1 font-semibold">{plan.badge}</Badge>
                 </div>
               )}
               
@@ -83,7 +75,7 @@ export function BeautyClinicPricing() {
                   <div className="text-sm text-gray-600 mb-1">Setup</div>
                   <div className="text-3xl font-bold text-[#1a1a1a]">{plan.setup}</div>
                   <div className="text-sm text-gray-600 mt-4 mb-1">Monthly</div>
-                  <div className={`text-4xl font-bold bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>{plan.monthly}</div>
+                  <div className="text-4xl font-bold text-[#d4af37]">{plan.monthly}</div>
                 </div>
               </CardHeader>
 
@@ -91,17 +83,17 @@ export function BeautyClinicPricing() {
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className={`h-5 w-5 shrink-0 mt-0.5 ${plan.badge ? 'text-[#d4af37]' : 'text-gray-400'}`} />
+                      <Check className="h-5 w-5 text-[#d4af37] shrink-0 mt-0.5" />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Button 
-                  className={`w-full bg-gradient-to-r ${plan.gradient} hover:opacity-90 text-white shadow-lg`}
+                  className={`w-full ${plan.badge ? 'bg-[#d4af37] hover:bg-[#b8961f]' : 'bg-[#1a1a1a] hover:bg-[#2a2a2a]'} text-white`}
                   asChild
                 >
-                  <Link href="/contact">Book Demo</Link>
+                  <Link href="/contact">Get Started</Link>
                 </Button>
               </CardContent>
             </Card>
