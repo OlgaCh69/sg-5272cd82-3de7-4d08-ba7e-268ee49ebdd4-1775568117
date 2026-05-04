@@ -34,6 +34,18 @@ export default function Document() {
             data-softgen-visual-editor="true"
           />
         )}
+
+        {/* O.N.E.Tech AI Assistant */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.ONETECH_CONFIG = {
+                apiUrl: window.location.origin
+              };
+            `
+          }}
+        />
+        <script src="/widget.js" />
       </body>
     </Html>
   );
