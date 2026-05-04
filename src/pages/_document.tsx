@@ -43,12 +43,12 @@ export default function Document() {
           dangerouslySetInnerHTML={{
             __html: `
               window.ONETECH_CONFIG = {
-                apiUrl: window.location.origin
+                apiUrl: 'https://3000-02d8fb72-99e9-45e7-8fc1-90fd8cae2207.softgen.dev'
               };
             `
           }}
         />
-        <Script src="/widget.js" strategy="afterInteractive" />
+        <Script src="https://3000-02d8fb72-99e9-45e7-8fc1-90fd8cae2207.softgen.dev/widget.js" strategy="afterInteractive" />
       </body>
     </Html>
   );
