@@ -13,15 +13,13 @@ import { RevenueIndustries } from "@/components/RevenueIndustries";
 import { BlogPreview } from "@/components/BlogPreview";
 import { ContactForm } from "@/components/ContactForm";
 import { RevenueFinalCTA } from "@/components/RevenueFinalCTA";
-import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
       <SEO 
-        title="AI Revenue Systems That Turn Conversations Into Sales | O.N.E.Tech Automation"
+        title="AI Revenue Systems That Turn Conversations Into Sales"
         description="We don't build basic automation. We build AI systems that capture leads, book clients, and recover lost revenue across your website, WhatsApp, and Instagram."
-        image="/og-image.png"
       />
       <Header />
       <main>
