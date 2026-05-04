@@ -36,12 +36,9 @@ export default function Home() {
         <RevenueBeforeAfter />
         <RevenueHowItWorks />
         <RevenueIndustries />
-        <Testimonials />
-        <FAQ />
         <ContactForm />
         <RevenueFinalCTA />
       </main>
-      <Footer />
     </>
   );
 }
