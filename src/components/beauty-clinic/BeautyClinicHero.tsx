@@ -15,7 +15,7 @@ export function BeautyClinicHero() {
                 Turn Every Message Into a Booked Appointment — <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#ffb6c1]">Automatically</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+              <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed">
                 Our AI receptionist replies instantly on Instagram, WhatsApp, and your website—books appointments, follows up, and captures every client before they go somewhere else.
               </p>
 
