@@ -67,6 +67,11 @@ export function Header() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
+                  <Link href="/ai-receptionist-beauty-clinic" className="w-full cursor-pointer">
+                    Beauty Salons & Clinics
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
                   <Link href="/" className="w-full cursor-pointer">
                     Ecommerce Stores
                   </Link>
@@ -184,6 +189,12 @@ export function Header() {
                       className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                     >
                       Real Estate Agencies
+                    </Link>
+                    <Link 
+                      href="/ai-receptionist-beauty-clinic" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Beauty Salons & Clinics
                     </Link>
                     <Link 
                       href="/" 
