@@ -66,19 +66,41 @@ export function Footer() {
 
           {/* Solutions Column */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">Platform Solutions</h3>
-            <ul className="space-y-3">
-              {solutionsLinks.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
+            <div>
+              <h3 className="font-semibold text-lg mb-4 text-white">Solutions</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="/ai-real-estate-automation" className="text-gray-400 hover:text-primary transition-colors">
+                    Real Estate AI Assistant
                   </Link>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <Link href="/ai-receptionist-beauty-clinic" className="text-gray-400 hover:text-primary transition-colors">
+                    AI Receptionist for Beauty
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/ai-lead-capture-assistant" className="text-gray-400 hover:text-primary transition-colors">
+                    AI Lead Capture System
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/whatsapp-automation-ecommerce" className="text-gray-400 hover:text-primary transition-colors">
+                    WhatsApp Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/instagram-automation-ecommerce" className="text-gray-400 hover:text-primary transition-colors">
+                    Instagram Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/telegram-automation-ecommerce" className="text-gray-400 hover:text-primary transition-colors">
+                    Telegram Automation
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Use Cases Column */}
@@ -116,8 +138,19 @@ export function Footer() {
             
             {/* Trust Badge */}
             <div className="mt-6 pt-6 border-t border-border">
-              <p className="text-xs text-muted-foreground mb-2 font-medium">Trusted By</p>
-              <p className="text-sm text-foreground">High-Growth Ecommerce Brands</p>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p className="text-sm text-gray-400">
+                  © 2026 O.N.E.Tech Automation. All rights reserved.
+                </p>
+                <div className="flex items-center gap-2">
+                  <div className="flex -space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center">
+                      <span className="text-xs font-bold text-primary">500+</span>
+                    </div>
+                  </div>
+                  <span className="text-sm text-gray-400">Trusted by 500+ Businesses</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
