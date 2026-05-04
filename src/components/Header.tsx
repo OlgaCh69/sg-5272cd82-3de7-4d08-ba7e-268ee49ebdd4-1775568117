@@ -74,6 +74,12 @@ export function Header() {
               </DropdownMenuContent>
             </DropdownMenu>
             <Link 
+              href="/ai-lead-capture-assistant" 
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Lead Capture
+            </Link>
+            <Link 
               href="/ai-chatbot-ecommerce" 
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
@@ -187,6 +193,12 @@ export function Header() {
                     </Link>
                   </div>
 
+                  <Link 
+                    href="/ai-lead-capture-assistant" 
+                    className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    AI Lead Capture Assistant
+                  </Link>
                   <Link 
                     href="/ai-chatbot-ecommerce" 
                     className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
