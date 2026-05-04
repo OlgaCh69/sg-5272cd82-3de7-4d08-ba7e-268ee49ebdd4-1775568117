@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Instagram, Calendar, TrendingUp } from "lucide-react";
 
 export function BeautyClinicHero() {
   return (
@@ -59,14 +59,54 @@ export function BeautyClinicHero() {
               </div>
             </div>
 
+            {/* Right side - Feature showcase */}
             <div className="lg:w-1/2 relative">
-              <div className="relative h-full flex items-center justify-center">
-                <div className="text-center space-y-6 p-8">
-                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] mb-6">
-                    <Sparkles className="w-12 h-12 text-[#1a1a1a]" />
+              <div className="relative h-full flex items-center justify-center p-8">
+                <div className="w-full max-w-md space-y-4">
+                  {/* Feature Card 1 */}
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
+                        <Instagram className="w-6 h-6 text-[#1a1a1a]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white mb-2">Instagram DM Automation</h3>
+                        <p className="text-sm text-gray-300">Reply to inquiries instantly, 24/7</p>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-white">24/7 Automated Booking</h3>
-                  <p className="text-lg text-gray-300">Never miss a client opportunity again</p>
+
+                  {/* Feature Card 2 */}
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
+                        <Calendar className="w-6 h-6 text-[#1a1a1a]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white mb-2">Smart Booking System</h3>
+                        <p className="text-sm text-gray-300">Appointments booked in seconds</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Feature Card 3 */}
+                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
+                        <TrendingUp className="w-6 h-6 text-[#1a1a1a]" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-white mb-2">20-40% More Bookings</h3>
+                        <p className="text-sm text-gray-300">Recover lost opportunities automatically</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Stat Badge */}
+                  <div className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] rounded-2xl p-6 text-center">
+                    <p className="text-3xl font-bold text-[#1a1a1a] mb-2">24/7</p>
+                    <p className="text-sm font-semibold text-[#1a1a1a]">Always-On Receptionist</p>
+                  </div>
                 </div>
               </div>
             </div>
