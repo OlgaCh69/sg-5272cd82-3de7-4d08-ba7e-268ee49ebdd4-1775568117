@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Work+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,58 +6,34 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 280 90% 65%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 262 83% 58%;
-    --radius: 0.5rem;
+    --background: 218 27% 6%;
+    --foreground: 0 0% 98%;
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 158 100% 50%;
+    --primary-foreground: 218 27% 6%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 15% 18%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 158 100% 50%;
+    --accent-foreground: 218 27% 6%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 158 100% 50%;
+    --radius: 0.75rem;
 
-    --real-estate-navy: 222 47% 11%;
-    --real-estate-blue: 210 100% 56%;
-    --real-estate-grey: 210 20% 96%;
-    --real-estate-dark: 222 47% 7%;
-  }
-
-  .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 100%;
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 100%;
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 262 83% 58%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-    --accent: 280 90% 65%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 262 83% 58%;
-
-    --real-estate-navy: 0 0% 100%;
-    --real-estate-blue: 210 100% 56%;
-    --real-estate-grey: 217 33% 17%;
-    --real-estate-dark: 0 0% 100%;
+    --neon-green: 158 100% 50%;
+    --dark-bg: 218 27% 6%;
+    --glass-bg: 220 25% 12%;
+    --glass-border: 220 20% 20%;
+    
+    --shadow-glow: 0 0 20px rgba(0, 255, 157, 0.15);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -68,11 +44,11 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Work Sans', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
     font-weight: 700;
   }
 }
