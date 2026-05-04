@@ -10,8 +10,7 @@ import { RevenueResults } from "@/components/RevenueResults";
 import { RevenueBeforeAfter } from "@/components/RevenueBeforeAfter";
 import { RevenueHowItWorks } from "@/components/RevenueHowItWorks";
 import { RevenueIndustries } from "@/components/RevenueIndustries";
-import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
+import { BlogPreview } from "@/components/BlogPreview";
 import { ContactForm } from "@/components/ContactForm";
 import { RevenueFinalCTA } from "@/components/RevenueFinalCTA";
 import { Footer } from "@/components/Footer";
@@ -36,6 +35,7 @@ export default function Home() {
         <RevenueBeforeAfter />
         <RevenueHowItWorks />
         <RevenueIndustries />
+        <BlogPreview />
         <ContactForm />
         <RevenueFinalCTA />
       </main>
