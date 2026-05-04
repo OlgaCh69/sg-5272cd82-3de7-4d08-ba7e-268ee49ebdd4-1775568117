@@ -53,11 +53,20 @@ export function BeautyClinicHero() {
               </Button>
             </div>
 
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-4xl mx-auto">
-              {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center gap-2 text-left bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10">
-                  <CheckCircle2 className="h-5 w-5 text-[#d4af37] shrink-0" />
-                  <span className="text-sm text-gray-200">{benefit}</span>
+            <div className="space-y-4">
+              {[
+                "24/7 Instagram & WhatsApp replies",
+                "Instant appointment booking",
+                "Recover 20–40% of lost bookings automatically",
+                "Missed call → SMS recovery",
+                "No more lost clients",
+                "Fully automated front desk"
+              ].map((benefit, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
+                    <CheckCircle2 className="w-4 h-4 text-[#1a1a1a]" />
+                  </div>
+                  <span className="text-base md:text-lg text-gray-700">{benefit}</span>
                 </div>
               ))}
             </div>

@@ -36,32 +36,31 @@ export function BeautyClinicProblem() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a1a1a]">
             You're Losing Clients Every Day
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 mb-6">
             In beauty and aesthetics, speed is everything. If you don't reply fast, clients book somewhere else.
           </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
-          {problems.map((problem, index) => {
-            const Icon = problem.icon;
-            return (
-              <div 
-                key={index} 
-                className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-xl border-2 border-gray-100 hover:border-[#ffb6c1]/30 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center mb-4">
-                  <Icon className="h-6 w-6 text-red-600" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2 text-[#1a1a1a]">{problem.title}</h3>
-                <p className="text-gray-600 text-sm">{problem.description}</p>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { icon: MessageSquareOff, text: "Instagram DMs go unanswered" },
+              { icon: Clock, text: "WhatsApp messages pile up" },
+              { icon: PhoneOff, text: "Missed calls = lost bookings" },
+              { icon: Users, text: "Receptionists can't keep up" },
+              { icon: TrendingDown, text: "Clients don't wait" }
+            ].map((item, index) => (
+              <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-lg border border-gray-200">
+                <item.icon className="w-5 h-5 text-[#e75480]" />
+                <span className="text-gray-700">{item.text}</span>
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
 
-        <div className="text-center">
-          <p className="text-xl font-bold text-[#d4af37]">
+          <p className="text-lg font-semibold text-[#1a1a1a]">
             👉 Every delay = lost revenue
+          </p>
+
+          <p className="text-base md:text-lg text-gray-600 mt-6 p-6 bg-gradient-to-br from-[#f8f3ef] to-white rounded-xl border border-gray-200">
+            Most beauty businesses don't realize they're losing <span className="font-bold text-[#e75480]">20–40% of potential bookings</span> due to slow replies, missed calls, and unhandled DMs.
           </p>
         </div>
       </div>

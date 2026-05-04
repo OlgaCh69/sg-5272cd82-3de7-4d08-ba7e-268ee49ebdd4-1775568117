@@ -2,15 +2,20 @@ import { XCircle, CheckCircle2 } from "lucide-react";
 
 export function BeautyClinicBeforeAfter() {
   const before = [
-    "Missed DMs",
+    "Missed DMs = lost clients",
+    "No follow-up on inquiries",
     "Slow replies",
     "Empty slots in calendar",
+    "Missed calls go nowhere",
     "Overworked staff"
   ];
 
   const after = [
+    "20–40% more bookings recovered",
+    "Every inquiry gets a follow-up",
     "Instant replies 24/7",
     "Fully booked schedule",
+    "Missed calls turn into appointments",
     "Automated front desk",
     "More revenue, less stress"
   ];

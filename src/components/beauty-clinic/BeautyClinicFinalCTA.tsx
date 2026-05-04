@@ -11,20 +11,24 @@ export function BeautyClinicFinalCTA() {
             Ready to Fill Your Calendar Automatically?
           </h2>
           
-          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
-            Stop losing clients to slow replies and missed calls. Let your AI receptionist handle everything.
+          <p className="text-lg md:text-xl text-gray-600 mb-8">
+            Stop losing clients to slow replies and missed calls. Recover the bookings you're already losing and fill your calendar without hiring more staff.
           </p>
 
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-[#d4af37] to-[#b8941f] hover:from-[#b8941f] hover:to-[#9a7a1a] text-black font-semibold text-lg px-8 py-6 shadow-xl shadow-[#d4af37]/20"
-            asChild
-          >
-            <Link href="/contact">
-              Book a Demo
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col items-center">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] hover:from-[#b8961f] hover:to-[#d4af37] text-[#1a1a1a] font-semibold px-8 py-6 text-lg"
+                asChild
+              >
+                <Link href="/contact">Book a Demo</Link>
+              </Button>
+              <p className="text-sm text-gray-500 mt-2">
+                Most salons recover 20–40% more bookings in the first 30 days.
+              </p>
+            </div>
+          </div>
 
           <p className="mt-6 text-gray-400">
             Have questions? Email us at{" "}
