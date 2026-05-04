@@ -66,7 +66,7 @@ export function BeautyClinicHero() {
                   <div className="w-6 h-6 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
                     <CheckCircle2 className="w-4 h-4 text-[#1a1a1a]" />
                   </div>
-                  <span className="text-base md:text-lg text-gray-700">{benefit}</span>
+                  <span className="text-base md:text-lg text-white font-medium">{benefit}</span>
                 </div>
               ))}
             </div>

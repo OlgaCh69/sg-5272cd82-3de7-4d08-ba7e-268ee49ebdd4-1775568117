@@ -28,9 +28,9 @@ export function BeautyClinicResults() {
               className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-[#d4af37]/30 hover:bg-white/10 transition-all duration-300"
             >
               <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#d4af37] to-[#ffb6c1] flex items-center justify-center mb-4">
-                <item.icon className="h-6 w-6 text-white" />
+                <item.icon className="h-6 w-6 text-[#1a1a1a]" />
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-white">{item.text}</h3>
+              <h3 className="text-lg font-semibold mb-2 text-[#1a1a1a]">{item.text}</h3>
             </div>
           ))}
         </div>
