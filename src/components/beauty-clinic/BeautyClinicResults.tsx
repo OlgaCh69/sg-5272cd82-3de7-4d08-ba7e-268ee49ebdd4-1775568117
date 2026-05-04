@@ -32,7 +32,7 @@ export function BeautyClinicResults() {
               </div>
               <h3 className="text-lg font-semibold mb-2 text-white">{item.text}</h3>
             </div>
-          )})}
+          ))}
         </div>
       </div>
     </section>
