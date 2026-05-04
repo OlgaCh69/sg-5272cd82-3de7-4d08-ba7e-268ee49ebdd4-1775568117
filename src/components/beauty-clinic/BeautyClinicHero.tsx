@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 
 export function BeautyClinicHero() {
   return (
@@ -59,16 +59,14 @@ export function BeautyClinicHero() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-2xl">
-                <div className="space-y-4">
-                  <div className="h-12 bg-gradient-to-r from-[#d4af37]/20 to-[#ffb6c1]/20 rounded-lg animate-pulse"></div>
-                  <div className="h-32 bg-gradient-to-br from-white/10 to-white/5 rounded-lg"></div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="h-24 bg-gradient-to-br from-[#d4af37]/10 to-transparent rounded-lg"></div>
-                    <div className="h-24 bg-gradient-to-br from-[#ffb6c1]/10 to-transparent rounded-lg"></div>
+            <div className="lg:w-1/2 relative">
+              <div className="relative h-full flex items-center justify-center">
+                <div className="text-center space-y-6 p-8">
+                  <div className="inline-flex items-center justify-center w-24 h-24 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] mb-6">
+                    <Sparkles className="w-12 h-12 text-[#1a1a1a]" />
                   </div>
-                  <div className="h-16 bg-gradient-to-r from-[#d4af37]/30 to-[#ffb6c1]/30 rounded-xl"></div>
+                  <h3 className="text-2xl font-bold text-white">24/7 Automated Booking</h3>
+                  <p className="text-lg text-gray-300">Never miss a client opportunity again</p>
                 </div>
               </div>
             </div>
