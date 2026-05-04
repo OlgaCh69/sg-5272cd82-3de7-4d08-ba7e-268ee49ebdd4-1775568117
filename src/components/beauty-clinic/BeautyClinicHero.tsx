@@ -1,28 +1,36 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Sparkles, Instagram, Calendar, TrendingUp, MessageCircle } from "lucide-react";
+import { ArrowRight, CheckCircle2, Sparkles, Instagram, Calendar, TrendingUp, MessageCircle, Clock, PhoneOff } from "lucide-react";
 
 export function BeautyClinicHero() {
   return (
-    <section className="relative py-20 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#d4af37]/10 via-transparent to-transparent"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+    <section className="relative min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#1a1a1a] overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-96 h-96 bg-[#d4af37] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#ffb6c1] rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-                Turn Every Message Into a Booked Appointment — <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d4af37] to-[#ffb6c1]">Automatically</span>
+            {/* Left side - Content */}
+            <div className="space-y-8">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                <span className="text-white">Turn Every Message Into a Booked Appointment — </span>
+                <span className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] bg-clip-text text-transparent">
+                  Automatically
+                </span>
               </h1>
-              
+
               <p className="text-xl md:text-2xl text-white mb-8 leading-relaxed">
                 Our AI receptionist replies instantly on Instagram, WhatsApp, and your website—books appointments, follows up, and captures every client before they go somewhere else.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
                   size="lg" 
-                  className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] hover:from-[#b8961f] hover:to-[#d4af37] text-[#1a1a1a] font-semibold px-8"
+                  className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] hover:from-[#b8961f] hover:to-[#d4af37] text-[#1a1a1a] font-semibold px-8 py-6 text-lg"
                   asChild
                 >
                   <Link href="/contact">Book a Demo</Link>
@@ -30,17 +38,16 @@ export function BeautyClinicHero() {
                 <Button 
                   size="lg" 
                   variant="outline" 
-                  className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50"
+                  className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg"
                   asChild
                 >
-                  <Link href="#features">
-                    See How It Works
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link href="#how-it-works">
+                    See How It Works <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 pt-8">
                 {[
                   "24/7 Instagram & WhatsApp replies",
                   "Instant appointment booking",
@@ -59,67 +66,84 @@ export function BeautyClinicHero() {
               </div>
             </div>
 
-            {/* Right side - Feature showcase */}
-            <div className="lg:w-1/2 relative">
-              <div className="relative h-full flex items-center justify-center p-4 lg:p-8">
-                <div className="w-full space-y-4">
-                  {/* Feature Card 1 */}
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
-                        <Instagram className="w-7 h-7 text-[#1a1a1a]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">Instagram DM Automation</h3>
-                        <p className="text-base text-gray-300">Reply to inquiries instantly, 24/7</p>
-                      </div>
+            {/* Right side - Expanded Feature Grid */}
+            <div className="relative">
+              <div className="grid grid-cols-1 gap-6">
+                {/* Large Featured Card */}
+                <div className="bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] rounded-3xl p-8 shadow-2xl">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 rounded-2xl bg-[#1a1a1a] flex items-center justify-center">
+                      <Sparkles className="w-8 h-8 text-[#d4af37]" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-[#1a1a1a]">AI Receptionist</h3>
+                      <p className="text-[#1a1a1a]/80 text-lg">Always Available</p>
                     </div>
                   </div>
-
-                  {/* Feature Card 2 */}
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
-                        <Calendar className="w-7 h-7 text-[#1a1a1a]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">Smart Booking System</h3>
-                        <p className="text-base text-gray-300">Appointments booked in seconds</p>
-                      </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-[#1a1a1a]/10 rounded-xl p-4">
+                      <p className="text-3xl font-bold text-[#1a1a1a]">24/7</p>
+                      <p className="text-sm text-[#1a1a1a]/80">Coverage</p>
+                    </div>
+                    <div className="bg-[#1a1a1a]/10 rounded-xl p-4">
+                      <p className="text-3xl font-bold text-[#1a1a1a]">5sec</p>
+                      <p className="text-sm text-[#1a1a1a]/80">Response</p>
                     </div>
                   </div>
+                </div>
 
-                  {/* Feature Card 3 */}
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
-                        <TrendingUp className="w-7 h-7 text-[#1a1a1a]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">20-40% More Bookings</h3>
-                        <p className="text-base text-gray-300">Recover lost opportunities automatically</p>
-                      </div>
+                {/* Feature Grid - 2 columns */}
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all hover:scale-105">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center mb-4">
+                      <Instagram className="w-6 h-6 text-[#1a1a1a]" />
                     </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Instagram</h4>
+                    <p className="text-sm text-gray-300">Auto DM replies</p>
                   </div>
 
-                  {/* Feature Card 4 - New */}
-                  <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center flex-shrink-0">
-                        <MessageCircle className="w-7 h-7 text-[#1a1a1a]" />
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white mb-2">WhatsApp Automation</h3>
-                        <p className="text-base text-gray-300">Handle client messages automatically</p>
-                      </div>
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all hover:scale-105">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center mb-4">
+                      <MessageCircle className="w-6 h-6 text-[#1a1a1a]" />
                     </div>
+                    <h4 className="text-lg font-bold text-white mb-2">WhatsApp</h4>
+                    <p className="text-sm text-gray-300">Smart booking</p>
                   </div>
 
-                  {/* Stat Badge */}
-                  <div className="bg-gradient-to-r from-[#d4af37] to-[#f4e4c1] rounded-2xl p-8 text-center">
-                    <p className="text-4xl font-bold text-[#1a1a1a] mb-2">24/7</p>
-                    <p className="text-lg font-semibold text-[#1a1a1a]">Always-On AI Receptionist</p>
-                    <p className="text-sm text-[#1a1a1a] mt-2 opacity-80">Never miss a client opportunity</p>
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all hover:scale-105">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center mb-4">
+                      <PhoneOff className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Missed Calls</h4>
+                    <p className="text-sm text-gray-300">SMS recovery</p>
+                  </div>
+
+                  <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 hover:border-[#d4af37]/50 transition-all hover:scale-105">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#d4af37] to-[#f4e4c1] flex items-center justify-center mb-4">
+                      <Calendar className="w-6 h-6 text-[#1a1a1a]" />
+                    </div>
+                    <h4 className="text-lg font-bold text-white mb-2">Bookings</h4>
+                    <p className="text-sm text-gray-300">Instant scheduling</p>
+                  </div>
+                </div>
+
+                {/* Stats Bar */}
+                <div className="bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="text-center flex-1">
+                      <p className="text-3xl font-bold text-[#d4af37]">20-40%</p>
+                      <p className="text-sm text-gray-300 mt-1">More Bookings</p>
+                    </div>
+                    <div className="w-px h-12 bg-white/20"></div>
+                    <div className="text-center flex-1">
+                      <p className="text-3xl font-bold text-[#d4af37]">100%</p>
+                      <p className="text-sm text-gray-300 mt-1">Automated</p>
+                    </div>
+                    <div className="w-px h-12 bg-white/20"></div>
+                    <div className="text-center flex-1">
+                      <p className="text-3xl font-bold text-[#d4af37]">0</p>
+                      <p className="text-sm text-gray-300 mt-1">Missed Leads</p>
+                    </div>
                   </div>
                 </div>
               </div>
