@@ -43,12 +43,12 @@ export default function Document() {
           dangerouslySetInnerHTML={{
             __html: `
               window.ONETECH_CONFIG = {
-                apiUrl: 'https://3000-02d8fb72-99e9-45e7-8fc1-90fd8cae2207.softgen.dev'
+                apiUrl: 'https://sg-24268a98-5dd4-4fe1-8b9b-9211300d.vercel.app'
               };
             `
           }}
         />
-        <Script src="https://3000-02d8fb72-99e9-45e7-8fc1-90fd8cae2207.softgen.dev/widget.js" strategy="afterInteractive" />
+        <Script src="https://sg-24268a98-5dd4-4fe1-8b9b-9211300d.vercel.app/widget.js" strategy="afterInteractive" />
       </body>
     </Html>
   );
