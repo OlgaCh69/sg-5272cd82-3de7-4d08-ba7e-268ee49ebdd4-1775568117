@@ -1,91 +1,100 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar, MessageSquare, Home, Zap } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function RealEstateHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-50 via-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
-        <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-sm font-medium text-blue-700">
-            <Zap className="w-4 h-4" />
-            <span>AI Real Estate Automation</span>
-          </div>
+    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-[hsl(var(--real-estate-navy))] via-[hsl(var(--real-estate-dark))] to-[hsl(var(--real-estate-navy))]">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-white">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(var(--real-estate-blue))]/10 border border-[hsl(var(--real-estate-blue))]/20 mb-6">
+              <span className="w-2 h-2 rounded-full bg-[hsl(var(--real-estate-blue))] animate-pulse"></span>
+              <span className="text-sm font-semibold text-[hsl(var(--real-estate-blue))]">AI Real Estate Automation</span>
+            </div>
 
-          <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight">
-            Turn Missed Property Inquiries Into Signed Deals — <span className="text-blue-600">Automatically</span>
-          </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+              Turn Missed Property Inquiries Into Signed Deals — <span className="text-[hsl(var(--real-estate-blue))]">Automatically</span>
+            </h1>
 
-          <p className="text-xl text-slate-600 max-w-2xl">
-            O.N.E.Tech builds 24/7 AI real estate automation systems that capture, qualify, and convert leads before they go cold.
-          </p>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              O.N.E.Tech builds 24/7 AI real estate automation systems that capture, qualify, and convert leads before they go cold.
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/contact">
-              <Button size="lg" className="text-lg px-8 py-6 bg-blue-600 hover:bg-blue-700">
-                Book a Demo
-                <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Button size="lg" className="text-lg bg-[hsl(var(--real-estate-blue))] hover:bg-[hsl(var(--real-estate-blue))]/90 text-white" asChild>
+                <Link href="/contact">
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-slate-300 hover:bg-slate-50">
-              See How It Works
-            </Button>
-          </div>
+              <Button size="lg" variant="outline" className="text-lg border-white/20 text-white hover:bg-white/10" asChild>
+                <Link href="#features">See How It Works</Link>
+              </Button>
+            </div>
 
-          <div className="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200">
-            <div>
-              <div className="text-3xl font-bold text-blue-600">24/7</div>
-              <div className="text-sm text-slate-600">Lead Capture</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600">+40%</div>
-              <div className="text-sm text-slate-600">More Leads</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-blue-600">5s</div>
-              <div className="text-sm text-slate-600">Response Time</div>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-200">
-            <div className="space-y-4">
-              <div className="flex items-center gap-3 pb-4 border-b border-slate-200">
-                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                  <MessageSquare className="w-6 h-6 text-blue-600" />
+            <div className="grid grid-cols-3 gap-6">
+              {[
+                { value: "24/7", label: "Lead Capture" },
+                { value: "40%+", label: "More Leads" },
+                { value: "5s", label: "Response Time" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-[hsl(var(--real-estate-blue))] mb-1">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
-                <div>
-                  <div className="font-semibold text-slate-900">AI Agent Active</div>
-                  <div className="text-sm text-slate-500">Handling inquiries</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-[hsl(var(--real-estate-blue))]/20 flex items-center justify-center">
+                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--real-estate-blue))]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-white">Lead Qualified</p>
+                    <p className="text-xs text-gray-400">Budget: €500k • Location: Downtown</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-[hsl(var(--real-estate-blue))]/20 flex items-center justify-center">
+                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--real-estate-blue))]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-white">Property Matched</p>
+                    <p className="text-xs text-gray-400">3 properties recommended</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-[hsl(var(--real-estate-blue))]/20 flex items-center justify-center">
+                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--real-estate-blue))]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-white">Viewing Booked</p>
+                    <p className="text-xs text-gray-400">Tomorrow 3:00 PM</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
+                  <div className="w-12 h-12 rounded-full bg-[hsl(var(--real-estate-blue))]/20 flex items-center justify-center">
+                    <CheckCircle2 className="h-6 w-6 text-[hsl(var(--real-estate-blue))]" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-semibold text-white">CRM Updated</p>
+                    <p className="text-xs text-gray-400">Lead synced automatically</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="space-y-3">
-                <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
-                  <Home className="w-5 h-5 text-blue-600 mt-1" />
-                  <div>
-                    <div className="font-medium text-slate-900">Property Matched</div>
-                    <div className="text-sm text-slate-600">3-bed villa in Marbella - €850k</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 bg-blue-50 rounded-xl">
-                  <Calendar className="w-5 h-5 text-blue-600 mt-1" />
-                  <div>
-                    <div className="font-medium text-slate-900">Viewing Scheduled</div>
-                    <div className="text-sm text-slate-600">Tomorrow at 2:00 PM</div>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 p-4 bg-slate-50 rounded-xl">
-                  <Zap className="w-5 h-5 text-blue-600 mt-1" />
-                  <div>
-                    <div className="font-medium text-slate-900">Lead Synced to CRM</div>
-                    <div className="text-sm text-slate-600">Contact details captured</div>
-                  </div>
-                </div>
-              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[hsl(var(--real-estate-blue))]/20 rounded-full blur-3xl"></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[hsl(var(--real-estate-blue))]/10 rounded-full blur-3xl"></div>
             </div>
           </div>
         </div>

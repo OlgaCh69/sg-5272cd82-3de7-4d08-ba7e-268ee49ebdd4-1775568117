@@ -1,30 +1,34 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function RealEstateFinalCTA() {
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-          Ready to Automate Your Real Estate Business?
-        </h2>
-        <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto">
-          Stop losing leads to slow replies, missed calls, and manual follow-up. Build a 24/7 AI real estate agent that captures every opportunity.
-        </p>
+    <section className="py-20 bg-gradient-to-br from-[hsl(var(--real-estate-navy))] to-[hsl(var(--real-estate-dark))] relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white leading-tight">
+            Ready to Automate Your Real Estate Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Stop losing leads to slow replies, missed calls, and manual follow-up. Build a 24/7 AI real estate agent that captures every opportunity.
+          </p>
 
-        <Link href="/contact">
-          <Button size="lg" className="text-lg px-12 py-6 bg-blue-600 hover:bg-blue-700 mb-8">
-            Book a Demo
-            <ArrowRight className="ml-2 w-5 h-5" />
+          <Button size="lg" className="text-lg bg-[hsl(var(--real-estate-blue))] hover:bg-[hsl(var(--real-estate-blue))]/90 text-white mb-8" asChild>
+            <Link href="/contact">
+              Book a Demo
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
-        </Link>
 
-        <div className="flex items-center justify-center gap-2 text-slate-400">
-          <Mail className="w-5 h-5" />
-          <a href="mailto:support@onetechautomation.com" className="hover:text-blue-400 transition-colors">
-            support@onetechautomation.com
-          </a>
+          <p className="text-gray-400">
+            Questions? Email us at{" "}
+            <a href="mailto:support@onetechautomation.com" className="text-[hsl(var(--real-estate-blue))] hover:underline">
+              support@onetechautomation.com
+            </a>
+          </p>
         </div>
       </div>
     </section>

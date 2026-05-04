@@ -6,7 +6,6 @@
 
 @layer base {
   :root {
-    /* Existing ecommerce tokens */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
@@ -28,7 +27,6 @@
     --ring: 262 83% 58%;
     --radius: 0.5rem;
 
-    /* Real estate tokens */
     --real-estate-navy: 222 47% 11%;
     --real-estate-blue: 210 100% 56%;
     --real-estate-grey: 210 20% 96%;
@@ -56,7 +54,6 @@
     --input: 217 33% 17%;
     --ring: 262 83% 58%;
 
-    /* Real estate dark mode */
     --real-estate-navy: 0 0% 100%;
     --real-estate-blue: 210 100% 56%;
     --real-estate-grey: 217 33% 17%;
@@ -71,11 +68,11 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Work Sans', system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
     font-weight: 700;
   }
 }

@@ -17,13 +17,13 @@ export function RealEstatePricing() {
         "Lead Qualification",
         "Email Support"
       ],
-      popular: false
+      badge: null
     },
     {
       name: "Growth",
       setup: "€2,500",
       monthly: "€750",
-      description: "Most popular for growing agencies",
+      description: "Ideal for growing agencies ready to scale",
       features: [
         "3 AI Agents",
         "All Boutique Features",
@@ -31,13 +31,13 @@ export function RealEstatePricing() {
         "CRM Integration",
         "Priority Support"
       ],
-      popular: true
+      badge: "Most Popular"
     },
     {
       name: "Enterprise",
       setup: "€5,000",
       monthly: "€1,500",
-      description: "Complete automation for high-volume agencies",
+      description: "For established agencies handling high volume",
       features: [
         "Unlimited Agents",
         "All Growth Features",
@@ -45,58 +45,59 @@ export function RealEstatePricing() {
         "Dedicated Account Manager",
         "White-Label Option"
       ],
-      popular: false
+      badge: null
     }
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-slate-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
-            Choose Your <span className="text-blue-600">Automation Plan</span>
+    <section className="py-20 bg-[hsl(var(--real-estate-grey))]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[hsl(var(--real-estate-navy))]">
+            Choose Your Automation Plan
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Transparent pricing designed for real estate agencies at every stage.
+          <p className="text-lg text-gray-600">
+            Transparent pricing. No hidden fees. Cancel anytime.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative ${plan.popular ? "border-2 border-blue-600 shadow-xl scale-105" : "border-2 border-slate-200"}`}>
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-blue-600 text-white px-4 py-1">Most Popular</Badge>
+            <Card key={index} className={`relative border-2 ${plan.badge ? 'border-[hsl(var(--real-estate-blue))] shadow-xl scale-105' : 'border-gray-200'} bg-white`}>
+              {plan.badge && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <Badge className="bg-[hsl(var(--real-estate-blue))] text-white px-4 py-1">{plan.badge}</Badge>
                 </div>
               )}
+              
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-3xl font-bold text-slate-900 mb-2">{plan.name}</CardTitle>
-                <CardDescription className="text-base">{plan.description}</CardDescription>
+                <CardTitle className="text-2xl text-[hsl(var(--real-estate-navy))] mb-2">{plan.name}</CardTitle>
+                <CardDescription className="text-gray-600">{plan.description}</CardDescription>
+                
                 <div className="mt-6">
-                  <div className="text-sm text-slate-600 mb-2">Setup</div>
-                  <div className="text-2xl font-bold text-slate-900">{plan.setup}</div>
-                  <div className="text-sm text-slate-500 mt-4">Then</div>
-                  <div className="text-5xl font-bold text-blue-600 mt-2">{plan.monthly}</div>
-                  <div className="text-slate-600 mt-1">/month</div>
+                  <div className="text-sm text-gray-600 mb-1">Setup</div>
+                  <div className="text-3xl font-bold text-[hsl(var(--real-estate-navy))]">{plan.setup}</div>
+                  <div className="text-sm text-gray-600 mt-4 mb-1">Monthly</div>
+                  <div className="text-4xl font-bold text-[hsl(var(--real-estate-blue))]">{plan.monthly}</div>
                 </div>
               </CardHeader>
+
               <CardContent>
                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-700">{feature}</span>
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className="h-5 w-5 text-[hsl(var(--real-estate-blue))] shrink-0 mt-0.5" />
+                      <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact">
-                  <Button 
-                    className={`w-full ${plan.popular ? "bg-blue-600 hover:bg-blue-700" : "bg-slate-900 hover:bg-slate-800"}`}
-                    size="lg"
-                  >
-                    Book a Demo
-                  </Button>
-                </Link>
+
+                <Button 
+                  className={`w-full ${plan.badge ? 'bg-[hsl(var(--real-estate-blue))] hover:bg-[hsl(var(--real-estate-blue))]/90' : 'bg-[hsl(var(--real-estate-navy))] hover:bg-[hsl(var(--real-estate-navy))]/90'} text-white`}
+                  asChild
+                >
+                  <Link href="/contact">Book Demo</Link>
+                </Button>
               </CardContent>
             </Card>
           ))}

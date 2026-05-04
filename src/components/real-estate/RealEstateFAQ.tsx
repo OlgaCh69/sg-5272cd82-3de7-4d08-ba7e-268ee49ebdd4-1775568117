@@ -34,24 +34,24 @@ export function RealEstateFAQ() {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-6">
-            Frequently Asked <span className="text-blue-600">Questions</span>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[hsl(var(--real-estate-navy))]">
+            Frequently Asked Questions
           </h2>
-          <p className="text-xl text-slate-600">
+          <p className="text-lg text-gray-600">
             Everything you need to know about AI real estate automation.
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-slate-50 rounded-xl px-6 border-none">
-              <AccordionTrigger className="text-left text-lg font-semibold text-slate-900 hover:text-blue-600">
+            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
+              <AccordionTrigger className="text-left text-lg font-semibold text-[hsl(var(--real-estate-navy))] hover:text-[hsl(var(--real-estate-blue))] transition-colors">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="text-slate-600 pt-2">
+              <AccordionContent className="text-gray-600 text-base leading-relaxed">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
