@@ -55,6 +55,24 @@ export function Header() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                Industries
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56">
+                <DropdownMenuItem asChild>
+                  <Link href="/ai-real-estate-automation" className="w-full cursor-pointer">
+                    Real Estate Agencies
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/" className="w-full cursor-pointer">
+                    Ecommerce Stores
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link 
               href="/ai-chatbot-ecommerce" 
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -148,6 +166,24 @@ export function Header() {
                       className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
                     >
                       Telegram Automation
+                    </Link>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                      Industries
+                    </p>
+                    <Link 
+                      href="/ai-real-estate-automation" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Real Estate Agencies
+                    </Link>
+                    <Link 
+                      href="/" 
+                      className="block py-2 text-base font-medium text-foreground hover:text-primary transition-colors"
+                    >
+                      Ecommerce Stores
                     </Link>
                   </div>
 

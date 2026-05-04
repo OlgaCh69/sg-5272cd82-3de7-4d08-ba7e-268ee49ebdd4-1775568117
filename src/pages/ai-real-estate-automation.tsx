@@ -1,6 +1,7 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
 import { RealEstateHero } from "@/components/real-estate/RealEstateHero";
 import { RealEstateProblem } from "@/components/real-estate/RealEstateProblem";
 import { RealEstateSolution } from "@/components/real-estate/RealEstateSolution";
@@ -88,6 +89,7 @@ export default function RealEstateAutomation() {
         <RealEstateResults />
         <RealEstatePricing />
         <RealEstateFAQ />
+        <ContactForm />
         <RealEstateFinalCTA />
       </main>
       <Footer />
