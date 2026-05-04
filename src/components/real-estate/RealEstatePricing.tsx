@@ -35,8 +35,8 @@ export function RealEstatePricing() {
     },
     {
       name: "Enterprise",
-      setup: "€5,000",
-      monthly: "€1,500",
+      setup: "€5,000+",
+      monthly: "€1,500+",
       description: "For established agencies handling high volume",
       features: [
         "Unlimited Agents",
