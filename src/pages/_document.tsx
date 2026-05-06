@@ -8,6 +8,9 @@ export default function Document() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <SEOElements />
+        
+        {/* O.N.E.Tech AI Assistant */}
+        <Script src="https://silent.onetechautomation.com/widget.js" strategy="lazyOnload" />
       </Head>
       <body
         className={cn(
