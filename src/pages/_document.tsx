@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 import { SEOElements } from "@/components/SEO";
 
 export default function Document() {
