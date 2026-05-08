@@ -33,7 +33,7 @@ export function RealEstatePricing() {
       badge: "Most Popular"
     },
     {
-      name: "Enterprise",
+      name: "Enterprise Elite",
       setup: "€5,000+",
       monthly: "€1,500+",
       description: "For established agencies handling high volume",
