@@ -61,42 +61,42 @@ export function RealEstatePricing() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative border-2 ${plan.badge ? 'border-[#0ea5e9] shadow-xl scale-105' : 'border-gray-200'} bg-white`}>
-              {plan.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-[#0ea5e9] text-white px-4 py-1">{plan.badge}</Badge>
+            <Card 
+              key={index}
+              className={`relative ${
+                plan.popular 
+                  ? "border-[#00ff87] bg-gradient-to-br from-white/10 to-white/5" 
+                  : "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10"
+              } hover:border-[#00ff87]/50 transition-all duration-300`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#00ff87] to-[#60efff] rounded-full text-xs font-bold text-[#0a0a0a]">
+                  Most Popular
                 </div>
               )}
-              
-              <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl text-[#1a2332] mb-2">{plan.name}</CardTitle>
-                <CardDescription className="text-gray-600">{plan.description}</CardDescription>
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">{plan.name}</h3>
                 
-                <div className="mt-6">
-                  <div className="text-sm text-gray-600 mb-1">Setup</div>
-                  <div className="text-3xl font-bold text-[#1a2332]">{plan.setup}</div>
-                  <div className="text-sm text-gray-600 mt-4 mb-1">Monthly</div>
-                  <div className="text-4xl font-bold text-[#0ea5e9]">{plan.monthly}</div>
-                </div>
-              </CardHeader>
-
-              <CardContent>
                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start gap-3">
-                      <Check className="h-5 w-5 text-[#0ea5e9] shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{feature}</span>
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-[#00ff87] flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-300">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 <Button 
-                  className={`w-full ${plan.badge ? 'bg-[#0ea5e9] hover:bg-[#0ea5e9]/90' : 'bg-[#1a2332] hover:bg-[#1a2332]/90'} text-white`}
+                  className={`w-full ${
+                    plan.popular
+                      ? "bg-gradient-to-r from-[#00ff87] to-[#60efff] hover:from-[#00dd75] hover:to-[#50dfef] text-[#0a0a0a]"
+                      : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                  } font-semibold`}
                   asChild
                 >
-                  <Link href="/contact">Book Demo</Link>
+                  <Link href="/contact">Get Started <ArrowRight className="w-4 h-4 ml-2" /></Link>
                 </Button>
               </CardContent>
             </Card>
