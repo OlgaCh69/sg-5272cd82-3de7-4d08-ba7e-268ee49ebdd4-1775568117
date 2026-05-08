@@ -40,6 +40,8 @@ export function RealEstatePricing() {
       features: [
         "Unlimited Agents",
         "All Growth Features",
+        "Multi language AI Assistant",
+        "Website scraping",
         "Custom Integrations",
         "Dedicated Account Manager",
         "White-Label Option"
