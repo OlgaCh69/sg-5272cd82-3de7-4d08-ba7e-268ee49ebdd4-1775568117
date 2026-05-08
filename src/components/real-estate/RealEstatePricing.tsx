@@ -1,8 +1,7 @@
-import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export function RealEstatePricing() {
   const plans = [
@@ -66,14 +65,14 @@ export function RealEstatePricing() {
             <Card 
               key={index}
               className={`relative ${
-                plan.popular 
+                plan.badge 
                   ? "border-[#00ff87] bg-gradient-to-br from-white/10 to-white/5" 
                   : "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10"
               } hover:border-[#00ff87]/50 transition-all duration-300`}
             >
-              {plan.popular && (
+              {plan.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#00ff87] to-[#60efff] rounded-full text-xs font-bold text-[#0a0a0a]">
-                  Most Popular
+                  {plan.badge}
                 </div>
               )}
               <CardContent className="p-8">
@@ -90,7 +89,7 @@ export function RealEstatePricing() {
 
                 <Button 
                   className={`w-full ${
-                    plan.popular
+                    plan.badge
                       ? "bg-gradient-to-r from-[#00ff87] to-[#60efff] hover:from-[#00dd75] hover:to-[#50dfef] text-[#0a0a0a]"
                       : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
                   } font-semibold`}
