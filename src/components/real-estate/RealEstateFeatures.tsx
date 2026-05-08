@@ -31,6 +31,12 @@ export function RealEstateFeatures() {
       title: "CRM Lead Capture",
       description: "Automatically log every lead, conversation, property interest, and booking into your CRM.",
       gradient: "from-[#c9a961]/20 to-[#c9a961]/5"
+    },
+    {
+      icon: Sparkles,
+      title: "Multi-Lingual AI Assistant",
+      description: "Communicate with international buyers in their native language, expanding your market reach globally.",
+      gradient: "from-[#b89851]/20 to-[#b89851]/5"
     }
   ];
 
