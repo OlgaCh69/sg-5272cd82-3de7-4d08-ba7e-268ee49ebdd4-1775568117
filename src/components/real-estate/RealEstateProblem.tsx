@@ -1,62 +1,64 @@
-import { XCircle, Clock, PhoneOff, FileX, TrendingDown } from "lucide-react";
+import { Clock, MessageSquareOff, TrendingDown, XCircle, AlertCircle } from "lucide-react";
 
 export function RealEstateProblem() {
   const problems = [
     {
       icon: Clock,
       title: "Slow replies kill deal momentum",
-      description: "Buyers move fast. A 2-hour delay means they've contacted 3 competitors."
+      description: "High-value buyers expect instant responses, not hours of waiting"
     },
     {
-      icon: PhoneOff,
+      icon: MessageSquareOff,
       title: "No after-hours lead handling",
-      description: "Property inquiries don't stop at 5 PM. Missing evening and weekend leads costs you."
+      description: "Premium properties don't sleep—your service shouldn't either"
     },
     {
       icon: TrendingDown,
       title: "Missed calls become missed commissions",
-      description: "Every unanswered call is a potential €20k-€50k commission walking away."
-    },
-    {
-      icon: FileX,
-      title: "Manual CRM entry wastes agent time",
-      description: "Agents spend hours updating systems instead of closing deals."
+      description: "Every unanswered inquiry is revenue walking out the door"
     },
     {
       icon: XCircle,
+      title: "Manual CRM entry wastes agent time",
+      description: "Your top agents should close deals, not update spreadsheets"
+    },
+    {
+      icon: AlertCircle,
       title: "Property inquiries slip through the cracks",
-      description: "High inquiry volume overwhelms teams, and quality leads get lost in the chaos."
+      description: "Losing qualified buyers to competitors with faster response times"
     }
   ];
 
   return (
-    <section className="py-20 bg-[#f0f4f8]">
+    <section className="py-32 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a2332]">
-            Missed Inquiries = Lost Commissions
-          </h2>
-          <p className="text-lg text-gray-600">
-            High-end real estate agencies lose valuable leads because manual follow-up is too slow. Buyers expect instant answers, after-hours support, and easy viewing bookings.
-          </p>
-        </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm uppercase tracking-widest text-[#c9a961] mb-4 font-medium">The Challenge</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[#1a1a2e] mb-6">
+              Missed Inquiries = <span className="italic">Lost Commissions</span>
+            </h2>
+            <p className="text-xl text-[#1a1a2e]/70 max-w-3xl mx-auto font-light leading-relaxed">
+              High-end real estate agencies lose valuable leads because manual follow-up is too slow. Buyers expect instant answers, after-hours support, and seamless viewing bookings.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {problems.map((problem, index) => {
-            const Icon = problem.icon;
-            return (
-              <div
+          {/* Problem Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {problems.map((problem, index) => (
+              <div 
                 key={index}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-[#0ea5e9]/30 transition-all duration-300 hover:shadow-lg"
+                className="group bg-white rounded-2xl p-8 hover:shadow-2xl hover:shadow-[#c9a961]/10 transition-all duration-500 border border-[#1a1a2e]/5"
               >
-                <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center mb-4">
-                  <Icon className="h-6 w-6 text-red-600" />
+                <div className="w-14 h-14 rounded-full bg-[#c9a961]/10 flex items-center justify-center mb-6 group-hover:bg-[#c9a961]/20 transition-colors">
+                  <problem.icon className="w-7 h-7 text-[#c9a961]" />
                 </div>
-                <h3 className="text-lg font-bold mb-2 text-[#1a2332]">{problem.title}</h3>
-                <p className="text-gray-600 text-sm">{problem.description}</p>
+                <h3 className="text-xl font-medium text-[#1a1a2e] mb-3">{problem.title}</h3>
+                <p className="text-[#1a1a2e]/60 font-light leading-relaxed">{problem.description}</p>
               </div>
-            );
-          })}
+            ))}
+          </div>
         </div>
       </div>
     </section>

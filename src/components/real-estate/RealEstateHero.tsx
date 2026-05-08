@@ -1,102 +1,100 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Play, TrendingUp, Clock, Target } from "lucide-react";
 
 export function RealEstateHero() {
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-br from-[#1a2332] via-[#0f1419] to-[#1a2332]">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <Image 
+          src="/generated/luxury-mansion-hero.png"
+          alt="Luxury Real Estate"
+          fill
+          className="object-cover opacity-40"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-[#0a0a0a]/60"></div>
+      </div>
+
+      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0ea5e9]/10 border border-[#0ea5e9]/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#0ea5e9] animate-pulse"></span>
-              <span className="text-sm font-semibold text-[#0ea5e9]">AI Real Estate Automation</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Turn Missed Property Inquiries Into Signed Deals — <span className="text-[#0ea5e9]">Automatically</span>
-            </h1>
-
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              O.N.E.Tech builds 24/7 AI real estate automation systems that capture, qualify, and convert leads before they go cold.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="text-lg bg-[#0ea5e9] hover:bg-[#0ea5e9]/90 text-white" asChild>
-                <Link href="/contact">
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg border-white/20 text-white hover:bg-white/10" asChild>
-                <Link href="#features">See How It Works</Link>
-              </Button>
-            </div>
-
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { value: "24/7", label: "Lead Capture" },
-                { value: "40%+", label: "More Leads" },
-                { value: "5s", label: "Response Time" }
-              ].map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#0ea5e9] mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+        <div className="max-w-4xl">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+            <div className="w-2 h-2 rounded-full bg-[#c9a961] animate-pulse"></div>
+            <span className="text-sm text-white/80 font-light tracking-wide">Premium AI Automation for Elite Agencies</span>
           </div>
 
-          <div className="relative">
-            <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6 text-[#0ea5e9]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">Lead Qualified</p>
-                    <p className="text-xs text-gray-400">Budget: €500k • Location: Downtown</p>
-                  </div>
-                </div>
+          {/* Main Heading */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1]">
+            <span className="text-white font-light">Turn Missed Property</span>
+            <br />
+            <span className="text-white font-light">Inquiries Into</span>
+            <br />
+            <span className="text-[#c9a961] font-normal">Signed Deals</span>
+          </h1>
 
-                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6 text-[#0ea5e9]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">Property Matched</p>
-                    <p className="text-xs text-gray-400">3 properties recommended</p>
-                  </div>
-                </div>
+          {/* Subheading */}
+          <p className="text-xl sm:text-2xl text-white/70 mb-12 max-w-2xl font-light leading-relaxed">
+            O.N.E.Tech builds 24/7 AI real estate automation systems that capture, qualify, and convert leads before they go cold.
+          </p>
 
-                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6 text-[#0ea5e9]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">Viewing Booked</p>
-                    <p className="text-xs text-gray-400">Tomorrow 3:00 PM</p>
-                  </div>
-                </div>
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Button 
+              size="lg" 
+              className="bg-[#c9a961] hover:bg-[#b89851] text-white font-medium px-8 py-6 text-lg border-0"
+              asChild
+            >
+              <Link href="/contact">
+                Book a Demo <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white px-8 py-6 text-lg"
+              asChild
+            >
+              <Link href="#how-it-works">
+                <Play className="w-5 h-5 mr-2" /> See How It Works
+              </Link>
+            </Button>
+          </div>
 
-                <div className="flex items-center gap-3 p-4 bg-white/10 rounded-lg border border-white/10">
-                  <div className="w-12 h-12 rounded-full bg-[#0ea5e9]/20 flex items-center justify-center">
-                    <CheckCircle2 className="h-6 w-6 text-[#0ea5e9]" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-semibold text-white">CRM Updated</p>
-                    <p className="text-xs text-gray-400">Lead synced automatically</p>
-                  </div>
-                </div>
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8 max-w-2xl">
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <TrendingUp className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">+40%</p>
               </div>
-
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#0ea5e9]/20 rounded-full blur-3xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-[#0ea5e9]/10 rounded-full blur-3xl"></div>
+              <p className="text-sm text-white/60 font-light">More leads captured</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <Clock className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">&lt;2s</p>
+              </div>
+              <p className="text-sm text-white/60 font-light">Response time</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <Target className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">5-15%</p>
+              </div>
+              <p className="text-sm text-white/60 font-light">Conversion lift</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-2 bg-white/60 rounded-full"></div>
         </div>
       </div>
     </section>
