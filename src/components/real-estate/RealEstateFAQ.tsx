@@ -9,54 +9,60 @@ export function RealEstateFAQ() {
   const faqs = [
     {
       question: "What is AI real estate automation?",
-      answer: "AI real estate automation uses artificial intelligence to respond to leads, qualify buyers, recommend properties, schedule viewings, and update your CRM automatically. It works 24/7 to handle repetitive tasks so your agents can focus on closing deals."
+      answer: "AI real estate automation uses artificial intelligence to respond to leads, qualify buyers, recommend properties, schedule viewings, and update your CRM automatically."
     },
     {
       question: "Can the AI match buyers with properties?",
-      answer: "Yes. The system can scan your website listings and match buyers with suitable properties based on location, budget, requirements, and preferences. It learns from your inventory and buyer conversations to make smart recommendations."
+      answer: "Yes. The system can scan your website listings and match buyers with suitable properties based on location, budget, requirements, and preferences."
     },
     {
       question: "Does it work after hours?",
-      answer: "Yes. The AI agent handles inquiries 24/7, including evenings, weekends, and holidays. Buyers get instant responses regardless of when they reach out, dramatically improving your lead capture rate."
+      answer: "Yes. The AI agent handles inquiries 24/7, including evenings, weekends, and holidays."
     },
     {
       question: "Can it connect to our CRM?",
-      answer: "Yes. The system can capture and sync lead details directly into your CRM. Every conversation, property interest, viewing booking, and buyer detail is automatically logged, keeping your pipeline updated without manual data entry."
+      answer: "Yes. The system can capture and sync lead details directly into your CRM."
     },
     {
       question: "Does it replace real estate agents?",
-      answer: "No. It handles repetitive lead intake and qualification so agents can focus on serious buyers, viewings, and closing deals. Think of it as a smart assistant that ensures no opportunity slips through the cracks."
+      answer: "No. It handles repetitive lead intake and qualification so agents can focus on serious buyers, viewings, and closing deals."
     },
     {
       question: "How long does implementation take?",
-      answer: "Setup typically takes 2-4 weeks depending on the plan. This includes AI training, CRM integration, property data import, and testing. Our team handles the technical setup so you can focus on your business."
+      answer: "Most agencies are fully operational within 2-4 weeks, including custom integration with your property listings and CRM system."
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-32 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a2332]">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-gray-600">
-            Everything you need to know about AI real estate automation.
-          </p>
-        </div>
+        <div className="max-w-4xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm uppercase tracking-widest text-[#c9a961] mb-4 font-medium">Questions</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-[#1a1a2e] mb-6">
+              Everything You Need to <span className="italic">Know</span>
+            </h2>
+          </div>
 
-        <Accordion type="single" collapsible className="max-w-3xl mx-auto">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
-              <AccordionTrigger className="text-left text-lg font-semibold text-[#1a2332] hover:text-[#0ea5e9] transition-colors">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-600 text-base leading-relaxed">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+          {/* FAQ Accordion */}
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.map((faq, index) => (
+              <AccordionItem 
+                key={index} 
+                value={`item-${index}`}
+                className="bg-white rounded-2xl border border-[#1a1a2e]/5 px-8 hover:shadow-lg transition-shadow duration-300"
+              >
+                <AccordionTrigger className="text-left text-lg font-medium text-[#1a1a2e] py-6 hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-[#1a1a2e]/70 font-light leading-relaxed pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

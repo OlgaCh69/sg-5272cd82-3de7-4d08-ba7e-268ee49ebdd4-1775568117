@@ -7,36 +7,28 @@ export function RealEstatePricing() {
   const plans = [
     {
       name: "Boutique",
-      setup: "€950",
-      monthly: "€299",
-      description: "Perfect for independent agents and small teams",
+      badge: null,
       features: [
         "1 AI Agent",
         "Website Scraping",
         "Lead Qualification",
         "Email Support"
-      ],
-      badge: null
+      ]
     },
     {
       name: "Growth",
-      setup: "€2,500",
-      monthly: "€750",
-      description: "Ideal for growing agencies ready to scale",
+      badge: "Most Popular",
       features: [
         "3 AI Agents",
         "All Boutique Features",
         "Missed Call AI",
         "CRM Integration",
         "Priority Support"
-      ],
-      badge: "Most Popular"
+      ]
     },
     {
       name: "Enterprise Elite",
-      setup: "€5,000+",
-      monthly: "€1,500+",
-      description: "For established agencies handling high volume",
+      badge: null,
       features: [
         "Unlimited Agents",
         "All Growth Features",
@@ -45,63 +37,77 @@ export function RealEstatePricing() {
         "Custom Integrations",
         "Dedicated Account Manager",
         "White-Label Option"
-      ],
-      badge: null
+      ]
     }
   ];
 
   return (
-    <section className="py-20 bg-[#f0f4f8]">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1a2332]">
-            Choose Your Automation Plan
-          </h2>
-          <p className="text-lg text-gray-600">
-            Transparent pricing. No hidden fees. Cancel anytime.
+    <section className="py-32 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a2e] relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-[#c9a961] rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <p className="text-sm uppercase tracking-widest text-[#c9a961] mb-4 font-medium">Investment</p>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-light text-white mb-6">
+              Choose Your <span className="italic text-[#c9a961]">Automation Plan</span>
+            </h2>
+            <p className="text-xl text-white/70 max-w-3xl mx-auto font-light leading-relaxed">
+              Tailored solutions for boutique agencies to enterprise operations
+            </p>
+          </div>
+
+          {/* Pricing Grid */}
+          <div className="grid md:grid-cols-3 gap-8">
+            {plans.map((plan, index) => (
+              <Card 
+                key={index}
+                className={`relative ${
+                  plan.badge 
+                    ? "border-[#c9a961] bg-gradient-to-br from-white/10 to-white/5" 
+                    : "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10"
+                } hover:border-[#c9a961]/50 transition-all duration-500 overflow-hidden group`}
+              >
+                {plan.badge && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-6 py-2 bg-gradient-to-r from-[#c9a961] to-[#b89851] rounded-full text-sm font-medium text-white shadow-lg">
+                    {plan.badge}
+                  </div>
+                )}
+                <CardContent className="p-10">
+                  <h3 className="text-3xl font-serif font-light text-white mb-8 text-center">{plan.name}</h3>
+                  
+                  <ul className="space-y-4 mb-10">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-[#c9a961] flex-shrink-0 mt-1" />
+                        <span className="text-white/80 font-light">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button 
+                    className={`w-full ${
+                      plan.badge
+                        ? "bg-gradient-to-r from-[#c9a961] to-[#b89851] hover:from-[#b89851] hover:to-[#a88741] text-white"
+                        : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
+                    } font-medium py-6`}
+                    asChild
+                  >
+                    <Link href="/contact">Get Started <ArrowRight className="w-4 h-4 ml-2" /></Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Bottom Note */}
+          <p className="text-center text-white/50 text-sm font-light mt-12">
+            All plans include 24/7 support and ongoing optimization
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <Card 
-              key={index}
-              className={`relative ${
-                plan.badge 
-                  ? "border-[#00ff87] bg-gradient-to-br from-white/10 to-white/5" 
-                  : "bg-gradient-to-br from-white/5 to-white/[0.02] border-white/10"
-              } hover:border-[#00ff87]/50 transition-all duration-300`}
-            >
-              {plan.badge && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-[#00ff87] to-[#60efff] rounded-full text-xs font-bold text-[#0a0a0a]">
-                  {plan.badge}
-                </div>
-              )}
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">{plan.name}</h3>
-                
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-[#00ff87] flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button 
-                  className={`w-full ${
-                    plan.badge
-                      ? "bg-gradient-to-r from-[#00ff87] to-[#60efff] hover:from-[#00dd75] hover:to-[#50dfef] text-[#0a0a0a]"
-                      : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
-                  } font-semibold`}
-                  asChild
-                >
-                  <Link href="/contact">Get Started <ArrowRight className="w-4 h-4 ml-2" /></Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
         </div>
       </div>
     </section>

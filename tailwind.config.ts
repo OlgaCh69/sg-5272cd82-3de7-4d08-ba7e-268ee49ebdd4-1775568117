@@ -49,7 +49,8 @@ const config: Config = {
         "glass-border": "hsl(var(--glass-border))",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        serif: ['Playfair Display', 'Georgia', 'serif'],
         heading: ["Space Grotesk", "system-ui", "sans-serif"],
       },
       borderRadius: {
