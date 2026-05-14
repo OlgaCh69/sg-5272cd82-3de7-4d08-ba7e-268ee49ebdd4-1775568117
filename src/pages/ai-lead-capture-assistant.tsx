@@ -10,7 +10,6 @@ import { LeadCaptureHowItWorks } from "@/components/lead-capture/LeadCaptureHowI
 import { LeadCaptureUseCases } from "@/components/lead-capture/LeadCaptureUseCases";
 import { LeadCaptureBenefits } from "@/components/lead-capture/LeadCaptureBenefits";
 import { LeadCaptureBeforeAfter } from "@/components/lead-capture/LeadCaptureBeforeAfter";
-import { LeadCapturePricing } from "@/components/lead-capture/LeadCapturePricing";
 import { LeadCaptureFAQ } from "@/components/lead-capture/LeadCaptureFAQ";
 import { LeadCaptureFinalCTA } from "@/components/lead-capture/LeadCaptureFinalCTA";
 import Link from "next/link";
@@ -92,7 +91,6 @@ export default function LeadCaptureAssistant() {
         <LeadCaptureUseCases />
         <LeadCaptureBenefits />
         <LeadCaptureBeforeAfter />
-        <LeadCapturePricing />
         <LeadCaptureFAQ />
         
         <section className="py-12 bg-white">
