@@ -1,61 +1,53 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export function WhatsAppFAQ() {
   const faqs = [
     {
-      question: "What is WhatsApp automation for ecommerce?",
-      answer: "WhatsApp automation for ecommerce uses automated messaging and chatbot workflows to handle customer conversations, answer questions, recover abandoned carts, and support the buying journey.",
+      question: "How quickly can we get WhatsApp automation set up?",
+      answer: "Most ecommerce stores are live within 7-14 days. We handle the technical integration, AI training, and testing—you just need to provide access to your store and approve the conversation flows."
     },
     {
-      question: "Can WhatsApp automation help increase sales?",
-      answer: "Yes. It can improve response time, reduce friction in the customer journey, and help recover lost opportunities such as abandoned carts and unanswered product questions.",
+      question: "Does this work with my ecommerce platform?",
+      answer: "Yes. We integrate with Shopify, WooCommerce, BigCommerce, Magento, and custom platforms. If you have an API, we can connect."
     },
     {
-      question: "Is this only for large ecommerce brands?",
-      answer: "No. It works for both growing stores and established ecommerce businesses, especially those handling a steady volume of customer messages.",
+      question: "What if customers ask questions the AI can't handle?",
+      answer: "The AI seamlessly hands off complex questions to your team. You'll see every conversation in your dashboard and can jump in anytime. Most stores find the AI handles 70-85% of questions autonomously."
     },
     {
-      question: "Can it automate customer support too?",
-      answer: "Yes. Common support questions, order updates, and repetitive inquiries can be handled automatically.",
+      question: "How much does WhatsApp automation cost?",
+      answer: "Pricing depends on your message volume and features needed. Most ecommerce stores invest €1,500-€5,000/month—a fraction of hiring support staff, with significantly higher ROI from recovered revenue."
     },
     {
-      question: "Does this replace my team?",
-      answer: "No. It helps your team work more efficiently by automating the repetitive parts of customer communication while allowing human support where needed.",
+      question: "Can we customize the conversation flows?",
+      answer: "Absolutely. We build custom flows based on your products, brand voice, and customer journey. You approve every template before launch, and we adjust based on performance data."
     },
     {
-      question: "Can this work alongside Instagram and Telegram automation?",
-      answer: "Yes. OneTech Automation is designed to support multi-channel ecommerce communication, including WhatsApp, Instagram, and Telegram.",
-    },
+      question: "What results should we expect?",
+      answer: "Typical results: 15-30% of abandoned carts recovered, 50-70% reduction in support costs, sub-1-minute response times, and 20-40% increase in customer satisfaction scores."
+    }
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Frequently Asked Questions
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Common <span className="text-[#c9a961] font-normal">Questions</span>
             </h2>
+            <p className="text-xl text-gray-600 font-light">
+              Everything you need to know about WhatsApp automation for ecommerce.
+            </p>
           </div>
 
-          {/* FAQ Accordion */}
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`item-${index}`}
-                className="bg-muted/30 rounded-xl border border-border/50 px-6 hover:border-green-500/30 transition-colors"
-              >
-                <AccordionTrigger className="text-left text-lg font-semibold hover:text-green-600 dark:hover:text-green-500">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg px-6">
+                <AccordionTrigger className="text-left font-serif font-light text-[#1a1a1a] hover:text-[#c9a961] hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-gray-600 font-light leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

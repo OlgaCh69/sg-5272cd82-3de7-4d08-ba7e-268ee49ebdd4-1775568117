@@ -1,71 +1,59 @@
-import { Plug, PenTool, Rocket } from "lucide-react";
+import { Plug, Settings, Rocket } from "lucide-react";
 
 export function WhatsAppHowItWorks() {
   const steps = [
     {
       icon: Plug,
-      step: "1",
-      title: "Connect Your Systems",
-      description: "Integrate your ecommerce business with WhatsApp and your existing workflow.",
+      title: "Connect Your Store",
+      description: "We integrate with your Shopify, WooCommerce, or custom ecommerce platform. No complex technical setup required."
     },
     {
-      icon: PenTool,
-      step: "2",
-      title: "Build Your Automation Flows",
-      description: "We create structured conversation paths based on your customer journey, support needs, and sales goals.",
+      icon: Settings,
+      title: "Customize Your AI",
+      description: "We train the AI on your products, brand voice, and customer data. It learns your FAQs, policies, and sales approach."
     },
     {
       icon: Rocket,
-      step: "3",
-      title: "Launch and Optimize",
-      description: "Once live, your automation starts handling conversations in real time while performance data helps improve results over time.",
-    },
+      title: "Go Live",
+      description: "Your WhatsApp automation starts capturing abandoned carts and handling conversations automatically. Monitor results in real-time."
+    }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              How Our WhatsApp Automation Works
+    <section id="how-it-works" className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              From Setup to <span className="text-[#c9a961] font-normal">Revenue</span> in Days
             </h2>
-            <p className="text-xl text-muted-foreground">
-              We make the setup simple, but the impact is powerful.
+            <p className="text-xl text-white/70 font-light">
+              No lengthy implementations or technical headaches. Get WhatsApp automation running fast.
             </p>
           </div>
 
-          {/* Process Steps */}
-          <div className="relative">
-            {/* Connection Line */}
-            <div className="hidden md:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500/20 via-green-500/40 to-green-500/20" />
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {steps.map((step, index) => (
-                <div key={index} className="relative">
-                  {/* Step Number Badge */}
-                  <div className="flex justify-center mb-6">
-                    <div className="relative">
-                      <div className="w-16 h-16 rounded-full bg-green-500/10 border-4 border-background flex items-center justify-center">
-                        <step.icon className="h-7 w-7 text-green-600 dark:text-green-500" />
-                      </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-bold">
-                        {step.step}
-                      </div>
-                    </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg">
+                  <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                    <step.icon className="w-6 h-6 text-[#c9a961]" />
                   </div>
-
-                  {/* Content */}
-                  <div className="text-center space-y-3">
-                    <h3 className="text-xl font-bold">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {step.description}
-                    </p>
+                  <div className="mb-4">
+                    <span className="text-sm text-[#c9a961] font-medium">Step {index + 1}</span>
                   </div>
+                  <h3 className="text-2xl font-serif font-light text-white mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              ))}
-            </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-[#c9a961] to-transparent"></div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,66 +1,64 @@
-import { ShoppingCart, Clock, MessageCircle, TrendingUp } from "lucide-react";
+import { ShoppingCart, Clock, Target, TrendingUp, Zap, MessageCircle } from "lucide-react";
 
 export function AbandonedCartFocus() {
-  const points = [
-    {
-      icon: MessageCircle,
-      text: "Reach customers where they actually respond",
-    },
+  const features = [
     {
       icon: Clock,
-      text: "Send follow-up messages at the right time",
+      title: "Instant Follow-Up",
+      description: "WhatsApp message sent within 5-15 minutes of cart abandonment—while purchase intent is still high."
+    },
+    {
+      icon: Target,
+      title: "Personalized Recovery",
+      description: "Include product images, answer common objections, and offer time-sensitive incentives based on cart value."
+    },
+    {
+      icon: Zap,
+      title: "Multi-Touch Campaigns",
+      description: "Automated follow-up sequences if the first message doesn't convert. 3-5 touchpoints over 7 days."
     },
     {
       icon: TrendingUp,
-      text: "Reduce drop-off before purchase",
+      title: "15-30% Recovery Rate",
+      description: "Industry-leading conversion on abandoned carts—significantly higher than email alone."
+    },
+    {
+      icon: MessageCircle,
+      title: "Two-Way Conversations",
+      description: "Customers can ask questions, negotiate, or request modifications. AI handles it all conversationally."
     },
     {
       icon: ShoppingCart,
-      text: "Turn missed checkout into recovered revenue",
-    },
+      title: "One-Click Checkout",
+      description: "Direct checkout links in WhatsApp. Customers complete purchase without returning to your site."
+    }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 text-sm font-medium text-green-700 dark:text-green-400 mb-4">
-              <ShoppingCart className="h-4 w-4" />
-              Abandoned Cart Recovery
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Recover Abandoned Carts Automatically on WhatsApp
+    <section className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Abandoned Cart Recovery That <span className="text-[#c9a961] font-normal">Actually Works</span>
             </h2>
-          </div>
-
-          {/* Main Copy */}
-          <div className="prose prose-lg max-w-none text-center mb-12 space-y-6">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              A large percentage of ecommerce revenue is lost at checkout.
-            </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Customers leave because they get distracted, hesitate, or still have unanswered questions. WhatsApp automation helps you re-engage those customers quickly with timely, personalized follow-up.
-            </p>
-            
-            <p className="text-xl text-foreground font-semibold">
-              Instead of losing high-intent buyers, you create a second chance to convert them.
+            <p className="text-xl text-white/70 font-light">
+              Most stores recover €50,000-€300,000 annually from carts they would have otherwise lost.
             </p>
           </div>
 
-          {/* Supporting Points Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {points.map((point, index) => (
-              <div 
-                key={index}
-                className="flex items-center gap-4 p-6 rounded-xl bg-background border border-border/50 hover:border-green-500/30 transition-all duration-300 group"
-              >
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
-                  <point.icon className="h-6 w-6 text-green-600 dark:text-green-500" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
                 </div>
-                <p className="text-lg text-foreground font-medium">{point.text}</p>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
