@@ -1,68 +1,63 @@
-import { AlertCircle, Clock, MessageSquareX } from "lucide-react";
+import { AlertCircle, TrendingDown, MessageCircle, Clock } from "lucide-react";
 
 export function InstagramProblem() {
-  const problems = [
-    {
-      icon: Clock,
-      title: "Delayed responses",
-      description: "Manual replies create gaps that cost conversions",
-    },
-    {
-      icon: MessageSquareX,
-      title: "Inconsistent follow-up",
-      description: "Leads are missed when conversations fall through cracks",
-    },
-    {
-      icon: AlertCircle,
-      title: "Lost buying intent",
-      description: "Slow response times kill momentum and reduce sales",
-    },
-  ];
-
   return (
-    <section id="problem" className="py-20 md:py-28 bg-muted/30">
-      <div className="container px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Most Ecommerce Brands Lose Sales in{" "}
-              <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                Instagram DMs
-              </span>
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Your Instagram DMs Are <span className="text-[#c9a961] font-normal">Costing You Sales</span>
             </h2>
-          </div>
-
-          <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
-            <p className="text-lg leading-relaxed">
-              Instagram is one of the most powerful sales channels for ecommerce.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Customers discover your brand, engage with your content, and message you with buying intent.
-            </p>
-            <p className="text-lg leading-relaxed">
-              But most brands handle DMs manually.
-            </p>
-            <p className="text-lg leading-relaxed">
-              Replies are delayed. Conversations are inconsistent. Leads are missed.<br />
-              And when response time slows down, conversions drop.
-            </p>
-            <p className="text-lg leading-relaxed font-semibold text-foreground">
-              Instagram is not just engagement. It is a sales channel.<br />
-              But without automation, it cannot scale.
+            <p className="text-xl text-gray-600 font-light">
+              Every unanswered DM is a lost customer. Every slow response sends them to your competitors.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {problems.map((problem, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-lg bg-background border border-border/50 hover:border-pink-500/50 transition-colors"
-              >
-                <problem.icon className="w-8 h-8 text-pink-500 mb-4" />
-                <h3 className="font-semibold mb-2">{problem.title}</h3>
-                <p className="text-sm text-muted-foreground">{problem.description}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <MessageCircle className="w-6 h-6 text-[#c9a961]" />
               </div>
-            ))}
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Overwhelmed DM Inbox</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Product questions, order inquiries, and buying requests pile up. Your team can't respond fast enough during peak hours.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">200-500+ daily DMs ignored</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <Clock className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Slow Response Time</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Instagram users expect instant replies. Manual responses take hours—by then, they've already bought elsewhere.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">3-8 hour average delay</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <TrendingDown className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Lost Conversion Opportunities</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Interested followers message you about products, but never hear back. Warm leads go cold while you sleep.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">30-50% potential sales lost</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <AlertCircle className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Manual Work Doesn't Scale</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                As your Instagram grows, DM volume becomes unmanageable. Hiring more support staff is expensive and slow.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">€4,000-€10,000/month per agent</p>
+            </div>
           </div>
         </div>
       </div>
