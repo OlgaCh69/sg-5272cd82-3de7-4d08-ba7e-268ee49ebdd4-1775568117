@@ -1,76 +1,62 @@
-import { AlertCircle, Clock, MessageSquareX } from "lucide-react";
+import { AlertCircle, TrendingDown, Clock, UserX } from "lucide-react";
 
 export function WhatsAppProblem() {
-  const problems = [
-    {
-      icon: Clock,
-      text: "Delays and missed replies",
-    },
-    {
-      icon: MessageSquareX,
-      text: "Inconsistent follow-up",
-    },
-    {
-      icon: AlertCircle,
-      text: "Lost sales opportunities",
-    },
-  ];
-
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Most Ecommerce Brands Are Losing Revenue in WhatsApp Conversations
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              The Cost of <span className="text-[#c9a961] font-normal">Manual Conversations</span>
             </h2>
-          </div>
-
-          {/* Main Copy */}
-          <div className="prose prose-lg max-w-none text-center mb-12 space-y-6">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Customers ask product questions, request updates, and show buying intent on WhatsApp every day.
-            </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              But most ecommerce teams still handle those conversations <strong className="text-foreground">manually</strong>.
+            <p className="text-xl text-gray-600 font-light">
+              Every missed message is lost revenue. Every slow response loses you to a competitor.
             </p>
           </div>
 
-          {/* Problem Points */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            {problems.map((problem, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-3 p-6 rounded-lg bg-background border border-border/50"
-              >
-                <problem.icon className="h-6 w-6 text-destructive flex-shrink-0 mt-1" />
-                <p className="text-lg text-foreground">{problem.text}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <AlertCircle className="w-6 h-6 text-[#c9a961]" />
               </div>
-            ))}
-          </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Abandoned Cart Revenue Loss</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                70% of carts are abandoned. Without automated WhatsApp recovery, you're leaving 15-30% of that revenue on the table.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">€50,000-€300,000+ annual loss</p>
+            </div>
 
-          {/* Conclusion */}
-          <div className="text-center space-y-6">
-            <p className="text-xl text-muted-foreground">
-              That creates delays, missed replies, inconsistent follow-up, and lost sales.
-            </p>
-            
-            <p className="text-xl text-muted-foreground">
-              When response time drops, conversions drop with it.
-            </p>
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <Clock className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Slow Response Time</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                82% of customers expect responses within 10 minutes on messaging platforms. Manual support can't keep up.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">3-6 hour average delay</p>
+            </div>
 
-            <div className="pt-8 space-y-3">
-              <p className="text-2xl font-semibold text-foreground">
-                For growing ecommerce brands, WhatsApp is not just a support channel.
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <TrendingDown className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Conversion Leaks</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Product questions go unanswered. Buying objections aren't addressed. Customers shop elsewhere while you sleep.
               </p>
-              <p className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500">
-                It is a revenue channel.
+              <p className="text-sm text-[#c9a961] font-medium">20-40% conversion loss</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <UserX className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Team Bottlenecks</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Your team spends hours on repetitive WhatsApp questions instead of high-value work. Support costs scale linearly with volume.
               </p>
-              <p className="text-xl text-muted-foreground pt-4">
-                The problem is that most businesses are not using it that way.
-              </p>
+              <p className="text-sm text-[#c9a961] font-medium">€3,000-€8,000/month per agent</p>
             </div>
           </div>
         </div>

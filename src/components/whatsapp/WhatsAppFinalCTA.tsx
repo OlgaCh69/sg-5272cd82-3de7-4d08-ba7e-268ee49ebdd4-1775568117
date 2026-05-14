@@ -1,47 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
 
 export function WhatsAppFinalCTA() {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-500/10 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Ready to Turn WhatsApp Into a{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-500">
-              Revenue Channel?
-            </span>
+    <section className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-8">
+            Ready to Turn WhatsApp Into Your <span className="text-[#c9a961] font-normal">Top Revenue Channel?</span>
           </h2>
-
-          {/* Subheadline */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            If your ecommerce brand is getting customer messages every day, there is already revenue sitting in those conversations.
+          
+          <p className="text-xl text-white/70 mb-12 font-light leading-relaxed">
+            Book a demo and see exactly how WhatsApp automation will capture more revenue for your ecommerce store.
           </p>
           
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Let's build a system that helps you capture more of it.
-          </p>
-
-          {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
+            <Button 
+              size="lg" 
+              className="bg-[#c9a961] hover:bg-[#b89851] text-white font-medium px-8 py-6 text-lg border-0"
+              asChild
+            >
+              <Link href="/contact">
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Your Demo
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="#benefits">See Benefits</Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white px-8 py-6 text-lg"
+              asChild
+            >
+              <Link href="/ecommerce-automation-case-studies">
+                See Results <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
           </div>
-
-          {/* Trust Line */}
-          <p className="text-sm text-muted-foreground pt-8">
-            Built for ecommerce brands that want smarter automation, better customer experiences, and stronger conversion performance.
-          </p>
         </div>
       </div>
     </section>
