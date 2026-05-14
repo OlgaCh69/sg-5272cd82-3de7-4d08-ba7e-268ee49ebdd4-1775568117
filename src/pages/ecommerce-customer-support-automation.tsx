@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, MessageCircle, Clock, Users, TrendingUp, Zap, Shield } from "lucide-react";
@@ -56,7 +57,7 @@ export default function EcommerceCustomerSupportAutomation() {
               <p className="text-lg text-foreground/80 mb-4">
                 But in ecommerce, it directly impacts revenue.
               </p>
-              <div className="bg-muted/50 p-6 rounded-lg border border-border/50 my-6">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20 my-6">
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -83,7 +84,7 @@ export default function EcommerceCustomerSupportAutomation() {
         </section>
 
         {/* Section 1: What Is */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               What Is Ecommerce Customer Support Automation?
@@ -111,7 +112,7 @@ export default function EcommerceCustomerSupportAutomation() {
             </h2>
             
             <div className="space-y-8">
-              <div className="bg-background p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Zap className="w-6 h-6 text-primary" />
@@ -130,7 +131,7 @@ export default function EcommerceCustomerSupportAutomation() {
                 </div>
               </div>
 
-              <div className="bg-background p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Clock className="w-6 h-6 text-primary" />
@@ -155,7 +156,7 @@ export default function EcommerceCustomerSupportAutomation() {
                 </div>
               </div>
 
-              <div className="bg-background p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Shield className="w-6 h-6 text-primary" />
@@ -174,7 +175,7 @@ export default function EcommerceCustomerSupportAutomation() {
                 </div>
               </div>
 
-              <div className="bg-background p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/10 p-3 rounded-lg">
                     <Users className="w-6 h-6 text-primary" />
@@ -194,29 +195,29 @@ export default function EcommerceCustomerSupportAutomation() {
         </section>
 
         {/* Section 3: Benefits */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Benefits of Customer Support Automation
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
+              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Faster response times</span>
               </div>
-              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
+              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Reduced workload</span>
               </div>
-              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
+              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Increased conversions</span>
               </div>
-              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
+              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Scalable support system</span>
               </div>
-              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-border/50">
+              <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                 <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Improved customer experience</span>
               </div>
@@ -231,23 +232,23 @@ export default function EcommerceCustomerSupportAutomation() {
               Common Use Cases
             </h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border border-primary/20">
                 <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Answering FAQs (shipping, returns, products)</span>
               </div>
-              <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border border-primary/20">
                 <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Handling order inquiries</span>
               </div>
-              <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border border-primary/20">
                 <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Supporting customers during checkout</span>
               </div>
-              <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border border-primary/20">
                 <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Providing product recommendations</span>
               </div>
-              <div className="flex items-start gap-3 p-4 bg-muted/30 rounded-lg">
+              <div className="flex items-start gap-3 p-4 bg-gradient-to-br from-primary/5 to-accent/5 rounded-lg border border-primary/20">
                 <MessageCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-foreground/80">Managing post-purchase questions</span>
               </div>
@@ -256,12 +257,12 @@ export default function EcommerceCustomerSupportAutomation() {
         </section>
 
         {/* Section 5: Common Mistakes */}
-        <section className="py-16 md:py-20 bg-muted/30">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               Common Mistakes to Avoid
             </h2>
-            <div className="bg-background p-8 rounded-lg border border-border/50">
+            <div className="bg-background p-8 rounded-lg border border-primary/20">
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <span className="text-primary font-bold text-xl">×</span>
@@ -312,7 +313,7 @@ export default function EcommerceCustomerSupportAutomation() {
               Frequently Asked Questions
             </h2>
             <div className="space-y-6">
-              <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Does customer support automation replace human agents?
                 </h3>
@@ -321,7 +322,7 @@ export default function EcommerceCustomerSupportAutomation() {
                 </p>
               </div>
               
-              <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Can automation improve ecommerce sales?
                 </h3>
@@ -330,7 +331,7 @@ export default function EcommerceCustomerSupportAutomation() {
                 </p>
               </div>
               
-              <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
+              <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   Is automation suitable for small ecommerce businesses?
                 </h3>
@@ -343,11 +344,11 @@ export default function EcommerceCustomerSupportAutomation() {
         </section>
 
         {/* Related Content */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   AI Chatbots Increase Ecommerce Sales
                 </h3>
@@ -355,7 +356,7 @@ export default function EcommerceCustomerSupportAutomation() {
                   Learn how AI chatbots can boost your ecommerce revenue
                 </p>
               </Link>
-              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   WhatsApp Automation for Ecommerce
                 </h3>
@@ -363,7 +364,7 @@ export default function EcommerceCustomerSupportAutomation() {
                   Turn WhatsApp conversations into sales with automation
                 </p>
               </Link>
-              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Instagram Automation for Ecommerce
                 </h3>
@@ -371,7 +372,7 @@ export default function EcommerceCustomerSupportAutomation() {
                   Automate Instagram DMs to increase sales and engagement
                 </p>
               </Link>
-              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Increase Ecommerce Conversion Rate
                 </h3>
@@ -407,6 +408,7 @@ export default function EcommerceCustomerSupportAutomation() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }

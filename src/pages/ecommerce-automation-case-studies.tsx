@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { CaseStudiesHero } from "@/components/case-studies/CaseStudiesHero";
 import { CaseStudiesIntro } from "@/components/case-studies/CaseStudiesIntro";
 import { CaseStudyBlock } from "@/components/case-studies/CaseStudyBlock";
@@ -115,6 +116,7 @@ export default function CaseStudiesPage() {
         <TrustBuilder />
         <CaseStudiesFinalCTA />
       </main>
+      <Footer />
     </>
   );
 }

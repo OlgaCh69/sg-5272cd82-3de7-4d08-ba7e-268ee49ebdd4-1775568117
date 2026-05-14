@@ -50,7 +50,7 @@ export default function WhatsAppAutomationEcommerce() {
         </section>
 
         {/* Section 1 - What Is WhatsApp Automation */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -75,7 +75,7 @@ export default function WhatsAppAutomationEcommerce() {
               
               <div className="space-y-8">
                 {/* 1. Instant Responses */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <MessageCircle className="w-6 h-6 text-primary" />
                     1. Instant Responses
@@ -87,7 +87,7 @@ export default function WhatsAppAutomationEcommerce() {
                 </div>
 
                 {/* 2. Abandoned Cart Recovery */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <TrendingUp className="w-6 h-6 text-primary" />
                     2. Abandoned Cart Recovery
@@ -95,7 +95,7 @@ export default function WhatsAppAutomationEcommerce() {
                   <div className="space-y-3 text-foreground/80 text-lg">
                     <p>Follow up with customers who didn't complete their purchase.</p>
                     <p className="font-semibold text-foreground">A simple reminder message can recover lost revenue.</p>
-                    <div className="mt-4 p-4 bg-background rounded-lg border border-border">
+                    <div className="mt-4 p-4 bg-background rounded-lg border border-primary/20">
                       <p className="text-foreground font-semibold mb-2">Related Resource:</p>
                       <Link href="/abandoned-cart-recovery-ecommerce" className="text-primary hover:text-accent inline-flex items-center gap-2 font-medium">
                         Abandoned Cart Recovery for Ecommerce <ArrowRight className="w-4 h-4" />
@@ -105,7 +105,7 @@ export default function WhatsAppAutomationEcommerce() {
                 </div>
 
                 {/* 3. Order Updates & Notifications */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <Clock className="w-6 h-6 text-primary" />
                     3. Order Updates & Notifications
@@ -117,7 +117,7 @@ export default function WhatsAppAutomationEcommerce() {
                 </div>
 
                 {/* 4. Personalized Messaging */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <Users className="w-6 h-6 text-primary" />
                     4. Personalized Messaging
@@ -132,30 +132,30 @@ export default function WhatsAppAutomationEcommerce() {
         </section>
 
         {/* Section 3 - Benefits */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Benefits of WhatsApp Automation for Ecommerce
               </h2>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Faster customer support</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Higher engagement rates</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Increased conversion rates</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Reduced manual workload</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Scalable communication</span>
                 </div>
@@ -198,7 +198,7 @@ export default function WhatsAppAutomationEcommerce() {
         </section>
 
         {/* Section 5 - Common Mistakes */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -282,11 +282,11 @@ export default function WhatsAppAutomationEcommerce() {
         </section>
 
         {/* Related Content */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Related Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Instagram Automation for Ecommerce
                 </h3>
@@ -294,7 +294,7 @@ export default function WhatsAppAutomationEcommerce() {
                   Learn how Instagram automation can increase your sales
                 </p>
               </Link>
-              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   AI Chatbots Increase Ecommerce Sales
                 </h3>
@@ -302,7 +302,7 @@ export default function WhatsAppAutomationEcommerce() {
                   Learn how AI chatbots can boost your ecommerce revenue
                 </p>
               </Link>
-              <Link href="/ecommerce-customer-support-automation" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/ecommerce-customer-support-automation" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Ecommerce Customer Support Automation
                 </h3>
@@ -310,7 +310,7 @@ export default function WhatsAppAutomationEcommerce() {
                   Reduce workload and increase sales with automated support
                 </p>
               </Link>
-              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Increase Ecommerce Conversion Rate
                 </h3>

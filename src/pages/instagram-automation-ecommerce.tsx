@@ -50,7 +50,7 @@ export default function InstagramAutomationEcommerce() {
         </section>
 
         {/* Section 1 - What Is Instagram Automation */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -74,7 +74,7 @@ export default function InstagramAutomationEcommerce() {
               
               <div className="space-y-8">
                 {/* 1. Instant DM Replies */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <Zap className="w-6 h-6 text-primary" />
                     1. Instant DM Replies
@@ -86,7 +86,7 @@ export default function InstagramAutomationEcommerce() {
                 </div>
 
                 {/* 2. Lead Qualification */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <Users className="w-6 h-6 text-primary" />
                     2. Lead Qualification
@@ -98,7 +98,7 @@ export default function InstagramAutomationEcommerce() {
                 </div>
 
                 {/* 3. Product Recommendations */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <TrendingUp className="w-6 h-6 text-primary" />
                     3. Product Recommendations
@@ -109,7 +109,7 @@ export default function InstagramAutomationEcommerce() {
                 </div>
 
                 {/* 4. Follow-Up Messages */}
-                <div className="bg-muted/50 p-6 rounded-lg">
+                <div className="bg-gradient-to-br from-primary/5 to-accent/5 p-6 rounded-lg border border-primary/20">
                   <h3 className="text-2xl font-semibold text-foreground mb-4 flex items-center gap-3">
                     <MessageCircle className="w-6 h-6 text-primary" />
                     4. Follow-Up Messages
@@ -125,30 +125,30 @@ export default function InstagramAutomationEcommerce() {
         </section>
 
         {/* Section 3 - Benefits */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Benefits of Instagram Automation
               </h2>
               <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Faster response times</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Increased engagement</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Higher conversion rates</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Reduced manual workload</span>
                 </div>
-                <div className="flex items-start gap-3 bg-background p-4 rounded-lg">
+                <div className="flex items-start gap-3 bg-background p-4 rounded-lg border border-primary/20">
                   <Check className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                   <span className="text-foreground/80 text-lg">Scalable communication</span>
                 </div>
@@ -191,7 +191,7 @@ export default function InstagramAutomationEcommerce() {
         </section>
 
         {/* Section 5 - Common Mistakes */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="prose prose-lg max-w-none">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
@@ -275,11 +275,11 @@ export default function InstagramAutomationEcommerce() {
         </section>
 
         {/* Related Content */}
-        <section className="py-16 md:py-20 bg-muted">
+        <section className="py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-3xl font-bold text-foreground mb-8">Related Articles</h2>
             <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   WhatsApp Automation for Ecommerce
                 </h3>
@@ -287,7 +287,7 @@ export default function InstagramAutomationEcommerce() {
                   Learn how WhatsApp automation can increase your sales
                 </p>
               </Link>
-              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   AI Chatbots Increase Ecommerce Sales
                 </h3>
@@ -295,7 +295,7 @@ export default function InstagramAutomationEcommerce() {
                   Discover how AI chatbots can boost revenue
                 </p>
               </Link>
-              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-border hover:border-primary transition-colors">
+              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-background rounded-lg border border-primary/20 hover:border-primary transition-colors">
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary">
                   Increase Ecommerce Conversion Rate
                 </h3>
@@ -337,6 +337,7 @@ export default function InstagramAutomationEcommerce() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
