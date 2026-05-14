@@ -1,54 +1,59 @@
-import { Search, Wrench, Rocket } from "lucide-react";
+import { Plug, Settings, Rocket } from "lucide-react";
 
 export function SupportHowItWorks() {
   const steps = [
     {
-      icon: Search,
-      step: "Step 1",
-      title: "Analyze Your Support Flow",
-      description: "We identify the most common questions and support patterns.",
+      icon: Plug,
+      title: "Analyze Support Patterns",
+      description: "We audit your current support tickets to identify the most common questions and resolution patterns."
     },
     {
-      icon: Wrench,
-      step: "Step 2",
-      title: "Build Automation Logic",
-      description: "We create structured responses and conversation flows tailored to your store.",
+      icon: Settings,
+      title: "Build AI Flows",
+      description: "We create custom conversation flows and integrate with your order management, CRM, and knowledge base."
     },
     {
       icon: Rocket,
-      step: "Step 3",
-      title: "Launch and Optimize",
-      description: "Your system goes live and improves over time based on real interactions.",
-    },
+      title: "Launch & Optimize",
+      description: "Your AI support goes live. We monitor performance and refine based on real conversation data."
+    }
   ];
 
   return (
-    <section id="how-it-works" className="py-16 md:py-24 bg-background">
+    <section id="how-it-works" className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="space-y-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold">
-              How Our Customer Support Automation Works
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              From Setup to <span className="text-[#c9a961] font-normal">Automation</span> in Weeks
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We build support systems based on your actual customer conversations.
+            <p className="text-xl text-gray-600 font-light">
+              No lengthy implementations. Get AI support running fast.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <div key={index} className="space-y-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-primary" />
+            {steps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="bg-white border border-gray-200 p-8 rounded-lg">
+                  <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                    <step.icon className="w-6 h-6 text-[#c9a961]" />
                   </div>
-                  <div className="text-sm font-medium text-primary">{step.step}</div>
-                  <h3 className="text-xl font-semibold">{step.title}</h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+                  <div className="mb-4">
+                    <span className="text-sm text-[#c9a961] font-medium">Step {index + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-600 font-light leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
-              );
-            })}
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-[#c9a961] to-transparent"></div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
