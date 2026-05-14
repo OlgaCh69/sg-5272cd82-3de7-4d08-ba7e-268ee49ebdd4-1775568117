@@ -88,9 +88,19 @@ export default function CaseStudiesPage() {
           {caseStudies.map((study, index) => (
             <CaseStudyBlock
               key={index}
-              {...study}
-              title={study.company}
-              problem={study.challenge}
+              title={`${study.company} - ${study.industry}`}
+              problem={{
+                title: "The Challenge",
+                points: [study.challenge]
+              }}
+              solution={{
+                title: "The Solution",
+                points: [study.solution]
+              }}
+              results={{
+                title: "The Results",
+                points: study.results
+              }}
             />
           ))}
           
