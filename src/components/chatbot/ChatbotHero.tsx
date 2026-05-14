@@ -1,31 +1,23 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, PlayCircle } from "lucide-react";
-
 export function ChatbotHero() {
   return (
-    <section className="pt-32 pb-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            AI Chatbot for Ecommerce Brands
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Increase conversions, automate customer conversations, and turn more traffic into revenue with an AI chatbot built for high-growth ecommerce brands.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="#how-it-works">See How It Works</Link>
-            </Button>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/95 to-[#0a0a0a]/90"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl">
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+            <div className="w-2 h-2 rounded-full bg-[#c9a961] animate-pulse"></div>
+            <span className="text-sm text-white/80 font-light tracking-wide">AI Chatbot for Elite Ecommerce</span>
           </div>
-          
-          <p className="text-sm text-muted-foreground">
-            Built for ecommerce businesses that want faster responses, better customer journeys, and scalable growth
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1]">
+            <span className="text-white font-light">AI Chatbot That</span>
+            <br />
+            <span className="text-[#c9a961] font-normal">Sells While You Sleep</span>
+          </h1>
+
+          <p className="text-xl sm:text-2xl text-white/70 mb-12 max-w-2xl font-light leading-relaxed">
+            24/7 AI assistant that handles customer questions, recovers abandoned carts, and closes sales across all your channels.
           </p>
         </div>
       </div>

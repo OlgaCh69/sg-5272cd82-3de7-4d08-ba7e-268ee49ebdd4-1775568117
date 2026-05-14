@@ -1,63 +1,32 @@
-import { TrendingUp, Target, Smile, Users, Zap } from "lucide-react";
+import { Clock, MessageCircle, TrendingUp, DollarSign, Target, Zap, Users } from "lucide-react";
 
 export function ChatbotBenefits() {
   const benefits = [
-    {
-      icon: TrendingUp,
-      title: "Increase Conversion Rates",
-      description: "Customers are more likely to buy when they get answers immediately.",
-    },
-    {
-      icon: Target,
-      title: "Reduce Missed Opportunities",
-      description: "An AI chatbot helps you capture demand that would otherwise disappear.",
-    },
-    {
-      icon: Smile,
-      title: "Improve Customer Experience",
-      description: "Fast, relevant replies create trust and reduce buying friction.",
-    },
-    {
-      icon: Users,
-      title: "Scale Support Efficiently",
-      description: "Handle more conversations without expanding your team at the same pace.",
-    },
-    {
-      icon: Zap,
-      title: "Support Growth Across Channels",
-      description: "Use chatbot automation across your ecommerce ecosystem, including social and messaging platforms.",
-    },
+    { icon: Clock, title: "Instant Response Time", description: "AI responds in under 30 seconds, 24/7. Never miss a sale opportunity again." },
+    { icon: MessageCircle, title: "Multi-Channel Support", description: "One AI across WhatsApp, Instagram, website chat, Telegram, and email." },
+    { icon: TrendingUp, title: "Higher Conversion Rates", description: "20-40% lift from instant answers to product questions and buying objections." },
+    { icon: DollarSign, title: "15-30% Cart Recovery", description: "Automated abandoned cart follow-ups recover revenue you'd otherwise lose." },
+    { icon: Target, title: "Personalized Conversations", description: "Tailored responses based on browsing history, cart contents, and past purchases." },
+    { icon: Zap, title: "Seamless Handoff", description: "Complex questions route to your team automatically. You only handle what AI can't." },
+    { icon: Users, title: "Scales Infinitely", description: "Handle 10, 100, or 1,000 simultaneous conversations without adding staff." }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why Ecommerce Brands Use AI Chatbots
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              AI chatbots help ecommerce businesses improve both performance and efficiency. They do not just answer messages. They support the customer journey in real time and help remove the friction that stops people from buying.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.slice(0, 3).map((benefit, index) => (
-              <div key={index} className="bg-card p-8 rounded-xl border border-border/50 hover:border-primary/50 transition-colors">
-                <benefit.icon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-            {benefits.slice(3).map((benefit, index) => (
-              <div key={index} className="bg-card p-8 rounded-xl border border-border/50 hover:border-primary/50 transition-colors">
-                <benefit.icon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                <p className="text-muted-foreground">{benefit.description}</p>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] text-center mb-16">
+            Turn Conversations Into <span className="text-[#c9a961] font-normal">Predictable Revenue</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {benefits.map((benefit, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <benefit.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">{benefit.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed">{benefit.description}</p>
               </div>
             ))}
           </div>
