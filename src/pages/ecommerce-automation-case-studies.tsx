@@ -101,6 +101,7 @@ export default function CaseStudiesPage() {
                 title: "The Results",
                 points: study.results
               }}
+              variant={index % 2 === 0 ? "default" : "accent"}
             />
           ))}
           

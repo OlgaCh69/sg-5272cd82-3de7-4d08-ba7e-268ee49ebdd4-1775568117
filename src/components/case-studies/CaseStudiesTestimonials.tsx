@@ -23,14 +23,14 @@ export function CaseStudiesTestimonials() {
   ];
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What Ecommerce Brands Are Saying
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              What Ecommerce Brands <span className="text-[#c9a961] font-normal">Are Saying</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-xl text-gray-600 font-light">
               Real feedback from businesses using automation to improve performance
             </p>
           </div>
@@ -39,29 +39,29 @@ export function CaseStudiesTestimonials() {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
-                className="bg-background border border-border rounded-lg p-8 relative"
+                className="bg-white border border-gray-200 rounded-lg p-8 relative"
               >
-                <Quote className="w-10 h-10 text-primary/20 absolute top-6 left-6" />
+                <Quote className="w-10 h-10 text-[#c9a961]/20 absolute top-6 left-6" />
                 
                 <div className="relative z-10">
                   <div className="flex gap-1 mb-4 ml-16">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <Star 
                         key={star} 
-                        className="w-5 h-5 fill-primary text-primary" 
+                        className="w-5 h-5 fill-[#c9a961] text-[#c9a961]" 
                       />
                     ))}
                   </div>
 
-                  <blockquote className="text-lg mb-6 ml-16">
+                  <blockquote className="text-lg text-gray-600 font-light mb-6 ml-16 leading-relaxed">
                     "{testimonial.quote}"
                   </blockquote>
 
-                  <div className="ml-16 pt-4 border-t border-border">
-                    <p className="font-semibold text-foreground">
+                  <div className="ml-16 pt-4 border-t border-gray-200">
+                    <p className="font-medium text-[#1a1a1a]">
                       {testimonial.author}
                     </p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-gray-600 font-light">
                       {testimonial.role}, {testimonial.company}
                     </p>
                   </div>
@@ -71,7 +71,7 @@ export function CaseStudiesTestimonials() {
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-sm text-muted-foreground italic">
+            <p className="text-sm text-gray-500 font-light italic">
               Results may vary based on business model, implementation, and market conditions
             </p>
           </div>
