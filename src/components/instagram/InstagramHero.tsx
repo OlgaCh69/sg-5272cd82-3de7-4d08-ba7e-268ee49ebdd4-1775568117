@@ -1,69 +1,82 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Instagram } from "lucide-react";
+import { ArrowRight, Play, Instagram, TrendingUp, Clock } from "lucide-react";
 import Link from "next/link";
 
 export function InstagramHero() {
-  const stats = [
-    { value: "3x", label: "Higher engagement" },
-    { value: "60%", label: "Faster response time" },
-    { value: "24/7", label: "Automated replies" },
-  ];
-
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-muted/20 to-background">
-      {/* Decorative gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 via-transparent to-fuchsia-500/5" />
-      
-      <div className="container relative z-10 px-4 py-20 md:py-28">
-        <div className="mx-auto max-w-4xl text-center space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 border border-pink-500/20">
-            <Instagram className="w-4 h-4 text-pink-500" />
-            <span className="text-sm font-medium text-pink-600 dark:text-pink-400">
-              Instagram Automation for Ecommerce
-            </span>
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0a0a0a]">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/95 to-[#0a0a0a]/90"></div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl">
+          {/* Premium Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+            <div className="w-2 h-2 rounded-full bg-[#c9a961] animate-pulse"></div>
+            <span className="text-sm text-white/80 font-light tracking-wide">Instagram Automation for Elite Ecommerce</span>
           </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            Instagram Automation for{" "}
-            <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-              Ecommerce Brands
-            </span>
+          {/* Main Heading */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1]">
+            <span className="text-white font-light">Convert Instagram DMs</span>
+            <br />
+            <span className="text-white font-light">Into Automatic</span>
+            <br />
+            <span className="text-[#c9a961] font-normal">Revenue Growth</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Turn Instagram DMs into revenue. Automate conversations, capture leads, and convert followers into customers with a system built for high-growth ecommerce brands.
+          {/* Subheading */}
+          <p className="text-xl sm:text-2xl text-white/70 mb-12 max-w-2xl font-light leading-relaxed">
+            Automate Instagram conversations, respond to DMs instantly, and turn followers into customers with 24/7 AI automation built for high-growth ecommerce brands.
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Button 
+              size="lg" 
+              className="bg-[#c9a961] hover:bg-[#b89851] text-white font-medium px-8 py-6 text-lg border-0"
+              asChild
+            >
+              <Link href="/contact">
+                Book a Demo <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="#how-it-works">See How It Works</Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white px-8 py-6 text-lg"
+              asChild
+            >
+              <Link href="#how-it-works">
+                <Play className="w-5 h-5 mr-2" /> See How It Works
+              </Link>
             </Button>
           </div>
 
-          {/* Supporting text */}
-          <p className="text-sm text-muted-foreground pt-4">
-            Built for ecommerce brands that want to scale sales without scaling manual replies
-          </p>
-
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto pt-12 border-t border-border/50">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground mt-1">
-                  {stat.label}
-                </div>
+          <div className="grid grid-cols-3 gap-8 max-w-2xl">
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <TrendingUp className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">20-35%</p>
               </div>
-            ))}
+              <p className="text-sm text-white/60 font-light">More conversions</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <Clock className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">&lt;30s</p>
+              </div>
+              <p className="text-sm text-white/60 font-light">Response time</p>
+            </div>
+            <div className="text-center sm:text-left">
+              <div className="flex items-center justify-center sm:justify-start gap-2 mb-2">
+                <Instagram className="w-5 h-5 text-[#c9a961]" />
+                <p className="text-3xl font-light text-white">24/7</p>
+              </div>
+              <p className="text-sm text-white/60 font-light">Active engagement</p>
+            </div>
           </div>
         </div>
       </div>
