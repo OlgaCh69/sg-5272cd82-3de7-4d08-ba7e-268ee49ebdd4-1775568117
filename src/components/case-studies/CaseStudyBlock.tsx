@@ -23,8 +23,8 @@ export function CaseStudyBlock({ title, problem, solution, results, variant = "d
   const bgClass = variant === "accent" ? "bg-primary/5" : "bg-background";
   
   return (
-    <section className={`py-16 ${bgClass}`}>
-      <div className="container mx-auto px-4">
+    <section className={variant === 'accent' ? 'py-16 md:py-20 bg-gradient-to-br from-primary/5 to-accent/5' : 'py-16 md:py-20'}>
+      <div className="container mx-auto px-4 max-w-4xl">
         <div className="max-w-4xl mx-auto space-y-12">
           <h2 className="text-3xl md:text-4xl font-bold text-center">
             {title}

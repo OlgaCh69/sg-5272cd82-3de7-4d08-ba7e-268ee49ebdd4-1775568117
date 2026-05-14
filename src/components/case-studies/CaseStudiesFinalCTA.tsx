@@ -4,8 +4,8 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 
 export function CaseStudiesFinalCTA() {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/50">
-      <div className="container mx-auto px-4">
+    <section className="py-20 md:py-24 bg-gradient-to-br from-primary to-accent text-white">
+      <div className="container mx-auto px-4 max-w-3xl text-center">
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-bold">
             Let's Build a System That Works for Your Store

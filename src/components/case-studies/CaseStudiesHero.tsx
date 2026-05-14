@@ -4,10 +4,10 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 
 export function CaseStudiesHero() {
   return (
-    <section className="py-20 bg-gradient-to-b from-muted/50 to-background">
+    <section className="pt-32 pb-16 md:pb-20 bg-gradient-to-br from-primary/10 to-accent/10">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
             Ecommerce Automation Case Studies
           </h1>
           
