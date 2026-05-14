@@ -1,55 +1,43 @@
 import Link from "next/link";
-import { MessageCircle, Instagram, Bot } from "lucide-react";
+import { MessageCircle, Instagram, Send, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function ChannelPositioning() {
   const channels = [
-    {
-      icon: MessageCircle,
-      title: "WhatsApp Abandoned Cart Recovery",
-      description: "Re-engage shoppers with direct, high-converting messages on WhatsApp and recover lost checkouts faster.",
-      link: "/whatsapp-automation-ecommerce",
-      color: "text-green-600",
-    },
-    {
-      icon: Instagram,
-      title: "Instagram Follow-Up Automation",
-      description: "Reconnect with interested customers through structured Instagram messaging flows.",
-      link: "/instagram-automation-ecommerce",
-      color: "text-pink-600",
-    },
-    {
-      icon: Bot,
-      title: "AI Chatbot Recovery Flows",
-      description: "Use AI-powered conversation paths to answer objections, guide decisions, and move customers back to checkout.",
-      link: "/ai-chatbot-ecommerce",
-      color: "text-primary",
-    },
+    { icon: MessageCircle, title: "WhatsApp Recovery", description: "95%+ open rates. Direct, personal, and highest-converting channel for cart recovery.", link: "/whatsapp-automation-ecommerce" },
+    { icon: Instagram, title: "Instagram Recovery", description: "Reach customers where they discovered your products. Convert DM conversations into completed purchases.", link: "/instagram-automation-ecommerce" },
+    { icon: Send, title: "Telegram Recovery", description: "Direct communication channel with engaged subscribers. Perfect for repeat customers and loyal audiences.", link: "/telegram-automation-ecommerce" }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Abandoned Cart Recovery Across the Channels That Convert
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Customers do not always respond the same way on every platform. That is why we build abandoned cart recovery systems around the channels ecommerce brands already use.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] text-center mb-8">
+            Multi-Channel Recovery <span className="text-[#c9a961] font-normal">Maximizes Results</span>
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-16 font-light">
+            Different customers prefer different channels. We reach them wherever they're most likely to respond.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
             {channels.map((channel, index) => (
-              <Link 
-                key={index}
-                href={channel.link}
-                className="bg-card p-8 rounded-xl border border-border/50 hover:border-primary/50 transition-colors group"
-              >
-                <channel.icon className={`w-12 h-12 ${channel.color} mb-4 group-hover:scale-110 transition-transform`} />
-                <h3 className="text-xl font-semibold mb-3">{channel.title}</h3>
-                <p className="text-muted-foreground">{channel.description}</p>
-              </Link>
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <channel.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">{channel.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed mb-6">{channel.description}</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-gray-300 hover:border-[#c9a961] bg-white hover:bg-gray-50 text-[#1a1a1a]"
+                  asChild
+                >
+                  <Link href={channel.link}>
+                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
             ))}
           </div>
         </div>
