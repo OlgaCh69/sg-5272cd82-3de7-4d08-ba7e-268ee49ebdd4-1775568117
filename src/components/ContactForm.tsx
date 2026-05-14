@@ -245,7 +245,7 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="platform" className="text-sm font-medium mb-2 block">
-          Platform of Interest <span className="text-red-500">*</span>
+          Service of Interest <span className="text-red-500">*</span>
         </label>
         <select
           id="platform"
@@ -255,11 +255,18 @@ export function ContactForm() {
           onChange={handleInputChange}
           className={`w-full h-10 px-3 rounded-md bg-muted/30 border text-sm focus:outline-none focus:ring-2 focus:ring-primary ${errors.platform ? 'border-red-500' : 'border-border/50'}`}
         >
-          <option value="">Select platform</option>
-          <option value="Instagram">Instagram</option>
-          <option value="WhatsApp">WhatsApp</option>
-          <option value="Telegram">Telegram</option>
-          <option value="All Platforms">All Platforms</option>
+          <option value="">Select service</option>
+          <option value="WhatsApp Automation">WhatsApp Automation</option>
+          <option value="Instagram Automation">Instagram Automation</option>
+          <option value="Telegram Automation">Telegram Automation</option>
+          <option value="AI Chatbot">AI Chatbot</option>
+          <option value="Abandoned Cart Recovery">Abandoned Cart Recovery</option>
+          <option value="Customer Support Automation">Customer Support Automation</option>
+          <option value="Real Estate AI Automation">Real Estate AI Automation</option>
+          <option value="Lead Capture Assistant">Lead Capture Assistant</option>
+          <option value="Beauty Clinic AI Receptionist">Beauty Clinic AI Receptionist</option>
+          <option value="Revenue Automation">Revenue Automation</option>
+          <option value="All Services">All Services</option>
         </select>
         {errors.platform && <p className="text-xs text-red-500 mt-1">{errors.platform}</p>}
       </div>
