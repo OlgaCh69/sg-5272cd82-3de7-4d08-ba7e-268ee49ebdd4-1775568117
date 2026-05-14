@@ -2,17 +2,19 @@ import { TrendingUp } from "lucide-react";
 
 export function ROIAngle() {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-start gap-4 mb-8">
-            <TrendingUp className="w-12 h-12 text-primary flex-shrink-0 mt-1" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Recover Revenue Without Increasing Ad Spend
+            <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6 text-[#c9a961]" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white">
+              Recover Revenue <span className="text-[#c9a961] font-normal">Without Increasing Ad Spend</span>
             </h2>
           </div>
           
-          <div className="space-y-6 text-lg text-muted-foreground">
+          <div className="space-y-6 text-lg text-white/70 font-light">
             <p>
               Most ecommerce brands focus heavily on acquiring more traffic.
             </p>
@@ -21,7 +23,7 @@ export function ROIAngle() {
               But recovering abandoned carts is often a more efficient growth move.
             </p>
             
-            <p className="text-foreground font-semibold">
+            <p className="text-white font-medium">
               Why?
             </p>
             
@@ -33,7 +35,7 @@ export function ROIAngle() {
               Instead of spending more to replace lost buyers, you create a system that helps convert the ones you already had.
             </p>
             
-            <p className="text-primary font-semibold text-xl">
+            <p className="text-[#c9a961] font-medium text-xl">
               That means more revenue from the same traffic.
             </p>
           </div>

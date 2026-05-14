@@ -1,32 +1,49 @@
-import { CheckCircle2 } from "lucide-react";
+import { Target, Zap, MessageCircle } from "lucide-react";
 
 export function AbandonedCartDifferentiation() {
-  const points = [
-    "Built specifically for ecommerce brands",
-    "Focused on revenue recovery, not generic automation",
-    "Structured around high-intent customer journeys",
-    "Designed for multi-channel follow-up",
-    "Premium system for brands serious about growth",
+  const differentiators = [
+    {
+      icon: Target,
+      title: "Revenue-First Approach",
+      description: "We optimize for recovery rate and revenue captured—not just message delivery. Every flow is built around conversion."
+    },
+    {
+      icon: Zap,
+      title: "Multi-Channel Reach",
+      description: "WhatsApp, Instagram, Telegram, and email—all coordinated. Different customers prefer different channels."
+    },
+    {
+      icon: MessageCircle,
+      title: "Conversational AI",
+      description: "No rigid templates. Our AI handles natural objections, questions, and negotiations that move customers toward purchase."
+    }
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Why Ecommerce Brands Choose OneTech Automation
-          </h2>
-          
-          <p className="text-lg text-muted-foreground mb-10">
-            Most abandoned cart tools stop at simple reminders.<br />
-            <span className="text-foreground font-semibold">We build recovery systems around real customer behavior, buyer hesitation, and revenue opportunities.</span>
-          </p>
-          
-          <div className="space-y-4">
-            {points.map((point, index) => (
-              <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg border border-border/50">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-foreground font-medium">{point}</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Why O.N.E.Tech for <span className="text-[#c9a961] font-normal">Cart Recovery?</span>
+            </h2>
+            <p className="text-xl text-gray-600 font-light">
+              Most tools stop at simple reminders. We build recovery systems around real customer behavior and buying psychology.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {differentiators.map((diff, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <diff.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {diff.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {diff.description}
+                </p>
               </div>
             ))}
           </div>

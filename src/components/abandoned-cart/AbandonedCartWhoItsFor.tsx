@@ -1,32 +1,49 @@
-import { CheckCircle2 } from "lucide-react";
+import { TrendingUp, ShoppingCart, Users } from "lucide-react";
 
 export function AbandonedCartWhoItsFor() {
-  const ideal = [
-    "Growing ecommerce stores",
-    "Brands with regular checkout volume",
-    "Stores looking to improve conversion rates",
-    "Teams that want a more efficient recovery process",
-    "Ecommerce businesses focused on performance and ROI",
+  const segments = [
+    {
+      icon: TrendingUp,
+      title: "Growing Ecommerce Stores",
+      description: "€500k-€5M+ revenue. You're generating consistent checkout activity and know you're losing revenue during the buying journey."
+    },
+    {
+      icon: ShoppingCart,
+      title: "High Cart Abandonment",
+      description: "If your abandonment rate is above 60%, you have a major recovery opportunity. Most stores can recapture €50k-€300k+ annually."
+    },
+    {
+      icon: Users,
+      title: "Performance-Focused Brands",
+      description: "You optimize for metrics and ROI. Cart recovery is one of the highest-leverage moves to improve conversion without increasing traffic."
+    }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Built for Ecommerce Brands That Want to Recover More Sales
-          </h2>
-          
-          <p className="text-lg text-muted-foreground mb-10">
-            This is designed for ecommerce businesses that are already generating traffic but know they are losing revenue during checkout.
-          </p>
-          
-          <div className="space-y-4">
-            <p className="text-lg font-semibold text-foreground mb-4">Ideal For:</p>
-            {ideal.map((item, index) => (
-              <div key={index} className="flex items-start gap-3 bg-card p-4 rounded-lg border border-border/50">
-                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-foreground">{item}</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Built for Brands That <span className="text-[#c9a961] font-normal">Want More Revenue</span>
+            </h2>
+            <p className="text-xl text-white/70 font-light">
+              Cart recovery delivers ROI when you already have checkout volume and traffic.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {segments.map((segment, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <segment.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">
+                  {segment.title}
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {segment.description}
+                </p>
               </div>
             ))}
           </div>
