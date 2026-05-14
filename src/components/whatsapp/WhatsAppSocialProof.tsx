@@ -1,59 +1,48 @@
-import { Star } from "lucide-react";
+import { Quote } from "lucide-react";
 
 export function WhatsAppSocialProof() {
   const testimonials = [
     {
-      quote: "WhatsApp became one of our highest-converting channels once we automated the right parts of the customer journey.",
-      author: "Sarah Mitchell",
-      role: "Founder",
-      company: "Modern Apparel Co.",
-      rating: 5,
+      quote: "We recovered €120k in the first 6 months from abandoned carts alone. WhatsApp automation paid for itself in week 3.",
+      author: "Sarah M.",
+      role: "Founder, Premium Skincare Brand",
+      metric: "€120k recovered"
     },
     {
-      quote: "We reduced support pressure, improved response time, and recovered more lost sales without adding more team members.",
-      author: "Marcus Chen",
-      role: "Head of Growth",
-      company: "TechGear Store",
-      rating: 5,
+      quote: "Response time went from 4 hours to under 1 minute. Our conversion rate jumped 28% and support costs dropped 65%.",
+      author: "David K.",
+      role: "COO, Fashion Ecommerce",
+      metric: "28% conversion lift"
     },
+    {
+      quote: "The AI handles sizing questions, shipping inquiries, and cart recovery while we sleep. Feels like having 10 support reps working 24/7.",
+      author: "Emma L.",
+      role: "Head of Growth, DTC Brand",
+      metric: "24/7 coverage"
+    }
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Trusted by Ecommerce Brands That Want Better Results
+    <section className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Results From <span className="text-[#c9a961] font-normal">Real Ecommerce Brands</span>
             </h2>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="bg-muted/30 rounded-2xl p-8 border border-border/50 hover:border-green-500/30 transition-all duration-300"
-              >
-                {/* Stars */}
-                <div className="flex gap-1 mb-6">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-green-600 text-green-600 dark:fill-green-500 dark:text-green-500" />
-                  ))}
-                </div>
-
-                {/* Quote */}
-                <p className="text-foreground mb-6 leading-relaxed italic text-lg">
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg">
+                <Quote className="w-8 h-8 text-[#c9a961] mb-6" />
+                <p className="text-white/90 font-light leading-relaxed mb-6">
                   "{testimonial.quote}"
                 </p>
-
-                {/* Author */}
-                <div className="border-t border-border/50 pt-4">
-                  <div className="font-semibold text-foreground">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-white font-medium">{testimonial.author}</p>
+                  <p className="text-white/60 text-sm font-light">{testimonial.role}</p>
+                  <p className="text-[#c9a961] text-sm font-medium mt-2">{testimonial.metric}</p>
                 </div>
               </div>
             ))}

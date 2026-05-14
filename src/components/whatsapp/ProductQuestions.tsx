@@ -1,60 +1,66 @@
-import { MessageCircle, Clock, CheckCircle2 } from "lucide-react";
+import { MessageSquare, Clock, ShoppingBag, TrendingUp, CheckCircle, Zap } from "lucide-react";
 
 export function ProductQuestions() {
+  const features = [
+    {
+      icon: Clock,
+      title: "Instant Answers",
+      description: "Customer asks about sizing, materials, or shipping—AI responds in under 60 seconds with accurate product information."
+    },
+    {
+      icon: CheckCircle,
+      title: "No Question Unanswered",
+      description: "24/7 availability means no lost sales from unanswered questions during off-hours or high-volume periods."
+    },
+    {
+      icon: ShoppingBag,
+      title: "Purchase-Ready Responses",
+      description: "AI doesn't just answer—it moves customers toward checkout with product recommendations and direct purchase links."
+    },
+    {
+      icon: TrendingUp,
+      title: "Conversion Boost",
+      description: "Stores see 20-40% higher conversion rates when product questions are answered immediately versus manually."
+    },
+    {
+      icon: Zap,
+      title: "Smart Escalation",
+      description: "Complex questions route to your team automatically. You only handle what AI can't—typically 15-30% of inquiries."
+    },
+    {
+      icon: MessageSquare,
+      title: "Contextual Understanding",
+      description: "AI references the customer's browsing history and cart to provide personalized, relevant answers."
+    }
+  ];
+
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-medium text-primary mb-4">
-              <MessageCircle className="h-4 w-4" />
-              Instant Answers
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Answer Buying Questions Before They Cost You the Sale
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Product Questions Answered <span className="text-[#c9a961] font-normal">Instantly</span>
             </h2>
+            <p className="text-xl text-gray-600 font-light">
+              No more waiting hours for responses. AI handles sizing, shipping, materials, availability—automatically.
+            </p>
           </div>
 
-          {/* Main Copy */}
-          <div className="prose prose-lg max-w-none space-y-6 mb-12">
-            <p className="text-xl text-muted-foreground leading-relaxed text-center">
-              Many ecommerce customers do not need a long sales process. They just need one clear answer before they buy.
-            </p>
-            
-            <p className="text-xl text-muted-foreground leading-relaxed text-center">
-              Questions about sizing, delivery times, stock availability, returns, or product fit often decide whether a customer converts or leaves.
-            </p>
-            
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 border border-primary/10 text-center">
-              <p className="text-xl text-foreground font-semibold mb-2">
-                With WhatsApp automation, those questions can be handled instantly, even outside business hours.
-              </p>
-              <p className="text-lg text-muted-foreground">
-                That means fewer lost opportunities and more completed purchases.
-              </p>
-            </div>
-          </div>
-
-          {/* Supporting Points */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 rounded-xl bg-muted/30 border border-border/50">
-              <Clock className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">24/7 Availability</h3>
-              <p className="text-sm text-muted-foreground">Answer questions anytime, even when your team is offline</p>
-            </div>
-            
-            <div className="text-center p-6 rounded-xl bg-muted/30 border border-border/50">
-              <MessageCircle className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Instant Response</h3>
-              <p className="text-sm text-muted-foreground">No waiting time for customers who are ready to buy</p>
-            </div>
-            
-            <div className="text-center p-6 rounded-xl bg-muted/30 border border-border/50">
-              <CheckCircle2 className="h-10 w-10 text-primary mx-auto mb-4" />
-              <h3 className="font-semibold mb-2">Higher Conversions</h3>
-              <p className="text-sm text-muted-foreground">Remove friction and close more sales faster</p>
-            </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
