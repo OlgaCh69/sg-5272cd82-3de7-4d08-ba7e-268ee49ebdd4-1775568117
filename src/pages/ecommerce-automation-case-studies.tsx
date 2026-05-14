@@ -89,6 +89,8 @@ export default function CaseStudiesPage() {
             <CaseStudyBlock
               key={index}
               {...study}
+              title={study.company}
+              problem={study.challenge}
             />
           ))}
           
