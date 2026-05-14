@@ -89,7 +89,6 @@ export default function CaseStudiesPage() {
             <CaseStudyBlock
               key={index}
               {...study}
-              isEven={index % 2 === 0}
             />
           ))}
           
