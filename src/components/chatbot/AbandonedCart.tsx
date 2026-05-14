@@ -1,33 +1,31 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Clock, Target, TrendingUp } from "lucide-react";
 
 export function AbandonedCart() {
+  const features = [
+    { icon: Clock, title: "Instant Follow-Up", description: "AI reaches out within minutes while purchase intent is still high." },
+    { icon: Target, title: "Personalized Recovery", description: "Include product details, answer objections, offer time-sensitive incentives." },
+    { icon: TrendingUp, title: "15-30% Recovery Rate", description: "Significantly higher than email-only cart recovery campaigns." },
+    { icon: ShoppingCart, title: "Direct Revenue Impact", description: "Most stores recover €50k-€300k annually from abandoned carts." }
+  ];
+
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-start gap-4 mb-8">
-            <ShoppingCart className="w-12 h-12 text-primary flex-shrink-0 mt-1" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Recover Lost Revenue Before It Disappears
-            </h2>
-          </div>
-          
-          <div className="space-y-6 text-lg text-muted-foreground">
-            <p>
-              A large percentage of ecommerce revenue is lost when shoppers leave before completing checkout.
-            </p>
-            
-            <p>
-              Often, those customers still intend to buy. They just need a reminder, an answer, or a final push.
-            </p>
-            
-            <p>
-              AI chatbots help you follow up automatically, re-engage interested visitors, and recover sales that would otherwise be lost.
-            </p>
-            
-            <p className="text-foreground font-semibold">
-              This turns automation into a direct revenue driver, not just a convenience feature.
-            </p>
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] text-center mb-16">
+            Recover Lost Revenue <span className="text-[#c9a961] font-normal">Automatically</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">{feature.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -7,49 +7,49 @@ export function MultiChannel() {
     {
       icon: MessageCircle,
       title: "WhatsApp Automation",
-      description: "Recover carts, answer questions, and close sales in a high-converting channel.",
+      description: "Recover carts, answer questions, and close sales in your highest-converting channel.",
       link: "/whatsapp-automation-ecommerce",
-      color: "text-green-600",
     },
     {
       icon: Instagram,
       title: "Instagram Automation",
-      description: "Turn DMs and comments into structured sales opportunities.",
+      description: "Turn DMs and comments into structured sales conversations automatically.",
       link: "/instagram-automation-ecommerce",
-      color: "text-pink-600",
     },
     {
       icon: Send,
       title: "Telegram Automation",
-      description: "Build direct engagement and support repeat revenue with owned communication.",
+      description: "Build direct engagement and drive repeat revenue with owned communication.",
       link: "/telegram-automation-ecommerce",
-      color: "text-blue-600",
     },
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Built for the Channels Ecommerce Brands Already Use
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Your customers do not all interact in the same place. That is why our AI chatbot systems are designed to support ecommerce conversations across multiple channels.
-            </p>
-          </div>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-white text-center mb-8">
+            One AI Across <span className="text-[#c9a961] font-normal">All Your Channels</span>
+          </h2>
+          <p className="text-xl text-white/70 text-center mb-16 font-light">
+            Your customers interact on different platforms. Your AI should too.
+          </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {channels.map((channel, index) => (
-              <div key={index} className="bg-card p-8 rounded-xl border border-border/50 hover:border-primary/50 transition-colors">
-                <channel.icon className={`w-12 h-12 ${channel.color} mb-4`} />
-                <h3 className="text-xl font-semibold mb-3">{channel.title}</h3>
-                <p className="text-muted-foreground mb-6">{channel.description}</p>
-                <Button variant="outline" className="w-full" asChild>
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <channel.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">{channel.title}</h3>
+                <p className="text-white/70 font-light leading-relaxed mb-6">{channel.description}</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-white/30 hover:border-white/60 bg-white/5 hover:bg-white/10 text-white"
+                  asChild
+                >
                   <Link href={channel.link}>
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>
               </div>

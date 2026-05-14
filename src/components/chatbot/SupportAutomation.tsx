@@ -1,55 +1,34 @@
-import { HeadphonesIcon, CheckCircle2 } from "lucide-react";
+import { Headphones, Clock, MessageCircle, CheckCircle, TrendingUp, Users } from "lucide-react";
 
 export function SupportAutomation() {
-  const supportTypes = [
-    "Shipping times",
-    "Return policies",
-    "Stock questions",
-    "Order updates",
-    "Product details",
+  const features = [
+    { icon: Clock, title: "Instant Answers 24/7", description: "Shipping times, return policies, stock questions—answered in seconds." },
+    { icon: MessageCircle, title: "70-85% Automation Rate", description: "AI handles the majority of support questions without human intervention." },
+    { icon: CheckCircle, title: "Consistent Quality", description: "Every customer gets accurate, on-brand responses every time." },
+    { icon: TrendingUp, title: "Reduced Support Costs", description: "Free your team from repetitive questions to focus on complex issues." },
+    { icon: Users, title: "Smart Escalation", description: "Complex questions route to your team automatically when needed." },
+    { icon: Headphones, title: "Better Customer Satisfaction", description: "Fast, helpful responses improve CSAT scores and loyalty." }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-start gap-4 mb-8">
-            <HeadphonesIcon className="w-12 h-12 text-primary flex-shrink-0 mt-1" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Automate Support Without Sacrificing Experience
-            </h2>
-          </div>
-          
-          <div className="space-y-6 text-lg text-muted-foreground mb-8">
-            <p>
-              Customer support is one of the biggest pressure points for growing ecommerce brands.
-            </p>
-            
-            <p>
-              As message volume increases, teams struggle to maintain speed and consistency.
-            </p>
-            
-            <p>
-              AI chatbots help handle the repetitive, high-volume questions that slow your team down.
-            </p>
-            
-            <p className="text-foreground font-semibold">
-              This includes common requests such as:
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 mb-8">
-            {supportTypes.map((type, index) => (
-              <div key={index} className="flex items-center gap-2 bg-card p-3 rounded-lg border border-border/50">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-sm font-medium">{type}</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-white text-center mb-16">
+            Automate Support Without <span className="text-[#c9a961] font-normal">Sacrificing Experience</span>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">{feature.title}</h3>
+                <p className="text-white/70 font-light leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
-          
-          <p className="text-lg text-foreground font-semibold">
-            The result is faster support for customers and more leverage for your business.
-          </p>
         </div>
       </div>
     </section>

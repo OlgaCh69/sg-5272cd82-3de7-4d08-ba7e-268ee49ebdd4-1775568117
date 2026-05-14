@@ -1,28 +1,33 @@
 import { Quote } from "lucide-react";
 
 export function ChatbotSocialProof() {
+  const testimonials = [
+    { quote: "AI chatbot helped us respond faster and convert more conversations into sales.", author: "Sarah M.", role: "Founder, DTC Brand", metric: "35% conversion lift" },
+    { quote: "We recovered €85k in abandoned carts in the first 4 months.", author: "David K.", role: "COO, Fashion Store", metric: "€85k recovered" },
+    { quote: "Support costs dropped 60% while customer satisfaction went up.", author: "Emma L.", role: "Head of Growth", metric: "60% cost reduction" }
+  ];
+
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-            Trusted by Ecommerce Brands Focused on Growth
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-white text-center mb-16">
+            Results From <span className="text-[#c9a961] font-normal">Real Brands</span>
           </h2>
-          
-          <div className="bg-card p-8 md:p-12 rounded-xl border border-border/50">
-            <Quote className="w-12 h-12 text-primary mb-6" />
-            <p className="text-xl md:text-2xl text-foreground mb-6 italic">
-              "Our AI chatbot helped us respond faster, improve customer experience, and convert more conversations into sales."
-            </p>
-            <div className="border-t border-border pt-6">
-              <p className="font-semibold text-foreground">Ecommerce Brand</p>
-              <p className="text-sm text-muted-foreground">Founder & CEO</p>
-            </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg">
+                <Quote className="w-8 h-8 text-[#c9a961] mb-6" />
+                <p className="text-white/90 font-light leading-relaxed mb-6">"{testimonial.quote}"</p>
+                <div className="border-t border-white/10 pt-6">
+                  <p className="text-white font-medium">{testimonial.author}</p>
+                  <p className="text-white/60 text-sm font-light">{testimonial.role}</p>
+                  <p className="text-[#c9a961] text-sm font-medium mt-2">{testimonial.metric}</p>
+                </div>
+              </div>
+            ))}
           </div>
-          
-          <p className="text-center text-muted-foreground mt-8">
-            Add your testimonials, results, case studies, or client logos here.
-          </p>
         </div>
       </div>
     </section>
