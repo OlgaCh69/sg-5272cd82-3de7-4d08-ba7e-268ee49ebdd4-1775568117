@@ -1,356 +1,108 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, MessageCircle, Clock, TrendingUp, Users } from "lucide-react";
+import { WhatsAppHero } from "@/components/whatsapp/WhatsAppHero";
+import { WhatsAppProblem } from "@/components/whatsapp/WhatsAppProblem";
+import { WhatsAppSolution } from "@/components/whatsapp/WhatsAppSolution";
+import { WhatsAppBenefits } from "@/components/whatsapp/WhatsAppBenefits";
+import { WhatsAppUseCases } from "@/components/whatsapp/WhatsAppUseCases";
+import { AbandonedCartFocus } from "@/components/whatsapp/AbandonedCartFocus";
+import { ProductQuestions } from "@/components/whatsapp/ProductQuestions";
+import { WhatsAppHowItWorks } from "@/components/whatsapp/WhatsAppHowItWorks";
+import { WhoItsFor } from "@/components/whatsapp/WhoItsFor";
+import { WhatsAppDifferentiation } from "@/components/whatsapp/WhatsAppDifferentiation";
+import { WhatsAppSocialProof } from "@/components/whatsapp/WhatsAppSocialProof";
+import { WhatsAppROI } from "@/components/whatsapp/WhatsAppROI";
+import { Investment } from "@/components/Investment";
+import { WhatsAppFAQ } from "@/components/whatsapp/WhatsAppFAQ";
+import { ContactForm } from "@/components/ContactForm";
+import { WhatsAppFinalCTA } from "@/components/whatsapp/WhatsAppFinalCTA";
 
 export default function WhatsAppAutomationEcommerce() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is WhatsApp automation for ecommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WhatsApp automation for ecommerce uses AI to handle customer conversations on WhatsApp automatically. It can answer product questions, send cart reminders, process orders, provide shipping updates, and handle support inquiries 24/7 without human intervention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does WhatsApp cart recovery work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When a customer abandons their cart, our AI system automatically sends a personalized WhatsApp message within minutes. It can offer discounts, answer questions about products, and guide them back to complete their purchase—all conversationally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it handle multiple customer conversations at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The AI can handle unlimited simultaneous conversations on WhatsApp, responding to each customer instantly and personally. Unlike human agents, there's no waiting in queue or delayed responses during peak hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with my existing ecommerce platform?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our WhatsApp automation integrates with Shopify, WooCommerce, Magento, and other major ecommerce platforms. We connect to your store to access product catalogs, inventory, orders, and customer data for personalized automation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can I see results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most ecommerce stores see measurable improvements within 2-4 weeks: recovered carts increase by 15-30%, support tickets drop by 40-60%, and overall conversion rates improve as customers get instant answers when they're ready to buy."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the setup process?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setup typically takes 2-3 weeks. We connect to your WhatsApp Business API, integrate with your ecommerce platform, train the AI on your products and policies, test conversations, and launch. Our team handles the technical setup."
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <SEO
-        title="WhatsApp Automation for Ecommerce: Increase Sales & Save Time"
-        description="Learn how WhatsApp automation helps ecommerce brands increase sales, improve customer support, and recover abandoned carts."
+      <SEO 
+        title="WhatsApp Automation for Ecommerce | AI Cart Recovery & 24/7 Customer Service"
+        description="Automate your ecommerce store with WhatsApp AI. Recover abandoned carts, answer product questions instantly, and provide 24/7 customer support that converts."
         url="https://onetechautomation.com/whatsapp-automation-ecommerce"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
-      <main className="min-h-screen bg-[#0a0a0a]">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a2e] to-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                WhatsApp Automation for Ecommerce
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Use WhatsApp automation to respond instantly, recover lost sales, and improve customer experience.
-              </p>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Ecommerce brands are increasingly using WhatsApp to communicate with customers. Automation helps turn those conversations into conversions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Why WhatsApp Is Powerful for Ecommerce
-              </h2>
-              <div className="space-y-4 text-gray-300 text-lg">
-                <p>Customers want fast, direct communication.</p>
-                <p>Email is often ignored.<br/>Live chat is not always available.</p>
-                <p>But WhatsApp messages get opened and read quickly.</p>
-                <p className="font-semibold text-white">For ecommerce brands, this creates a powerful opportunity to engage customers, answer questions, and drive more sales.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 1 - What Is WhatsApp Automation */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                What Is WhatsApp Automation?
-              </h2>
-              <div className="space-y-4 text-gray-300 text-lg">
-                <p>WhatsApp automation allows businesses to send messages, respond to customers, and manage conversations automatically.</p>
-                <p>Instead of replying manually to every message, automated systems handle common interactions instantly.</p>
-                <p className="font-semibold text-white">This improves speed, consistency, and scalability.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2 - How WhatsApp Automation Increases Sales */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                How WhatsApp Automation Increases Ecommerce Sales
-              </h2>
-              
-              <div className="space-y-8">
-                {/* 1. Instant Responses */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <MessageCircle className="w-6 h-6 text-[#00ff87]" />
-                    1. Instant Responses
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Customers don't wait.</p>
-                    <p className="font-semibold text-white">Automation ensures they get immediate answers to their questions, increasing the chances of purchase.</p>
-                  </div>
-                </div>
-
-                {/* 2. Abandoned Cart Recovery */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <TrendingUp className="w-6 h-6 text-[#00ff87]" />
-                    2. Abandoned Cart Recovery
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Follow up with customers who didn't complete their purchase.</p>
-                    <p className="font-semibold text-white">A simple reminder message can recover lost revenue.</p>
-                    <div className="mt-4 p-4 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20">
-                      <p className="text-white font-semibold mb-2">Related Resource:</p>
-                      <Link href="/abandoned-cart-recovery-ecommerce" className="text-[#00ff87] hover:text-[#60efff] inline-flex items-center gap-2 font-medium">
-                        Abandoned Cart Recovery for Ecommerce <ArrowRight className="w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* 3. Order Updates & Notifications */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <Clock className="w-6 h-6 text-[#00ff87]" />
-                    3. Order Updates & Notifications
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Send real-time updates about orders, shipping, and delivery.</p>
-                    <p className="font-semibold text-white">This improves customer experience and reduces support requests.</p>
-                  </div>
-                </div>
-
-                {/* 4. Personalized Messaging */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <Users className="w-6 h-6 text-[#00ff87]" />
-                    4. Personalized Messaging
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p className="font-semibold text-white">Automation can be tailored based on customer behavior, making communication more relevant and effective.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3 - Benefits */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Benefits of WhatsApp Automation for Ecommerce
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Faster customer support</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Higher engagement rates</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Increased conversion rates</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Reduced manual workload</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Scalable communication</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4 - Common Use Cases */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Common Use Cases
-              </h2>
-              <div className="space-y-3 text-gray-300 text-lg">
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Answering product questions</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Sending order confirmations</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Recovering abandoned carts</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Providing support</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Following up with customers</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5 - Common Mistakes */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Common Mistakes to Avoid
-              </h2>
-              <div className="space-y-3 text-gray-300 text-lg">
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Slow or delayed responses</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Over-automating without personalization</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Sending too many messages</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Not guiding the customer journey</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mid CTA */}
-        <section className="py-20 md:py-24 bg-gradient-to-r from-[#00ff87] to-[#60efff]">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-[#0a0a0a] mb-6">
-              Want to Automate Your WhatsApp for Ecommerce?
-            </h3>
-            <p className="text-xl text-[#0a0a0a]/80 mb-8 max-w-2xl mx-auto">
-              If your store receives customer messages daily, automation can improve efficiency and increase sales.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              variant="secondary"
-              className="bg-[#0a0a0a] text-white hover:bg-[#1a1a2e] text-lg px-8 py-6"
-            >
-              <Link href="/whatsapp-automation-ecommerce">Explore WhatsApp Automation Solutions</Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Is WhatsApp automation allowed?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, when used with official APIs and compliant systems.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Does WhatsApp automation increase sales?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, by improving response time and customer experience.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Can small ecommerce stores use WhatsApp automation?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, automation helps businesses of all sizes scale communication.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Content */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-bold text-white mb-8">Related Articles</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/instagram-automation-ecommerce" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  Instagram Automation for Ecommerce
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Learn how Instagram automation can increase your sales
-                </p>
-              </Link>
-              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  AI Chatbots Increase Ecommerce Sales
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Learn how AI chatbots can boost your ecommerce revenue
-                </p>
-              </Link>
-              <Link href="/ecommerce-customer-support-automation" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  Ecommerce Customer Support Automation
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Reduce workload and increase sales with automated support
-                </p>
-              </Link>
-              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  Increase Ecommerce Conversion Rate
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Proven methods to convert more visitors into customers
-                </p>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-20 md:py-24 bg-gradient-to-r from-[#00ff87] to-[#60efff]">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a0a0a] mb-6">
-              Start Using WhatsApp Automation Today
-            </h2>
-            <p className="text-xl text-[#0a0a0a]/80 mb-8 max-w-2xl mx-auto">
-              If your ecommerce business is already receiving customer messages, automation can turn those interactions into consistent sales opportunities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                variant="secondary"
-                className="bg-[#0a0a0a] text-white hover:bg-[#1a1a2e] text-lg px-8 py-6"
-              >
-                <Link href="/contact">Book a Strategy Demo</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-[#0a0a0a] text-[#0a0a0a] hover:bg-[#0a0a0a]/10 text-lg px-8 py-6"
-              >
-                <Link href="/">View All Automation Solutions</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+      <main className="bg-[#0a0a0a]">
+        <WhatsAppHero />
+        <WhatsAppProblem />
+        <WhatsAppSolution />
+        <WhatsAppBenefits />
+        <WhatsAppUseCases />
+        <AbandonedCartFocus />
+        <ProductQuestions />
+        <WhatsAppHowItWorks />
+        <WhoItsFor />
+        <WhatsAppDifferentiation />
+        <WhatsAppSocialProof />
+        <WhatsAppROI />
+        <Investment />
+        <WhatsAppFAQ />
+        <ContactForm />
+        <WhatsAppFinalCTA />
       </main>
       <Footer />
     </>

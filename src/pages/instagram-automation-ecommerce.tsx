@@ -1,341 +1,110 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, MessageCircle, TrendingUp, Users, Zap } from "lucide-react";
+import { InstagramHero } from "@/components/instagram/InstagramHero";
+import { InstagramProblem } from "@/components/instagram/InstagramProblem";
+import { InstagramSolution } from "@/components/instagram/InstagramSolution";
+import { InstagramBenefits } from "@/components/instagram/InstagramBenefits";
+import { CommentAutomation } from "@/components/instagram/CommentAutomation";
+import { DMAutomation } from "@/components/instagram/DMAutomation";
+import { InstagramUseCases } from "@/components/instagram/InstagramUseCases";
+import { InstagramCustomerJourney } from "@/components/instagram/InstagramCustomerJourney";
+import { InstagramHowItWorks } from "@/components/instagram/InstagramHowItWorks";
+import { InstagramWhoItsFor } from "@/components/instagram/InstagramWhoItsFor";
+import { InstagramDifferentiation } from "@/components/instagram/InstagramDifferentiation";
+import { InstagramSocialProof } from "@/components/instagram/InstagramSocialProof";
+import { InstagramROI } from "@/components/instagram/InstagramROI";
+import { Investment } from "@/components/Investment";
+import { InstagramFAQ } from "@/components/instagram/InstagramFAQ";
+import { ContactForm } from "@/components/ContactForm";
+import { InstagramFinalCTA } from "@/components/instagram/InstagramFinalCTA";
 
 export default function InstagramAutomationEcommerce() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Instagram automation for ecommerce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Instagram automation for ecommerce uses AI to automatically respond to comments, DMs, and inquiries on your Instagram account. It can answer product questions, handle orders, provide support, and guide followers to purchase—all while maintaining your brand voice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can it respond to Instagram comments automatically?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The AI monitors your posts and responds to comments in real-time. It can answer questions, provide product links, handle objections, and engage with your audience 24/7 without manual intervention."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work with Instagram DMs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The system handles Instagram Direct Messages automatically, responding to inquiries about products, orders, shipping, and support. It can also initiate conversations based on triggers like story replies or product tags."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does it integrate with my ecommerce store?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We connect your Instagram Business account to your Shopify, WooCommerce, or other ecommerce platform. This allows the AI to access product information, inventory levels, and order data to provide accurate, helpful responses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What results can I expect?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most ecommerce brands see 20-35% more conversions from Instagram traffic, 50-70% reduction in response time, and significant increases in follower engagement. The AI captures sales opportunities that would otherwise be lost to slow or missed responses."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does setup take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setup typically takes 2-3 weeks. We connect your Instagram Business account, integrate with your ecommerce platform, train the AI on your products and brand voice, and test the automation before going live."
+        }
+      }
+    ]
+  };
+
   return (
     <>
-      <SEO
-        title="Instagram Automation for Ecommerce: Increase Sales with DM Automation"
-        description="Learn how Instagram automation helps ecommerce brands increase sales, automate DMs, and improve customer engagement."
+      <SEO 
+        title="Instagram Automation for Ecommerce | AI Comment & DM Management"
+        description="Automate your Instagram for ecommerce with AI. Respond to comments and DMs instantly, convert followers to customers, and never miss a sale opportunity."
         url="https://onetechautomation.com/instagram-automation-ecommerce"
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
-      <main className="min-h-screen bg-[#0a0a0a]">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a2e] to-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="text-center space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Instagram Automation for Ecommerce
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
-                Turn Instagram messages into sales with automated replies, follow-ups, and customer journeys.
-              </p>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                Ecommerce brands are using Instagram DMs as a sales channel. Automation helps you respond instantly and convert more customers.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Intro Section */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Why Instagram Is a Powerful Sales Channel
-              </h2>
-              <div className="space-y-4 text-gray-300 text-lg">
-                <p>Instagram is no longer just a marketing platform.</p>
-                <p>Customers discover products, ask questions, and make buying decisions directly through messages.</p>
-                <p>If those messages are slow or unanswered, sales are lost.</p>
-                <p className="font-semibold text-white">Automation helps you capture those opportunities instantly.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 1 - What Is Instagram Automation */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                What Is Instagram Automation?
-              </h2>
-              <div className="space-y-4 text-gray-300 text-lg">
-                <p>Instagram automation allows ecommerce brands to automatically respond to messages, manage conversations, and guide customers through the buying process.</p>
-                <p className="font-semibold text-white">Instead of manually replying to every DM, automated systems handle common questions and interactions in real time.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2 - How Instagram Automation Increases Sales */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-                How Instagram Automation Increases Ecommerce Sales
-              </h2>
-              
-              <div className="space-y-8">
-                {/* 1. Instant DM Replies */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <Zap className="w-6 h-6 text-[#00ff87]" />
-                    1. Instant DM Replies
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Customers expect fast responses.</p>
-                    <p className="font-semibold text-white">Automation ensures every message is answered immediately, increasing the likelihood of conversion.</p>
-                  </div>
-                </div>
-
-                {/* 2. Lead Qualification */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <Users className="w-6 h-6 text-[#00ff87]" />
-                    2. Lead Qualification
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Not every customer is ready to buy.</p>
-                    <p className="font-semibold text-white">Automation can identify serious buyers and guide them through the next steps.</p>
-                  </div>
-                </div>
-
-                {/* 3. Product Recommendations */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <TrendingUp className="w-6 h-6 text-[#00ff87]" />
-                    3. Product Recommendations
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p className="font-semibold text-white">Automated messages can suggest products based on customer interest, helping them make faster decisions.</p>
-                  </div>
-                </div>
-
-                {/* 4. Follow-Up Messages */}
-                <div className="bg-gradient-to-br from-[#00ff87]/10 to-[#60efff]/10 p-6 rounded-lg border border-[#00ff87]/20">
-                  <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-3">
-                    <MessageCircle className="w-6 h-6 text-[#00ff87]" />
-                    4. Follow-Up Messages
-                  </h3>
-                  <div className="space-y-3 text-gray-300 text-lg">
-                    <p>Many customers don't buy immediately.</p>
-                    <p className="font-semibold text-white">Automation allows you to follow up and bring them back.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 3 - Benefits */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Benefits of Instagram Automation
-              </h2>
-              <div className="grid md:grid-cols-2 gap-4 mt-6">
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Faster response times</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Increased engagement</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Higher conversion rates</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Reduced manual workload</span>
-                </div>
-                <div className="flex items-start gap-3 bg-[#0a0a0a] p-4 rounded-lg border border-[#00ff87]/20">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">Scalable communication</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4 - Common Use Cases */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Common Use Cases
-              </h2>
-              <div className="space-y-3 text-gray-300 text-lg">
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Answering product questions</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Handling customer inquiries</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Sending product links</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Following up with leads</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Guiding customers to purchase</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 5 - Common Mistakes */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Common Mistakes to Avoid
-              </h2>
-              <div className="space-y-3 text-gray-300 text-lg">
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Ignoring DMs</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Slow responses</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Over-automation without personalization</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-[#00ff87] mt-1 flex-shrink-0" />
-                  <span>Lack of clear customer journey</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Mid CTA */}
-        <section className="py-20 md:py-24 bg-gradient-to-r from-[#00ff87] to-[#60efff]">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h3 className="text-3xl md:text-4xl font-bold text-[#0a0a0a] mb-6">
-              Want to Automate Your Instagram DMs?
-            </h3>
-            <p className="text-xl text-[#0a0a0a]/80 mb-8 max-w-2xl mx-auto">
-              If your ecommerce brand receives daily messages, automation can help you respond faster and convert more customers.
-            </p>
-            <Button
-              asChild
-              size="lg"
-              variant="secondary"
-              className="bg-[#0a0a0a] text-white hover:bg-[#1a1a2e] text-lg px-8 py-6"
-            >
-              <Link href="/instagram-automation-ecommerce">Explore Instagram Automation Solutions</Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 md:py-20 bg-[#0a0a0a]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-8">
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Does Instagram automation increase sales?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, by improving response speed and guiding customers through conversations.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Is Instagram automation safe?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, when implemented using approved tools and best practices.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-white">
-                  Can small ecommerce brands use it?
-                </h3>
-                <p className="text-gray-300 text-lg">
-                  Yes, automation helps businesses of all sizes scale communication.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Related Content */}
-        <section className="py-16 md:py-20 bg-[#1a1a2e]">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-bold text-white mb-8">Related Articles</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <Link href="/whatsapp-automation-ecommerce" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  WhatsApp Automation for Ecommerce
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Learn how WhatsApp automation can increase your sales
-                </p>
-              </Link>
-              <Link href="/ai-chatbots-increase-ecommerce-sales" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  AI Chatbots Increase Ecommerce Sales
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Discover how AI chatbots can boost revenue
-                </p>
-              </Link>
-              <Link href="/increase-ecommerce-conversion-rate" className="group p-6 bg-[#0a0a0a] rounded-lg border border-[#00ff87]/20 hover:border-[#00ff87] transition-colors">
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#00ff87]">
-                  Increase Ecommerce Conversion Rate
-                </h3>
-                <p className="text-sm text-gray-400">
-                  Proven methods to convert more visitors
-                </p>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Final CTA */}
-        <section className="py-20 md:py-24 bg-gradient-to-r from-[#00ff87] to-[#60efff]">
-          <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="text-3xl md:text-5xl font-bold text-[#0a0a0a] mb-6">
-              Start Using Instagram Automation Today
-            </h2>
-            <p className="text-xl text-[#0a0a0a]/80 mb-8 max-w-2xl mx-auto">
-              If your ecommerce business is already receiving messages on Instagram, automation can turn those conversations into consistent sales opportunities.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                asChild
-                size="lg"
-                variant="secondary"
-                className="bg-[#0a0a0a] text-white hover:bg-[#1a1a2e] text-lg px-8 py-6"
-              >
-                <Link href="/contact">Book a Strategy Demo</Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-[#0a0a0a] text-[#0a0a0a] hover:bg-[#0a0a0a]/10 text-lg px-8 py-6"
-              >
-                <Link href="/">View All Automation Solutions</Link>
-              </Button>
-            </div>
-          </div>
-        </section>
+      <main className="bg-[#0a0a0a]">
+        <InstagramHero />
+        <InstagramProblem />
+        <InstagramSolution />
+        <InstagramBenefits />
+        <CommentAutomation />
+        <DMAutomation />
+        <InstagramUseCases />
+        <InstagramCustomerJourney />
+        <InstagramHowItWorks />
+        <InstagramWhoItsFor />
+        <InstagramDifferentiation />
+        <InstagramSocialProof />
+        <InstagramROI />
+        <Investment />
+        <InstagramFAQ />
+        <ContactForm />
+        <InstagramFinalCTA />
       </main>
       <Footer />
     </>
