@@ -16,7 +16,7 @@ export default function InstagramAutomationEcommerce() {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-muted to-background">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 to-accent/10">
           <div className="container mx-auto px-4 max-w-4xl">
             <div className="text-center space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
