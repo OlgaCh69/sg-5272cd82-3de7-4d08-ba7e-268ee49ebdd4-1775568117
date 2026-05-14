@@ -1,71 +1,71 @@
-import { Eye, MessageCircle, Zap, Package, ShoppingCart } from "lucide-react";
+import { Eye, MessageCircle, ShoppingCart, Heart, Repeat, Star } from "lucide-react";
 
 export function InstagramCustomerJourney() {
-  const steps = [
+  const stages = [
     {
       icon: Eye,
-      title: "User sees your content",
-      description: "Discovery through posts, stories, or ads",
+      title: "Discovery",
+      description: "Follower sees your product post or story. AI auto-responds to comments with personalized DM invitations."
     },
     {
       icon: MessageCircle,
-      title: "Leaves a comment or sends a DM",
-      description: "Shows buying intent through engagement",
-    },
-    {
-      icon: Zap,
-      title: "Receives instant response",
-      description: "Automated reply guides the conversation",
-    },
-    {
-      icon: Package,
-      title: "Gets product information or offer",
-      description: "Personalized recommendations and details",
+      title: "Engagement",
+      description: "User opens DM. AI answers questions about sizing, materials, shipping, and availability instantly."
     },
     {
       icon: ShoppingCart,
-      title: "Moves toward purchase",
-      description: "Smooth conversion without friction",
+      title: "Conversion",
+      description: "AI sends direct checkout link. User completes purchase without leaving Instagram."
     },
+    {
+      icon: Heart,
+      title: "Fulfillment",
+      description: "Proactive shipping updates and delivery notifications keep customers informed automatically."
+    },
+    {
+      icon: Star,
+      title: "Feedback",
+      description: "Post-purchase follow-up requests reviews and ratings, building social proof."
+    },
+    {
+      icon: Repeat,
+      title: "Retention",
+      description: "Automated campaigns for cross-sells, new arrivals, and re-engagement drive repeat purchases."
+    }
   ];
 
   return (
-    <section id="customer-journey" className="py-20 md:py-28 bg-muted/30">
-      <div className="container px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Build a Complete Sales Journey{" "}
-              <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                Inside Instagram
-              </span>
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              The Complete <span className="text-[#c9a961] font-normal">Instagram Sales Journey</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Instagram automation allows you to guide customers from discovery to purchase without friction.
+            <p className="text-xl text-gray-600 font-light">
+              From first comment to repeat purchase—fully automated.
             </p>
           </div>
 
-          <div className="space-y-6">
-            {steps.map((step, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-6 p-6 rounded-lg bg-background border border-border/50 hover:border-pink-500/50 transition-colors"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 border border-pink-500/20 flex-shrink-0">
-                  <step.icon className="w-6 h-6 text-pink-500" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {stages.map((stage, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <stage.icon className="w-6 h-6 text-[#c9a961]" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-[#c9a961] font-medium mb-1">Stage {index + 1}</div>
+                    <h3 className="text-2xl font-serif font-light text-[#1a1a1a]">
+                      {stage.title}
+                    </h3>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </div>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {stage.description}
+                </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 p-6 rounded-lg bg-gradient-to-r from-pink-500/5 to-fuchsia-500/5 border border-pink-500/20">
-            <p className="text-center text-muted-foreground">
-              This creates a structured system instead of random, inconsistent conversations.
-            </p>
           </div>
         </div>
       </div>

@@ -1,56 +1,54 @@
-import { Plug, PenTool, Rocket } from "lucide-react";
+import { Plug, Settings, Rocket } from "lucide-react";
 
 export function InstagramHowItWorks() {
   const steps = [
     {
       icon: Plug,
-      title: "Connect Your Instagram Account",
-      description: "Integrate your account into a structured automation system.",
+      title: "Connect Instagram",
+      description: "We integrate with Instagram Business API and your ecommerce platform. No technical complexity."
     },
     {
-      icon: PenTool,
-      title: "Build Conversation Flows",
-      description: "We create automated paths based on customer intent and buying behavior.",
+      icon: Settings,
+      title: "Train Your AI",
+      description: "We customize conversation flows based on your products, brand voice, and customer data."
     },
     {
       icon: Rocket,
-      title: "Launch and Optimize",
-      description: "Your system goes live and continuously improves with performance data.",
-    },
+      title: "Launch & Scale",
+      description: "Your Instagram automation goes live. Monitor conversations and revenue in real-time."
+    }
   ];
 
   return (
-    <section id="how-it-works" className="py-20 md:py-28">
-      <div className="container px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              How Instagram Automation{" "}
-              <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                Works
-              </span>
+    <section id="how-it-works" className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              From Setup to <span className="text-[#c9a961] font-normal">Sales</span> in Days
             </h2>
-            <p className="text-lg text-muted-foreground">
-              We design systems that fit your business, not generic templates.
-            </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-6 p-6 rounded-lg bg-muted/30 border border-border/30 hover:border-pink-500/30 transition-colors"
-              >
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-pink-500/10 to-fuchsia-500/10 border border-pink-500/20 flex-shrink-0">
-                  <step.icon className="w-6 h-6 text-pink-500" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-sm font-semibold text-pink-500">Step {index + 1}</span>
+              <div key={index} className="relative">
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg">
+                  <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                    <step.icon className="w-6 h-6 text-[#c9a961]" />
                   </div>
-                  <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                  <div className="mb-4">
+                    <span className="text-sm text-[#c9a961] font-medium">Step {index + 1}</span>
+                  </div>
+                  <h3 className="text-2xl font-serif font-light text-white mb-4">
+                    {step.title}
+                  </h3>
+                  <p className="text-white/70 font-light leading-relaxed">
+                    {step.description}
+                  </p>
                 </div>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-px bg-gradient-to-r from-[#c9a961] to-transparent"></div>
+                )}
               </div>
             ))}
           </div>

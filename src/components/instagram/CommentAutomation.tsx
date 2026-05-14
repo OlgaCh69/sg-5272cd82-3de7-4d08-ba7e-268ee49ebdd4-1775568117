@@ -1,58 +1,64 @@
-import { MessageCircle, Zap, Target, TrendingUp } from "lucide-react";
+import { MessageSquare, Users, TrendingUp, Zap, Target, Clock } from "lucide-react";
 
 export function CommentAutomation() {
-  const points = [
+  const features = [
     {
-      icon: MessageCircle,
-      text: "Automatically message users who comment",
+      icon: MessageSquare,
+      title: "Auto-Reply to Comments",
+      description: "AI responds to product questions in comments, moving interested users into private DM conversations."
     },
     {
-      icon: Zap,
-      text: "Deliver offers, links, or product info instantly",
-    },
-    {
-      icon: Target,
-      text: "Capture leads directly from content",
+      icon: Users,
+      title: "Story Engagement",
+      description: "Automatically reply to story mentions, questions, and poll responses with personalized messages."
     },
     {
       icon: TrendingUp,
-      text: "Turn engagement into measurable results",
+      title: "Turn Engagement Into Sales",
+      description: "Convert public interest into private sales conversations. Guide followers from comment to checkout."
     },
+    {
+      icon: Zap,
+      title: "Instant Response",
+      description: "No more waiting hours to reply to comments. AI engages within seconds of any public interaction."
+    },
+    {
+      icon: Target,
+      title: "Qualified Lead Filtering",
+      description: "AI identifies buying signals and routes high-intent users to priority DM queues."
+    },
+    {
+      icon: Clock,
+      title: "24/7 Coverage",
+      description: "Never miss engagement opportunities. AI monitors and responds to comments around the clock."
+    }
   ];
 
   return (
-    <section id="comment-automation" className="py-20 md:py-28">
-      <div className="container px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Turn Comments Into{" "}
-              <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                Conversations Automatically
-              </span>
+    <section className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Comment Automation That <span className="text-[#c9a961] font-normal">Drives Conversions</span>
             </h2>
-          </div>
-
-          <div className="space-y-6 mb-12">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Every comment on your posts is potential buying intent.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              With Instagram automation, you can trigger direct messages when someone comments on your content.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              This allows you to move users from public engagement into private conversations where conversions happen.
+            <p className="text-xl text-white/70 font-light">
+              Turn every comment and story interaction into a sales opportunity.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 p-6 rounded-lg bg-muted/30 border border-border/30"
-              >
-                <point.icon className="w-6 h-6 text-pink-500 flex-shrink-0 mt-1" />
-                <p className="text-sm leading-relaxed">{point.text}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>

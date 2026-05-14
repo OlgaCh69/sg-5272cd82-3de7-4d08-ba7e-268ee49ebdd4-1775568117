@@ -1,47 +1,59 @@
-import { MessageSquare, Package, Truck, Sparkles, ShoppingCart } from "lucide-react";
+import { MessageCircle, ShoppingBag, Package, Users, Clock } from "lucide-react";
 
 export function DMAutomation() {
-  const examples = [
-    { icon: Package, text: "Product questions" },
-    { icon: ShoppingCart, text: "Pricing inquiries" },
-    { icon: Truck, text: "Shipping details" },
-    { icon: Sparkles, text: "Recommendations" },
-    { icon: MessageSquare, text: "Purchase guidance" },
+  const features = [
+    {
+      icon: MessageCircle,
+      title: "Product Questions",
+      description: "Instant answers to sizing, materials, availability, and shipping—24/7 without manual work."
+    },
+    {
+      icon: ShoppingBag,
+      title: "Direct Checkout Links",
+      description: "AI sends personalized product links and one-click checkout URLs directly in DMs."
+    },
+    {
+      icon: Package,
+      title: "Order Status Updates",
+      description: "Proactive notifications about shipping, delivery, and order updates via Instagram DMs."
+    },
+    {
+      icon: Users,
+      title: "Personalized Recommendations",
+      description: "AI suggests products based on browsing history, previous purchases, and stated preferences."
+    },
+    {
+      icon: Clock,
+      title: "Follow-Up Campaigns",
+      description: "Automated sequences for cart abandonment, post-purchase engagement, and re-activation."
+    }
   ];
 
   return (
-    <section id="dm-automation" className="py-20 md:py-28 bg-muted/30">
-      <div className="container px-4">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold">
-              Automate Instagram DMs Without{" "}
-              <span className="bg-gradient-to-r from-pink-600 to-fuchsia-600 bg-clip-text text-transparent">
-                Losing the Personal Touch
-              </span>
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              DM Automation That <span className="text-[#c9a961] font-normal">Sells 24/7</span>
             </h2>
-          </div>
-
-          <div className="space-y-6 mb-12">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Customers expect fast, helpful responses.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Instagram automation ensures every message is answered immediately while maintaining a natural and relevant conversation flow.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Instead of generic replies, your system can guide users based on their intent.
+            <p className="text-xl text-gray-600 font-light">
+              Handle every DM like your best sales rep—instantly, personally, profitably.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {examples.map((example, index) => (
-              <div
-                key={index}
-                className="p-4 rounded-lg bg-background border border-border/50 hover:border-pink-500/50 transition-colors text-center"
-              >
-                <example.icon className="w-8 h-8 text-pink-500 mx-auto mb-3" />
-                <p className="text-sm font-medium">{example.text}</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
