@@ -16,34 +16,39 @@ import { AbandonedCartSocialProof } from "@/components/abandoned-cart/AbandonedC
 import { AbandonedCartInvestment } from "@/components/abandoned-cart/AbandonedCartInvestment";
 import { AbandonedCartFAQ } from "@/components/abandoned-cart/AbandonedCartFAQ";
 import { AbandonedCartFinalCTA } from "@/components/abandoned-cart/AbandonedCartFinalCTA";
+import { ContactForm } from "@/components/ContactForm";
+import { Footer } from "@/components/Footer";
 
-export default function AbandonedCartRecoveryPage() {
+export default function AbandonedCartPage() {
   return (
     <>
-      <SEO
-        title="Abandoned Cart Recovery for Ecommerce | Recover More Lost Sales"
-        description="Recover abandoned carts with ecommerce automation built for growth. Re-engage shoppers, reduce checkout drop-off, and turn lost revenue into completed sales."
-        url="/abandoned-cart-recovery-ecommerce"
+      <SEO 
+        title="Abandoned Cart Recovery for Ecommerce | Recover 15-30% Lost Revenue"
+        description="Automated cart recovery via WhatsApp, SMS, and Email. Most stores recover €50k-€300k annually from abandoned carts with our AI automation."
       />
-      <Header />
-      <main>
-        <AbandonedCartHero />
-        <AbandonedCartProblem />
-        <AbandonedCartSolution />
-        <WhyCartsAbandoned />
-        <AbandonedCartBenefits />
-        <ChannelPositioning />
-        <AbandonedCartHowItWorks />
-        <BuyingObjections />
-        <ROIAngle />
-        <AbandonedCartUseCases />
-        <AbandonedCartWhoItsFor />
-        <AbandonedCartDifferentiation />
-        <AbandonedCartSocialProof />
-        <AbandonedCartInvestment />
-        <AbandonedCartFAQ />
-        <AbandonedCartFinalCTA />
-      </main>
+      <div className="min-h-screen bg-[#0a0a0a]">
+        <Header />
+        <main>
+          <AbandonedCartHero />
+          <AbandonedCartProblem />
+          <AbandonedCartSolution />
+          <WhyCartsAbandoned />
+          <AbandonedCartBenefits />
+          <ChannelPositioning />
+          <AbandonedCartHowItWorks />
+          <BuyingObjections />
+          <ROIAngle />
+          <AbandonedCartUseCases />
+          <AbandonedCartWhoItsFor />
+          <AbandonedCartDifferentiation />
+          <AbandonedCartSocialProof />
+          <AbandonedCartInvestment />
+          <AbandonedCartFAQ />
+          <ContactForm />
+          <AbandonedCartFinalCTA />
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

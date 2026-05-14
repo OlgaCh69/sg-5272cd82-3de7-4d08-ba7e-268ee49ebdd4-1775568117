@@ -1,102 +1,115 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { ContactForm } from "@/components/ContactForm";
-import { Mail, MessageCircle, Clock, Instagram, Linkedin } from "lucide-react";
+import { Footer } from "@/components/Footer";
+import { Calendar, MessageCircle, Mail } from "lucide-react";
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <>
       <SEO 
-        title="Contact Us | OneTech Automation"
-        description="Get in touch with OneTech Automation. Book a strategy demo to see how AI chatbot automation can transform your ecommerce business."
+        title="Contact O.N.E.Tech | Book Your Ecommerce Automation Demo"
+        description="Ready to automate your ecommerce store? Book a demo and see how AI chatbots, WhatsApp automation, and support automation drive revenue."
       />
-      <Header />
-      <main>
-        <section className="py-24 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                  Get In Touch
-                </h1>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Get in touch with us to discuss your project and start automating your business today.
-                </p>
-              </div>
+      <div className="min-h-screen bg-[#0a0a0a]">
+        <Header />
+        <main>
+          {/* Hero Section */}
+          <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#0a0a0a]">
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/95 to-[#0a0a0a]/90"></div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <ContactForm />
+            <div className="container mx-auto px-4 relative z-10 py-24">
+              <div className="max-w-3xl mx-auto text-center">
+                <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+                  <div className="w-2 h-2 rounded-full bg-[#c9a961] animate-pulse"></div>
+                  <span className="text-sm text-white/80 font-light tracking-wide">Get Started</span>
                 </div>
 
-                <div className="space-y-6">
-                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <Mail className="w-8 h-8 text-primary mb-3" />
-                    <h3 className="font-semibold mb-2">Email Us</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Get in touch via email
-                    </p>
-                    <a 
-                      href="mailto:support@onetechautomation.com" 
-                      className="text-sm text-primary hover:underline break-all"
-                    >
-                      support@onetechautomation.com
-                    </a>
-                  </div>
+                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif mb-8 leading-[1.1]">
+                  <span className="text-white font-light">Let's Build Your</span>
+                  <br />
+                  <span className="text-[#c9a961] font-normal">Revenue Engine</span>
+                </h1>
 
-                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <MessageCircle className="w-8 h-8 text-green-600 mb-3" />
-                    <h3 className="font-semibold mb-2">WhatsApp</h3>
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Message us directly
-                    </p>
-                    <a 
-                      href="https://wa.me/35795180206" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-green-600 hover:underline"
-                    >
-                      +357 95 180 206
-                    </a>
-                  </div>
+                <p className="text-xl sm:text-2xl text-white/70 mb-12 font-light leading-relaxed">
+                  Book a demo and see exactly how AI automation will grow your ecommerce revenue.
+                </p>
 
-                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <Clock className="w-8 h-8 text-primary mb-3" />
-                    <h3 className="font-semibold mb-2">Response Time</h3>
-                    <p className="text-sm text-muted-foreground">
-                      We typically respond within 24 hours
-                    </p>
-                  </div>
-
-                  <div className="bg-muted/30 p-6 rounded-lg border border-border/50">
-                    <h3 className="font-semibold mb-4">Follow Us</h3>
-                    <div className="flex flex-col gap-4">
-                      <a 
-                        href="https://www.instagram.com/o.n.e.tech/" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Instagram className="w-5 h-5" />
-                        <span>Instagram</span>
-                      </a>
-                      <a 
-                        href="https://www.linkedin.com/company/o-n-e-tech/" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 text-sm text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                        <span>LinkedIn</span>
-                      </a>
+                {/* Contact Options */}
+                <div className="grid md:grid-cols-3 gap-6 mb-16">
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg">
+                    <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Calendar className="w-6 h-6 text-[#c9a961]" />
                     </div>
+                    <h3 className="text-white font-medium mb-2">Book a Demo</h3>
+                    <p className="text-white/60 text-sm font-light">30-minute consultation</p>
+                  </div>
+
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg">
+                    <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <MessageCircle className="w-6 h-6 text-[#c9a961]" />
+                    </div>
+                    <h3 className="text-white font-medium mb-2">Quick Questions</h3>
+                    <p className="text-white/60 text-sm font-light">Get answers fast</p>
+                  </div>
+
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg">
+                    <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <Mail className="w-6 h-6 text-[#c9a961]" />
+                    </div>
+                    <h3 className="text-white font-medium mb-2">Partnership Inquiries</h3>
+                    <p className="text-white/60 text-sm font-light">support@onetechautomation.com</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+
+          {/* Contact Form */}
+          <ContactForm />
+
+          {/* Info Section */}
+          <section className="py-24 bg-[#faf8f5]">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center">
+                <h2 className="text-4xl font-serif font-light text-[#1a1a1a] mb-8">
+                  What Happens <span className="text-[#c9a961] font-normal">Next?</span>
+                </h2>
+
+                <div className="space-y-6 text-left">
+                  <div className="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 className="text-xl font-serif font-light text-[#1a1a1a] mb-3">
+                      1. Discovery Call
+                    </h3>
+                    <p className="text-gray-600 font-light leading-relaxed">
+                      We'll discuss your ecommerce store, current challenges, and automation goals. This typically takes 30 minutes.
+                    </p>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 className="text-xl font-serif font-light text-[#1a1a1a] mb-3">
+                      2. Custom Proposal
+                    </h3>
+                    <p className="text-gray-600 font-light leading-relaxed">
+                      We'll design a tailored automation system for your specific needs—cart recovery, support, multi-channel engagement.
+                    </p>
+                  </div>
+
+                  <div className="bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 className="text-xl font-serif font-light text-[#1a1a1a] mb-3">
+                      3. Implementation
+                    </h3>
+                    <p className="text-gray-600 font-light leading-relaxed">
+                      Most stores go live in 7-14 days. We handle the technical setup, you focus on running your business.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }
