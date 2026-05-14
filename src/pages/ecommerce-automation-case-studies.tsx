@@ -105,7 +105,7 @@ export default function CaseStudiesPage() {
         url="https://onetechautomation.com/ecommerce-automation-case-studies"
       />
       <Header />
-      <main>
+      <main className="bg-[#0a0a0a]">
         <CaseStudiesHero />
         <CaseStudiesIntro />
         <CaseStudyBlock {...caseStudy1} />
