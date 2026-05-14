@@ -1,65 +1,66 @@
-import { Send, Target, Clock } from "lucide-react";
+import { Send, Target, TrendingUp, Users, Zap, BarChart } from "lucide-react";
 
 export function BroadcastPower() {
+  const features = [
+    {
+      icon: Send,
+      title: "Unlimited Reach",
+      description: "Telegram channels have no subscriber limits. Scale from 100 to 100,000+ subscribers with zero platform restrictions."
+    },
+    {
+      icon: Target,
+      title: "Smart Segmentation",
+      description: "Send different messages to different audience segments. New customers get welcome flows, VIPs get exclusive offers."
+    },
+    {
+      icon: TrendingUp,
+      title: "Rich Media Messages",
+      description: "Images, videos, product carousels, polls—Telegram supports engaging content formats that drive clicks."
+    },
+    {
+      icon: Users,
+      title: "Interactive Bots",
+      description: "Subscribers can browse products, check order status, and complete purchases directly through the bot interface."
+    },
+    {
+      icon: Zap,
+      title: "Instant Engagement",
+      description: "Messages arrive immediately. No email delays, no social feed algorithms. Your audience sees your message now."
+    },
+    {
+      icon: BarChart,
+      title: "Real-Time Analytics",
+      description: "Track opens, clicks, conversions, and revenue for every broadcast. Know exactly what's working."
+    }
+  ];
+
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Send Messages That Actually Get Seen
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Broadcast at Scale, <span className="text-[#c9a961] font-normal">Engage Individually</span>
             </h2>
-          </div>
-
-          {/* Main Content */}
-          <div className="space-y-8 text-center mb-12">
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Email open rates continue to decline. Social media reach is unpredictable.
-            </p>
-            
-            <p className="text-2xl font-semibold text-foreground">
-              Telegram gives you a direct line to your audience.
-            </p>
-
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              With automation, you can schedule, segment, and deliver messages that reach customers at the right time with the right content.
+            <p className="text-xl text-gray-600 font-light">
+              Reach thousands with one message, or have personal conversations—Telegram does both.
             </p>
           </div>
 
-          {/* Feature Highlights */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: Send,
-                title: "Direct Delivery",
-                description: "No spam filters, no promotions tab",
-              },
-              {
-                icon: Target,
-                title: "Smart Segmentation",
-                description: "Target the right audience segments",
-              },
-              {
-                icon: Clock,
-                title: "Perfect Timing",
-                description: "Schedule for maximum impact",
-              },
-            ].map((item, index) => (
-              <div key={index} className="text-center space-y-3">
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mx-auto">
-                  <item.icon className="h-6 w-6 text-blue-600" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <feature.icon className="w-6 h-6 text-[#c9a961]" />
                 </div>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-xl font-semibold text-blue-600">
-              This allows you to turn simple broadcasts into consistent revenue opportunities.
-            </p>
           </div>
         </div>
       </div>

@@ -1,65 +1,67 @@
-import { TrendingUp, Target, MessageCircle, Repeat, Zap } from "lucide-react";
+import { TrendingUp, MessageCircle, Users, Target, Zap, DollarSign, Clock } from "lucide-react";
 
 export function TelegramBenefits() {
   const benefits = [
     {
       icon: TrendingUp,
-      title: "High Open Rates",
-      description: "Your messages are seen more consistently compared to email or social media.",
-    },
-    {
-      icon: Target,
-      title: "Direct Customer Access",
-      description: "No algorithm limits. You reach your audience when it matters.",
+      title: "95%+ Open Rates",
+      description: "Telegram messages get read. No email filters, no social algorithm throttling. Your audience sees every message."
     },
     {
       icon: MessageCircle,
-      title: "Stronger Engagement",
-      description: "Telegram users are more active and responsive.",
+      title: "Two-Way Conversations",
+      description: "AI handles customer questions, product inquiries, and support requests in private chats—automatically, 24/7."
     },
     {
-      icon: Repeat,
-      title: "Repeat Sales Opportunities",
-      description: "Stay connected with customers beyond the first purchase.",
+      icon: Users,
+      title: "Unlimited Audience",
+      description: "Unlike WhatsApp Business (capped at 256 contacts), Telegram channels and groups scale infinitely. Reach thousands, millions."
+    },
+    {
+      icon: Target,
+      title: "Personalized Broadcasts",
+      description: "Segment subscribers based on behavior and send targeted offers. AI tailors messages to individual preferences."
     },
     {
       icon: Zap,
-      title: "Scalable Communication",
-      description: "Engage thousands of users without increasing workload.",
+      title: "Instant Checkouts",
+      description: "Direct purchase links in messages. Customers buy without leaving Telegram. Frictionless conversion."
     },
+    {
+      icon: DollarSign,
+      title: "Lower CAC",
+      description: "Telegram marketing is nearly free compared to paid ads. Build a direct audience channel you own and control."
+    },
+    {
+      icon: Clock,
+      title: "Always-On Engagement",
+      description: "Automated campaigns for launches, flash sales, cart recovery, and re-engagement run around the clock."
+    }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Why Ecommerce Brands Are Turning to Telegram
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Direct Access, <span className="text-[#c9a961] font-normal">Infinite Scale</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Telegram gives ecommerce brands something most platforms don't—direct, uninterrupted communication.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              When combined with automation, it becomes a powerful growth tool.
+            <p className="text-xl text-gray-600 font-light">
+              Build a revenue channel you own—no algorithm changes, no ad costs, no platform risk.
             </p>
           </div>
 
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-background border border-border/50 hover:border-blue-500/30 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
-                  <benefit.icon className="h-6 w-6 text-blue-600" />
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <benefit.icon className="w-6 h-6 text-[#c9a961]" />
                 </div>
-                
-                <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-                
-                <p className="text-muted-foreground leading-relaxed">
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
                   {benefit.description}
                 </p>
               </div>

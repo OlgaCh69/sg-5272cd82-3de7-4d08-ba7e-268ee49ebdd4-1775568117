@@ -1,56 +1,50 @@
-import { Repeat, Users, Rocket, Target, TrendingUp } from "lucide-react";
+import { TrendingUp, Globe, Users, ShoppingBag } from "lucide-react";
 
 export function TelegramWhoItsFor() {
-  const idealFor = [
+  const segments = [
     {
-      icon: Repeat,
-      title: "Brands with repeat purchase potential",
+      icon: TrendingUp,
+      title: "International Ecommerce",
+      description: "Telegram is massive in emerging markets (Russia, Middle East, Latin America). If you sell internationally, this is critical infrastructure."
+    },
+    {
+      icon: Globe,
+      title: "Digital Products & SaaS",
+      description: "Tech-savvy audiences already use Telegram. Instant delivery of digital goods, license keys, and subscriptions."
     },
     {
       icon: Users,
-      title: "Ecommerce stores building communities",
+      title: "Community-Driven Brands",
+      description: "Build engaged communities around your products. Groups, channels, and bots create belonging and loyalty."
     },
     {
-      icon: Rocket,
-      title: "Businesses launching products regularly",
-    },
-    {
-      icon: Target,
-      title: "Brands with active audiences",
-    },
-    {
-      icon: TrendingUp,
-      title: "Teams looking for better engagement channels",
-    },
+      icon: ShoppingBag,
+      title: "High-Repeat Products",
+      description: "Consumables, subscriptions, seasonal items—Telegram's direct access drives repeat purchases effortlessly."
+    }
   ];
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Built for Ecommerce Brands Focused on Retention and Growth
+    <section className="py-24 bg-[#0a0a0a]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Built for <span className="text-[#c9a961] font-normal">Global Growth</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Telegram automation is especially valuable for ecommerce businesses that want to build long-term relationships with their customers.
-            </p>
           </div>
 
-          {/* Ideal For Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {idealFor.map((item, index) => (
-              <div
-                key={index}
-                className="p-6 rounded-xl bg-muted/30 border border-border/50 hover:border-blue-500/30 transition-all duration-300 group"
-              >
-                <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-colors">
-                  <item.icon className="h-6 w-6 text-blue-600" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {segments.map((segment, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <segment.icon className="w-6 h-6 text-[#c9a961]" />
                 </div>
-                
-                <p className="text-foreground font-medium leading-relaxed">
-                  {item.title}
+                <h3 className="text-2xl font-serif font-light text-white mb-4">
+                  {segment.title}
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {segment.description}
                 </p>
               </div>
             ))}

@@ -1,57 +1,51 @@
-import { Target, TrendingUp, Award, Users, Zap } from "lucide-react";
+import { Target, Zap, Users, MessageCircle } from "lucide-react";
 
 export function TelegramDifferentiation() {
-  const points = [
+  const differentiators = [
     {
       icon: Target,
-      text: "Built for ecommerce use cases, not generic messaging",
-    },
-    {
-      icon: TrendingUp,
-      text: "Focus on engagement and revenue, not just broadcasts",
-    },
-    {
-      icon: Award,
-      text: "Designed for long-term customer retention",
-    },
-    {
-      icon: Users,
-      text: "Multi-channel strategy (Telegram + other platforms)",
+      title: "Ecommerce-First Design",
+      description: "Built for product sales, not just notifications. Every automation optimizes for conversions and revenue."
     },
     {
       icon: Zap,
-      text: "Premium approach tailored for growth-focused brands",
+      title: "Broadcast + Bot Hybrid",
+      description: "Combine mass communication with individual conversations. Scale engagement without losing personalization."
     },
+    {
+      icon: Users,
+      title: "Unlimited Scale",
+      description: "No subscriber caps, no message limits. Grow your Telegram audience without platform restrictions."
+    },
+    {
+      icon: MessageCircle,
+      title: "Conversational AI",
+      description: "Natural language understanding, not keyword matching. AI handles complex questions and multi-turn conversations."
+    }
   ];
 
   return (
-    <section className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Why OneTech Automation for Telegram
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Why O.N.E.Tech for <span className="text-[#c9a961] font-normal">Telegram?</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Most Telegram tools focus on basic messaging.
-            </p>
-            <p className="text-xl font-semibold text-foreground">
-              We focus on building structured systems that drive measurable results.
-            </p>
           </div>
 
-          {/* Points Grid */}
-          <div className="grid gap-4">
-            {points.map((point, index) => (
-              <div
-                key={index}
-                className="flex items-start gap-4 p-6 rounded-xl bg-background border border-border/50 hover:border-blue-500/30 transition-all duration-300 group"
-              >
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
-                  <point.icon className="h-4 w-4 text-blue-600" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {differentiators.map((diff, index) => (
+              <div key={index} className="bg-white p-8 rounded-lg border border-gray-200 hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <diff.icon className="w-6 h-6 text-[#c9a961]" />
                 </div>
-                <p className="text-lg text-foreground flex-1">{point.text}</p>
+                <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">
+                  {diff.title}
+                </h3>
+                <p className="text-gray-600 font-light leading-relaxed">
+                  {diff.description}
+                </p>
               </div>
             ))}
           </div>

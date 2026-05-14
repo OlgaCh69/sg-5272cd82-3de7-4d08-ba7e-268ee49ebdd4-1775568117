@@ -1,39 +1,42 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
 
 export function TelegramFinalCTA() {
   return (
-    <section className="py-24 bg-gradient-to-b from-background via-muted/30 to-background">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Ready to Build a Direct Revenue Channel with{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 bg-[length:200%_auto] animate-gradient">
-              Telegram?
-            </span>
+    <section className="py-24 bg-[#faf8f5]">
+      <div className="container mx-auto px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-8">
+            Ready to Build Your <span className="text-[#c9a961] font-normal">Telegram Revenue Channel?</span>
           </h2>
-
-          {/* Body */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            If you want more control, better engagement, and a stronger connection with your customers, Telegram automation is a powerful next step.
+          
+          <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
+            Book a demo and see how Telegram automation will drive direct sales for your ecommerce business.
           </p>
-
-          {/* CTA Buttons */}
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
+            <Button 
+              size="lg" 
+              className="bg-[#c9a961] hover:bg-[#b89851] text-white font-medium px-8 py-6 text-lg border-0"
+              asChild
+            >
+              <Link href="/contact">
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Your Demo
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="/telegram-automation-ecommerce">Learn More</Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-gray-300 hover:border-[#c9a961] hover:bg-[#c9a961]/5 px-8 py-6 text-lg"
+              asChild
+            >
+              <Link href="/ecommerce-automation-case-studies">
+                See Results <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
           </div>
-
-          {/* Supporting Text */}
-          <p className="text-sm text-muted-foreground pt-4">
-            Built for ecommerce brands that want long-term growth, not just short-term campaigns
-          </p>
         </div>
       </div>
     </section>
