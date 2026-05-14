@@ -27,7 +27,7 @@ export function Header() {
               height={40}
               className="w-10 h-10"
             />
-            <span>O.N.E.Tech</span>
+            <span className="text-white">O.N.E.Tech</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -152,7 +152,7 @@ export function Header() {
                     height={40}
                     className="w-10 h-10"
                   />
-                  <span>O.N.E.Tech</span>
+                  <span className="text-white">O.N.E.Tech</span>
                 </Link>
                 
                 <div className="space-y-4">

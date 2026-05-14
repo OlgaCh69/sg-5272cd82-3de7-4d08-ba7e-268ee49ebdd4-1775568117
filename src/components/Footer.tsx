@@ -29,17 +29,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-              <Image 
-                src="/onetech-logo.png" 
-                alt="O.N.E.Tech Logo" 
-                width={32} 
-                height={32}
-                className="w-8 h-8"
-              />
-              <span>O.N.E.Tech</span>
+            <Link href="/" className="inline-block">
+              <span className="text-2xl font-bold text-white">O.N.E.Tech</span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground max-w-xs">
               AI-powered automation solutions for high-growth ecommerce brands
             </p>
             <div className="flex items-center gap-4 pt-2">
