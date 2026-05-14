@@ -1,39 +1,59 @@
-import { Zap } from "lucide-react";
+import { Clock, TrendingUp, Users, Zap } from "lucide-react";
 
 export function ResponseTimeImpact() {
+  const metrics = [
+    {
+      icon: Clock,
+      metric: "<1 min",
+      label: "Average response time",
+      description: "AI answers every support question in under 60 seconds. No queues, no wait times."
+    },
+    {
+      icon: TrendingUp,
+      metric: "35-50%",
+      label: "Higher CSAT scores",
+      description: "Instant, accurate answers drive significantly better customer satisfaction ratings."
+    },
+    {
+      icon: Users,
+      metric: "24/7",
+      label: "Always available",
+      description: "No coverage gaps. Support works around the clock across all timezones."
+    },
+    {
+      icon: Zap,
+      metric: "Zero",
+      label: "Queue times",
+      description: "Every customer gets immediate attention. No \"your message is #47 in queue.\""
+    }
+  ];
+
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-start gap-4 mb-6">
-            <Zap className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Faster Support Leads to More Sales
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              Speed <span className="text-[#c9a961] font-normal">Drives Satisfaction</span>
             </h2>
+            <p className="text-xl text-white/70 font-light">
+              Fast support isn't just convenient—it directly impacts CSAT, retention, and LTV.
+            </p>
           </div>
-          
-          <div className="space-y-4 text-lg text-muted-foreground">
-            <p>
-              Speed matters.
-            </p>
-            
-            <p>
-              When customers ask a question, they are often close to making a decision.
-            </p>
-            
-            <p>
-              If they get an answer quickly, they move forward.
-              If they don't, they leave.
-            </p>
-            
-            <p className="font-medium text-foreground">
-              Customer support is not just about solving problems.
-              It is about removing friction at the moment of decision.
-            </p>
-            
-            <p>
-              Automation ensures you are always present when it matters most.
-            </p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {metrics.map((item, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <item.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <p className="text-4xl font-serif font-light text-white mb-2">{item.metric}</p>
+                <p className="text-lg text-[#c9a961] font-medium mb-4">{item.label}</p>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

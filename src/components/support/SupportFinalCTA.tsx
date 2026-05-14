@@ -1,36 +1,42 @@
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Calendar } from "lucide-react";
+import Link from "next/link";
 
 export function SupportFinalCTA() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Ready to Automate Your Customer Support?
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-8">
+            Ready to <span className="text-[#c9a961] font-normal">Automate Support?</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground">
-            If your ecommerce brand is handling increasing customer messages, automation can help you respond faster, reduce workload, and improve performance.
+          <p className="text-xl text-gray-600 mb-12 font-light leading-relaxed">
+            Book a demo and see exactly how AI support automation will reduce costs while improving customer satisfaction.
           </p>
           
-          <p className="text-lg text-muted-foreground">
-            Let's build a system that supports your growth.
-          </p>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
+            <Button 
+              size="lg" 
+              className="bg-[#c9a961] hover:bg-[#b89851] text-white font-medium px-8 py-6 text-lg border-0"
+              asChild
+            >
+              <Link href="/contact">
+                <Calendar className="w-5 h-5 mr-2" />
+                Book Your Demo
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="/ecommerce-customer-support-automation">Learn More</Link>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="border-gray-300 hover:border-[#c9a961] hover:bg-[#c9a961]/5 px-8 py-6 text-lg"
+              asChild
+            >
+              <Link href="/ecommerce-automation-case-studies">
+                See Results <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
             </Button>
           </div>
-
-          <p className="text-sm text-muted-foreground pt-4">
-            Built for ecommerce brands that want efficient, scalable support systems
-          </p>
         </div>
       </div>
     </section>

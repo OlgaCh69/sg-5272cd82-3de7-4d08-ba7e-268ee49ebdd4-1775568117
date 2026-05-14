@@ -1,38 +1,63 @@
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, TrendingDown, Clock, DollarSign } from "lucide-react";
 
 export function SupportProblem() {
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-24 bg-[#faf8f5]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
-          <div className="flex items-start gap-4 mb-6">
-            <AlertCircle className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
-            <h2 className="text-3xl md:text-4xl font-bold">
-              Customer Support Is Slowing Down Your Growth
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-[#1a1a1a] mb-6">
+              Manual Support <span className="text-[#c9a961] font-normal">Doesn't Scale</span>
             </h2>
+            <p className="text-xl text-gray-600 font-light">
+              Every support ticket costs you time and money. Growth multiplies the burden linearly.
+            </p>
           </div>
-          
-          <div className="space-y-4 text-lg text-muted-foreground">
-            <p>
-              As ecommerce businesses grow, customer support becomes harder to manage.
-            </p>
-            
-            <p>
-              More orders mean more questions. More customers mean more messages.
-            </p>
-            
-            <p>
-              Support teams get overwhelmed. Response times increase. Customers wait longer than they should.
-            </p>
-            
-            <p>
-              And when customers don't get answers quickly, they don't just get frustrated—they leave.
-            </p>
-            
-            <p className="font-medium text-foreground">
-              For many ecommerce brands, support is no longer just an operational task.
-              It directly impacts revenue, conversion, and customer retention.
-            </p>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <Clock className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Slow Response Times</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                Customers wait hours for answers to simple questions. Every delay drives them to competitors.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">3-6 hour average response</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <DollarSign className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Rising Support Costs</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                More customers = more tickets = more agents. Support costs scale linearly with volume.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">€3,000-€8,000/month per agent</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <TrendingDown className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">Repetitive Work Burnout</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                70% of tickets are repetitive questions your team has answered hundreds of times.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">High agent turnover</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-lg border border-gray-200">
+              <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                <AlertCircle className="w-6 h-6 text-[#c9a961]" />
+              </div>
+              <h3 className="text-2xl font-serif font-light text-[#1a1a1a] mb-4">24/7 Coverage Gaps</h3>
+              <p className="text-gray-600 font-light leading-relaxed mb-4">
+                International customers, late-night shoppers, weekend inquiries—manual teams can't cover every timezone.
+              </p>
+              <p className="text-sm text-[#c9a961] font-medium">Off-hours revenue lost</p>
+            </div>
           </div>
         </div>
       </div>

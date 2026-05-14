@@ -1,37 +1,54 @@
-import { CheckCircle2 } from "lucide-react";
+import { Package, CreditCard, MapPin, RotateCw } from "lucide-react";
 
 export function WhatCanBeAutomated() {
-  const useCases = [
-    "Order tracking and delivery updates",
-    "Shipping and return policy questions",
-    "Product availability and details",
-    "Payment and checkout questions",
-    "Refund and exchange requests",
-    "FAQ responses",
-    "Pre-sale support questions",
+  const categories = [
+    {
+      icon: Package,
+      title: "Order Status & Tracking",
+      description: "\"Where is my order?\" queries resolved instantly with real-time tracking info pulled from your system."
+    },
+    {
+      icon: CreditCard,
+      title: "Refunds & Returns",
+      description: "AI walks customers through return policies, generates labels, and processes straightforward refunds autonomously."
+    },
+    {
+      icon: MapPin,
+      title: "Shipping & Delivery",
+      description: "Questions about delivery times, shipping costs, international options—answered accurately in seconds."
+    },
+    {
+      icon: RotateCw,
+      title: "Product Information",
+      description: "Sizing, materials, care instructions, compatibility—AI knows your catalog and answers product questions instantly."
+    }
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section className="py-24 bg-[#0a0a0a]">
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto space-y-8">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            What You Can Automate in Customer Support
-          </h2>
-          
-          <p className="text-lg text-muted-foreground">
-            Most ecommerce support conversations follow predictable patterns.
-          </p>
-          
-          <p className="text-lg text-muted-foreground">
-            These can be automated without losing quality.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-serif font-light text-white mb-6">
+              What Gets <span className="text-[#c9a961] font-normal">Automated?</span>
+            </h2>
+            <p className="text-xl text-white/70 font-light">
+              70-85% of your support tickets can be resolved autonomously by AI.
+            </p>
+          </div>
 
-          <div className="grid gap-3 pt-4">
-            {useCases.map((useCase, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-foreground">{useCase}</span>
+          <div className="grid md:grid-cols-2 gap-8">
+            {categories.map((category, index) => (
+              <div key={index} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-lg hover:border-[#c9a961]/30 transition-colors">
+                <div className="w-12 h-12 bg-[#c9a961]/10 rounded-lg flex items-center justify-center mb-6">
+                  <category.icon className="w-6 h-6 text-[#c9a961]" />
+                </div>
+                <h3 className="text-2xl font-serif font-light text-white mb-4">
+                  {category.title}
+                </h3>
+                <p className="text-white/70 font-light leading-relaxed">
+                  {category.description}
+                </p>
               </div>
             ))}
           </div>
