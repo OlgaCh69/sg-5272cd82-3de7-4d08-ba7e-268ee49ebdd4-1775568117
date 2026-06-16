@@ -1,42 +1,35 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
-import { Hero } from "@/components/Hero";
-import { Positioning } from "@/components/Positioning";
-import { RevenueProblem } from "@/components/RevenueProblem";
-import { RevenueSolution } from "@/components/RevenueSolution";
-import { RevenueServices } from "@/components/RevenueServices";
-import { RevenueFeatures } from "@/components/RevenueFeatures";
-import { RevenueResults } from "@/components/RevenueResults";
-import { RevenueBeforeAfter } from "@/components/RevenueBeforeAfter";
-import { RevenueHowItWorks } from "@/components/RevenueHowItWorks";
-import { RevenueIndustries } from "@/components/RevenueIndustries";
-import { BlogPreview } from "@/components/BlogPreview";
-import { ContactForm } from "@/components/ContactForm";
-import { RevenueFinalCTA } from "@/components/RevenueFinalCTA";
+import { Footer } from "@/components/Footer";
+import { EnterpriseHero } from "@/components/enterprise/EnterpriseHero";
+import { TrustBar } from "@/components/enterprise/TrustBar";
+import { ProblemSection } from "@/components/enterprise/ProblemSection";
+import { PlatformStack } from "@/components/enterprise/PlatformStack";
+import { SolutionsPreview } from "@/components/enterprise/SolutionsPreview";
+import { IndustriesPreview } from "@/components/enterprise/IndustriesPreview";
+import { AIGovernance } from "@/components/enterprise/AIGovernance";
+import { GCCPositioning } from "@/components/enterprise/GCCPositioning";
 
 export default function Home() {
   return (
     <>
       <SEO 
-        title="AI Revenue Systems That Turn Conversations Into Sales"
-        description="We don't build basic automation. We build AI systems that capture leads, book clients, and recover lost revenue across your website, WhatsApp, and Instagram."
+        title="O.N.E.Tech - Governance-First AI Infrastructure For Enterprise Operations"
+        description="Transform fragmented enterprise processes into intelligent operational ecosystems powered by AI orchestration, governance frameworks, and real-time operational intelligence across GCC and Cyprus."
+        image="/og-image.png"
       />
       <Header />
-      <main>
-        <Hero />
-        <Positioning />
-        <RevenueProblem />
-        <RevenueSolution />
-        <RevenueServices />
-        <RevenueFeatures />
-        <RevenueResults />
-        <RevenueBeforeAfter />
-        <RevenueHowItWorks />
-        <RevenueIndustries />
-        <BlogPreview />
-        <ContactForm />
-        <RevenueFinalCTA />
+      <main className="min-h-screen">
+        <EnterpriseHero />
+        <TrustBar />
+        <ProblemSection />
+        <PlatformStack />
+        <SolutionsPreview />
+        <IndustriesPreview />
+        <AIGovernance />
+        <GCCPositioning />
       </main>
+      <Footer />
     </>
   );
 }
