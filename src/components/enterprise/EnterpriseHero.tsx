@@ -3,126 +3,303 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Network, Shield, Zap, Database, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, Shield, Eye, TrendingUp, Workflow } from "lucide-react";
+
+const layers = [
+  {
+    id: 5,
+    title: "Strategic Outcomes",
+    items: ["Executive Visibility", "Operational Excellence", "Risk Reduction", "Performance Intelligence"],
+    color: "from-emerald-500 to-emerald-600"
+  },
+  {
+    id: 4,
+    title: "Operational Intelligence",
+    items: ["Predictive Insights", "Workforce Intelligence", "Risk Monitoring", "Business Intelligence"],
+    color: "from-emerald-600 to-emerald-700"
+  },
+  {
+    id: 3,
+    title: "AI Governance Layer",
+    items: ["Policies", "Human Approval Gates", "Audit Trails", "Role-Based Access", "Compliance Controls"],
+    color: "from-emerald-700 to-emerald-800"
+  },
+  {
+    id: 2,
+    title: "Agentic Coordination Layer",
+    items: ["AI Agents", "Workflow Intelligence", "Decision Routing", "Task Orchestration"],
+    color: "from-emerald-800 to-emerald-900"
+  },
+  {
+    id: 1,
+    title: "Enterprise Systems",
+    items: ["ERP", "CRM", "HR", "Operations", "Finance", "Trading Platforms"],
+    color: "from-gray-800 to-gray-900"
+  }
+];
+
+const governanceMetrics = [
+  { label: "Policy Compliance", value: "99.8%", status: "active" },
+  { label: "Human Oversight", value: "Active", status: "active" },
+  { label: "Audit Trail", value: "Enabled", status: "active" },
+  { label: "Risk Monitoring", value: "Active", status: "active" }
+];
+
+const executiveMetrics = [
+  { icon: Shield, label: "Governance By Design" },
+  { icon: TrendingUp, label: "Operational Intelligence" },
+  { icon: Eye, label: "Executive Visibility" },
+  { icon: Workflow, label: "AI Orchestration" },
+  { icon: CheckCircle2, label: "Enterprise Scale" }
+];
 
 export function EnterpriseHero() {
-  const [activeNode, setActiveNode] = useState(0);
+  const [hoveredLayer, setHoveredLayer] = useState<number | null>(null);
+  const [dataFlowActive, setDataFlowActive] = useState(true);
+  const [networkNodes, setNetworkNodes] = useState<Array<{ x: number; y: number; opacity: number }>>([]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveNode((prev) => (prev + 1) % 6);
-    }, 2000);
-    return () => clearInterval(interval);
+    // Generate network topology nodes
+    const nodes = Array.from({ length: 30 }, () => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      opacity: Math.random() * 0.3 + 0.1
+    }));
+    setNetworkNodes(nodes);
   }, []);
 
-  const nodes = [
-    { icon: Database, label: "ERP", position: "top-1/4 left-1/4" },
-    { icon: Users, label: "CRM", position: "top-1/4 right-1/4" },
-    { icon: TrendingUp, label: "Finance", position: "bottom-1/4 left-1/4" },
-    { icon: Shield, label: "HR", position: "bottom-1/4 right-1/4" },
-    { icon: Network, label: "Operations", position: "top-1/2 left-1/2" },
-    { icon: Zap, label: "Field", position: "bottom-1/2 right-1/3" }
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background" />
-      
-      {/* Floating Orbs */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "2s" }} />
-      </div>
-
-      {/* Infrastructure Nodes Visualization */}
-      <div className="absolute inset-0 opacity-40 pointer-events-none">
-        {nodes.map((node, i) => (
+    <section className="relative min-h-screen bg-background overflow-hidden">
+      {/* Premium Background - Network Topology */}
+      <div className="absolute inset-0">
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20" />
+        
+        {/* Network nodes */}
+        {networkNodes.map((node, i) => (
           <div
             key={i}
-            className={`absolute ${node.position} transform -translate-x-1/2 -translate-y-1/2 transition-all duration-1000`}
-          >
-            <div className={`relative ${activeNode === i ? 'scale-125' : 'scale-100'} transition-transform duration-500`}>
-              <div className={`w-16 h-16 rounded-full border-2 backdrop-blur-sm flex items-center justify-center
-                ${activeNode === i ? 'border-primary bg-primary/20' : 'border-border bg-card/20'}`}>
-                <node.icon className={`w-8 h-8 ${activeNode === i ? 'text-primary' : 'text-muted-foreground'}`} />
-              </div>
-              {/* Connection Lines */}
-              {i < nodes.length - 1 && (
-                <svg className="absolute top-8 left-8 w-64 h-64 overflow-visible">
-                  <line
-                    x1="0"
-                    y1="0"
-                    x2={Math.random() * 200 - 100}
-                    y2={Math.random() * 200 - 100}
-                    stroke={activeNode === i || activeNode === i + 1 ? "#00B67A" : "#ffffff20"}
-                    strokeWidth="2"
-                    className="transition-all duration-500"
-                  />
-                </svg>
-              )}
-            </div>
-          </div>
+            className="absolute w-1 h-1 bg-emerald-500 rounded-full animate-pulse"
+            style={{
+              left: `${node.x}%`,
+              top: `${node.y}%`,
+              opacity: node.opacity,
+              animationDelay: `${i * 0.2}s`,
+              animationDuration: "3s"
+            }}
+          />
         ))}
-        
-        {/* Central AI Layer */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="relative">
-            <div className="w-32 h-32 rounded-full border-2 border-primary/50 bg-primary/10 backdrop-blur-md flex items-center justify-center animate-pulse">
-              <Network className="w-16 h-16 text-primary" />
-            </div>
-            <div className="absolute inset-0 rounded-full border-2 border-primary/30 animate-ping" />
-          </div>
+
+        {/* Data streams */}
+        <div className="absolute inset-0">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute h-px bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent animate-pulse"
+              style={{
+                top: `${(i + 1) * 12}%`,
+                left: 0,
+                right: 0,
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: "4s"
+              }}
+            />
+          ))}
         </div>
+
+        {/* Radial gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 py-32">
-        <div className="max-w-5xl mx-auto text-center space-y-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm text-sm text-foreground mb-4 animate-fade-in">
-            <Shield className="w-4 h-4 text-primary" />
-            <span>Governance-First AI Infrastructure</span>
+      <div className="container relative z-10 mx-auto px-6 py-32">
+        <div className="grid lg:grid-cols-5 gap-12 items-center min-h-[calc(100vh-16rem)]">
+          
+          {/* LEFT SIDE - Executive Messaging (40%) */}
+          <div className="lg:col-span-2 space-y-8">
+            {/* Label */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+              <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase">
+                Governance-First AI Infrastructure
+              </span>
+            </div>
+
+            {/* Headline */}
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+                The Operating System For{" "}
+                <span className="text-gradient">Enterprise Intelligence</span>
+              </h1>
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                O.N.E.Tech transforms fragmented systems, workforce operations, governance frameworks and decision intelligence into a unified operational infrastructure.
+              </p>
+
+              <p className="text-lg text-foreground font-semibold">
+                Enterprise organizations do not need more AI tools.
+                <br />
+                <span className="text-primary">They need operational control.</span>
+              </p>
+            </div>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact">
+                <Button size="lg" className="group w-full sm:w-auto">
+                  Request Executive Briefing
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
+              <Link href="/infrastructure">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  View Infrastructure Stack
+                </Button>
+              </Link>
+            </div>
+
+            {/* Executive Metrics */}
+            <div className="grid grid-cols-1 gap-3 pt-6">
+              {executiveMetrics.map((metric, index) => {
+                const Icon = metric.icon;
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center gap-3 text-sm text-muted-foreground"
+                  >
+                    <Icon className="h-4 w-4 text-emerald-500" />
+                    <span className="font-medium">{metric.label}</span>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fade-in">
-            <span className="block text-foreground">The Infrastructure Layer Behind</span>
-            <span className="block text-gradient mt-2">Enterprise AI Transformation</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            O.N.E.Tech designs and deploys governance-first AI infrastructure that connects enterprise systems, workforce operations, decision intelligence and operational execution into a unified ecosystem.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Link href="/contact">
-              <Button size="lg" className="bg-primary hover:bg-accent text-white px-8 py-6 text-lg rounded-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all">
-                Request Executive Briefing
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link href="/infrastructure">
-              <Button size="lg" variant="outline" className="border-primary/30 hover:bg-primary/5 px-8 py-6 text-lg rounded-lg">
-                Explore Infrastructure Stack
-                <Network className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-          </div>
-
-          {/* Key Capabilities */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 animate-fade-in" style={{ animationDelay: "0.6s" }}>
-            {[
-              { icon: Shield, label: "Governance-First", desc: "Built-in compliance & audit trails" },
-              { icon: Network, label: "AI Orchestration", desc: "Intelligent workflow automation" },
-              { icon: Zap, label: "Operational Intelligence", desc: "Real-time insights & predictions" }
-            ].map((item, i) => (
-              <div key={i} className="group relative rounded-xl border border-border bg-card/30 backdrop-blur-sm p-6 hover:border-primary/50 hover:bg-card/50 transition-all duration-300">
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <item.icon className="w-8 h-8 text-primary mb-3 mx-auto relative z-10" />
-                <h3 className="font-semibold text-lg mb-2 relative z-10">{item.label}</h3>
-                <p className="text-sm text-muted-foreground relative z-10">{item.desc}</p>
+          {/* RIGHT SIDE - Infrastructure Architecture Diagram (60%) */}
+          <div className="lg:col-span-3">
+            <div className="relative">
+              
+              {/* Live Governance Status */}
+              <div className="absolute -top-6 right-0 z-20">
+                <div className="bg-card/80 backdrop-blur-sm border border-border rounded-lg p-4 shadow-2xl">
+                  <div className="flex items-center gap-2 mb-3 pb-3 border-b border-border">
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                    <span className="text-xs font-bold text-foreground tracking-wider uppercase">
+                      Live Governance Status
+                    </span>
+                  </div>
+                  <div className="space-y-2">
+                    {governanceMetrics.map((metric, index) => (
+                      <div key={index} className="flex items-center justify-between gap-4 text-xs">
+                        <span className="text-muted-foreground">{metric.label}</span>
+                        <span className="font-bold text-emerald-500">{metric.value}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            ))}
+
+              {/* Architecture Diagram Container */}
+              <div className="relative bg-card/50 backdrop-blur-sm border border-border rounded-2xl p-8 shadow-2xl mt-12">
+                
+                {/* Layer Stack */}
+                <div className="space-y-6">
+                  {layers.map((layer, index) => (
+                    <div key={layer.id} className="relative">
+                      {/* Connection line to next layer */}
+                      {index < layers.length - 1 && (
+                        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-full h-6 w-px">
+                          <div className="h-full w-full bg-gradient-to-b from-emerald-500/50 to-transparent">
+                            {dataFlowActive && (
+                              <div
+                                className="h-2 w-full bg-emerald-500 animate-pulse"
+                                style={{
+                                  animationDelay: `${index * 0.3}s`,
+                                  animationDuration: "2s"
+                                }}
+                              />
+                            )}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Layer Card */}
+                      <div
+                        className={`
+                          relative group cursor-pointer
+                          transition-all duration-300
+                          ${hoveredLayer === layer.id ? "scale-105 z-10" : ""}
+                        `}
+                        onMouseEnter={() => setHoveredLayer(layer.id)}
+                        onMouseLeave={() => setHoveredLayer(null)}
+                      >
+                        <div
+                          className={`
+                            relative bg-gradient-to-br ${layer.color}
+                            rounded-xl p-5 border border-emerald-500/20
+                            shadow-lg transition-all duration-300
+                            ${hoveredLayer === layer.id ? "shadow-emerald-500/20 shadow-2xl" : ""}
+                          `}
+                        >
+                          {/* Glow effect on hover */}
+                          {hoveredLayer === layer.id && (
+                            <div className="absolute inset-0 bg-emerald-500/10 rounded-xl animate-pulse" />
+                          )}
+
+                          <div className="relative z-10">
+                            {/* Layer Header */}
+                            <div className="flex items-center justify-between mb-3">
+                              <div className="flex items-center gap-2">
+                                <span className="text-xs font-bold text-emerald-400">
+                                  LAYER {layer.id}
+                                </span>
+                                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                              </div>
+                              {hoveredLayer === layer.id && (
+                                <span className="text-xs text-emerald-300 animate-pulse">
+                                  ACTIVE
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Layer Title */}
+                            <h3 className="text-lg font-bold text-white mb-3">
+                              {layer.title}
+                            </h3>
+
+                            {/* Layer Capabilities */}
+                            <div className="flex flex-wrap gap-2">
+                              {layer.items.map((item, i) => (
+                                <span
+                                  key={i}
+                                  className={`
+                                    text-xs px-2 py-1 rounded
+                                    bg-black/30 text-white/90
+                                    transition-all duration-200
+                                    ${hoveredLayer === layer.id ? "bg-black/50 text-white" : ""}
+                                  `}
+                                >
+                                  {item}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Data Flow Indicator */}
+                <div className="flex items-center justify-center gap-2 mt-6 pt-6 border-t border-border">
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                  <span className="text-xs text-muted-foreground">
+                    Data flowing through infrastructure layers
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
