@@ -1,6 +1,6 @@
 ---
 title: Industries Page
-status: todo
+status: done
 priority: high
 type: feature
 tags: [industries, enterprise]

@@ -1,6 +1,6 @@
 ---
 title: Contact & SEO Updates
-status: todo
+status: done
 priority: medium
 type: feature
 tags: [contact, seo]

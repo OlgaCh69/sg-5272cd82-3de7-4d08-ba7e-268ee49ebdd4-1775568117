@@ -1,6 +1,6 @@
 ---
 title: Founder Page
-status: todo
+status: done
 priority: medium
 type: feature
 tags: [founder, company]
