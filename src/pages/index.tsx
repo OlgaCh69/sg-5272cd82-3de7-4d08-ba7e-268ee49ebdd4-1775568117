@@ -3,7 +3,10 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnterpriseHero } from "@/components/enterprise/EnterpriseHero";
 import { TrustBar } from "@/components/enterprise/TrustBar";
-import { ProblemSection } from "@/components/enterprise/ProblemSection";
+import { InfrastructureProblem } from "@/components/enterprise/InfrastructureProblem";
+import { FutureEnterpriseStack } from "@/components/enterprise/FutureEnterpriseStack";
+import { OperationalDashboard } from "@/components/enterprise/OperationalDashboard";
+import { GovernanceFramework } from "@/components/enterprise/GovernanceFramework";
 import { PlatformStack } from "@/components/enterprise/PlatformStack";
 import { SolutionsPreview } from "@/components/enterprise/SolutionsPreview";
 import { IndustriesPreview } from "@/components/enterprise/IndustriesPreview";
@@ -15,14 +18,16 @@ export default function Home() {
     <>
       <SEO 
         title="O.N.E.Tech - Governance-First AI Infrastructure For Enterprise Operations"
-        description="Transform fragmented enterprise processes into intelligent operational ecosystems powered by AI orchestration, governance frameworks, and real-time operational intelligence across GCC and Cyprus."
-        image="/og-image.png"
+        description="O.N.E.Tech designs and deploys governance-first AI infrastructure that connects enterprise systems, workforce operations, decision intelligence and operational execution into unified ecosystems. Serving GCC & Cyprus enterprises."
       />
       <Header />
       <main className="min-h-screen">
         <EnterpriseHero />
         <TrustBar />
-        <ProblemSection />
+        <InfrastructureProblem />
+        <FutureEnterpriseStack />
+        <OperationalDashboard />
+        <GovernanceFramework />
         <PlatformStack />
         <SolutionsPreview />
         <IndustriesPreview />
