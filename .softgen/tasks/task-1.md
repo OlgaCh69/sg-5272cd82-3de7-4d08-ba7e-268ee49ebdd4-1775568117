@@ -1,34 +1,33 @@
 ---
-title: Rebuild Landing Page - Ecommerce AI Chatbot Focus
-status: done
+title: Homepage Enterprise Rebuild
+status: in_progress
 priority: urgent
 type: feature
-tags: [content, redesign, ecommerce]
+tags: [homepage, enterprise, core]
 created_by: agent
-created_at: 2026-04-11T20:09:57Z
+created_at: 2026-06-16T05:26:00Z
 position: 1
 ---
 
 ## Notes
-Complete content refresh to position OneTech Automation as an AI chatbot & automation platform for high-growth ecommerce brands. Focus on WhatsApp, Instagram, Messenger automation with clear value proposition around turning conversations into revenue.
-
-Key messaging:
-- Target: Ecommerce brands serious about scaling
-- Problem: Conversion problem, not traffic problem
-- Solution: Automated conversations that generate revenue
-- Platforms: WhatsApp, Instagram, Messenger
-- Results: Higher conversions, reduced support costs, scalable growth
+Complete homepage transformation to enterprise AI infrastructure positioning. Remove all ecommerce/automation agency messaging. Premium dark theme with emerald accents.
 
 ## Checklist
-- [x] Update Hero section with new H1, subheadline, CTAs
-- [ ] Transform Problem → Positioning (Premium Hook)
-- [ ] Update Solution → Core Value section
-- [ ] Rebuild Features → Platform Authority (WhatsApp, Instagram, Messenger)
-- [ ] Create Use Cases section (6 automation scenarios)
-- [ ] Create Results/Benefits section (performance metrics)
-- [ ] Update HowItWorks → Process (3-step system)
-- [ ] Update Testimonials section
-- [ ] Update FAQ with ecommerce-focused questions
-- [ ] Update Final CTA section
-- [ ] Update SEO metadata (title, description)
-- [ ] Update project brief with new positioning
+- [x] Update globals.css with dark charcoal + emerald color system
+- [x] Update tailwind.config.ts with Inter font and new colors
+- [ ] Create Hero component: "Governance-First AI Infrastructure" headline with animated ecosystem visual
+- [ ] Create TrustBar component: 8 enterprise capabilities
+- [ ] Create ProblemSection: enterprise challenges visualization
+- [ ] Create PlatformStack: 5-layer infrastructure architecture
+- [ ] Create SolutionsPreview: 5 solution cards
+- [ ] Create IndustriesPreview: industry grid with challenges/outcomes
+- [ ] Create AIGovernance section: governance framework
+- [ ] Create GCCPositioning: Vision 2030, transformation messaging
+- [ ] Update Header: new navigation (Home, Solutions, Industries, Infrastructure, Company, Founder, Contact)
+- [ ] Update Footer: Cyprus/GCC/Saudi positioning
+- [ ] Rebuild index.tsx with all new sections
+
+## Acceptance
+- Homepage shows enterprise AI infrastructure positioning
+- Dark theme with emerald accents renders correctly
+- All sections display premium enterprise messaging

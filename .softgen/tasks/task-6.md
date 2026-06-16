@@ -1,30 +1,29 @@
 ---
-title: Replace Pricing with Premium Investment Section
-status: done
-priority: high
+title: Contact & SEO Updates
+status: todo
+priority: medium
 type: feature
-tags: [pricing, investment, premium-positioning]
+tags: [contact, seo]
 created_by: agent
-created_at: 2026-04-11T21:09:15Z
+created_at: 2026-06-16T05:26:00Z
 position: 6
 ---
 
 ## Notes
-Replace generic pricing tiers with premium "Investment" section that emphasizes:
-- Custom solutions (not packages)
-- ROI focus (not cost)
-- Qualification (who this is for)
-- Performance-based pricing
-- High-ticket B2B positioning
-
-Position AFTER Results/Benefits, BEFORE Final CTA on all pages.
+Update contact form for enterprise consultation requests and SEO optimization for enterprise AI keywords.
 
 ## Checklist
-- [x] Create Investment component with all subsections
-- [ ] Update main landing page (replace Pricing with Investment)
-- [ ] Update Instagram page (add Investment section)
-- [ ] Update WhatsApp page (add Investment section)
-- [ ] Update Telegram page (add Investment section)
-- [ ] Position correctly on all pages (after Results, before FAQ/Final CTA)
-- [ ] Test responsive layout
-- [ ] Verify all CTAs link to /contact
+- [ ] Update contact.tsx with enterprise messaging
+- [ ] Add Company field
+- [ ] Add Industry dropdown
+- [ ] Add Employees field
+- [ ] Update CTA: "Request Executive Consultation"
+- [ ] Update SEO.tsx with enterprise AI keywords
+- [ ] Update meta descriptions
+- [ ] Add JSON-LD structured data
+- [ ] Update robots.txt and sitemap.xml for new pages
+
+## Acceptance
+- Contact form captures enterprise-level information
+- SEO targets enterprise AI infrastructure keywords
+- All new pages indexed properly
