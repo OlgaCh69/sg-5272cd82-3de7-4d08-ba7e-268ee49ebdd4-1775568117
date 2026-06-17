@@ -16,8 +16,8 @@ Transform O.N.E.Tech into complete enterprise AI infrastructure platform with 9 
 - [x] Create AI Governance page (/ai-governance)
 - [x] Create Operational Intelligence page (/operational-intelligence)
 - [x] Create Enterprise AI Architecture page (/enterprise-ai-architecture) - flagship technical
-- [ ] Create Trust Center page (/trust-center)
-- [ ] Create GCC Transformation page (/gcc-transformation)
+- [x] Create Trust Center page (/trust-center)
+- [x] Create GCC Transformation page (/gcc-transformation)
 - [ ] Create Infrastructure Assessment page (/assessment) - interactive
 - [ ] Rename blog to Intelligence Layer (/intelligence-layer)
 - [ ] Create Infrastructure Blueprint page (/infrastructure-blueprint)
