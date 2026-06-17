@@ -155,13 +155,8 @@ export default function EnterpriseAIArchitecturePage() {
                     <div
                       key={index}
                       className={`relative group rounded-2xl border transition-all duration-500 ${
-                        isActive ? `${layer.borderColor} shadow-2xl scale-[1.02]` : 'border-border/30'
+                        isActive ? `${layer.borderColor} shadow-2xl scale-[1.02] bg-gradient-to-br ${layer.color}` : 'border-border/30 bg-gradient-to-br from-muted/5 to-background'
                       }`}
-                      style={{
-                        background: isActive 
-                          ? `linear-gradient(to bottom right, ${layer.color.split(' ')[1].replace('/', '/')} 0%, ${layer.color.split(' ')[2].replace('/', '/')} 100%)`
-                          : 'linear-gradient(to bottom right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05))'
-                      }}
                     >
                       <div className="p-8">
                         <div className="flex items-start gap-6">
