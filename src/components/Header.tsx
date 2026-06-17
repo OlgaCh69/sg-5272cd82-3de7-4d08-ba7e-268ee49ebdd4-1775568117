@@ -160,27 +160,32 @@ export function Header() {
                   Resources
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[500px] p-4">
-                    <div className="grid gap-3">
-                      {resourcesLinks.map((link) => (
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
                         <Link
-                          key={link.href}
-                          href={link.href}
-                          className="group grid grid-cols-[1fr_auto] items-start gap-4 rounded-lg p-3 hover:bg-muted/50 transition-colors"
+                          className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-primary/20 to-primary/5 p-6 no-underline outline-none focus:shadow-md hover:bg-primary/10 transition-colors"
+                          href="/intelligence-layer"
                         >
-                          <div>
-                            <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                              {link.label}
-                            </div>
-                            <div className="text-sm text-muted-foreground mt-1">
-                              {link.desc}
-                            </div>
+                          <div className="mb-2 mt-4 text-lg font-medium">
+                            The Intelligence Layer
                           </div>
-                          <ArrowRight className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity mt-1" />
+                          <p className="text-sm leading-tight text-muted-foreground">
+                            Insights on AI Governance, Operational Intelligence, and Enterprise Transformation
+                          </p>
                         </Link>
-                      ))}
-                    </div>
-                  </div>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem href="/case-studies" title="Case Studies">
+                      Industry transformation scenarios demonstrating infrastructure capabilities
+                    </ListItem>
+                    <ListItem href="/infrastructure-blueprint" title="Infrastructure Blueprint">
+                      Complete enterprise AI infrastructure framework and methodology
+                    </ListItem>
+                    <ListItem href="/gcc-transformation" title="GCC Transformation">
+                      Vision 2030, digital transformation, and operational excellence initiatives
+                    </ListItem>
+                  </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
@@ -324,6 +329,27 @@ export function Header() {
                     Book Executive Briefing
                     <ArrowRight className="w-4 h-4" />
                   </Button>
+                </Link>
+                <Link
+                  href="/gcc-transformation"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  GCC Transformation
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Case Studies
+                </Link>
+                <Link
+                  href="/founder"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Founder
                 </Link>
               </nav>
             </SheetContent>
