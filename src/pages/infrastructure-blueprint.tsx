@@ -56,19 +56,11 @@ export default function InfrastructureBlueprintPage() {
         message: `Infrastructure Blueprint Download Request - Company: ${formData.company}, Industry: ${formData.industry}, Employees: ${formData.employees}`,
       });
 
-      // Download the blueprint PDF
-      const link = document.createElement('a');
-      link.href = '/onetech-infrastructure-blueprint.pdf';
-      link.download = 'ONETech-Infrastructure-Blueprint.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-
       setIsSubmitted(true);
       
       toast({
-        title: "Blueprint Download Started",
-        description: "Check your downloads folder for the Infrastructure Blueprint PDF. Our team will contact you within 24 hours.",
+        title: "Request Received",
+        description: "Our team will email you the Infrastructure Blueprint within 24 hours.",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -176,17 +168,17 @@ export default function InfrastructureBlueprintPage() {
                   <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-10 h-10 text-primary" />
                   </div>
-                  <h2 className="text-3xl font-bold">Blueprint Downloaded</h2>
+                  <h2 className="text-3xl font-bold">Request Received</h2>
                   <p className="text-lg text-muted-foreground">
-                    Check your downloads folder for the Infrastructure Blueprint PDF.
-                    Our team will contact you within 24 hours to discuss implementation.
+                    Our team will email you the Infrastructure Blueprint within 24 hours and schedule 
+                    a follow-up consultation to discuss implementation.
                   </p>
                   <Button
                     onClick={() => setIsSubmitted(false)}
                     variant="outline"
                     className="gap-2"
                   >
-                    Download Again
+                    Submit Another Request
                   </Button>
                 </div>
               ) : (
@@ -287,12 +279,12 @@ export default function InfrastructureBlueprintPage() {
                       className="w-full gap-2 bg-primary hover:bg-primary/90"
                       size="lg"
                     >
-                      <Download className="w-4 h-4" />
-                      {isSubmitting ? "Processing..." : "Download Infrastructure Blueprint"}
+                      <Mail className="w-4 h-4" />
+                      {isSubmitting ? "Processing..." : "Request Infrastructure Blueprint"}
                     </Button>
 
                     <p className="text-sm text-muted-foreground text-center">
-                      Your download will start immediately. Our team will follow up within 24 hours.
+                      Our team will email you the Blueprint within 24 hours and schedule a follow-up consultation.
                     </p>
                   </form>
                 </div>
