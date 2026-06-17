@@ -183,8 +183,8 @@ export default function InfrastructureBlueprintPage() {
                   {/* Cover Image */}
                   <div className="relative rounded-xl overflow-hidden border border-primary/20 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
                     <img
-                      src="/generated/blueprint-cover-2026.png"
-                      alt="Enterprise AI Infrastructure Blueprint 2026"
+                      src="/blueprint-cover-2026.png"
+                      alt="Enterprise AI Infrastructure Blueprint 2026 - O.N.E.Tech"
                       className="w-full h-auto"
                     />
                   </div>
