@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 interface SEOProps {
   title?: string;
@@ -7,61 +7,58 @@ interface SEOProps {
   url?: string;
 }
 
-// SEO elements that can be used in _document.tsx (returns JSX without Head wrapper)
+const defaultSEO = {
+  title: "O.N.E.Tech | Governance-First AI Infrastructure For Enterprise Operations",
+  description: "O.N.E.Tech designs governance-first AI infrastructure that connects enterprise systems, workforce operations, AI governance and operational intelligence into a unified ecosystem for GCC and global enterprises.",
+  image: "/og-enterprise-infrastructure.png",
+  url: "https://onetechautomation.com"
+};
+
 export function SEOElements({
-  title = "O.N.E.Tech AI Automation for E-Commerce Business",
-  description = "Boost your e-commerce business with AI automation, Chatbots, and smart workflows. O.N.E.Tech Automation helps you save time, increase sales, and scale faster.",
-  image = "/og-image.png",
-  url,
-}: SEOProps) {
+  title = defaultSEO.title,
+  description = defaultSEO.description,
+  image = defaultSEO.image,
+  url = defaultSEO.url
+}: SEOProps = {}) {
+  const fullImageUrl = image.startsWith('http') ? image : `${defaultSEO.url}${image}`;
+  
   return (
     <>
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
 
-      {/* Open Graph */}
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={url} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      {image && <meta property="og:image" content={image} />}
-      {url && <meta property="og:url" content={url} />}
-      <meta property="og:type" content="website" />
+      <meta property="og:image" content={fullImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:site_name" content="O.N.E.Tech" />
 
-      {/* Twitter */}
+      {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={url} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image" content={fullImageUrl} />
+
+      {/* LinkedIn */}
+      <meta property="og:image:alt" content="O.N.E.Tech - Governance-First AI Infrastructure" />
+
+      {/* WhatsApp / Telegram */}
+      <meta property="og:locale" content="en_US" />
     </>
   );
 }
 
-// SEO component for use in pages/_app.tsx or individual pages (uses next/head)
-// Note: Flattened structure (no fragment) for better Next.js Head compatibility during hot reload
-export function SEO({
-  title = "O.N.E.Tech AI Automation for E-Commerce Business",
-  description = "Boost your e-commerce business with AI automation, Chatbots, and smart workflows. O.N.E.Tech Automation helps you save time, increase sales, and scale faster.",
-  image = "/og-image.png",
-  url,
-}: SEOProps) {
+export function SEO(props: SEOProps = {}) {
   return (
     <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <link rel="icon" href="/favicon.ico" />
-
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      {image && <meta property="og:image" content={image} />}
-      {url && <meta property="og:url" content={url} />}
-      <meta property="og:type" content="website" />
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
+      <SEOElements {...props} />
     </Head>
   );
 }
