@@ -20,12 +20,14 @@ Transform O.N.E.Tech into a complete enterprise AI infrastructure ecosystem. Bui
 - [x] Create GCC Transformation page (/gcc-transformation)
 - [x] Rename blog to Intelligence Layer theme
 - [x] Create How It Works page (/how-it-works)
+- [x] Create Infrastructure Assessment page (/assessment) - interactive tool
+- [x] Create Infrastructure Blueprint page (/infrastructure-blueprint) - lead gen resource
 - [x] Build mega menu navigation in Header with 4 sections
 - [x] Restore Case Studies to Resources menu
-- [x] Clean up mobile navigation structure
+- [x] All strategic pages interconnected via CTAs and related links
 
 ## Acceptance
 - All strategic infrastructure pages are live and accessible
 - Mega menu provides organized access to complete ecosystem
-- Case Studies integrated in Resources section
-- Enterprise positioning consistent across navigation
+- Every page includes enterprise-level CTAs and contextual links
+- Website positions O.N.E.Tech as complete infrastructure platform
