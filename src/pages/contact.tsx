@@ -9,12 +9,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Building2, Mail, User, Users, MessageSquare, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Building2, Mail, User, Users, MessageSquare, ArrowRight, CheckCircle2, Phone } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     company: "",
     industry: "",
     employees: "",
@@ -35,8 +36,8 @@ export default function ContactPage() {
           name: formData.name,
           email: formData.email,
           company: formData.company,
-          phone: formData.employees,
-          message: formData.industry,
+          phone: formData.phone,
+          message: `Industry: ${formData.industry}\nEmployees: ${formData.employees}`,
           plan: formData.challenge
         }
       ]).select().single();
@@ -48,9 +49,9 @@ export default function ContactPage() {
         body: {
           name: formData.name,
           email: formData.email,
-          phone: formData.employees,
+          phone: formData.phone,
           company: formData.company,
-          message: formData.industry,
+          message: `Industry: ${formData.industry}\nEmployees: ${formData.employees}`,
           plan: formData.challenge,
           created_at: contactData?.created_at || new Date().toISOString()
         }
@@ -70,6 +71,7 @@ export default function ContactPage() {
       setFormData({
         name: "",
         email: "",
+        phone: "",
         company: "",
         industry: "",
         employees: "",
@@ -185,6 +187,24 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         placeholder="your.email@company.com"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
+                    </div>
+
+                    {/* Phone */}
+                    <div className="space-y-2">
+                      <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Phone className="w-4 h-4 text-primary" />
+                        Phone Number
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        required
+                        placeholder="+966 50 123 4567"
                         className="bg-muted/30 border-border/30 focus:border-primary/50"
                       />
                     </div>
