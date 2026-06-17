@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Menu } from "lucide-react";
+import { Menu, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import {
@@ -15,6 +15,7 @@ import {
 export function Header() {
   const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,54 +71,42 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             <Link
               href="/"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/solutions"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Solutions
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/industries"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Industries
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/infrastructure"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Infrastructure
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-1 left-0 w-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/case-studies"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Case Studies
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/founder"
-              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                isScrolled ? "" : ""
-              }`}
+              className="text-sm font-medium transition-colors hover:text-primary relative group"
             >
               Founder
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
@@ -136,7 +125,7 @@ export function Header() {
             </Button>
           </div>
 
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon" className="relative">
                 <Menu className="h-6 w-6 transition-transform duration-300 hover:scale-110" />
