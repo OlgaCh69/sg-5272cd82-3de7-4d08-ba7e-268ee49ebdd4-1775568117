@@ -15,10 +15,10 @@ const defaultSEO = {
 };
 
 export function SEOElements({
-  title = defaultSEO.title,
-  description = defaultSEO.description,
-  image = defaultSEO.image,
-  url = defaultSEO.url
+  title = "O.N.E.Tech | Governance-First AI Infrastructure For Enterprise Operations",
+  description = "O.N.E.Tech designs governance-first AI infrastructure that connects enterprise systems, workforce operations, AI governance and operational intelligence into a unified ecosystem for GCC and global enterprises.",
+  image = "/og-image.png",
+  url,
 }: SEOProps = {}) {
   const fullImageUrl = image.startsWith('http') ? image : `${defaultSEO.url}${image}`;
   
