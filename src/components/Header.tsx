@@ -67,35 +67,61 @@ export function Header() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link 
-                key={item.href}
-                href={item.href} 
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
-                  isActive(item.href)
-                    ? 'text-primary' 
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                <span className="relative z-10">{item.label}</span>
-                
-                {/* Active indicator */}
-                {isActive(item.href) && (
-                  <div className="absolute inset-0 bg-primary/10 rounded-lg" />
-                )}
-                
-                {/* Hover effect */}
-                <div className="absolute inset-0 bg-primary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Animated underline */}
-                <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-primary transition-all duration-300 ${
-                  isActive(item.href) 
-                    ? 'w-8' 
-                    : 'w-0 group-hover:w-8'
-                }`} />
-              </Link>
-            ))}
+          <nav className="hidden lg:flex items-center gap-8">
+            <Link
+              href="/"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Home
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              href="/solutions"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Solutions
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              href="/industries"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Industries
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              href="/infrastructure"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Infrastructure
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              href="/case-studies"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Case Studies
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
+            <Link
+              href="/founder"
+              className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                isScrolled ? "" : ""
+              }`}
+            >
+              Founder
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -116,45 +142,57 @@ export function Header() {
                 <Menu className="h-6 w-6 transition-transform duration-300 hover:scale-110" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background/95 backdrop-blur-xl border-primary/20">
-              <div className="flex flex-col gap-6 mt-6">
-                <Link href="/" className="flex items-center gap-3">
-                  <Image 
-                    src="/onetech-logo.png" 
-                    alt="O.N.E.Tech Logo" 
-                    width={40} 
-                    height={40}
-                    className="w-10 h-10"
-                  />
-                  <div className="flex flex-col">
-                    <span className="text-lg font-bold text-foreground">O.N.E.Tech</span>
-                    <span className="text-xs text-muted-foreground">AI Infrastructure</span>
-                  </div>
+            <SheetContent side="right" className="w-full sm:w-[400px]">
+              <nav className="flex flex-col gap-6 mt-8">
+                <Link
+                  href="/"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Home
                 </Link>
-                
-                <div className="space-y-2">
-                  {navItems.map((item) => (
-                    <Link 
-                      key={item.href}
-                      href={item.href} 
-                      className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
-                        isActive(item.href)
-                          ? 'bg-primary/10 text-primary border-l-2 border-primary' 
-                          : 'text-foreground hover:bg-muted/50 hover:text-primary'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <div className="pt-6 border-t border-border/30">
-                    <Button className="w-full bg-primary hover:bg-primary/90" asChild>
-                      <Link href="/contact">
-                        Book Executive Briefing
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
+                <Link
+                  href="/solutions"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Solutions
+                </Link>
+                <Link
+                  href="/industries"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Industries
+                </Link>
+                <Link
+                  href="/infrastructure"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Infrastructure
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Case Studies
+                </Link>
+                <Link
+                  href="/founder"
+                  className="text-lg font-medium hover:text-primary transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Founder
+                </Link>
+                <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <Button className="w-full gap-2 bg-primary hover:bg-primary/90">
+                    Contact Us
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </nav>
             </SheetContent>
           </Sheet>
         </div>
