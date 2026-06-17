@@ -1,12 +1,14 @@
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { BlogPreview } from "@/components/BlogPreview";
 import Link from "next/link";
 import Script from "next/script";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-export default function Blog() {
+export default function BlogPage() {
   const blogPosts = [
     {
       title: "Ecommerce Customer Support Automation: Reduce Workload & Increase Sales",
@@ -62,20 +64,26 @@ export default function Blog() {
   return (
     <>
       <SEO 
-        title="Blog - OneTech Automation | Ecommerce AI & Automation Insights"
-        description="Expert insights on AI chatbots, WhatsApp automation, abandoned cart recovery, and customer support automation for ecommerce brands."
+        title="The Intelligence Layer | O.N.E.Tech"
+        description="Insights on AI Governance, Operational Intelligence, Enterprise Infrastructure, Workforce Intelligence, and GCC Transformation."
       />
       <Header />
-      <main>
+      <main className="relative min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                Ecommerce Automation Insights
+        <section className="relative pt-32 pb-20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+                <span className="text-sm font-medium text-primary">KNOWLEDGE BASE</span>
+              </div>
+              
+              <h1 className="text-5xl lg:text-6xl font-bold">
+                The Intelligence <span className="text-primary">Layer</span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Practical guides on AI chatbots, automation strategies, and proven tactics to increase ecommerce revenue.
+              
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                Insights on AI Governance, Operational Intelligence, Enterprise Infrastructure, 
+                Workforce Intelligence, and GCC Transformation.
               </p>
             </div>
           </div>
@@ -188,6 +196,7 @@ export default function Blog() {
         src="https://app.trysoro.com/api/embed/da7f8ba9-ea7e-4f22-869e-d4b0df8b82b9" 
         strategy="lazyOnload"
       />
+      <Footer />
     </>
   );
 }
