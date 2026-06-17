@@ -8,7 +8,7 @@ export default function BlogPage() {
     <>
       <SEO
         title="The Intelligence Layer | O.N.E.Tech"
-        description="Insights on AI Governance, Operational Intelligence, Enterprise Infrastructure, Workforce Intelligence, and GCC Transformation."
+        description="Insights on AI Governance, Operational Intelligence, Enterprise Infrastructure, Workforce Intelligence, and GCC Transformation from O.N.E.Tech."
       />
       <Header />
 
@@ -25,7 +25,7 @@ export default function BlogPage() {
               </h1>
               
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Insights on AI Governance, Operational Intelligence, Enterprise Infrastructure, 
+                Insights on AI Governance, Operational Intelligence, Enterprise AI Infrastructure,
                 Workforce Intelligence, and GCC Transformation.
               </p>
             </div>
