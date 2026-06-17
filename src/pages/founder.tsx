@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Building2, Shield, TrendingUp, Network, Users, Home, DollarSign, Globe, Target, CheckCircle2 } from "lucide-react";
+import { Building2, Shield, TrendingUp, Network, Users, Home, DollarSign, Globe, Target, CheckCircle2, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -81,23 +81,38 @@ export default function FounderPage() {
             <div className="max-w-6xl mx-auto">
               <div className="grid lg:grid-cols-[300px,1fr] gap-12 items-start">
                 {/* Left - Photo */}
-                <div className="relative">
-                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
-                    <Image
-                      src="/olga-chavoshi.jpg"
-                      alt="Olga Chavoshi"
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-                  </div>
-                  
-                  {/* Badge */}
-                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                    <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm">
-                      <p className="text-xs font-semibold text-primary">Building Enterprise AI Infrastructure</p>
+                <div className="relative space-y-6">
+                  <div className="relative">
+                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
+                      <Image
+                        src="/olga-chavoshi.jpg"
+                        alt="Olga Chavoshi"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                     </div>
+                    
+                    {/* Badge */}
+                    <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                      <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm">
+                        <p className="text-xs font-semibold text-primary">Building Enterprise AI Infrastructure</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* LinkedIn */}
+                  <div className="flex justify-center pt-2">
+                    <a
+                      href="https://linkedin.com/in/olga-chavoshi-798bba177"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center gap-2 px-4 py-2 rounded-lg border border-border/30 bg-gradient-to-br from-muted/10 to-background hover:border-primary/30 transition-all duration-300"
+                    >
+                      <Linkedin className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
+                      <span className="text-sm font-medium text-foreground">Connect on LinkedIn</span>
+                    </a>
                   </div>
                 </div>
 
