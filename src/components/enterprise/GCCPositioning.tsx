@@ -1,54 +1,91 @@
-import { Globe2, TrendingUp, Building2, Zap, DollarSign, Users } from "lucide-react";
+"use client";
+
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Globe, Building2, TrendingUp, Users, Zap, Shield, ArrowRight } from "lucide-react";
+
+const capabilities = [
+  { icon: TrendingUp, text: "Saudi Vision 2030 Alignment" },
+  { icon: Building2, text: "Digital Transformation" },
+  { icon: Zap, text: "Industrial Modernization" },
+  { icon: Users, text: "Workforce Intelligence" },
+  { icon: Shield, text: "Operational Excellence" },
+  { icon: Globe, text: "Cross-Border Growth" }
+];
 
 export function GCCPositioning() {
-  const initiatives = [
-    { icon: TrendingUp, label: "Saudi Vision 2030", desc: "Aligned with digital transformation goals" },
-    { icon: Building2, label: "Industrial Modernization", desc: "AI-powered operational excellence" },
-    { icon: Zap, label: "Digital Transformation", desc: "Enterprise-grade AI infrastructure" },
-    { icon: Users, label: "Workforce Intelligence", desc: "Multilingual operational support" },
-    { icon: DollarSign, label: "Financial Services Innovation", desc: "Forex and fintech infrastructure" },
-    { icon: Globe2, label: "Cross-Border Growth", desc: "GCC and Cyprus expansion support" }
-  ];
-
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/30 to-accent/30" />
-      </div>
+    <section className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Built For The Next Wave Of <span className="text-gradient">GCC & Cyprus Transformation</span>
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            O.N.E.Tech infrastructure aligns with regional digital transformation initiatives, regulatory frameworks, and operational excellence standards across the Gulf Cooperation Council and Cyprus.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {initiatives.map((initiative, i) => (
-            <div key={i} className="glass-panel p-6 rounded-xl hover:bg-card/60 transition-all group text-center">
-              <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/30 transition-colors">
-                <initiative.icon className="w-7 h-7 text-primary" />
-              </div>
-              <h3 className="font-bold text-lg mb-2">{initiative.label}</h3>
-              <p className="text-sm text-muted-foreground">{initiative.desc}</p>
+      <div className="relative container mx-auto px-6 lg:px-12">
+        <div className="max-w-5xl mx-auto">
+          {/* Main content */}
+          <div className="text-center space-y-8 mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+              <Globe className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary">GCC & CYPRUS TRANSFORMATION</span>
             </div>
-          ))}
-        </div>
 
-        <div className="glass-card p-8 rounded-xl max-w-3xl mx-auto border border-primary/20">
-          <div className="text-center">
-            <p className="text-lg text-muted-foreground mb-4">
-              Serving enterprises across
+            <h2 className="text-5xl lg:text-6xl font-bold">
+              Built For The Next Wave Of
+              <br />
+              <span className="text-primary">GCC & Cyprus Transformation</span>
+            </h2>
+
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              O.N.E.Tech infrastructure designed for enterprise organizations navigating
+              operational modernization, workforce intelligence, and AI-driven transformation
+              across Saudi Arabia, UAE, GCC markets, and Cyprus.
             </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {["Saudi Arabia", "UAE", "Qatar", "Bahrain", "Kuwait", "Oman", "Cyprus"].map((country) => (
-                <span key={country} className="px-4 py-2 rounded-lg glass-panel text-sm font-medium border border-border/50">
-                  {country}
-                </span>
-              ))}
+          </div>
+
+          {/* Capabilities grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {capabilities.map((capability, index) => {
+              const Icon = capability.icon;
+              return (
+                <div
+                  key={index}
+                  className="group p-6 rounded-xl border border-border/30 bg-gradient-to-br from-muted/5 to-background hover:border-primary/30 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <span className="font-semibold text-foreground">{capability.text}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Final CTA */}
+          <div className="text-center space-y-8 p-12 rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-muted/10 backdrop-blur-sm">
+            <h3 className="text-3xl lg:text-4xl font-bold">
+              Ready To Transform Your
+              <br />
+              <span className="text-primary">Enterprise Operations?</span>
+            </h3>
+            
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Stop operating with fragmented systems and disconnected processes.
+              Let's build governance-first AI infrastructure that scales.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact">
+                <Button size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+                  Request Executive Briefing
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+              <Link href="/infrastructure">
+                <Button size="lg" variant="outline" className="gap-2">
+                  Explore Infrastructure Stack
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
