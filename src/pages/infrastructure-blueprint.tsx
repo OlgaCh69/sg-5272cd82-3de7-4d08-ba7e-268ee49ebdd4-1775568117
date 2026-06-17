@@ -20,7 +20,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
-import { submitContactForm } from "@/services/contactService";
+import { contactService from "@/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 
 export default function InfrastructureBlueprintPage() {
@@ -48,12 +48,11 @@ export default function InfrastructureBlueprintPage() {
 
     try {
       // Submit to Supabase and send email notification
-      await submitContactForm({
+      await contactService.submitContact({
         name: formData.name,
         email: formData.email,
+        phone: "", // Not collected on this form
         company: formData.company,
-        industry: formData.industry,
-        employees: formData.employees,
         message: `Infrastructure Blueprint Download Request - Company: ${formData.company}, Industry: ${formData.industry}, Employees: ${formData.employees}`,
       });
 
