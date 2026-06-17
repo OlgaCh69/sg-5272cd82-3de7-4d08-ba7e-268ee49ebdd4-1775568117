@@ -65,11 +65,19 @@ export default function InfrastructureBlueprintPage() {
         message: `Infrastructure Blueprint Download Request - Role: ${formData.role}, Company: ${formData.company}, Industry: ${formData.industry}, Employees: ${formData.employees}`,
       });
 
+      // Trigger PDF download
+      const link = document.createElement('a');
+      link.href = '/Enterprise_AI_Infrastructure_Blueprint_2026.pdf';
+      link.download = 'Enterprise_AI_Infrastructure_Blueprint_2026.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
       setIsSubmitted(true);
       
       toast({
-        title: "Blueprint Sent",
-        description: "Check your email for the Infrastructure Blueprint. Calculating your readiness score...",
+        title: "Blueprint Downloaded",
+        description: "Check your downloads folder for the Infrastructure Blueprint PDF. Calculating your readiness score...",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
