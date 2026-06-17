@@ -1,186 +1,265 @@
+"use client";
+
+import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
-import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
-import { Calendar, Shield, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { Building2, Mail, User, Users, MessageSquare, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    industry: "",
+    employees: "",
+    challenge: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("contact_submissions").insert([
+        {
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          industry: formData.industry,
+          employees: formData.employees,
+          challenge: formData.challenge
+        }
+      ]);
+
+      if (error) throw error;
+
+      setIsSubmitted(true);
+      toast({
+        title: "Request Received",
+        description: "Our team will contact you within 24 hours to schedule your executive briefing.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        industry: "",
+        employees: "",
+        challenge: ""
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to submit request. Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
     <>
-      <SEO 
-        title="Contact - O.N.E.Tech"
-        description="Schedule an executive briefing to discuss your operational intelligence roadmap. Governance-first AI infrastructure for GCC and Cyprus enterprises."
-        image="/og-image.png"
+      <SEO
+        title="Contact | O.N.E.Tech"
+        description="Request an executive briefing to discuss your operational infrastructure roadmap."
       />
       <Header />
-      <main className="min-h-screen">
+
+      <main className="relative min-h-screen">
         {/* Hero Section */}
-        <section className="relative border-b border-border bg-background pt-32 pb-20">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          <div className="container relative mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center">
-              <h1 className="mb-6 text-5xl font-bold tracking-tight text-foreground md:text-6xl">
-                Discuss Your Operational Intelligence Roadmap
+        <section className="relative pt-32 pb-20">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+          
+          <div className="relative container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-sm font-medium text-primary">EXECUTIVE BRIEFING</span>
+              </div>
+              
+              <h1 className="text-5xl lg:text-6xl font-bold">
+                Discuss Your Operational
+                <br />
+                <span className="text-primary">Infrastructure Roadmap</span>
               </h1>
+              
               <p className="text-xl text-muted-foreground leading-relaxed">
-                Schedule an executive consultation to explore how governance-first AI infrastructure can transform your enterprise operations.
+                Schedule a strategic consultation to explore how governance-first AI infrastructure
+                can transform your enterprise operations.
               </p>
-            </div>
-
-            {/* Contact Options */}
-            <div className="mt-16 grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
-              <div className="rounded-lg border border-border bg-card/50 backdrop-blur-sm p-6 text-center hover:border-primary/50 transition-colors">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                  <Calendar className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  Executive Briefing
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  45-minute infrastructure consultation
-                </p>
-              </div>
-
-              <div className="rounded-lg border border-border bg-card/50 backdrop-blur-sm p-6 text-center hover:border-primary/50 transition-colors">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  Governance Assessment
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  AI readiness and compliance review
-                </p>
-              </div>
-
-              <div className="rounded-lg border border-border bg-card/50 backdrop-blur-sm p-6 text-center hover:border-primary/50 transition-colors">
-                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 border border-primary/20">
-                  <TrendingUp className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  Infrastructure Planning
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Strategic roadmap development
-                </p>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* Contact Form */}
-        <ContactForm />
-
-        {/* Process Section */}
-        <section className="border-t border-border bg-card/30 py-24">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl">
-              <div className="mb-16 text-center">
-                <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-                  Our Engagement Process
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  How we work with enterprise clients
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <div className="rounded-lg border border-border bg-background/50 backdrop-blur-sm p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-xl font-bold text-primary">
-                      01
-                    </div>
-                    <div>
-                      <h3 className="mb-3 text-xl font-semibold text-foreground">
-                        Discovery & Assessment
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        We begin with a comprehensive assessment of your current operational landscape: systems, processes, pain points, and strategic objectives. This includes reviewing your existing enterprise infrastructure, identifying governance requirements, and understanding your industry-specific challenges.
-                      </p>
-                    </div>
+        {/* Contact Form Section */}
+        <section className="relative pb-32">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-3xl mx-auto">
+              {isSubmitted ? (
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-muted/20 p-12 text-center space-y-6">
+                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                    <CheckCircle2 className="w-10 h-10 text-primary" />
                   </div>
+                  <h2 className="text-3xl font-bold">Request Received</h2>
+                  <p className="text-lg text-muted-foreground">
+                    Our team will contact you within 24 hours to schedule your executive briefing.
+                  </p>
+                  <Button
+                    onClick={() => setIsSubmitted(false)}
+                    variant="outline"
+                    className="gap-2"
+                  >
+                    Submit Another Request
+                  </Button>
                 </div>
+              ) : (
+                <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background p-8 lg:p-12">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Name */}
+                    <div className="space-y-2">
+                      <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <User className="w-4 h-4 text-primary" />
+                        Name
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your full name"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
+                    </div>
 
-                <div className="rounded-lg border border-border bg-background/50 backdrop-blur-sm p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-xl font-bold text-primary">
-                      02
+                    {/* Email */}
+                    <div className="space-y-2">
+                      <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Mail className="w-4 h-4 text-primary" />
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="your.email@company.com"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
                     </div>
-                    <div>
-                      <h3 className="mb-3 text-xl font-semibold text-foreground">
-                        Infrastructure Design
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        We design a governance-first AI infrastructure tailored to your enterprise needs. This includes architectural specifications, integration requirements, governance frameworks, and a phased implementation roadmap. Every component is designed with your compliance requirements and operational constraints in mind.
-                      </p>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="rounded-lg border border-border bg-background/50 backdrop-blur-sm p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-xl font-bold text-primary">
-                      03
+                    {/* Company */}
+                    <div className="space-y-2">
+                      <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Building2 className="w-4 h-4 text-primary" />
+                        Company
+                      </label>
+                      <Input
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        required
+                        placeholder="Your company name"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
                     </div>
-                    <div>
-                      <h3 className="mb-3 text-xl font-semibold text-foreground">
-                        Phased Implementation
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Implementation follows a phased approach: start with high-value use cases, validate outcomes, then scale across the enterprise. This typically spans 3-6 months for initial deployment, with ongoing optimization and expansion as your operational intelligence capabilities mature.
-                      </p>
-                    </div>
-                  </div>
-                </div>
 
-                <div className="rounded-lg border border-border bg-background/50 backdrop-blur-sm p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-xl font-bold text-primary">
-                      04
+                    {/* Industry */}
+                    <div className="space-y-2">
+                      <label htmlFor="industry" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Building2 className="w-4 h-4 text-primary" />
+                        Industry
+                      </label>
+                      <Input
+                        id="industry"
+                        name="industry"
+                        value={formData.industry}
+                        onChange={handleChange}
+                        required
+                        placeholder="e.g., Energy, Real Estate, Financial Services, Forex Brokerage"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
                     </div>
-                    <div>
-                      <h3 className="mb-3 text-xl font-semibold text-foreground">
-                        Governance & Optimization
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Post-deployment, we provide ongoing governance support, performance monitoring, and continuous optimization. This ensures your AI infrastructure remains compliant, secure, and aligned with evolving business objectives while delivering measurable operational improvements.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Enterprise Focus */}
-        <section className="border-t border-border bg-background py-20">
-          <div className="container mx-auto px-6">
-            <div className="mx-auto max-w-4xl text-center">
-              <h2 className="mb-6 text-3xl font-bold text-foreground md:text-4xl">
-                Built For GCC & Cyprus Enterprise Markets
-              </h2>
-              <p className="mb-8 text-lg text-muted-foreground leading-relaxed">
-                O.N.E.Tech specializes in governance-first AI infrastructure for enterprises operating across Saudi Arabia, UAE, Qatar, Bahrain, Kuwait, Oman, and Cyprus. We understand regional compliance requirements, multilingual operations, and the strategic importance of sovereign AI infrastructure.
-              </p>
-              <div className="grid gap-4 sm:grid-cols-3 max-w-3xl mx-auto text-sm text-muted-foreground">
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">GCC</div>
-                  <div>Regional Operations</div>
+                    {/* Employees */}
+                    <div className="space-y-2">
+                      <label htmlFor="employees" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <Users className="w-4 h-4 text-primary" />
+                        Number of Employees
+                      </label>
+                      <Input
+                        id="employees"
+                        name="employees"
+                        value={formData.employees}
+                        onChange={handleChange}
+                        required
+                        placeholder="e.g., 50-200, 200-500, 500+"
+                        className="bg-muted/30 border-border/30 focus:border-primary/50"
+                      />
+                    </div>
+
+                    {/* Challenge */}
+                    <div className="space-y-2">
+                      <label htmlFor="challenge" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                        <MessageSquare className="w-4 h-4 text-primary" />
+                        Operational Challenge
+                      </label>
+                      <Textarea
+                        id="challenge"
+                        name="challenge"
+                        value={formData.challenge}
+                        onChange={handleChange}
+                        required
+                        rows={5}
+                        placeholder="Describe your key operational challenges or infrastructure requirements..."
+                        className="bg-muted/30 border-border/30 focus:border-primary/50 resize-none"
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full gap-2 bg-primary hover:bg-primary/90"
+                      size="lg"
+                    >
+                      {isSubmitting ? "Submitting..." : "Request Executive Briefing"}
+                      <ArrowRight className="w-4 h-4" />
+                    </Button>
+
+                    <p className="text-sm text-muted-foreground text-center">
+                      Our team typically responds within 24 hours to schedule your consultation.
+                    </p>
+                  </form>
                 </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">Cyprus</div>
-                  <div>EU Gateway</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-primary mb-1">Enterprise</div>
-                  <div>Governance-First</div>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </section>
       </main>
+
       <Footer />
     </>
   );
