@@ -29,7 +29,8 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("contacts").insert([
+      // Insert into database
+      const { data: contactData, error: dbError } = await supabase.from("contacts").insert([
         {
           name: formData.name,
           email: formData.email,
@@ -38,9 +39,27 @@ export default function ContactPage() {
           message: formData.industry,
           plan: formData.challenge
         }
-      ]);
+      ]).select().single();
 
-      if (error) throw error;
+      if (dbError) throw dbError;
+
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke("send-contact-notification", {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.employees,
+          company: formData.company,
+          message: formData.industry,
+          plan: formData.challenge,
+          created_at: contactData?.created_at || new Date().toISOString()
+        }
+      });
+
+      if (emailError) {
+        console.error("Email notification error:", emailError);
+        // Don't throw - form submission succeeded even if email fails
+      }
 
       setIsSubmitted(true);
       toast({
@@ -57,6 +76,7 @@ export default function ContactPage() {
         challenge: ""
       });
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error",
         description: "Failed to submit request. Please try again or email us directly.",
