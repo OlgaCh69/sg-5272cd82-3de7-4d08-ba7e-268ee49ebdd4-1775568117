@@ -29,14 +29,14 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("contact_submissions").insert([
+      const { error } = await supabase.from("contacts").insert([
         {
           name: formData.name,
           email: formData.email,
           company: formData.company,
-          industry: formData.industry,
-          employees: formData.employees,
-          challenge: formData.challenge
+          phone: formData.employees,
+          message: formData.industry,
+          plan: formData.challenge
         }
       ]);
 
