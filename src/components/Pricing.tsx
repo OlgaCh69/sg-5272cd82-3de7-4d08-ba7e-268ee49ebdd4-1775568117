@@ -1,131 +1,150 @@
-import Link from "next/link";
+"use client";
+
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+const pricingPlans = [
+  {
+    name: "AI Lead Capture",
+    price: "997",
+    period: "one-time setup",
+    description: "Smart AI assistant that captures and qualifies leads 24/7 across your website, WhatsApp, and Instagram.",
+    features: [
+      "AI-powered lead capture form",
+      "WhatsApp & Instagram integration",
+      "Real-time lead qualification",
+      "CRM integration",
+      "Multilingual support",
+      "Analytics dashboard"
+    ],
+    cta: "Request Executive Briefing",
+    href: "/contact",
+    popular: false
+  },
+  {
+    name: "AI Sales Assistant",
+    price: "1,997",
+    period: "one-time setup",
+    description: "Full conversational AI that answers questions, recommends products, and guides customers to purchase.",
+    features: [
+      "Everything in Lead Capture",
+      "Product recommendation engine",
+      "Cart abandonment recovery",
+      "Order tracking integration",
+      "Custom conversation flows",
+      "Priority support"
+    ],
+    cta: "Request Executive Briefing",
+    href: "/contact",
+    popular: true
+  },
+  {
+    name: "Complete Revenue System",
+    price: "3,997",
+    period: "one-time setup",
+    description: "Enterprise-grade AI infrastructure that handles everything from first message to repeat purchase.",
+    features: [
+      "Everything in Sales Assistant",
+      "Multi-channel automation (WhatsApp, Instagram, Telegram)",
+      "Customer support automation",
+      "Post-purchase follow-up",
+      "Review collection system",
+      "Dedicated account manager"
+    ],
+    cta: "Request Executive Briefing",
+    href: "/contact",
+    popular: false
+  },
+  {
+    name: "Custom Enterprise",
+    price: "Custom",
+    period: "tailored solution",
+    description: "Custom AI infrastructure designed for your specific operational requirements and scale.",
+    features: [
+      "Custom AI infrastructure design",
+      "Unlimited integrations",
+      "White-label options",
+      "Advanced analytics",
+      "Dedicated engineering team",
+      "SLA guarantee"
+    ],
+    cta: "Request Executive Briefing",
+    href: "/contact",
+    popular: false
+  }
+];
 
 export function Pricing() {
-  const tiers = [
-    {
-      name: "Starter",
-      price: "Custom",
-      description: "Perfect for ecommerce brands starting with automation",
-      features: [
-        "WhatsApp or Instagram automation",
-        "Basic chatbot setup",
-        "Up to 1,000 conversations/month",
-        "Email support",
-        "Setup & onboarding"
-      ],
-      cta: "Book Your Strategy Demo",
-      popular: false
-    },
-    {
-      name: "Growth",
-      price: "Custom",
-      description: "For growing brands scaling customer interactions",
-      features: [
-        "Multi-channel automation (WhatsApp + Instagram)",
-        "Advanced AI chatbot",
-        "Up to 5,000 conversations/month",
-        "Priority support",
-        "Custom workflows",
-        "Analytics dashboard"
-      ],
-      cta: "Book Your Strategy Demo",
-      popular: true
-    },
-    {
-      name: "Pro",
-      price: "Custom",
-      description: "For established brands with high volume",
-      features: [
-        "All platforms (WhatsApp, Instagram, Telegram)",
-        "Premium AI capabilities",
-        "Up to 15,000 conversations/month",
-        "Dedicated account manager",
-        "Custom integrations",
-        "Advanced analytics",
-        "A/B testing"
-      ],
-      cta: "Book Your Strategy Demo",
-      popular: false
-    },
-    {
-      name: "Enterprise",
-      price: "Custom",
-      description: "For large-scale operations requiring full customization",
-      features: [
-        "Unlimited conversations",
-        "Full platform access",
-        "White-label options",
-        "Custom development",
-        "SLA guarantees",
-        "Dedicated team",
-        "Strategic consulting"
-      ],
-      cta: "Book Your Strategy Demo",
-      popular: false
-    }
-  ];
-
   return (
-    <section id="pricing" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Pricing Built for Growth
+    <section className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      
+      <div className="relative container mx-auto px-6 lg:px-12">
+        <div className="text-center mb-16 space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
+            <span className="text-sm font-medium text-primary">INVESTMENT</span>
+          </div>
+          
+          <h2 className="text-5xl lg:text-6xl font-bold">
+            Simple, Transparent <span className="text-primary">Pricing</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Flexible pricing that scales with your ecommerce business. Every tier includes full automation capabilities.
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            One-time setup fee. No monthly subscriptions. You own the infrastructure.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {tiers.map((tier, index) => (
-            <div 
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {pricingPlans.map((plan, index) => (
+            <div
               key={index}
-              className={`relative rounded-lg border-2 ${
-                tier.popular 
-                  ? "border-primary bg-background shadow-lg scale-105" 
-                  : "border-border bg-background"
-              } p-8 hover:shadow-xl transition-all duration-300`}
+              className={`group relative rounded-2xl border transition-all duration-300 ${
+                plan.popular 
+                  ? 'border-primary/50 bg-gradient-to-br from-primary/10 to-muted/30 shadow-2xl shadow-primary/20 scale-105' 
+                  : 'border-border/30 bg-gradient-to-br from-muted/5 to-background hover:border-primary/30'
+              }`}
             >
-              {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-primary-foreground text-sm font-semibold">
                   Most Popular
                 </div>
               )}
-              
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{tier.description}</p>
-                <div className="text-4xl font-bold mb-2">{tier.price}</div>
-                <p className="text-sm text-muted-foreground">Tailored to your needs</p>
+
+              <div className="p-8 space-y-6">
+                <div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
+                </div>
+
+                <div className="space-y-1">
+                  <div className="text-4xl font-bold text-foreground">
+                    {plan.price === "Custom" ? plan.price : `$${plan.price}`}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{plan.period}</div>
+                </div>
+
+                <ul className="space-y-3">
+                  {plan.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Link
+                  href={plan.href}
+                  className={`block w-full py-3 px-6 rounded-xl text-center font-semibold transition-all duration-300 ${
+                    plan.popular
+                      ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/30'
+                      : 'bg-muted/30 text-foreground hover:bg-primary/10 border border-border/30 hover:border-primary/30'
+                  }`}
+                >
+                  {plan.cta}
+                </Link>
               </div>
-
-              <ul className="space-y-3 mb-8">
-                {tier.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button 
-                variant={tier.popular ? "default" : "outline"}
-                className="w-full"
-                asChild
-              >
-                <Link href="/contact">{tier.cta}</Link>
-              </Button>
             </div>
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground">
-            All plans include dedicated onboarding, analytics, and ongoing optimization support.
-          </p>
         </div>
       </div>
     </section>
