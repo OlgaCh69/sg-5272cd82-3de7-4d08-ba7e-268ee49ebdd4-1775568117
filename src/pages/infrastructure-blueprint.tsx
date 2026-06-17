@@ -192,9 +192,9 @@ export default function InfrastructureBlueprintPage() {
               ) : (
                 <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background p-8">
                   <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold mb-4">Download The Blueprint</h2>
+                    <h2 className="text-3xl font-bold mb-4">Download The Enterprise AI Infrastructure Blueprint</h2>
                     <p className="text-muted-foreground">
-                      Enter your details to receive the complete Infrastructure Blueprint PDF
+                      Receive the Governance-First Enterprise AI Infrastructure Blueprint and Executive Readiness Framework used to evaluate modern operational ecosystems.
                     </p>
                   </div>
 
