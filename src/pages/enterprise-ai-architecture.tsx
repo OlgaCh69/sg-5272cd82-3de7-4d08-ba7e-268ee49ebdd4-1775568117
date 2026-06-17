@@ -30,33 +30,48 @@ export default function EnterpriseAIArchitecturePage() {
   const layers = [
     {
       number: "01",
+      icon: Database,
       title: "Enterprise Systems Layer",
       description: "Existing operational infrastructure - ERP, CRM, HRM, supply chain, financial systems and enterprise databases.",
-      items: ["ERP Systems", "CRM Platforms", "Supply Chain", "Financial Systems", "HR Systems", "Legacy Databases"]
+      components: ["ERP Systems", "CRM Platforms", "Supply Chain", "Financial Systems", "HR Systems", "Legacy Databases"],
+      borderColor: "border-primary/50",
+      color: "from-primary/10 to-primary/5"
     },
     {
-      number: "02", 
+      number: "02",
+      icon: Workflow,
       title: "Agentic Coordination Layer",
       description: "AI agents orchestrate workflows across systems - data extraction, process automation, decision support and cross-system coordination.",
-      items: ["Workflow Agents", "Data Agents", "Integration Agents", "Decision Support", "Process Orchestration", "System Coordination"]
+      components: ["Workflow Agents", "Data Agents", "Integration Agents", "Decision Support", "Process Orchestration", "System Coordination"],
+      borderColor: "border-primary/50",
+      color: "from-primary/10 to-primary/5"
     },
     {
       number: "03",
+      icon: Shield,
       title: "AI Governance Layer",
       description: "Built-in oversight and control mechanisms - human approval workflows, audit trails, policy enforcement and compliance monitoring.",
-      items: ["Human Oversight", "Audit Trails", "Policy Controls", "Compliance Monitoring", "Risk Management", "Access Controls"]
+      components: ["Human Oversight", "Audit Trails", "Policy Controls", "Compliance Monitoring", "Risk Management", "Access Controls"],
+      borderColor: "border-primary/50",
+      color: "from-primary/10 to-primary/5"
     },
     {
       number: "04",
+      icon: TrendingUp,
       title: "Operational Intelligence Layer",
       description: "Real-time insights and intelligence - performance monitoring, predictive analytics, anomaly detection and operational visibility.",
-      items: ["Performance Analytics", "Predictive Intelligence", "Anomaly Detection", "Real-time Monitoring", "Trend Analysis", "Operational Metrics"]
+      components: ["Performance Analytics", "Predictive Intelligence", "Anomaly Detection", "Real-time Monitoring", "Trend Analysis", "Operational Metrics"],
+      borderColor: "border-primary/50",
+      color: "from-primary/10 to-primary/5"
     },
     {
       number: "05",
+      icon: Target,
       title: "Executive Control Center",
       description: "Unified command interface for enterprise leadership - strategic dashboards, decision intelligence and operational control.",
-      items: ["Strategic Dashboards", "Decision Intelligence", "Performance Overview", "Risk Monitoring", "Resource Allocation", "Strategic Planning"]
+      components: ["Strategic Dashboards", "Decision Intelligence", "Performance Overview", "Risk Monitoring", "Resource Allocation", "Strategic Planning"],
+      borderColor: "border-primary/50",
+      color: "from-primary/10 to-primary/5"
     }
   ];
 
