@@ -325,10 +325,28 @@ export default function ContactPage() {
                         <div>
                           <div className="text-sm text-muted-foreground mb-1">Email</div>
                           <a 
-                            href="mailto:olga@onetechautomation.com" 
+                            href="mailto:support@onetechautomation.com" 
                             className="text-foreground hover:text-primary transition-colors font-medium"
                           >
-                            olga@onetechautomation.com
+                            support@onetechautomation.com
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* WhatsApp */}
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Phone className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground mb-1">WhatsApp</div>
+                          <a 
+                            href="https://wa.me/35795180206" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground hover:text-primary transition-colors font-medium"
+                          >
+                            +357 95 180 206
                           </a>
                         </div>
                       </div>
