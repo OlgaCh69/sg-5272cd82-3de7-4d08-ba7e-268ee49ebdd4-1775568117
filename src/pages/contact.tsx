@@ -145,232 +145,238 @@ export default function ContactPage() {
         {/* Contact Form Section */}
         <section className="relative pb-32">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="max-w-3xl mx-auto">
-              {isSubmitted ? (
-                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-muted/20 p-12 text-center space-y-6">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-10 h-10 text-primary" />
-                  </div>
-                  <h2 className="text-3xl font-bold">Request Received</h2>
-                  <p className="text-lg text-muted-foreground">
-                    Our team will contact you within 24 hours to schedule your executive briefing.
-                  </p>
-                  <Button
-                    onClick={() => setIsSubmitted(false)}
-                    variant="outline"
-                    className="gap-2"
-                  >
-                    Submit Another Request
-                  </Button>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Left - Form */}
+                <div>
+                  {isSubmitted ? (
+                    <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-muted/20 p-12 text-center space-y-6">
+                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                        <CheckCircle2 className="w-10 h-10 text-primary" />
+                      </div>
+                      <h2 className="text-3xl font-bold">Request Received</h2>
+                      <p className="text-lg text-muted-foreground">
+                        Our team will contact you within 24 hours to schedule your executive briefing.
+                      </p>
+                      <Button
+                        onClick={() => setIsSubmitted(false)}
+                        variant="outline"
+                        className="gap-2"
+                      >
+                        Submit Another Request
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background p-8">
+                      <form onSubmit={handleSubmit} className="space-y-6">
+                        {/* Name */}
+                        <div className="space-y-2">
+                          <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <User className="w-4 h-4 text-primary" />
+                            Name
+                          </label>
+                          <Input
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                            placeholder="Your full name"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Email */}
+                        <div className="space-y-2">
+                          <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <Mail className="w-4 h-4 text-primary" />
+                            Email
+                          </label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            placeholder="your.email@company.com"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Phone */}
+                        <div className="space-y-2">
+                          <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <Phone className="w-4 h-4 text-primary" />
+                            Phone Number
+                          </label>
+                          <Input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                            placeholder="+966 50 123 4567"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Company */}
+                        <div className="space-y-2">
+                          <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <Building2 className="w-4 h-4 text-primary" />
+                            Company
+                          </label>
+                          <Input
+                            id="company"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleChange}
+                            required
+                            placeholder="Your company name"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Industry */}
+                        <div className="space-y-2">
+                          <label htmlFor="industry" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <Building2 className="w-4 h-4 text-primary" />
+                            Industry
+                          </label>
+                          <Input
+                            id="industry"
+                            name="industry"
+                            value={formData.industry}
+                            onChange={handleChange}
+                            required
+                            placeholder="e.g., Energy, Real Estate, Financial Services, Forex Brokerage"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Employees */}
+                        <div className="space-y-2">
+                          <label htmlFor="employees" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <Users className="w-4 h-4 text-primary" />
+                            Number of Employees
+                          </label>
+                          <Input
+                            id="employees"
+                            name="employees"
+                            value={formData.employees}
+                            onChange={handleChange}
+                            required
+                            placeholder="e.g., 50-200, 200-500, 500+"
+                            className="bg-muted/30 border-border/30 focus:border-primary/50"
+                          />
+                        </div>
+
+                        {/* Challenge */}
+                        <div className="space-y-2">
+                          <label htmlFor="challenge" className="flex items-center gap-2 text-sm font-semibold text-foreground">
+                            <MessageSquare className="w-4 h-4 text-primary" />
+                            Operational Challenge
+                          </label>
+                          <Textarea
+                            id="challenge"
+                            name="challenge"
+                            value={formData.challenge}
+                            onChange={handleChange}
+                            required
+                            rows={5}
+                            placeholder="Describe your key operational challenges or infrastructure requirements..."
+                            className="bg-muted/30 border-border/30 focus:border-primary/50 resize-none"
+                          />
+                        </div>
+
+                        {/* Submit Button */}
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full gap-2 bg-primary hover:bg-primary/90"
+                          size="lg"
+                        >
+                          {isSubmitting ? "Submitting..." : "Request Executive Briefing"}
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
+
+                        <p className="text-sm text-muted-foreground text-center">
+                          Our team typically responds within 24 hours to schedule your consultation.
+                        </p>
+                      </form>
+                    </div>
+                  )}
                 </div>
-              ) : (
-                <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background p-8 lg:p-12">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {/* Name */}
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <User className="w-4 h-4 text-primary" />
-                        Name
-                      </label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        placeholder="Your full name"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
+
+                {/* Right - Contact Info */}
+                <div className="space-y-8">
+                  {/* Contact Details */}
+                  <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-muted/10 p-8 space-y-6">
+                    <h3 className="text-2xl font-bold">Get In Touch</h3>
+                    
+                    <div className="space-y-4">
+                      {/* Email */}
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Mail className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground mb-1">Email</div>
+                          <a 
+                            href="mailto:olga@onetechautomation.com" 
+                            className="text-foreground hover:text-primary transition-colors font-medium"
+                          >
+                            olga@onetechautomation.com
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* LinkedIn */}
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <Linkedin className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground mb-1">LinkedIn</div>
+                          <a 
+                            href="https://linkedin.com/in/olga-chavoshi-798bba177" 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-foreground hover:text-primary transition-colors font-medium"
+                          >
+                            Connect with Olga Chavoshi
+                          </a>
+                        </div>
+                      </div>
+
+                      {/* Location */}
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <div className="text-sm text-muted-foreground mb-1">Headquarters</div>
+                          <div className="text-foreground font-medium">
+                            Cyprus | Saudi Arabia | UAE
+                          </div>
+                          <div className="text-sm text-muted-foreground mt-1">
+                            Serving GCC & Cyprus Markets
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
 
-                    {/* Email */}
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <Mail className="w-4 h-4 text-primary" />
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        placeholder="your.email@company.com"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
-                    </div>
-
-                    {/* Phone */}
-                    <div className="space-y-2">
-                      <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <Phone className="w-4 h-4 text-primary" />
-                        Phone Number
-                      </label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        placeholder="+966 50 123 4567"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
-                    </div>
-
-                    {/* Company */}
-                    <div className="space-y-2">
-                      <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <Building2 className="w-4 h-4 text-primary" />
-                        Company
-                      </label>
-                      <Input
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        required
-                        placeholder="Your company name"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
-                    </div>
-
-                    {/* Industry */}
-                    <div className="space-y-2">
-                      <label htmlFor="industry" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <Building2 className="w-4 h-4 text-primary" />
-                        Industry
-                      </label>
-                      <Input
-                        id="industry"
-                        name="industry"
-                        value={formData.industry}
-                        onChange={handleChange}
-                        required
-                        placeholder="e.g., Energy, Real Estate, Financial Services, Forex Brokerage"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
-                    </div>
-
-                    {/* Employees */}
-                    <div className="space-y-2">
-                      <label htmlFor="employees" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <Users className="w-4 h-4 text-primary" />
-                        Number of Employees
-                      </label>
-                      <Input
-                        id="employees"
-                        name="employees"
-                        value={formData.employees}
-                        onChange={handleChange}
-                        required
-                        placeholder="e.g., 50-200, 200-500, 500+"
-                        className="bg-muted/30 border-border/30 focus:border-primary/50"
-                      />
-                    </div>
-
-                    {/* Challenge */}
-                    <div className="space-y-2">
-                      <label htmlFor="challenge" className="flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <MessageSquare className="w-4 h-4 text-primary" />
-                        Operational Challenge
-                      </label>
-                      <Textarea
-                        id="challenge"
-                        name="challenge"
-                        value={formData.challenge}
-                        onChange={handleChange}
-                        required
-                        rows={5}
-                        placeholder="Describe your key operational challenges or infrastructure requirements..."
-                        className="bg-muted/30 border-border/30 focus:border-primary/50 resize-none"
-                      />
-                    </div>
-
-                    {/* Submit Button */}
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full gap-2 bg-primary hover:bg-primary/90"
-                      size="lg"
-                    >
-                      {isSubmitting ? "Submitting..." : "Request Executive Briefing"}
-                      <ArrowRight className="w-4 h-4" />
-                    </Button>
-
-                    <p className="text-sm text-muted-foreground text-center">
-                      Our team typically responds within 24 hours to schedule your consultation.
+                  {/* Enterprise Focus */}
+                  <div className="rounded-xl border border-border/30 bg-gradient-to-br from-muted/10 to-background p-6 space-y-4">
+                    <h4 className="font-semibold">Enterprise Infrastructure Consultations</h4>
+                    <p className="text-sm text-muted-foreground">
+                      O.N.E.Tech works with GCC and Cyprus-based enterprises deploying governance-first
+                      AI infrastructure at scale. Book a briefing to discuss your operational transformation roadmap.
                     </p>
-                  </form>
-                </div>
-              )}
-              {/* Right - Contact Info */}
-              <div className="space-y-8">
-                {/* Contact Details */}
-                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-muted/10 p-8 space-y-6">
-                  <h3 className="text-2xl font-bold">Get In Touch</h3>
-                  
-                  <div className="space-y-4">
-                    {/* Email */}
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                        <Mail className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">Email</div>
-                        <a 
-                          href="mailto:olga@onetechautomation.com" 
-                          className="text-foreground hover:text-primary transition-colors font-medium"
-                        >
-                          olga@onetechautomation.com
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* LinkedIn */}
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                        <Linkedin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">LinkedIn</div>
-                        <a 
-                          href="https://linkedin.com/in/olga-chavoshi-798bba177" 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground hover:text-primary transition-colors font-medium"
-                        >
-                          Connect with Olga Chavoshi
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Location */}
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="w-5 h-5 text-primary" />
-                      </div>
-                      <div>
-                        <div className="text-sm text-muted-foreground mb-1">Headquarters</div>
-                        <div className="text-foreground font-medium">
-                          Cyprus | Saudi Arabia | UAE
-                        </div>
-                        <div className="text-sm text-muted-foreground mt-1">
-                          Serving GCC & Cyprus Markets
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                </div>
-
-                {/* Enterprise Focus */}
-                <div className="rounded-xl border border-border/30 bg-gradient-to-br from-muted/10 to-background p-6 space-y-4">
-                  <h4 className="font-semibold">Enterprise Infrastructure Consultations</h4>
-                  <p className="text-sm text-muted-foreground">
-                    O.N.E.Tech works with GCC and Cyprus-based enterprises deploying governance-first
-                    AI infrastructure at scale. Book a briefing to discuss your operational transformation roadmap.
-                  </p>
                 </div>
               </div>
             </div>
