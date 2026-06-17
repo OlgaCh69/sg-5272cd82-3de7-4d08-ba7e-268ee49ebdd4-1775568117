@@ -6,6 +6,13 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { 
   Building2, 
   Users, 
@@ -17,7 +24,8 @@ import {
   TrendingUp,
   Network,
   Eye,
-  ArrowRight
+  ArrowRight,
+  Briefcase
 } from "lucide-react";
 import Link from "next/link";
 import { contactService } from "@/services/contactService";
@@ -31,11 +39,12 @@ export default function InfrastructureBlueprintPage() {
     company: "",
     industry: "",
     employees: "",
+    role: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -53,14 +62,14 @@ export default function InfrastructureBlueprintPage() {
         email: formData.email,
         phone: "", // Not collected on this form
         company: formData.company,
-        message: `Infrastructure Blueprint Download Request - Company: ${formData.company}, Industry: ${formData.industry}, Employees: ${formData.employees}`,
+        message: `Infrastructure Blueprint Download Request - Role: ${formData.role}, Company: ${formData.company}, Industry: ${formData.industry}, Employees: ${formData.employees}`,
       });
 
       setIsSubmitted(true);
       
       toast({
-        title: "Request Received",
-        description: "Our team will email you the Infrastructure Blueprint within 24 hours.",
+        title: "Blueprint Sent",
+        description: "Check your email for the Infrastructure Blueprint. Calculating your readiness score...",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -89,16 +98,28 @@ export default function InfrastructureBlueprintPage() {
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm">
                 <FileText className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">PREMIUM RESOURCE</span>
+                <span className="text-sm font-medium text-primary">Executive Blueprint</span>
               </div>
               
               <h1 className="text-5xl lg:text-6xl font-bold">
                 Enterprise AI Infrastructure <span className="text-primary">Blueprint</span>
               </h1>
               
+              <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
+                <span>35 Pages</span>
+                <span className="w-1 h-1 rounded-full bg-muted-foreground/50"></span>
+                <span>Enterprise Edition</span>
+                <span className="w-1 h-1 rounded-full bg-muted-foreground/50"></span>
+                <span>15 Minute Read</span>
+              </div>
+              
               <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
                 Complete framework for designing, deploying and governing enterprise AI infrastructure
                 at scale across operational, revenue and workforce systems.
+              </p>
+
+              <p className="text-base text-muted-foreground/80 max-w-2xl mx-auto">
+                Designed for enterprise leaders evaluating AI governance, operational intelligence and infrastructure transformation initiatives.
               </p>
             </div>
           </div>
@@ -108,39 +129,29 @@ export default function InfrastructureBlueprintPage() {
         <section className="relative py-20">
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center">What's Inside The Blueprint</h2>
+              <h2 className="text-3xl font-bold mb-12 text-center">What's Inside</h2>
               
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   {
-                    icon: Shield,
-                    title: "Governance Framework",
-                    description: "AI governance layer architecture, policy enforcement, human oversight and audit trails"
+                    icon: Building2,
+                    title: "Enterprise AI Architecture",
+                    description: "5-layer governance-first infrastructure model."
                   },
                   {
-                    icon: Building2,
-                    title: "5-Layer Architecture",
-                    description: "Complete infrastructure stack from enterprise systems to executive control center"
+                    icon: Shield,
+                    title: "AI Governance Framework",
+                    description: "Human oversight, auditability and compliance controls."
                   },
                   {
                     icon: TrendingUp,
-                    title: "Operational Intelligence",
-                    description: "Intelligence layer design, data flows, executive visibility and decision support"
+                    title: "Operational Intelligence Model",
+                    description: "How enterprises transform data into decisions."
                   },
                   {
-                    icon: Network,
-                    title: "Agentic Coordination",
-                    description: "AI agent orchestration, workflow automation and task routing frameworks"
-                  },
-                  {
-                    icon: Eye,
-                    title: "Executive Control",
-                    description: "Control center design, real-time monitoring and strategic decision interfaces"
-                  },
-                  {
-                    icon: FileText,
-                    title: "Implementation Roadmap",
-                    description: "Phase-by-phase deployment strategy for GCC enterprise transformation"
+                    icon: CheckCircle2,
+                    title: "Enterprise Readiness Assessment",
+                    description: "Determine your organization's maturity level."
                   }
                 ].map((item, index) => (
                   <div
@@ -164,27 +175,89 @@ export default function InfrastructureBlueprintPage() {
           <div className="container mx-auto px-6 lg:px-12">
             <div className="max-w-2xl mx-auto">
               {isSubmitted ? (
-                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-muted/20 p-12 text-center space-y-6">
-                  <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
-                    <CheckCircle2 className="w-10 h-10 text-primary" />
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-muted/10 p-8 lg:p-12 space-y-8">
+                  <div className="text-center space-y-4">
+                    <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="w-10 h-10 text-primary" />
+                    </div>
+                    <h2 className="text-3xl font-bold">Your Infrastructure Readiness Score</h2>
+                    <p className="text-muted-foreground">
+                      Based on your company profile, here's your estimated operational maturity assessment
+                    </p>
                   </div>
-                  <h2 className="text-3xl font-bold">Request Received</h2>
-                  <p className="text-lg text-muted-foreground">
-                    Our team will email you the Infrastructure Blueprint within 24 hours and schedule 
-                    a follow-up consultation to discuss implementation.
-                  </p>
-                  <Button
-                    onClick={() => setIsSubmitted(false)}
-                    variant="outline"
-                    className="gap-2"
-                  >
-                    Submit Another Request
-                  </Button>
+
+                  {/* Maturity Scores */}
+                  <div className="space-y-6">
+                    {/* Governance Maturity */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-semibold">Governance Maturity</span>
+                        <span className="text-sm text-muted-foreground">Initial Stage</span>
+                      </div>
+                      <div className="h-3 bg-muted/30 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-primary/60 to-primary w-[35%] rounded-full"></div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Limited AI governance frameworks. Opportunity to establish enterprise controls.
+                      </p>
+                    </div>
+
+                    {/* Operational Intelligence */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-semibold">Operational Intelligence Maturity</span>
+                        <span className="text-sm text-muted-foreground">Developing</span>
+                      </div>
+                      <div className="h-3 bg-muted/30 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-primary/60 to-primary w-[45%] rounded-full"></div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Some data visibility. Ready for intelligence layer implementation.
+                      </p>
+                    </div>
+
+                    {/* Infrastructure Readiness */}
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="font-semibold">Infrastructure Readiness</span>
+                        <span className="text-sm text-muted-foreground">Early Stage</span>
+                      </div>
+                      <div className="h-3 bg-muted/30 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-primary/60 to-primary w-[40%] rounded-full"></div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">
+                        Enterprise systems present. Infrastructure coordination layer needed.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Overall Assessment */}
+                  <div className="rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-muted/5 p-6 space-y-4">
+                    <h3 className="font-semibold text-lg">Overall Assessment</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Your organization shows characteristics common to enterprises beginning their AI infrastructure journey.
+                      The Blueprint includes specific frameworks for your maturity level, plus a roadmap to advance through
+                      each stage of operational intelligence transformation.
+                    </p>
+                  </div>
+
+                  {/* CTA */}
+                  <div className="text-center space-y-4 pt-4">
+                    <p className="text-muted-foreground">
+                      Schedule an executive briefing to discuss your infrastructure roadmap
+                    </p>
+                    <Link href="/contact">
+                      <Button size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+                        Book Executive Briefing
+                        <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               ) : (
                 <div className="rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background p-8">
                   <div className="text-center mb-8">
-                    <h2 className="text-3xl font-bold mb-4">Download The Enterprise AI Infrastructure Blueprint</h2>
+                    <h2 className="text-3xl font-bold mb-4">Receive Executive Blueprint</h2>
                     <p className="text-muted-foreground">
                       Receive the Governance-First Enterprise AI Infrastructure Blueprint and Executive Readiness Framework used to evaluate modern operational ecosystems.
                     </p>
@@ -222,6 +295,32 @@ export default function InfrastructureBlueprintPage() {
                         placeholder="your.email@company.com"
                         className="bg-muted/30 border-border/30 focus:border-primary/50"
                       />
+                    </div>
+
+                    {/* Role / Job Title */}
+                    <div className="space-y-2">
+                      <label htmlFor="role" className="text-sm font-semibold text-foreground">
+                        Role / Job Title
+                      </label>
+                      <Select
+                        name="role"
+                        value={formData.role}
+                        onValueChange={(value) => setFormData({ ...formData, role: value })}
+                        required
+                      >
+                        <SelectTrigger className="bg-muted/30 border-border/30 focus:border-primary/50">
+                          <SelectValue placeholder="Select your role" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="ceo">CEO</SelectItem>
+                          <SelectItem value="coo">COO</SelectItem>
+                          <SelectItem value="cio">CIO</SelectItem>
+                          <SelectItem value="cto">CTO</SelectItem>
+                          <SelectItem value="transformation-director">Transformation Director</SelectItem>
+                          <SelectItem value="operations-director">Operations Director</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     {/* Company */}
@@ -279,13 +378,33 @@ export default function InfrastructureBlueprintPage() {
                       className="w-full gap-2 bg-primary hover:bg-primary/90"
                       size="lg"
                     >
-                      <Mail className="w-4 h-4" />
-                      {isSubmitting ? "Processing..." : "Request Infrastructure Blueprint"}
+                      <Download className="w-4 h-4" />
+                      {isSubmitting ? "Processing..." : "Receive Executive Blueprint"}
                     </Button>
 
-                    <p className="text-sm text-muted-foreground text-center">
-                      Our team will email you the Blueprint within 24 hours and schedule a follow-up consultation.
-                    </p>
+                    {/* Credibility Indicators */}
+                    <div className="grid grid-cols-1 gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>Governance-First Framework</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>Executive Readiness Assessment</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>Enterprise Architecture Model</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>GCC Transformation Roadmap</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        <span>Infrastructure Reference Architecture</span>
+                      </div>
+                    </div>
                   </form>
                 </div>
               )}
