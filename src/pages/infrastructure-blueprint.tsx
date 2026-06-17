@@ -20,7 +20,7 @@ import {
   ArrowRight
 } from "lucide-react";
 import Link from "next/link";
-import { contactService from "@/services/contactService";
+import { contactService } from "@/services/contactService";
 import { useToast } from "@/hooks/use-toast";
 
 export default function InfrastructureBlueprintPage() {
