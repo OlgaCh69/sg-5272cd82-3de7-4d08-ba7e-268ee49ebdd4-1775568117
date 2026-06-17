@@ -53,6 +53,8 @@ export function Header() {
   const resourcesLinks = [
     { href: "/blog", label: "The Intelligence Layer", desc: "Insights and thought leadership" },
     { href: "/case-studies", label: "Transformation Scenarios", desc: "Industry infrastructure examples" },
+    { href: "/infrastructure-blueprint", label: "Infrastructure Blueprint", desc: "Download complete framework" },
+    { href: "/assessment", label: "Infrastructure Assessment", desc: "Evaluate your readiness" },
     { href: "/gcc-transformation", label: "GCC Transformation", desc: "Built for Vision 2030" },
     { href: "/trust-center", label: "Trust Center", desc: "Security and governance" },
   ];
