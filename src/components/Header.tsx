@@ -325,27 +325,6 @@ export function Header() {
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </Link>
-                <Link
-                  href="/gcc-transformation"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  GCC Transformation
-                </Link>
-                <Link
-                  href="/case-studies"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Case Studies
-                </Link>
-                <Link
-                  href="/founder"
-                  className="text-lg font-medium hover:text-primary transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Founder
-                </Link>
               </nav>
             </SheetContent>
           </Sheet>
