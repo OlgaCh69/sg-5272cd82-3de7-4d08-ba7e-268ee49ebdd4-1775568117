@@ -35,11 +35,12 @@ export function Header() {
   }, []);
 
   const infrastructureLinks = [
-    { href: "/enterprise-ai-architecture", label: "Enterprise AI Architecture", desc: "Five-layer infrastructure stack" },
-    { href: "/operational-intelligence", label: "Operational Intelligence", desc: "Transform data into insights" },
-    { href: "/ai-governance", label: "AI Governance", desc: "Policy enforcement and oversight" },
-    { href: "/how-it-works", label: "How It Works", desc: "Infrastructure methodology" },
-    { href: "/infrastructure", label: "Platform Stack", desc: "Complete infrastructure overview" },
+    { href: "/methodology", label: "The O.N.E.Tech Methodology", desc: "Governance-first transformation framework" },
+    { href: "/enterprise-ai-architecture", label: "Enterprise AI Architecture", desc: "5-layer infrastructure model" },
+    { href: "/operational-intelligence", label: "Operational Intelligence", desc: "Transform data into decisions" },
+    { href: "/ai-governance", label: "AI Governance", desc: "Built-in oversight & control" },
+    { href: "/how-it-works", label: "How It Works", desc: "Implementation approach" },
+    { href: "/infrastructure", label: "Platform Stack", desc: "Complete technology foundation" },
   ];
 
   const solutionsLinks = [
