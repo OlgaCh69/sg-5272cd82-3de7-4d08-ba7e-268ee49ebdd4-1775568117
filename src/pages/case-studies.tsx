@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -16,11 +16,14 @@ import {
   Landmark, 
   Globe,
   ArrowRight,
-  ChevronRight,
   Shield,
-  Eye,
   Network,
-  Database
+  Database,
+  Eye,
+  Activity,
+  AlertTriangle,
+  CheckCircle2,
+  TrendingUp as TrendUp
 } from "lucide-react";
 
 const caseStudies = [
@@ -29,23 +32,37 @@ const caseStudies = [
     industry: "Energy & Utilities",
     title: "Operational Intelligence For Utility Infrastructure",
     scenario: "Industry Transformation Scenario",
+    summary: "Transform disconnected utility operations into an integrated intelligence platform with real-time asset health monitoring, predictive incident management, and executive operational control.",
     challenges: [
-      "Disconnected operational systems",
-      "Manual reporting",
-      "Limited asset visibility",
-      "Delayed decision making"
+      "Disconnected operational systems across grid infrastructure",
+      "Manual incident reporting and delayed response times",
+      "Limited real-time asset health visibility",
+      "Fragmented decision-making processes"
     ],
     infrastructure: [
       "Operational Intelligence Layer",
       "AI Governance Layer",
-      "Asset Intelligence",
-      "Executive Control Center"
+      "Asset Intelligence Module",
+      "Executive Control Center",
+      "Predictive Analytics Engine"
+    ],
+    governance: [
+      "Real-time decision audit trails",
+      "AI transparency controls",
+      "Compliance monitoring dashboard",
+      "Executive override protocols"
     ],
     outcomes: [
-      "38% faster incident response",
-      "24/7 operational visibility",
-      "Governed AI decision support",
-      "Improved infrastructure monitoring"
+      "38% faster incident response across grid operations",
+      "24/7 operational visibility for executive teams",
+      "Governed AI decision support for critical infrastructure",
+      "Improved asset health monitoring and predictive maintenance"
+    ],
+    metrics: [
+      { label: "Asset Health", value: "94%", status: "healthy" },
+      { label: "Incident Response", value: "12 min", status: "optimal" },
+      { label: "Grid Visibility", value: "Real-time", status: "active" },
+      { label: "Risk Alerts", value: "3 Active", status: "warning" }
     ]
   },
   {
@@ -53,23 +70,37 @@ const caseStudies = [
     industry: "Oil & Gas",
     title: "Governance-First Workforce Intelligence For Field Operations",
     scenario: "Industry Transformation Scenario",
+    summary: "Enable distributed workforce coordination across multilingual field operations with AI-powered safety intelligence, compliance monitoring, and real-time operational oversight.",
     challenges: [
-      "Large distributed workforce",
-      "Multilingual communication barriers",
-      "Safety compliance complexity",
-      "Knowledge fragmentation"
+      "Large distributed workforce across remote locations",
+      "Multilingual communication barriers in field operations",
+      "Complex safety compliance requirements",
+      "Knowledge fragmentation and delayed information flow"
     ],
     infrastructure: [
       "Workforce Intelligence Infrastructure",
-      "Multilingual AI Coordination",
-      "Safety Intelligence Layer",
-      "Governance Framework"
+      "Multilingual AI Coordination Layer",
+      "Safety Intelligence Module",
+      "Governance Framework",
+      "Real-time Field Data Platform"
+    ],
+    governance: [
+      "Safety protocol enforcement",
+      "Workforce action audit logs",
+      "Compliance tracking dashboard",
+      "Multilingual governance controls"
     ],
     outcomes: [
-      "Improved workforce coordination",
-      "Reduced operational bottlenecks",
-      "Enhanced compliance visibility",
-      "Real-time field intelligence"
+      "Improved cross-team workforce coordination",
+      "Reduced operational bottlenecks in field workflows",
+      "Enhanced compliance visibility for safety teams",
+      "Real-time field intelligence for executives"
+    ],
+    metrics: [
+      { label: "Field Workforce", value: "847", status: "active" },
+      { label: "Permit Status", value: "23 Pending", status: "normal" },
+      { label: "Safety Compliance", value: "98.2%", status: "healthy" },
+      { label: "Site Intelligence", value: "Live", status: "active" }
     ]
   },
   {
@@ -77,23 +108,37 @@ const caseStudies = [
     industry: "Infrastructure & EPC",
     title: "Pipeline 4.0 Operational Intelligence Ecosystem",
     scenario: "Industry Transformation Scenario",
+    summary: "Connect field operations to executive management through an integrated intelligence platform that enables real-time site visibility, digital workflows, and governed AI coordination.",
     challenges: [
-      "Field operations disconnected from management",
-      "Delayed reporting",
-      "Safety oversight limitations",
-      "Manual workflows"
+      "Field operations disconnected from management systems",
+      "Delayed reporting and information silos",
+      "Limited safety oversight across distributed sites",
+      "Manual workflow processes and approvals"
     ],
     infrastructure: [
       "Agentic Coordination Layer",
-      "Operational Intelligence Layer",
+      "Operational Intelligence Platform",
       "AI Governance Framework",
-      "Executive Command Center"
+      "Executive Command Center",
+      "Digital Workflow Engine"
+    ],
+    governance: [
+      "Permit approval chains",
+      "Site access controls",
+      "Executive decision logging",
+      "Compliance automation"
     ],
     outcomes: [
-      "Real-time site visibility",
-      "Digital permit workflows",
-      "Workforce orchestration",
-      "Executive operational control"
+      "Real-time visibility across all construction sites",
+      "Digital permit workflows replacing manual processes",
+      "Intelligent workforce orchestration and coordination",
+      "Executive operational control with governance oversight"
+    ],
+    metrics: [
+      { label: "Active Sites", value: "12", status: "active" },
+      { label: "Permits Today", value: "34 Approved", status: "healthy" },
+      { label: "Workforce", value: "1,243", status: "active" },
+      { label: "Issues", value: "5 Open", status: "warning" }
     ]
   },
   {
@@ -101,23 +146,37 @@ const caseStudies = [
     industry: "Construction",
     title: "AI-Powered Construction Operations Infrastructure",
     scenario: "Industry Transformation Scenario",
+    summary: "Unify siloed construction teams through intelligent coordination infrastructure that provides real-time project visibility, automated issue resolution, and governance-controlled AI adoption.",
     challenges: [
-      "Project delays",
-      "Siloed teams",
-      "Fragmented communication",
-      "Limited executive visibility"
+      "Project delays due to coordination failures",
+      "Siloed teams and fragmented communication",
+      "Limited executive visibility into project status",
+      "Manual tracking and reporting overhead"
     ],
     infrastructure: [
       "Project Intelligence Layer",
-      "Workforce Coordination",
+      "Workforce Coordination Module",
       "Governance Controls",
-      "Executive Dashboard"
+      "Executive Dashboard",
+      "Issue Resolution Engine"
+    ],
+    governance: [
+      "Project milestone tracking",
+      "Budget oversight controls",
+      "Resource allocation governance",
+      "Quality compliance monitoring"
     ],
     outcomes: [
-      "Faster issue resolution",
-      "Improved project coordination",
-      "Greater operational transparency",
-      "Governed AI adoption"
+      "Faster issue identification and resolution",
+      "Improved cross-team project coordination",
+      "Greater operational transparency for stakeholders",
+      "Governed AI adoption with executive oversight"
+    ],
+    metrics: [
+      { label: "Project Progress", value: "67%", status: "healthy" },
+      { label: "Issue Resolution", value: "2.3 days", status: "optimal" },
+      { label: "Team Coordination", value: "Active", status: "active" },
+      { label: "Budget Status", value: "On Track", status: "healthy" }
     ]
   },
   {
@@ -125,23 +184,37 @@ const caseStudies = [
     industry: "Real Estate",
     title: "Intelligent Property Operations Infrastructure",
     scenario: "Industry Transformation Scenario",
+    summary: "Transform property operations with AI-powered lead intelligence, multilingual client engagement, and portfolio-wide visibility that accelerates inquiry response and improves conversion rates.",
     challenges: [
-      "Lead management inefficiencies",
-      "Slow response times",
-      "Fragmented customer journeys",
-      "Limited portfolio visibility"
+      "Inefficient lead management across portfolios",
+      "Slow response times to buyer inquiries",
+      "Fragmented customer journey tracking",
+      "Limited portfolio-wide operational visibility"
     ],
     infrastructure: [
-      "Revenue Infrastructure",
-      "AI Property Intelligence",
+      "Revenue Infrastructure Layer",
+      "AI Property Intelligence Module",
       "Multilingual Client Engagement",
-      "Executive Analytics"
+      "Executive Analytics Dashboard",
+      "Lead Scoring Engine"
+    ],
+    governance: [
+      "Lead qualification standards",
+      "Client interaction audit trails",
+      "Portfolio performance monitoring",
+      "Revenue attribution tracking"
     ],
     outcomes: [
-      "Faster inquiry response",
-      "Improved lead qualification",
-      "Enhanced client experience",
-      "Portfolio-wide visibility"
+      "Faster inquiry response across all channels",
+      "Improved lead qualification and prioritization",
+      "Enhanced multilingual client experience",
+      "Real-time portfolio visibility for executives"
+    ],
+    metrics: [
+      { label: "Lead Quality", value: "A-Grade", status: "healthy" },
+      { label: "Portfolio Visibility", value: "100%", status: "active" },
+      { label: "Buyer Intent", value: "High", status: "healthy" },
+      { label: "Viewing Requests", value: "18 Today", status: "active" }
     ]
   },
   {
@@ -149,25 +222,38 @@ const caseStudies = [
     industry: "Forex Brokerage",
     title: "Forex Client Lifecycle Intelligence Infrastructure",
     scenario: "Industry Transformation Scenario",
+    summary: "Optimize client lifecycle management from onboarding through retention with AI-powered intelligence that automates compliance workflows and provides executive visibility into client health.",
     challenges: [
-      "Fragmented onboarding",
-      "Retention inefficiencies",
-      "Compliance workload",
-      "Limited operational visibility"
+      "Fragmented client onboarding workflows",
+      "Retention inefficiencies and churn risk",
+      "Heavy compliance workload and manual processes",
+      "Limited operational visibility for executives"
     ],
     infrastructure: [
       "Forex Infrastructure Layer",
       "Client Intelligence Engine",
-      "Retention Intelligence",
-      "Compliance Automation",
+      "Retention Intelligence Module",
+      "Compliance Automation Platform",
       "Executive Control Center"
     ],
+    governance: [
+      "Regulatory compliance tracking",
+      "Client action audit logs",
+      "Risk monitoring dashboard",
+      "Executive oversight controls"
+    ],
     outcomes: [
-      "Faster onboarding",
-      "Improved client retention",
-      "Operational transparency",
-      "Governed workflows",
-      "Executive visibility"
+      "Faster client onboarding with automated workflows",
+      "Improved retention through predictive intelligence",
+      "Operational transparency across client lifecycle",
+      "Governed compliance workflows with audit trails",
+      "Real-time executive visibility into client health"
+    ],
+    metrics: [
+      { label: "FTD Pipeline", value: "124", status: "healthy" },
+      { label: "Retention Risk", value: "12 Clients", status: "warning" },
+      { label: "Compliance Tasks", value: "8 Pending", status: "normal" },
+      { label: "Client Lifecycle", value: "Active", status: "active" }
     ]
   },
   {
@@ -175,23 +261,37 @@ const caseStudies = [
     industry: "Financial Services",
     title: "Enterprise Financial Operations Intelligence",
     scenario: "Industry Transformation Scenario",
+    summary: "Modernize financial operations with AI-driven intelligence infrastructure that automates compliance monitoring, enhances risk visibility, and provides executives with data-driven decision support.",
     challenges: [
-      "Manual processes",
-      "Compliance complexity",
-      "Operational inefficiencies",
-      "Limited executive oversight"
+      "Manual processes creating operational inefficiencies",
+      "Complex compliance requirements and audit overhead",
+      "Limited real-time risk visibility",
+      "Fragmented executive oversight and reporting"
     ],
     infrastructure: [
       "Financial Intelligence Layer",
       "AI Governance Framework",
-      "Risk Monitoring",
-      "Executive Dashboard"
+      "Risk Monitoring Platform",
+      "Executive Dashboard",
+      "Compliance Automation Engine"
+    ],
+    governance: [
+      "Transaction audit trails",
+      "Regulatory compliance monitoring",
+      "Risk threshold controls",
+      "Executive decision logging"
     ],
     outcomes: [
-      "Improved operational efficiency",
-      "Enhanced compliance monitoring",
-      "Better risk visibility",
-      "Data-driven decision support"
+      "Improved operational efficiency through automation",
+      "Enhanced real-time compliance monitoring",
+      "Better risk visibility for executive teams",
+      "Data-driven decision support with governance controls"
+    ],
+    metrics: [
+      { label: "Operational Efficiency", value: "87%", status: "healthy" },
+      { label: "Compliance Score", value: "96%", status: "healthy" },
+      { label: "Risk Visibility", value: "Real-time", status: "active" },
+      { label: "Audit Trail", value: "Complete", status: "active" }
     ]
   },
   {
@@ -199,29 +299,60 @@ const caseStudies = [
     industry: "Government & Public Sector",
     title: "Digital Service Infrastructure Modernization",
     scenario: "Industry Transformation Scenario",
+    summary: "Transform citizen services through integrated operational intelligence that automates workflows, enhances transparency, and provides executives with scalable digital infrastructure.",
     challenges: [
-      "Fragmented systems",
-      "Manual citizen services",
-      "Slow decision cycles",
-      "Operational inefficiencies"
+      "Fragmented legacy systems across departments",
+      "Manual citizen service processes and delays",
+      "Slow decision cycles and approval workflows",
+      "Limited operational visibility and transparency"
     ],
     infrastructure: [
       "Operational Intelligence Platform",
       "Governance Framework",
-      "Workflow Automation",
-      "Executive Visibility Layer"
+      "Workflow Automation Engine",
+      "Executive Visibility Layer",
+      "Citizen Service Portal"
+    ],
+    governance: [
+      "Service level monitoring",
+      "Process audit trails",
+      "Transparency dashboard",
+      "Executive oversight controls"
     ],
     outcomes: [
-      "Improved service delivery",
-      "Greater transparency",
-      "Enhanced operational efficiency",
-      "Scalable digital infrastructure"
+      "Improved citizen service delivery times",
+      "Greater operational transparency for stakeholders",
+      "Enhanced efficiency through workflow automation",
+      "Scalable digital infrastructure for future growth"
+    ],
+    metrics: [
+      { label: "Service Delivery", value: "2.1 days", status: "optimal" },
+      { label: "Transparency", value: "98%", status: "healthy" },
+      { label: "Efficiency", value: "+42%", status: "healthy" },
+      { label: "Digital Reach", value: "Scalable", status: "active" }
     ]
   }
 ];
 
 export default function CaseStudiesPage() {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll(".case-study-card").forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -307,145 +438,214 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        {/* Case Studies Grid */}
+        {/* Case Studies - Premium 2-Column Layout */}
         <section className="relative py-20">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="max-w-7xl mx-auto space-y-8">
+            <div className="max-w-7xl mx-auto space-y-16">
               {caseStudies.map((study, index) => {
                 const Icon = study.icon;
-                const isExpanded = expandedIndex === index;
 
                 return (
                   <div
                     key={index}
-                    className="group relative"
+                    className="case-study-card group relative opacity-0 translate-y-8 transition-all duration-700"
+                    style={{ transitionDelay: `${index * 100}ms` }}
                   >
-                    {/* Glow effect */}
-                    {isExpanded && (
-                      <div className="absolute -inset-4 bg-primary/10 rounded-3xl blur-2xl" />
-                    )}
+                    {/* Glow effect on hover */}
+                    <div className="absolute -inset-4 bg-primary/5 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                    <div
-                      className={`relative rounded-2xl border transition-all duration-500 cursor-pointer ${
-                        isExpanded
-                          ? 'border-primary/50 bg-gradient-to-br from-primary/10 to-muted/30 shadow-2xl shadow-primary/20'
-                          : 'border-border/30 bg-gradient-to-br from-muted/5 to-background hover:border-primary/30'
-                      }`}
-                      onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                    >
-                      <div className="p-8 lg:p-10">
-                        {/* Header */}
-                        <div className="flex items-start gap-6 mb-6">
-                          {/* Icon */}
-                          <div className={`w-20 h-20 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-                            isExpanded
-                              ? 'bg-primary/20 scale-110'
-                              : 'bg-muted/30 group-hover:bg-primary/10'
-                          }`}>
-                            <Icon className={`w-10 h-10 transition-colors duration-300 ${
-                              isExpanded ? 'text-primary' : 'text-muted-foreground group-hover:text-primary'
-                            }`} />
-                          </div>
-
-                          {/* Title section */}
-                          <div className="flex-1">
-                            <div className="flex items-center gap-3 mb-2">
-                              <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-wide">
-                                {study.industry}
-                              </span>
-                              <span className="text-xs text-muted-foreground italic">
-                                {study.scenario}
-                              </span>
+                    <div className="relative rounded-2xl border border-border/30 bg-gradient-to-br from-muted/5 to-background group-hover:border-primary/30 transition-all duration-500 overflow-hidden">
+                      {/* 2-Column Layout */}
+                      <div className="grid lg:grid-cols-2 gap-0">
+                        {/* LEFT COLUMN - Content */}
+                        <div className="p-8 lg:p-12 space-y-8">
+                          {/* Header */}
+                          <div className="space-y-4">
+                            <div className="flex items-center gap-4">
+                              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                                <Icon className="w-8 h-8 text-primary" />
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center gap-3 mb-1">
+                                  <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary uppercase tracking-wide">
+                                    {study.industry}
+                                  </span>
+                                  <span className="text-xs text-muted-foreground italic">
+                                    {study.scenario}
+                                  </span>
+                                </div>
+                              </div>
                             </div>
-                            <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
+                            
+                            <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
                               {study.title}
                             </h3>
-                            <div className="flex items-center gap-2 text-primary font-medium">
-                              <span className="text-sm">{isExpanded ? 'Collapse details' : 'Expand case study'}</span>
-                              <ChevronRight className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-90' : ''}`} />
+                            
+                            <p className="text-muted-foreground leading-relaxed">
+                              {study.summary}
+                            </p>
+                          </div>
+
+                          {/* Challenges */}
+                          <div>
+                            <div className="flex items-center gap-2 mb-4">
+                              <AlertTriangle className="w-5 h-5 text-destructive" />
+                              <h4 className="text-lg font-bold text-foreground">Operational Challenges</h4>
                             </div>
+                            <div className="space-y-2">
+                              {study.challenges.map((challenge, i) => (
+                                <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                  <div className="w-1.5 h-1.5 rounded-full bg-destructive/60 mt-2 flex-shrink-0" />
+                                  <span>{challenge}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Infrastructure Stack */}
+                          <div>
+                            <div className="flex items-center gap-2 mb-4">
+                              <Database className="w-5 h-5 text-primary" />
+                              <h4 className="text-lg font-bold text-foreground">Infrastructure Deployed</h4>
+                            </div>
+                            <div className="flex flex-wrap gap-2">
+                              {study.infrastructure.map((layer, i) => (
+                                <div key={i} className="px-3 py-1.5 rounded-lg border border-primary/30 bg-primary/5 backdrop-blur-sm text-xs font-medium text-primary">
+                                  {layer}
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Governance Controls */}
+                          <div>
+                            <div className="flex items-center gap-2 mb-4">
+                              <Shield className="w-5 h-5 text-primary" />
+                              <h4 className="text-lg font-bold text-foreground">Governance Controls</h4>
+                            </div>
+                            <div className="grid grid-cols-2 gap-2">
+                              {study.governance.map((control, i) => (
+                                <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                  <span>{control}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Expected Outcomes */}
+                          <div>
+                            <div className="flex items-center gap-2 mb-4">
+                              <TrendUp className="w-5 h-5 text-primary" />
+                              <h4 className="text-lg font-bold text-foreground">Expected Outcomes</h4>
+                            </div>
+                            <div className="space-y-2">
+                              {study.outcomes.map((outcome, i) => (
+                                <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                  <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                                  <span>{outcome}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* CTA */}
+                          <div className="pt-4">
+                            <Link href="/contact">
+                              <Button className="w-full gap-2 bg-primary hover:bg-primary/90">
+                                View Transformation Scenario
+                                <ArrowRight className="w-4 h-4" />
+                              </Button>
+                            </Link>
                           </div>
                         </div>
 
-                        {/* Expandable content */}
-                        <div className={`transition-all duration-500 overflow-hidden ${
-                          isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-                        }`}>
-                          <div className="space-y-8 pt-6 border-t border-border/30">
-                            {/* Challenges */}
-                            <div>
-                              <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center">
-                                  <span className="text-destructive font-bold text-sm">!</span>
-                                </div>
-                                <h4 className="text-lg font-bold text-foreground">Challenges</h4>
-                              </div>
-                              <div className="grid md:grid-cols-2 gap-3">
-                                {study.challenges.map((challenge, i) => (
-                                  <div key={i} className="flex items-start gap-2 text-muted-foreground">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-destructive/60 mt-2 flex-shrink-0" />
-                                    <span className="text-sm">{challenge}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Infrastructure Stack */}
-                            <div>
-                              <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                                  <Database className="w-4 h-4 text-primary" />
-                                </div>
-                                <h4 className="text-lg font-bold text-foreground">Infrastructure Deployed</h4>
-                              </div>
-                              <div className="flex flex-wrap gap-2">
-                                {study.infrastructure.map((layer, i) => (
-                                  <div key={i} className="px-4 py-2 rounded-lg border border-primary/30 bg-primary/5 backdrop-blur-sm">
-                                    <span className="text-sm font-medium text-primary">{layer}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Outcomes */}
-                            <div>
-                              <div className="flex items-center gap-2 mb-4">
-                                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                                  <Eye className="w-4 h-4 text-primary" />
-                                </div>
-                                <h4 className="text-lg font-bold text-foreground">Expected Outcomes</h4>
-                              </div>
-                              <div className="grid md:grid-cols-2 gap-3">
-                                {study.outcomes.map((outcome, i) => (
-                                  <div key={i} className="flex items-start gap-2">
-                                    <ChevronRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                                    <span className="text-sm text-muted-foreground">{outcome}</span>
-                                  </div>
-                                ))}
-                              </div>
-                            </div>
-
-                            {/* Architecture Preview */}
-                            <div className="rounded-xl border border-border/30 bg-muted/20 p-6">
-                              <div className="flex items-center gap-4">
-                                <div className="flex-1">
-                                  <h5 className="font-semibold text-foreground mb-2">Infrastructure Architecture</h5>
-                                  <p className="text-sm text-muted-foreground">
-                                    Governance-first, multi-layer AI infrastructure designed for
-                                    operational excellence and executive visibility.
-                                  </p>
-                                </div>
-                                <div className="flex gap-2">
-                                  {['05', '04', '03', '02', '01'].map((layer, i) => (
-                                    <div
-                                      key={i}
-                                      className="w-12 h-16 rounded border border-primary/20 bg-primary/5 flex items-center justify-center"
-                                      style={{ transitionDelay: `${i * 100}ms` }}
-                                    >
-                                      <span className="text-xs font-bold text-primary">{layer}</span>
+                        {/* RIGHT COLUMN - Visuals */}
+                        <div className="relative p-8 lg:p-12 bg-gradient-to-br from-muted/10 to-background border-l border-border/30 space-y-6">
+                          {/* Architecture Diagram */}
+                          <div className="rounded-xl border border-primary/20 bg-muted/20 backdrop-blur-sm p-6">
+                            <h5 className="text-sm font-semibold text-primary mb-4">Infrastructure Architecture</h5>
+                            
+                            <div className="relative space-y-3">
+                              {[
+                                { label: "Enterprise Systems", layer: "01" },
+                                { label: "Agentic Coordination", layer: "02" },
+                                { label: "AI Governance Layer", layer: "03" },
+                                { label: "Operational Intelligence", layer: "04" },
+                                { label: "Executive Control", layer: "05" }
+                              ].map((item, i) => (
+                                <div key={i} className="relative">
+                                  {/* Connecting line */}
+                                  {i < 4 && (
+                                    <div className="absolute left-6 top-12 w-0.5 h-3 bg-gradient-to-b from-primary/50 to-primary/20">
+                                      {/* Moving particle */}
+                                      <div 
+                                        className="absolute w-1 h-1 rounded-full bg-primary"
+                                        style={{
+                                          animation: `moveParticle 2s ease-in-out infinite`,
+                                          animationDelay: `${i * 0.4}s`
+                                        }}
+                                      />
                                     </div>
-                                  ))}
+                                  )}
+                                  
+                                  <div className="flex items-center gap-3 group/layer">
+                                    <div className="w-12 h-12 rounded-lg border border-primary/30 bg-primary/5 flex items-center justify-center group-hover/layer:bg-primary/10 group-hover/layer:border-primary/50 transition-all">
+                                      <span className="text-xs font-bold text-primary">{item.layer}</span>
+                                    </div>
+                                    <span className="text-xs font-medium text-muted-foreground group-hover/layer:text-foreground transition-colors">
+                                      {item.label}
+                                    </span>
+                                  </div>
                                 </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Live Dashboard Preview */}
+                          <div className="rounded-xl border border-primary/20 bg-muted/20 backdrop-blur-sm p-6">
+                            <div className="flex items-center justify-between mb-4">
+                              <h5 className="text-sm font-semibold text-primary">Operational Dashboard</h5>
+                              <div className="flex items-center gap-2">
+                                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                                <span className="text-xs text-muted-foreground">Live</span>
+                              </div>
+                            </div>
+                            
+                            <div className="space-y-3">
+                              {study.metrics.map((metric, i) => (
+                                <div 
+                                  key={i} 
+                                  className="flex items-center justify-between p-3 rounded-lg border border-border/20 bg-background/50 group/metric hover:border-primary/30 transition-all"
+                                >
+                                  <div className="flex items-center gap-3">
+                                    <Activity className={`w-4 h-4 ${
+                                      metric.status === 'healthy' ? 'text-primary' :
+                                      metric.status === 'warning' ? 'text-yellow-500' :
+                                      metric.status === 'optimal' ? 'text-emerald-500' :
+                                      'text-primary'
+                                    }`} />
+                                    <span className="text-xs font-medium text-muted-foreground group-hover/metric:text-foreground transition-colors">
+                                      {metric.label}
+                                    </span>
+                                  </div>
+                                  <span className={`text-sm font-bold ${
+                                    metric.status === 'healthy' ? 'text-primary' :
+                                    metric.status === 'warning' ? 'text-yellow-500' :
+                                    metric.status === 'optimal' ? 'text-emerald-500' :
+                                    'text-primary'
+                                  }`}>
+                                    {metric.value}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+
+                            {/* Status indicator */}
+                            <div className="mt-4 pt-4 border-t border-border/20">
+                              <div className="flex items-center gap-2">
+                                <Eye className="w-4 h-4 text-primary" />
+                                <span className="text-xs text-muted-foreground">Executive visibility active</span>
                               </div>
                             </div>
                           </div>
@@ -508,6 +708,18 @@ export default function CaseStudiesPage() {
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        @keyframes moveParticle {
+          0%, 100% { transform: translateY(0); opacity: 1; }
+          50% { transform: translateY(12px); opacity: 0.5; }
+        }
+        
+        .animate-in {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `}</style>
     </>
   );
 }
