@@ -7,9 +7,19 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { 
+  Building2, 
+  Users, 
+  CheckCircle2, 
+  Send,
+  Mail,
+  MapPin,
+  Linkedin
+} from "lucide-react";
+import Link from "next/link";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Building2, Mail, User, Users, MessageSquare, ArrowRight, CheckCircle2, Phone } from "lucide-react";
+import { ArrowRight, User, MessageSquare, Phone } from "lucide-react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -295,6 +305,74 @@ export default function ContactPage() {
                   </form>
                 </div>
               )}
+              {/* Right - Contact Info */}
+              <div className="space-y-8">
+                {/* Contact Details */}
+                <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-muted/10 p-8 space-y-6">
+                  <h3 className="text-2xl font-bold">Get In Touch</h3>
+                  
+                  <div className="space-y-4">
+                    {/* Email */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground mb-1">Email</div>
+                        <a 
+                          href="mailto:olga@onetechautomation.com" 
+                          className="text-foreground hover:text-primary transition-colors font-medium"
+                        >
+                          olga@onetechautomation.com
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* LinkedIn */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <Linkedin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground mb-1">LinkedIn</div>
+                        <a 
+                          href="https://linkedin.com/in/olga-chavoshi-798bba177" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-foreground hover:text-primary transition-colors font-medium"
+                        >
+                          Connect with Olga Chavoshi
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Location */}
+                    <div className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground mb-1">Headquarters</div>
+                        <div className="text-foreground font-medium">
+                          Cyprus | Saudi Arabia | UAE
+                        </div>
+                        <div className="text-sm text-muted-foreground mt-1">
+                          Serving GCC & Cyprus Markets
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Enterprise Focus */}
+                <div className="rounded-xl border border-border/30 bg-gradient-to-br from-muted/10 to-background p-6 space-y-4">
+                  <h4 className="font-semibold">Enterprise Infrastructure Consultations</h4>
+                  <p className="text-sm text-muted-foreground">
+                    O.N.E.Tech works with GCC and Cyprus-based enterprises deploying governance-first
+                    AI infrastructure at scale. Book a briefing to discuss your operational transformation roadmap.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
