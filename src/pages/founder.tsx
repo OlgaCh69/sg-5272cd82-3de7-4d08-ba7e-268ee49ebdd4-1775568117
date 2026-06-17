@@ -4,197 +4,126 @@ import { useState, useEffect } from "react";
 import { SEO } from "@/components/SEO";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Shield, Target, TrendingUp, Globe2, Network, Building2, Zap, Users, Database, Lock, Eye, Workflow } from "lucide-react";
-import Link from "next/link";
+import { Building2, Shield, TrendingUp, Network, Users, Home, DollarSign, Globe, Target, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import Image from "next/image";
 
-export default function Founder() {
+export default function FounderPage() {
   const [activeNode, setActiveNode] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveNode((prev) => (prev + 1) % 6);
-    }, 3000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
-  const focus_areas = [
-    "Enterprise AI Infrastructure",
-    "Operational Intelligence",
-    "AI Governance & Risk Management",
-    "Agentic Operations",
-    "Workforce Intelligence",
-    "Revenue Infrastructure",
-    "Industrial AI Systems",
-    "Financial & Forex Infrastructure",
-    "Enterprise Transformation"
+  const focusAreas = [
+    { icon: Building2, title: "Enterprise AI Infrastructure", color: "from-primary/20 to-primary/5" },
+    { icon: TrendingUp, title: "Operational Intelligence", color: "from-blue-500/20 to-blue-500/5" },
+    { icon: Shield, title: "AI Governance & Risk Management", color: "from-purple-500/20 to-purple-500/5" },
+    { icon: Network, title: "Agentic Operations", color: "from-cyan-500/20 to-cyan-500/5" },
+    { icon: Users, title: "Workforce Intelligence", color: "from-orange-500/20 to-orange-500/5" },
+    { icon: Home, title: "Real Estate Infrastructure", color: "from-pink-500/20 to-pink-500/5" },
+    { icon: DollarSign, title: "Forex & Financial Infrastructure", color: "from-yellow-500/20 to-yellow-500/5" },
+    { icon: Target, title: "Enterprise Transformation", color: "from-red-500/20 to-red-500/5" },
   ];
 
-  const networkNodes = [
-    { x: 20, y: 30, icon: Database, label: "Systems" },
-    { x: 80, y: 25, icon: Users, label: "Workforce" },
-    { x: 70, y: 70, icon: Shield, label: "Governance" },
-    { x: 30, y: 75, icon: TrendingUp, label: "Intelligence" },
-    { x: 50, y: 15, icon: Network, label: "Operations" },
-    { x: 50, y: 85, icon: Target, label: "Strategy" }
+  const geographicFocus = [
+    { name: "Cyprus", flag: "🇨🇾" },
+    { name: "Saudi Arabia", flag: "🇸🇦" },
+    { name: "UAE", flag: "🇦🇪" },
+    { name: "Qatar", flag: "🇶🇦" },
+    { name: "Bahrain", flag: "🇧🇭" },
+    { name: "Kuwait", flag: "🇰🇼" },
+    { name: "Oman", flag: "🇴🇲" },
+  ];
+
+  const principles = [
+    "Governance must precede automation",
+    "Intelligence without control is enterprise risk",
+    "AI should amplify human decision-making, not replace it",
+    "Operational ecosystems beat disconnected tools",
+    "Executive visibility is non-negotiable",
   ];
 
   return (
     <>
-      <SEO 
+      <SEO
         title="Olga Chavoshi - Founder & CEO | O.N.E.Tech"
-        description="Olga Chavoshi is the Founder and CEO of O.N.E.Tech, a Governance-First AI Infrastructure company helping enterprises transform fragmented operations into intelligent, governed ecosystems."
+        description="Enterprise AI Infrastructure Strategist building governance-first AI systems for GCC and Cyprus enterprises."
       />
       <Header />
-      
-      <main className="min-h-screen bg-background">
-        {/* Premium Hero Section with Portrait */}
-        <section className="relative min-h-screen flex items-center border-b border-border overflow-hidden">
-          {/* Animated Background Grid */}
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          
-          {/* Gradient Overlays */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-background" />
-          <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-primary/10 blur-[120px] rounded-full" />
-          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-accent/5 blur-[150px] rounded-full" />
 
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-              {/* Left: Executive Portrait with Network Animation */}
-              <div className="relative order-2 lg:order-1">
-                {/* Animated Infrastructure Network Behind Portrait */}
-                <div className="absolute inset-0 -z-10">
-                  <svg className="w-full h-full" viewBox="0 0 100 100">
-                    {/* Connection Lines */}
-                    {networkNodes.map((node, i) => 
-                      networkNodes.slice(i + 1).map((target, j) => (
-                        <line
-                          key={`${i}-${j}`}
-                          x1={node.x}
-                          y1={node.y}
-                          x2={target.x}
-                          y2={target.y}
-                          stroke="rgba(0, 182, 122, 0.15)"
-                          strokeWidth="0.3"
-                          className="transition-all duration-1000"
-                        />
-                      ))
-                    )}
-                    
-                    {/* Animated Nodes */}
-                    {networkNodes.map((node, i) => (
-                      <g key={i}>
-                        <circle
-                          cx={node.x}
-                          cy={node.y}
-                          r={activeNode === i ? "2" : "1.5"}
-                          fill={activeNode === i ? "rgba(0, 182, 122, 0.8)" : "rgba(0, 182, 122, 0.4)"}
-                          className="transition-all duration-500"
-                        />
-                        <circle
-                          cx={node.x}
-                          cy={node.y}
-                          r={activeNode === i ? "3.5" : "2.5"}
-                          fill="none"
-                          stroke="rgba(0, 182, 122, 0.3)"
-                          strokeWidth="0.5"
-                          className="transition-all duration-500"
-                        />
-                      </g>
-                    ))}
-                  </svg>
-                </div>
+      <main className="relative min-h-screen">
+        {/* Background Network */}
+        <div className="fixed inset-0 opacity-30 pointer-events-none">
+          <div className="absolute inset-0">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className={`absolute w-2 h-2 rounded-full transition-all duration-1000 ${
+                  activeNode === i ? "bg-primary scale-150" : "bg-primary/30 scale-100"
+                }`}
+                style={{
+                  left: `${20 + i * 12}%`,
+                  top: `${30 + (i % 2) * 20}%`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
 
-                {/* Portrait Container with Glow */}
+        {/* Hero Section - Compact */}
+        <section className="relative pt-32 pb-20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-6xl mx-auto">
+              <div className="grid lg:grid-cols-[300px,1fr] gap-12 items-start">
+                {/* Left - Photo */}
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/10 blur-3xl rounded-full" />
-                  
-                  <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
+                  <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-primary/20 shadow-2xl shadow-primary/10">
                     <Image
                       src="/olga-chavoshi.jpg"
-                      alt="Olga Chavoshi - Founder & CEO, O.N.E.Tech"
-                      width={600}
-                      height={600}
-                      className="w-full h-auto relative z-10"
+                      alt="Olga Chavoshi"
+                      fill
+                      className="object-cover"
                       priority
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   </div>
-
-                  {/* Floating Badge */}
-                  <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-full border border-primary/30 bg-background/90 backdrop-blur-md shadow-lg">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                      <span className="text-sm font-medium text-foreground">Building Enterprise AI Infrastructure</span>
+                  
+                  {/* Badge */}
+                  <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                    <div className="px-4 py-2 rounded-full bg-primary/10 border border-primary/30 backdrop-blur-sm">
+                      <p className="text-xs font-semibold text-primary">Building Enterprise AI Infrastructure</p>
                     </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Right: Executive Bio with Glass Card */}
-              <div className="order-1 lg:order-2 space-y-8">
-                {/* Title Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm text-sm text-foreground">
-                  <Shield className="w-4 h-4 text-primary" />
-                  <span>Enterprise AI Infrastructure Strategist</span>
-                </div>
-
-                {/* Name & Title */}
-                <div>
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4">
-                    <span className="text-foreground">Olga Chavoshi</span>
-                  </h1>
-                  <p className="text-2xl md:text-3xl text-primary font-semibold mb-2">Founder & Chief Executive Officer</p>
-                  <div className="flex items-center gap-3 text-muted-foreground">
-                    <Globe2 className="w-5 h-5 text-primary" />
-                    <span className="text-lg">O.N.E.Tech</span>
+                {/* Right - Bio */}
+                <div className="space-y-6">
+                  <div className="space-y-3">
+                    <h1 className="text-5xl lg:text-6xl font-bold">
+                      Olga Chavoshi
+                    </h1>
+                    <div className="space-y-1">
+                      <p className="text-xl text-primary font-semibold">Founder & Chief Executive Officer</p>
+                      <p className="text-lg text-muted-foreground">Enterprise AI Infrastructure Strategist</p>
+                    </div>
                   </div>
-                </div>
 
-                {/* Glass Card Bio */}
-                <div className="rounded-2xl border border-border bg-card/30 backdrop-blur-sm p-8 shadow-xl">
-                  <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    <span className="text-foreground font-semibold">Olga Chavoshi</span> is the Founder and CEO of <span className="text-primary font-medium">O.N.E.Tech</span>, a Governance-First AI Infrastructure company focused on helping enterprises transform fragmented operations into intelligent, governed, and scalable operational ecosystems.
-                  </p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    Her work focuses on the intersection of <span className="text-primary">operational intelligence</span>, <span className="text-primary">enterprise AI</span>, <span className="text-primary">workforce orchestration</span>, <span className="text-primary">governance frameworks</span>, and <span className="text-primary">infrastructure modernization</span>.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+                  <div className="h-px bg-gradient-to-r from-primary/50 via-primary/20 to-transparent" />
 
-        {/* Vision Section */}
-        <section className="relative py-24 border-b border-border bg-gradient-to-b from-card/20 to-background">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-foreground">Building The Infrastructure Layer</span>
-                  <br />
-                  <span className="text-gradient">For The AI-Driven Enterprise</span>
-                </h2>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                <div className="rounded-xl border border-border bg-card/30 backdrop-blur-sm p-8">
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    While many organizations focus on deploying individual AI tools, Olga's vision is centered on something larger:
-                  </p>
-                  <p className="text-xl text-foreground font-semibold mt-4">
-                    Creating the infrastructure layer that enables AI, people, systems, and operations to function as a coordinated enterprise ecosystem.
-                  </p>
-                </div>
-
-                <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 to-transparent backdrop-blur-sm p-8">
-                  <div className="flex items-start gap-3 mb-4">
-                    <Shield className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      Her approach emphasizes <span className="text-primary font-semibold">governance</span>, <span className="text-primary font-semibold">transparency</span>, <span className="text-primary font-semibold">operational control</span>, and <span className="text-primary font-semibold">executive visibility</span> as foundational requirements for enterprise AI adoption.
+                  <div className="prose prose-invert max-w-none">
+                    <p className="text-lg leading-relaxed text-muted-foreground">
+                      Olga Chavoshi is the Founder and CEO of <span className="text-foreground font-semibold">O.N.E.Tech</span>, 
+                      a Governance-First AI Infrastructure company focused on helping enterprises transform fragmented operations 
+                      into intelligent, governed, and scalable operational ecosystems.
+                    </p>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
+                      Her work focuses on the intersection of operational intelligence, enterprise AI, workforce orchestration, 
+                      governance frameworks, and infrastructure modernization.
                     </p>
                   </div>
                 </div>
@@ -203,59 +132,97 @@ export default function Founder() {
           </div>
         </section>
 
-        {/* Strategic Focus Areas */}
-        <section className="relative py-24 border-b border-border">
-          <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-                <span className="text-gradient">Strategic Focus Areas</span>
-              </h2>
-              <p className="text-center text-muted-foreground mb-12 text-lg">
-                Leading enterprise transformation across critical infrastructure domains
-              </p>
+        {/* Vision Section */}
+        <section className="relative py-20 border-y border-border/30">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <div className="text-center space-y-4">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5">
+                  <Target className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">VISION</span>
+                </div>
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Building The Infrastructure Layer<br />
+                  <span className="text-primary">For The AI-Driven Enterprise</span>
+                </h2>
+              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {focus_areas.map((area, i) => (
-                  <div
-                    key={i}
-                    className="group rounded-lg border border-border bg-card/20 backdrop-blur-sm px-6 py-4 hover:border-primary/50 hover:bg-card/40 transition-all duration-300"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform" />
-                      <span className="text-foreground font-medium">{area}</span>
-                    </div>
-                  </div>
-                ))}
+              <div className="relative p-8 rounded-2xl border border-border/30 bg-gradient-to-br from-muted/10 to-background">
+                <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-2xl" />
+                <div className="relative space-y-6 text-lg leading-relaxed text-muted-foreground">
+                  <p>
+                    While many organizations focus on deploying individual AI tools, Olga's vision is centered on something larger:
+                  </p>
+                  <p className="text-foreground font-semibold text-xl">
+                    Creating the infrastructure layer that enables AI, people, systems, and operations to function as a 
+                    coordinated enterprise ecosystem.
+                  </p>
+                  <p>
+                    Her approach emphasizes governance, transparency, operational control, and executive visibility as 
+                    foundational requirements for enterprise AI adoption.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Founder Quote - Premium Callout */}
-        <section className="relative py-24 border-b border-border bg-gradient-to-b from-card/30 to-background">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 via-card/50 to-background backdrop-blur-md p-12 shadow-2xl shadow-primary/10">
-                {/* Quote Icon */}
-                <div className="absolute -top-6 left-12 w-12 h-12 rounded-full bg-primary flex items-center justify-center text-3xl text-background font-serif">
-                  "
-                </div>
+        {/* Strategic Focus Areas */}
+        <section className="relative py-20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-6xl mx-auto space-y-12">
+              <div className="text-center space-y-4">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Strategic <span className="text-primary">Focus Areas</span>
+                </h2>
+              </div>
 
-                <blockquote className="space-y-6">
-                  <p className="text-2xl md:text-3xl font-medium text-foreground leading-relaxed">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {focusAreas.map((area, index) => {
+                  const Icon = area.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="group relative p-6 rounded-xl border border-border/30 bg-gradient-to-br from-muted/5 to-background hover:border-primary/30 transition-all duration-300"
+                    >
+                      <div className={`absolute inset-0 bg-gradient-to-br ${area.color} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                      <div className="relative space-y-3">
+                        <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                          <Icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <h3 className="text-sm font-semibold text-foreground leading-tight">
+                          {area.title}
+                        </h3>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Founder Quote */}
+        <section className="relative py-20 bg-muted/20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto">
+              <div className="relative p-12 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/5 to-background">
+                <div className="absolute -top-6 left-12">
+                  <div className="text-8xl text-primary/20 font-serif">"</div>
+                </div>
+                <blockquote className="relative space-y-6">
+                  <p className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
                     AI should not operate outside enterprise control.
                   </p>
-                  <p className="text-2xl md:text-3xl font-medium text-foreground leading-relaxed">
-                    The future belongs to organizations that combine intelligence, governance, and operational execution into a single infrastructure layer.
+                  <p className="text-2xl lg:text-3xl font-medium text-foreground leading-relaxed">
+                    The future belongs to organizations that combine intelligence, governance, 
+                    and operational execution into a single infrastructure layer.
                   </p>
-                  
-                  <footer className="pt-6 border-t border-primary/20">
-                    <cite className="not-italic">
-                      <p className="text-lg font-semibold text-primary">— Olga Chavoshi</p>
-                      <p className="text-sm text-muted-foreground mt-1">Founder & CEO, O.N.E.Tech</p>
-                    </cite>
+                  <footer className="flex items-center gap-4 pt-6 border-t border-primary/20">
+                    <div className="text-lg">
+                      <p className="font-semibold text-foreground">Olga Chavoshi</p>
+                      <p className="text-muted-foreground">Founder & CEO, O.N.E.Tech</p>
+                    </div>
                   </footer>
                 </blockquote>
               </div>
@@ -263,35 +230,63 @@ export default function Founder() {
           </div>
         </section>
 
-        {/* Mission Statement */}
-        <section className="relative py-24 border-b border-border">
-          <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                  <span className="text-gradient">Mission</span>
+        {/* Leadership Principles */}
+        <section className="relative py-20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto space-y-12">
+              <div className="text-center space-y-4">
+                <h2 className="text-4xl lg:text-5xl font-bold">
+                  Leadership <span className="text-primary">Principles</span>
                 </h2>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card/30 backdrop-blur-sm p-10">
-                <p className="text-2xl text-foreground leading-relaxed text-center mb-8">
-                  To help enterprises across <span className="text-primary font-semibold">Saudi Arabia</span>, <span className="text-primary font-semibold">UAE</span>, <span className="text-primary font-semibold">GCC</span> and <span className="text-primary font-semibold">Cyprus</span> deploy AI safely, govern it effectively, and transform operations through intelligent infrastructure rather than disconnected technology projects.
-                </p>
+              <div className="space-y-4">
+                {principles.map((principle, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-4 p-6 rounded-xl border border-border/30 bg-gradient-to-br from-muted/5 to-background hover:border-primary/30 transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-primary" />
+                    </div>
+                    <p className="text-lg text-foreground font-medium pt-0.5">{principle}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-                {/* Geographic Focus */}
-                <div className="flex flex-wrap justify-center gap-4 pt-8 border-t border-border">
-                  {[
-                    { icon: Globe2, label: "Cyprus", region: "European Hub" },
-                    { icon: Globe2, label: "Saudi Arabia", region: "Vision 2030" },
-                    { icon: Globe2, label: "UAE", region: "Digital Innovation" },
-                    { icon: Globe2, label: "GCC", region: "Regional Transformation" }
-                  ].map((location, i) => (
-                    <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/20 bg-primary/5">
-                      <location.icon className="w-4 h-4 text-primary" />
-                      <div>
-                        <div className="text-sm font-semibold text-foreground">{location.label}</div>
-                        <div className="text-xs text-muted-foreground">{location.region}</div>
-                      </div>
+        {/* Mission & Geographic Focus */}
+        <section className="relative py-20 bg-muted/20">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+              {/* Mission */}
+              <div className="space-y-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5">
+                  <Globe className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-medium text-primary">MISSION</span>
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-bold">
+                  Empowering GCC & Cyprus Enterprises
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  To help enterprises across Saudi Arabia, UAE, GCC and Cyprus deploy AI safely, govern it effectively, 
+                  and transform operations through intelligent infrastructure rather than disconnected technology projects.
+                </p>
+              </div>
+
+              {/* Geographic Focus */}
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold">Geographic Focus</h3>
+                <div className="flex flex-wrap gap-3">
+                  {geographicFocus.map((location, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/30 bg-gradient-to-br from-muted/10 to-background hover:border-primary/30 transition-all duration-300"
+                    >
+                      <span className="text-2xl">{location.flag}</span>
+                      <span className="text-sm font-medium text-foreground">{location.name}</span>
                     </div>
                   ))}
                 </div>
@@ -300,98 +295,23 @@ export default function Founder() {
           </div>
         </section>
 
-        {/* Key Positioning - What She Is / What She's Not */}
-        <section className="relative py-24 border-b border-border bg-gradient-to-b from-card/20 to-background">
-          <div className="absolute inset-0 bg-grid-white/[0.02]" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                <span className="text-foreground">Leadership </span>
-                <span className="text-gradient">Positioning</span>
+        {/* CTA */}
+        <section className="relative py-32">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto text-center space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold">
+                Discuss Your Enterprise
+                <br />
+                <span className="text-primary">Infrastructure Roadmap</span>
               </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* What She Is */}
-                <div className="rounded-xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-card/30 backdrop-blur-sm p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-                      <Shield className="w-6 h-6 text-background" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-foreground">Enterprise Leader</h3>
-                  </div>
-                  
-                  <ul className="space-y-3">
-                    {[
-                      "Enterprise Transformation Leader",
-                      "AI Infrastructure Strategist",
-                      "Operational Intelligence Advocate",
-                      "Governance-First AI Executive",
-                      "Founder Building Enterprise-Scale Infrastructure"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <div className="w-2 h-2 rounded-full bg-primary" />
-                        </div>
-                        <span className="text-foreground font-medium">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* What She's Not */}
-                <div className="rounded-xl border border-border bg-card/20 backdrop-blur-sm p-8">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center">
-                      <Eye className="w-6 h-6 text-muted-foreground" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-muted-foreground">Not Positioned As</h3>
-                  </div>
-                  
-                  <ul className="space-y-3">
-                    {[
-                      "Automation Consultant",
-                      "Marketing Agency Owner",
-                      "Chatbot Builder",
-                      "Freelancer",
-                      "No-Code Expert"
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 opacity-50">
-                        <div className="w-6 h-6 rounded-full bg-muted/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground" />
-                        </div>
-                        <span className="text-muted-foreground line-through">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="relative py-24">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="text-foreground">Discuss Your </span>
-                <span className="text-gradient">Infrastructure Roadmap</span>
-              </h2>
-              <p className="text-xl text-muted-foreground mb-8">
-                Book an executive briefing to explore how O.N.E.Tech can help your organization deploy governance-first AI infrastructure
+              <p className="text-xl text-muted-foreground">
+                Schedule an executive consultation to explore governance-first AI infrastructure for your organization.
               </p>
-              
               <Link href="/contact">
-                <Button size="lg" className="bg-primary hover:bg-accent text-white px-8 py-6 text-lg rounded-lg shadow-lg shadow-primary/20">
+                <Button size="lg" className="gap-2 bg-primary hover:bg-primary/90 text-lg px-8 py-6">
                   Request Executive Consultation
-                  <Zap className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-
-              <p className="text-sm text-muted-foreground mt-6">
-                Supporting enterprise transformation across Cyprus, Saudi Arabia, UAE, and the GCC region
-              </p>
             </div>
           </div>
         </section>
