@@ -170,6 +170,35 @@ export default function InfrastructureBlueprintPage() {
           </div>
         </section>
 
+        {/* Blueprint Cover Preview */}
+        <section className="relative py-20 bg-gradient-to-b from-muted/5 to-background">
+          <div className="container mx-auto px-6 lg:px-12">
+            <div className="max-w-4xl mx-auto">
+              <div className="relative group">
+                {/* 3D Effect Container */}
+                <div className="relative mx-auto max-w-md">
+                  {/* Shadow/Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 blur-3xl opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                  
+                  {/* Cover Image */}
+                  <div className="relative rounded-xl overflow-hidden border border-primary/20 shadow-2xl transform group-hover:scale-105 transition-transform duration-500">
+                    <img
+                      src="/generated/blueprint-cover-2026.png"
+                      alt="Enterprise AI Infrastructure Blueprint 2026"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  
+                  {/* Floating Badge */}
+                  <div className="absolute -top-4 -right-4 px-4 py-2 rounded-full bg-primary text-primary-foreground font-semibold text-sm shadow-lg">
+                    2026 Edition
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Download Form Section */}
         <section className="relative py-20 bg-gradient-to-b from-background to-muted/10">
           <div className="container mx-auto px-6 lg:px-12">
