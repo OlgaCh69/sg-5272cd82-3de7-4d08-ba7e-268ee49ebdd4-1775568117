@@ -1,43 +1,59 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+"use client";
+
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Network } from "lucide-react";
 
 export function FinalCTA() {
   return (
-    <section className="py-24 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+    <section className="relative py-32 overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, rgba(0, 183, 122, 0.3) 1px, transparent 0)`,
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Headline */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-            Ready to Turn Conversations Into{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
-              Revenue?
-            </span>
-          </h2>
+      <div className="relative container mx-auto px-6 lg:px-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative rounded-2xl border border-primary/20 bg-gradient-to-br from-primary/5 to-muted/10 backdrop-blur-sm overflow-hidden">
+            <div className="relative p-12 text-center space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/10">
+                <Network className="w-4 h-4 text-primary" />
+                <span className="text-sm font-semibold text-primary uppercase tracking-wide">
+                  Enterprise Infrastructure
+                </span>
+              </div>
 
-          {/* Subheadline */}
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            If you're serious about scaling your ecommerce brand, it's time to automate what matters most.
-          </p>
+              <h2 className="text-3xl lg:text-4xl font-bold">
+                Ready To Transform Your
+                <br />
+                <span className="text-primary">Enterprise Operations?</span>
+              </h2>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" asChild className="text-lg px-8">
-              <Link href="/contact">Book Your Strategy Demo</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg px-8">
-              <Link href="/#features">Explore Features</Link>
-            </Button>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                Stop operating with fragmented systems and disconnected processes.
+                Let's build governance-first AI infrastructure that scales.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="/contact">
+                  <Button size="lg" className="gap-2 bg-primary hover:bg-primary/90">
+                    Request Executive Briefing
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+                <Link href="/infrastructure">
+                  <Button size="lg" variant="outline" className="gap-2 border-primary/30 hover:bg-primary/5">
+                    Explore Infrastructure Stack
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
-
-          {/* Trust Line */}
-          <p className="text-sm text-muted-foreground pt-8">
-            Join ecommerce brands that chose growth over manual effort
-          </p>
         </div>
       </div>
     </section>
