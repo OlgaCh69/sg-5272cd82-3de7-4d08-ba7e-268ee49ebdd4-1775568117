@@ -29,49 +29,34 @@ export default function EnterpriseAIArchitecturePage() {
 
   const layers = [
     {
-      number: 5,
-      icon: Target,
-      title: "Executive Control Center",
-      color: "from-purple-500/20 to-purple-500/5",
-      borderColor: "border-purple-500/30",
-      description: "Strategic oversight, operational visibility, governance dashboard",
-      components: ["Risk Monitoring", "Policy Management", "Performance Analytics", "Strategic Dashboards"]
+      number: "01",
+      title: "Enterprise Systems Layer",
+      description: "Existing operational infrastructure - ERP, CRM, HRM, supply chain, financial systems and enterprise databases.",
+      items: ["ERP Systems", "CRM Platforms", "Supply Chain", "Financial Systems", "HR Systems", "Legacy Databases"]
     },
     {
-      number: 4,
-      icon: TrendingUp,
-      title: "Operational Intelligence",
-      color: "from-blue-500/20 to-blue-500/5",
-      borderColor: "border-blue-500/30",
-      description: "Predictive insights, decision support, executive visibility",
-      components: ["Predictive Analytics", "Decision Intelligence", "Real-Time Alerts", "Pattern Recognition"]
+      number: "02", 
+      title: "Agentic Coordination Layer",
+      description: "AI agents orchestrate workflows across systems - data extraction, process automation, decision support and cross-system coordination.",
+      items: ["Workflow Agents", "Data Agents", "Integration Agents", "Decision Support", "Process Orchestration", "System Coordination"]
     },
     {
-      number: 3,
-      icon: Shield,
+      number: "03",
       title: "AI Governance Layer",
-      color: "from-primary/20 to-primary/5",
-      borderColor: "border-primary/30",
-      description: "Policy enforcement, audit trails, compliance controls, human oversight",
-      components: ["Policy Engine", "Audit Trails", "Access Controls", "Compliance Framework"]
+      description: "Built-in oversight and control mechanisms - human approval workflows, audit trails, policy enforcement and compliance monitoring.",
+      items: ["Human Oversight", "Audit Trails", "Policy Controls", "Compliance Monitoring", "Risk Management", "Access Controls"]
     },
     {
-      number: 2,
-      icon: Workflow,
-      title: "Agentic Coordination",
-      color: "from-cyan-500/20 to-cyan-500/5",
-      borderColor: "border-cyan-500/30",
-      description: "AI agents orchestrating workflows, decisions, and tasks",
-      components: ["Workflow Orchestration", "Task Routing", "Knowledge Synthesis", "Process Automation"]
+      number: "04",
+      title: "Operational Intelligence Layer",
+      description: "Real-time insights and intelligence - performance monitoring, predictive analytics, anomaly detection and operational visibility.",
+      items: ["Performance Analytics", "Predictive Intelligence", "Anomaly Detection", "Real-time Monitoring", "Trend Analysis", "Operational Metrics"]
     },
     {
-      number: 1,
-      icon: Database,
-      title: "Enterprise Systems",
-      color: "from-orange-500/20 to-orange-500/5",
-      borderColor: "border-orange-500/30",
-      description: "ERP, CRM, HR, Operations, Finance, Trading platforms",
-      components: ["ERP Integration", "CRM Systems", "HR Platforms", "Operations Tools"]
+      number: "05",
+      title: "Executive Control Center",
+      description: "Unified command interface for enterprise leadership - strategic dashboards, decision intelligence and operational control.",
+      items: ["Strategic Dashboards", "Decision Intelligence", "Performance Overview", "Risk Monitoring", "Resource Allocation", "Strategic Planning"]
     }
   ];
 
