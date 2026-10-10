@@ -13,9 +13,9 @@ position: 1
 Create premium hospitality page hero, hotel owner pain section, and featured AI capabilities. Match existing emerald-charcoal design with luxury hotel aesthetic.
 
 ## Checklist
-- [ ] Create `/industries/hospitality` page with hero: "Your Hotel Has the Systems. We Connect the Intelligence."
-- [ ] Add hotel owner pain section with 6 problem cards
-- [ ] Build featured AI capabilities grid (6 cards): Guest Service, Housekeeping, Maintenance, Revenue, Staff Coordination, Multi-Property
+- [x] Create `/industries/hospitality` page with hero: "Your Hotel Has the Systems. We Connect the Intelligence."
+- [x] Add hotel owner pain section with 6 problem cards
+- [x] Build featured AI capabilities grid (6 cards): Guest Service, Housekeeping, Maintenance, Revenue, Staff Coordination, Multi-Property
 - [ ] Generate luxury hotel hero image
 - [ ] Implement responsive layouts and animations
 
