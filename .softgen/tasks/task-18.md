@@ -1,6 +1,6 @@
 ---
 title: Interactive Hotel Assessment Form
-status: todo
+status: done
 priority: high
 type: feature
 tags: [hospitality, assessment, form, supabase]
@@ -13,16 +13,16 @@ position: 3
 Multi-step lead generation form with 6 steps: Property → Challenges → Priorities → Technology → Contact → Submit. Supabase backend integration with lead notifications.
 
 ## Checklist
-- [ ] Create multi-step form component with progress indicator
-- [ ] Step 1: Property details (type, rooms, properties, country)
-- [ ] Step 2: Challenge selection from all 22 solution areas
-- [ ] Step 3: Top 3 priorities with impact and urgency
-- [ ] Step 4: Technology stack (optional)
-- [ ] Step 5: Contact details with validation
-- [ ] Step 6: Submission success with backend save
-- [ ] Add Supabase table for hospitality assessments
-- [ ] Validation, spam protection, GDPR compliance
-- [ ] Mobile-responsive design
+- [x] Create multi-step form component with progress indicator
+- [x] Step 1: Property details (type, rooms, properties, country)
+- [x] Step 2: Challenge selection from all 22 solution areas
+- [x] Step 3: Top 3 priorities with impact and urgency
+- [x] Step 4: Technology stack (optional)
+- [x] Step 5: Contact details with validation
+- [x] Step 6: Submission success with backend save
+- [x] Add Supabase table for hospitality assessments
+- [x] Validation, spam protection, GDPR compliance
+- [x] Mobile-responsive design
 
 ## Acceptance
 - All 6 steps navigate smoothly with validation

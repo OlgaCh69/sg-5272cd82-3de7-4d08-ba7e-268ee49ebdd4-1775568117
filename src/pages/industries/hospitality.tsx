@@ -6,6 +6,9 @@ import Link from "next/link";
 import { ArrowRight, Building2, Clock, MessageSquare, Users, TrendingUp, BarChart3, Sparkles, Hotel, Wrench, DollarSign, Shield, Globe } from "lucide-react";
 import Image from "next/image";
 import { HotelSolutionsCatalogue } from "@/components/hospitality/HotelSolutionsCatalogue";
+import { HotelAssessmentForm } from "@/components/hospitality/HotelAssessmentForm";
+import { AIWorkflowDemo } from "@/components/hospitality/AIWorkflowDemo";
+import { OurApproach } from "@/components/hospitality/OurApproach";
 
 export default function HospitalityPage() {
   const painPoints = [
@@ -239,6 +242,58 @@ export default function HospitalityPage() {
 
         {/* 22 Solutions Catalogue */}
         <HotelSolutionsCatalogue />
+
+        {/* Interactive Assessment */}
+        <section id="assessment" className="py-24 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-3xl text-center mb-12">
+              <h2 className="text-4xl font-bold text-foreground mb-6">
+                Where Is Your Hotel Losing Operational Efficiency?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Complete this assessment to identify opportunities for AI-powered improvements in your hotel operations. Our team will review your responses and provide customized recommendations.
+              </p>
+            </div>
+            
+            <div className="mx-auto max-w-4xl rounded-lg border border-border bg-card/50 backdrop-blur-sm p-8">
+              <HotelAssessmentForm />
+            </div>
+          </div>
+        </section>
+
+        {/* AI Workflow Demo */}
+        <AIWorkflowDemo />
+
+        {/* Our Approach */}
+        <OurApproach />
+
+        {/* Final CTA */}
+        <section className="py-24 bg-card/30 border-y border-border">
+          <div className="container mx-auto px-6">
+            <div className="mx-auto max-w-3xl text-center space-y-8">
+              <h2 className="text-4xl font-bold text-foreground md:text-5xl">
+                Your Next Operational Improvement Could Be Hiding in Plain Sight.
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Discover where AI-powered intelligence can reduce costs, improve guest satisfaction, and increase revenue in your hotel operations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="#assessment">
+                  <Button size="lg" className="gap-2 w-full sm:w-auto">
+                    Assess Your Hotel Operations
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button size="lg" variant="outline" className="gap-2 w-full sm:w-auto">
+                    Speak With O.N.E.Tech
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
