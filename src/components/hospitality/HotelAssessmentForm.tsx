@@ -123,7 +123,8 @@ export function HotelAssessmentForm() {
     setSubmitting(true);
 
     try {
-      const { error } = await supabase.from("hospitality_assessments").insert({
+      // Prepare assessment data
+      const assessmentData = {
         property_type: propertyType,
         rooms,
         number_of_properties: numberOfProperties,
@@ -145,9 +146,24 @@ export function HotelAssessmentForm() {
         comments,
         marketing_consent: marketingConsent,
         submitted_at: new Date().toISOString()
+      };
+
+      // Save to database
+      const { error: dbError } = await supabase
+        .from("hospitality_assessments")
+        .insert(assessmentData);
+
+      if (dbError) throw dbError;
+
+      // Send email notification
+      const emailResponse = await supabase.functions.invoke("send-hotel-assessment-notification", {
+        body: assessmentData
       });
 
-      if (error) throw error;
+      if (emailResponse.error) {
+        console.error("Email notification error:", emailResponse.error);
+        // Don't fail the whole submission if email fails
+      }
 
       setSubmitted(true);
       setStep(6);
@@ -160,7 +176,7 @@ export function HotelAssessmentForm() {
       console.error("Submission error:", error);
       toast({
         title: "Submission Error",
-        description: "Failed to submit assessment. Please try again or contact us directly.",
+        description: "Failed to submit assessment. Please try again or contact us directly at support@onetechautomation.com",
         variant: "destructive",
       });
     } finally {
