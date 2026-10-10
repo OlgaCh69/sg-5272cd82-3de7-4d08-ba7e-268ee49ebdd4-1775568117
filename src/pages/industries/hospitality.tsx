@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, Building2, Clock, MessageSquare, Users, TrendingUp, BarChart3, Sparkles, Hotel, Wrench, DollarSign, Shield, Globe } from "lucide-react";
 import Image from "next/image";
+import { HotelSolutionsCatalogue } from "@/components/hospitality/HotelSolutionsCatalogue";
 
 export default function HospitalityPage() {
   const painPoints = [
@@ -235,6 +236,9 @@ export default function HospitalityPage() {
             </div>
           </div>
         </section>
+
+        {/* 22 Solutions Catalogue */}
+        <HotelSolutionsCatalogue />
       </main>
       <Footer />
     </>
