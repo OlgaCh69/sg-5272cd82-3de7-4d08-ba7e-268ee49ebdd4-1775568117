@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Zap, Droplet, Building, HardHat, Home, TrendingUp, DollarSign, Building2, Briefcase, ArrowRight } from "lucide-react";
+import { Zap, Droplet, Building, HardHat, Home, TrendingUp, DollarSign, Building2, Briefcase, ArrowRight, Hotel } from "lucide-react";
 
 export default function IndustriesPage() {
   const industries = [
@@ -159,6 +159,24 @@ export default function IndustriesPage() {
         "Improved client satisfaction",
         "Enhanced operational metrics"
       ]
+    },
+    {
+      icon: Hotel,
+      name: "Hospitality & Hotels",
+      challenges: [
+        "Disconnected operational departments",
+        "Manual coordination delays",
+        "Fragmented guest communication",
+        "Limited real-time visibility"
+      ],
+      solution: "AI-powered hotel operational intelligence: workflow automation, guest service coordination, maintenance intelligence, revenue optimization, and multi-property oversight across all hotel departments.",
+      outcomes: [
+        "Improved operational efficiency",
+        "Enhanced guest experience",
+        "Faster issue resolution",
+        "Increased revenue per guest"
+      ],
+      link: "/industries/hospitality"
     }
   ];
 
@@ -166,7 +184,7 @@ export default function IndustriesPage() {
     <>
       <SEO 
         title="Industries - O.N.E.Tech"
-        description="Enterprise AI infrastructure solutions for Energy, Oil & Gas, Construction, Real Estate, Financial Services, Forex Brokerage, Government, and Enterprise Services across GCC and Cyprus."
+        description="Enterprise AI infrastructure solutions for Energy, Oil & Gas, Construction, Real Estate, Financial Services, Forex Brokerage, Hospitality, Government, and Enterprise Services across GCC and Cyprus."
         image="/og-image.png"
       />
       <Header />
@@ -246,6 +264,17 @@ export default function IndustriesPage() {
                         ))}
                       </ul>
                     </div>
+
+                    {industry.link && (
+                      <div className="mt-6 pt-6 border-t border-border">
+                        <Link href={industry.link}>
+                          <Button variant="outline" className="gap-2 w-full">
+                            Explore {industry.name}
+                            <ArrowRight className="h-4 w-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 );
               })}

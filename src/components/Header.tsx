@@ -49,6 +49,7 @@ export function Header() {
     { href: "/solutions#revenue", label: "Revenue Infrastructure", desc: "AI-powered revenue operations" },
     { href: "/solutions#real-estate", label: "Real Estate Infrastructure", desc: "Property operations intelligence" },
     { href: "/solutions#forex", label: "Forex Infrastructure", desc: "Client lifecycle intelligence" },
+    { href: "/industries/hospitality", label: "Hospitality & Hotels", desc: "Hotel operational intelligence" },
   ];
 
   const resourcesLinks = [
