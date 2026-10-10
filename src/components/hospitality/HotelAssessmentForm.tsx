@@ -148,12 +148,19 @@ export function HotelAssessmentForm() {
         submitted_at: new Date().toISOString()
       };
 
+      console.log("Submitting assessment...", { hotel_group: hotelGroup });
+
       // Save to database
       const { error: dbError } = await supabase
         .from("hospitality_assessments")
         .insert(assessmentData);
 
-      if (dbError) throw dbError;
+      if (dbError) {
+        console.error("Database error:", dbError);
+        throw dbError;
+      }
+
+      console.log("Database save successful, sending email...");
 
       // Send email notification via Next.js API route
       const emailResponse = await fetch("/api/send-hotel-assessment", {
@@ -164,10 +171,21 @@ export function HotelAssessmentForm() {
         body: JSON.stringify(assessmentData),
       });
 
+      console.log("Email response status:", emailResponse.status);
+      
+      const emailData = await emailResponse.json();
+      console.log("Email response data:", emailData);
+
       if (!emailResponse.ok) {
-        const errorData = await emailResponse.json();
-        console.error("Email notification error:", errorData);
-        // Don't fail the whole submission if email fails
+        console.error("Email notification error:", emailData);
+        // Log the error but don't fail the submission
+        toast({
+          title: "Partial Success",
+          description: "Assessment saved but email notification may have failed. We'll contact you soon.",
+          variant: "default",
+        });
+      } else {
+        console.log("Email sent successfully!");
       }
 
       setSubmitted(true);
