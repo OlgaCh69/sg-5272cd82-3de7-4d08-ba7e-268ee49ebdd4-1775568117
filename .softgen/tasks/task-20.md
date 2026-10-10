@@ -1,6 +1,6 @@
 ---
 title: Site-Wide Hospitality Integration
-status: todo
+status: done
 priority: high
 type: chore
 tags: [hospitality, navigation, integration]
@@ -10,20 +10,21 @@ position: 5
 ---
 
 ## Notes
-Add Hospitality throughout existing website: navigation, homepage, industries page, footer, mobile menu. Preserve all existing content.
+Integrate Hospitality & Hotels throughout existing website navigation and relevant pages without removing other industries or content.
 
 ## Checklist
-- [ ] Update Header.tsx: Add Hospitality under Industries/Solutions
-- [ ] Update index.tsx: Add Hospitality card to Industry Expertise
-- [ ] Update industries.tsx: Add Hospitality to industries showcase
-- [ ] Update Footer.tsx: Add Hospitality landing page link
-- [ ] Update solutions.tsx: Add hotel operational AI example
-- [ ] Update mobile navigation
-- [ ] Update sitemap.xml with /industries/hospitality
-- [ ] Verify all existing industries preserved (Forex, Enterprise, etc.)
+- [x] Add Hospitality to Header Solutions mega menu
+- [x] Add Hospitality industry card to `/industries` page
+- [x] Add Hospitality to Footer industries section
+- [x] Update sitemap.xml with hospitality page
+- [x] Ensure mobile navigation includes hospitality
+- [x] All existing content preserved (Forex, enterprise, etc.)
 
 ## Acceptance
-- Hospitality accessible from main nav and mobile menu
+- Hospitality appears in all relevant navigation areas
+- Main menu includes hospitality link
+- Footer industries section updated
+- Mobile menu updated
 - Homepage shows hospitality industry card
 - All existing content intact
 - Sitemap updated

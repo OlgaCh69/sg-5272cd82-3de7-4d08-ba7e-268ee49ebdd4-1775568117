@@ -4,8 +4,8 @@
   <!-- Homepage -->
   <url>
     <loc>https://onetechautomation.com/</loc>
-    <lastmod>2026-06-22</lastmod>
-    <changefreq>daily</changefreq>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
@@ -58,9 +58,15 @@
   <!-- Industries -->
   <url>
     <loc>https://onetechautomation.com/industries</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://onetechautomation.com/industries/hospitality</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Resources -->

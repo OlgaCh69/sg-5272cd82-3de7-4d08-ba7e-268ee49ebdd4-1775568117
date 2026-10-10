@@ -16,6 +16,7 @@ export function Footer() {
     { label: "Real Estate", href: "/industries#real-estate" },
     { label: "Financial Services", href: "/industries#financial" },
     { label: "Forex Brokerage", href: "/industries#forex" },
+    { label: "Hospitality & Hotels", href: "/industries/hospitality" },
     { label: "Government & Enterprise", href: "/industries#government" },
   ];
 
