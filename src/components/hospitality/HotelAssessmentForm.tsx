@@ -155,13 +155,18 @@ export function HotelAssessmentForm() {
 
       if (dbError) throw dbError;
 
-      // Send email notification
-      const emailResponse = await supabase.functions.invoke("send-hotel-assessment-notification", {
-        body: assessmentData
+      // Send email notification via Next.js API route
+      const emailResponse = await fetch("/api/send-hotel-assessment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(assessmentData),
       });
 
-      if (emailResponse.error) {
-        console.error("Email notification error:", emailResponse.error);
+      if (!emailResponse.ok) {
+        const errorData = await emailResponse.json();
+        console.error("Email notification error:", errorData);
         // Don't fail the whole submission if email fails
       }
 
